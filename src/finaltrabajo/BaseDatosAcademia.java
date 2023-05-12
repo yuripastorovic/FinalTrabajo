@@ -79,8 +79,8 @@ public class BaseDatosAcademia {
                 "   id_alumno INTEGER DEFAULT '0'," +
                 "   id_curso INTEGER DEFAULT '0'," +
                 "   fec_inicio DATE DEFAULT GETDATE() NOT NULL,"+
-                "   fecha_fin DATE DEFAULT GETDATE() NOT NULL,"+
-                "   calificacion VARCHAR(25) NOT NULL,"+
+                "   fecha_fin DATE DEFAULT NOT NULL,"+
+                "   calificacion VARCHAR(25)DEFAULT 'NO CALIFICADO' NOT NULL,"+
                 "   PRIMARY KEY (id)" +
                 "   CONSTRAINT fk_alumno_alumnos FOREIGN KEY(id_alumno)REFERENCES id(Alumnos) ON UPDATE CASCADE ON DELETE SET DEFAULT" +
                 "   CONSTRAINT fk_curso_cursos FOREIGN KEY(id_curso)REFERENCES id(Cursos) ON UPDATE CASCADE ON DELETE SET DEFAULT" +
