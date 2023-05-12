@@ -44,20 +44,11 @@ public class BaseDatosAcademia {
         conectar();
     }
     
-    public void conectar(){
-        try {  
-            Class.forName("org.mariadb.jdbc.Driver");
-            this.conn = DriverManager.getConnection("jdbc:mariadb://"+this.ip+":"+this.puerto+"/"+this.db, this.usuario, this.passw);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-   
     public void crearDB(){
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("create database if not exists academia");
+            stmt.executeUpdate("create database if not exists Jorge_Pastor_Miguel_Gonzalez_Academia");
             stmt.executeUpdate("use academia");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Alumnos(" +
                 "   id INTEGER UNSIGNED AUTOINCREMENT NOT NULL," +
@@ -78,8 +69,8 @@ public class BaseDatosAcademia {
                 "   id INTEGER UNSIGNED AUTOINCREMENT NOT NULL," +
                 "   id_alumno INTEGER DEFAULT '0'," +
                 "   id_curso INTEGER DEFAULT '0'," +
-                "   fec_inicio DATE DEFAULT GETDATE() NOT NULL,"+
-                "   fecha_fin DATE DEFAULT NOT NULL,"+
+                "   fInicio DATE DEFAULT GETDATE() NOT NULL,"+
+                "   fFin DATE DEFAULT NOT NULL,"+
                 "   calificacion VARCHAR(25)DEFAULT 'NO CALIFICADO' NOT NULL,"+
                 "   PRIMARY KEY (id)" +
                 "   CONSTRAINT fk_alumno_alumnos FOREIGN KEY(id_alumno)REFERENCES id(Alumnos) ON UPDATE CASCADE ON DELETE SET DEFAULT" +
@@ -102,6 +93,22 @@ public class BaseDatosAcademia {
             stmt.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
+        }
+    }
+     
+    public void conectar(){
+        try {  
+            Class.forName("org.mariadb.jdbc.Driver");
+            this.conn = DriverManager.getConnection("jdbc:mariadb://"+this.ip+":"+this.puerto+"/"+this.db, this.usuario, this.passw);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    public void cerrar() throws SQLException{
+        if(this.conn!=null){
+            if(!this.conn.isClosed()){
+                this.conn.close();
+            }   
         }
     }
     
@@ -127,11 +134,11 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }        
     }
-    public void insertarInscripcion(String id_alumno, String id_curso, String fec_inicio, String fec_fin,String calificacion){//--mirar como se van a introducir fecha fin y calificacion
+    public void insertarInscripcion(int id_alumno, int id_curso, String fInicio, String fFin,String calificacion){//--mirar como se van a introducir fecha fin y calificacion
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos VALUES ("+id_alumno+","+id_curso+","+fec_inicio+","+fec_fin+","+calificacion+");");
+            stmt.executeUpdate("INSERT INTO Cursos VALUES ("+id_alumno+","+id_curso+","+fInicio+","+fFin+","+calificacion+");");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
@@ -484,5 +491,100 @@ public class BaseDatosAcademia {
             return cadenaDatos;
     }
     
+    //--estos metodos tiene que comprobar mas cosas aparte del id 
+    public boolean confirmarAlumno(int id){
+        Statement stmt;
+        boolean confirmar=false;
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT COUNT(Alumnos.id) FROM Alumnos WHERE Alumnos.id="+id+" ;");//SELECT
+                while (rs.next()) {
+                    String ids = rs.getString(1);
+                    if(ids.equals("1")){
+                        confirmar=true;
+                    }else{
+                        confirmar=false;
+                    }
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            return confirmar;
+    }
+    public boolean confirmarCurso(int id){
+        Statement stmt;
+        boolean confirmar=false;
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT COUNT(Cursos.id) FROM Cursos WHERE Cursos.id="+id+" ;");//SELECT
+                while (rs.next()) {
+                    String ids = rs.getString(1);
+                    if(ids.equals("1")){
+                        confirmar=true;
+                    }else{
+                        confirmar=false;
+                    }
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            return confirmar;
+    }
+    public boolean confirmarInscripcion(int id){
+        Statement stmt;
+        boolean confirmar=false;
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT COUNT(Inscripciones.id) FROM Inscripciones WHERE Inscripciones.id="+id+" ;");//SELECT
+                while (rs.next()) {
+                    String ids = rs.getString(1);
+                    if(ids.equals("1")){
+                        confirmar=true;
+                    }else{
+                        confirmar=false;
+                    }
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            return confirmar;
+    }
+    
+    public void modificarAlumno(int id ,String nombre, String apellido, String correo, String telefono){
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Alumnos SET nombre="+nombre+","+"apellido="+apellido+","+"correo="+correo+","+" telefono="+telefono+" WHERE id="+id+";");
+            this.conn.commit();
+            stmt.close();
+        }catch (SQLException ex) {
+            ex.printStackTrace();
+        }        
+    }
+    public void modificarCursos(int id ,String nombre, String descripcion, String horas){
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Cursos SET nombre="+nombre+","+"descripcion="+descripcion+","+"horas="+horas+" WHERE id="+id+";");
+            this.conn.commit();
+            stmt.close();
+        }catch (SQLException ex) {
+            ex.printStackTrace();
+        }        
+    }
+    public void modificarInscripciones(int id ,int id_alumno, int id_curso, String fInicio, String fFin, String calificacion){
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Inscripciones SET id_alumno="+id_alumno+","+"id_curso="+id_curso+","+"fInicio="+fInicio+","+"fFin="+fFin+","+"calificacion="+calificacion+" WHERE id="+id+";");
+            this.conn.commit();
+            stmt.close();
+        }catch (SQLException ex) {
+            ex.printStackTrace();
+        }        
+    }
     
 }
