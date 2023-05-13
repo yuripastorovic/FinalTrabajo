@@ -35,14 +35,15 @@ public JPanel getFondo() {
         PanelFondo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         CampoNombre = new javax.swing.JTextField();
-        CampoApellido = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        CampoCorreo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        CampoTelefono = new javax.swing.JTextField();
-        ButtonModificar = new javax.swing.JPanel();
-        LabelButtonModificar = new javax.swing.JLabel();
+        ButtonAlta = new javax.swing.JPanel();
+        LabelButtonAlta = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TextAreaDescr = new javax.swing.JTextArea();
+        CBHoras = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        CBHoras1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,12 +51,11 @@ public JPanel getFondo() {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 34, 43));
-        jLabel1.setText("NOMBRE");
+        jLabel1.setText("NOMBRE DEL CURSO");
 
         CampoNombre.setBackground(new java.awt.Color(25, 34, 43));
         CampoNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CampoNombre.setForeground(new java.awt.Color(196, 190, 181));
-        CampoNombre.setText("   Introduzca nombre");
         CampoNombre.setBorder(null);
         CampoNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -63,88 +63,91 @@ public JPanel getFondo() {
             }
         });
 
-        CampoApellido.setBackground(new java.awt.Color(25, 34, 43));
-        CampoApellido.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        CampoApellido.setForeground(new java.awt.Color(196, 190, 181));
-        CampoApellido.setText("   Introduzca apellido");
-        CampoApellido.setBorder(null);
-        CampoApellido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CampoApellidoMouseClicked(evt);
-            }
-        });
-
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(25, 34, 43));
-        jLabel2.setText("APELLIDO");
-
-        CampoCorreo.setBackground(new java.awt.Color(25, 34, 43));
-        CampoCorreo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        CampoCorreo.setForeground(new java.awt.Color(196, 190, 181));
-        CampoCorreo.setText("   Introduzca correo");
-        CampoCorreo.setBorder(null);
-        CampoCorreo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CampoCorreoMouseClicked(evt);
-            }
-        });
+        jLabel2.setText("NUMERO DE HORAS");
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(25, 34, 43));
-        jLabel3.setText("CORREO");
+        jLabel3.setText("DESCRIPCION");
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(25, 34, 43));
-        jLabel4.setText("TELEFONO");
-
-        CampoTelefono.setBackground(new java.awt.Color(25, 34, 43));
-        CampoTelefono.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        CampoTelefono.setForeground(new java.awt.Color(196, 190, 181));
-        CampoTelefono.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        CampoTelefono.setText("   Introduzca telefono");
-        CampoTelefono.setBorder(null);
-        CampoTelefono.addMouseListener(new java.awt.event.MouseAdapter() {
+        ButtonAlta.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAlta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CampoTelefonoMouseClicked(evt);
-            }
-        });
-
-        ButtonModificar.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonModificar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonModificarModificar_press(evt);
+                ButtonAltaCrear_alumno(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ButtonModificarMouseEntered(evt);
+                ButtonAltaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ButtonModificarMouseExited(evt);
+                ButtonAltaMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                ButtonModificarMousePressed(evt);
+                ButtonAltaMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                ButtonModificarMouseReleased(evt);
+                ButtonAltaMouseReleased(evt);
             }
         });
 
-        LabelButtonModificar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        LabelButtonModificar.setForeground(new java.awt.Color(221, 214, 204));
-        LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelButtonModificar.setText("MODIFICAR");
+        LabelButtonAlta.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonAlta.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonAlta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonAlta.setText("MODIFICAR");
 
-        javax.swing.GroupLayout ButtonModificarLayout = new javax.swing.GroupLayout(ButtonModificar);
-        ButtonModificar.setLayout(ButtonModificarLayout);
-        ButtonModificarLayout.setHorizontalGroup(
-            ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonModificarLayout.createSequentialGroup()
-                .addGap(0, 34, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar))
+        javax.swing.GroupLayout ButtonAltaLayout = new javax.swing.GroupLayout(ButtonAlta);
+        ButtonAlta.setLayout(ButtonAltaLayout);
+        ButtonAltaLayout.setHorizontalGroup(
+            ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
-        ButtonModificarLayout.setVerticalGroup(
-            ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        ButtonAltaLayout.setVerticalGroup(
+            ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
+
+        TextAreaDescr.setBackground(new java.awt.Color(25, 34, 43));
+        TextAreaDescr.setColumns(20);
+        TextAreaDescr.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        TextAreaDescr.setForeground(new java.awt.Color(196, 190, 181));
+        TextAreaDescr.setRows(5);
+        TextAreaDescr.setBorder(null);
+        TextAreaDescr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextAreaDescrMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TextAreaDescr);
+
+        CBHoras.setBackground(new java.awt.Color(25, 34, 43));
+        CBHoras.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        CBHoras.setForeground(new java.awt.Color(221, 214, 204));
+        CBHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBHoras.setSelectedIndex(-1);
+        CBHoras.setBorder(null);
+        CBHoras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CBHoras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBHorasActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(25, 34, 43));
+        jLabel5.setText("SELECCIONE CURSO");
+
+        CBHoras1.setBackground(new java.awt.Color(25, 34, 43));
+        CBHoras1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        CBHoras1.setForeground(new java.awt.Color(221, 214, 204));
+        CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBHoras1.setSelectedIndex(-1);
+        CBHoras1.setBorder(null);
+        CBHoras1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CBHoras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBHoras1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
@@ -154,55 +157,67 @@ public JPanel getFondo() {
                 .addGap(64, 64, 64)
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                        .addGap(414, 414, 414))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(26, 26, 26))
-                    .addComponent(CampoNombre)
-                    .addComponent(CampoApellido)
-                    .addComponent(CampoCorreo)
-                    .addComponent(CampoTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
-                .addGap(388, 388, 388))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                            .addComponent(CBHoras1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(CBHoras, 0, 202, Short.MAX_VALUE)
+                                .addComponent(CampoNombre))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(40, 40, 40))))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CBHoras1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CampoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(CBHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CampoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CampoTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(37, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -210,46 +225,56 @@ public JPanel getFondo() {
 
     private void CampoNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoNombreMouseClicked
         CampoNombre.setText("");
+        CampoNombre.setBackground(new Color(189, 146, 64));
+        CampoNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoNombreMouseClicked
 
-    private void CampoApellidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoApellidoMouseClicked
-        CampoApellido.setText("");
-    }//GEN-LAST:event_CampoApellidoMouseClicked
-
-    private void CampoCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoCorreoMouseClicked
-        CampoCorreo.setText("");
-    }//GEN-LAST:event_CampoCorreoMouseClicked
-
-    private void CampoTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoTelefonoMouseClicked
-        CampoTelefono.setText("");
-    }//GEN-LAST:event_CampoTelefonoMouseClicked
-
-    private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
+    private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
         CampoNombre.setText("");
-        CampoApellido.setText("");
-        CampoCorreo.setText("");
-        CampoTelefono.setText("");
-    }//GEN-LAST:event_ButtonModificarModificar_press
+        TextAreaDescr.setText("");
+        CBHoras.setSelectedIndex(-1);
+        CBHoras.setBackground(new Color(25, 34, 43));
+        CBHoras.setForeground(new Color(221, 214, 204));
+        TextAreaDescr.setBackground(new Color(25, 34, 43));
+        TextAreaDescr.setForeground(new Color(221, 214, 204));
+        CampoNombre.setBackground(new Color(25, 34, 43));
+        CampoNombre.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ButtonAltaCrear_alumno
 
-    private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered
-        ButtonModificar.setBackground(new Color(189, 146, 64));
-        LabelButtonModificar.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ButtonModificarMouseEntered
+    private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered
+        ButtonAlta.setBackground(new Color(189, 146, 64));
+        LabelButtonAlta.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonAltaMouseEntered
 
-    private void ButtonModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseExited
-        ButtonModificar.setBackground(new Color(25, 34, 43));
-        LabelButtonModificar.setForeground(new Color(221, 214, 204));
-    }//GEN-LAST:event_ButtonModificarMouseExited
+    private void ButtonAltaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseExited
+        ButtonAlta.setBackground(new Color(25, 34, 43));
+        LabelButtonAlta.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ButtonAltaMouseExited
 
-    private void ButtonModificarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMousePressed
-        ButtonModificar.setBackground(new Color(184, 67, 87));
-        LabelButtonModificar.setForeground(new Color(189, 146, 64));
-    }//GEN-LAST:event_ButtonModificarMousePressed
+    private void ButtonAltaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMousePressed
+        ButtonAlta.setBackground(new Color(184, 67, 87));
+        LabelButtonAlta.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_ButtonAltaMousePressed
 
-    private void ButtonModificarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseReleased
-        ButtonModificar.setBackground(new Color(189, 146, 64));
-        LabelButtonModificar.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ButtonModificarMouseReleased
+    private void ButtonAltaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseReleased
+        ButtonAlta.setBackground(new Color(189, 146, 64));
+        LabelButtonAlta.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonAltaMouseReleased
+
+    private void TextAreaDescrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextAreaDescrMouseClicked
+        TextAreaDescr.setText("");
+        TextAreaDescr.setBackground(new Color(189, 146, 64));
+        TextAreaDescr.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_TextAreaDescrMouseClicked
+
+    private void CBHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHorasActionPerformed
+        CBHoras.setBackground(new Color(189, 146, 64));
+        CBHoras.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_CBHorasActionPerformed
+
+    private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBHoras1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,16 +312,17 @@ public JPanel getFondo() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ButtonModificar;
-    private javax.swing.JTextField CampoApellido;
-    private javax.swing.JTextField CampoCorreo;
+    private javax.swing.JPanel ButtonAlta;
+    private javax.swing.JComboBox<String> CBHoras;
+    private javax.swing.JComboBox<String> CBHoras1;
     private javax.swing.JTextField CampoNombre;
-    private javax.swing.JTextField CampoTelefono;
-    private javax.swing.JLabel LabelButtonModificar;
+    private javax.swing.JLabel LabelButtonAlta;
     private javax.swing.JPanel PanelFondo;
+    private javax.swing.JTextArea TextAreaDescr;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
