@@ -37,6 +37,7 @@ public class Alumnos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("alumnos");
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
