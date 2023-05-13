@@ -51,7 +51,7 @@ public class BaseDatosAcademia {
             stmt.executeUpdate("create database if not exists Jorge_Pastor_Miguel_Gonzalez_Academia");
             stmt.executeUpdate("use academia");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Alumnos(" +
-                "   id INTEGER UNSIGNED AUTOINCREMENT NOT NULL," +
+                "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL," +
                 "   nombre VARCHAR(25) NOT NULL," +
                 "   apellido VARCHAR(25) NOT NULL," +
                 "   correo VARCHAR(25) NOT NULL,"+
@@ -59,14 +59,14 @@ public class BaseDatosAcademia {
                 "   PRIMARY KEY (id)" +
                 ");");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Cursos(" +
-                "   id INTEGER UNSIGNED AUTOINCREMENT NOT NULL," +
+                "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL," +
                 "   nombre VARCHAR(25) NOT NULL," +
                 "   descripcion VARCHAR(25) NOT NULL," +
                 "   horas VARCHAR(25) NOT NULL,"+
                 "   PRIMARY KEY (id)" +
                 ");");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Inscripciones(" +
-                "   id INTEGER UNSIGNED AUTOINCREMENT NOT NULL," +
+                "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL," +
                 "   id_alumno INTEGER DEFAULT '0'," +
                 "   id_curso INTEGER DEFAULT '0'," +
                 "   fInicio DATE DEFAULT GETDATE() NOT NULL,"+
