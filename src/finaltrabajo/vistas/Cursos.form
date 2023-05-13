@@ -141,7 +141,7 @@
                       <Color blue="cc" green="d6" red="dd" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="NUEVO ALUMNO"/>
+                    <Property name="text" type="java.lang.String" value="NUEVO CURSO"/>
                   </Properties>
                 </Component>
               </SubComponents>

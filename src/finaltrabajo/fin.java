@@ -115,6 +115,7 @@ public class fin extends javax.swing.JFrame {
         LabelButtonModificar2.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         LabelButtonModificar2.setForeground(new java.awt.Color(221, 214, 204));
         LabelButtonModificar2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/icon3.png"))); // NOI18N
         LabelButtonModificar2.setText("PRINCIPAL");
 
         javax.swing.GroupLayout ButtonPrincLayout = new javax.swing.GroupLayout(ButtonPrinc);
@@ -152,6 +153,7 @@ public class fin extends javax.swing.JFrame {
         LabelButtonModificar3.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         LabelButtonModificar3.setForeground(new java.awt.Color(221, 214, 204));
         LabelButtonModificar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/icon5.png"))); // NOI18N
         LabelButtonModificar3.setText("ALUMNOS");
 
         javax.swing.GroupLayout ButtonAlumnLayout = new javax.swing.GroupLayout(ButtonAlumn);
@@ -189,6 +191,7 @@ public class fin extends javax.swing.JFrame {
         LabelButtonModificar4.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         LabelButtonModificar4.setForeground(new java.awt.Color(221, 214, 204));
         LabelButtonModificar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/icon2.png"))); // NOI18N
         LabelButtonModificar4.setText("CURSOS");
 
         javax.swing.GroupLayout ButtonCursoLayout = new javax.swing.GroupLayout(ButtonCurso);
@@ -226,6 +229,7 @@ public class fin extends javax.swing.JFrame {
         LabelButtonModificar5.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         LabelButtonModificar5.setForeground(new java.awt.Color(221, 214, 204));
         LabelButtonModificar5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/icon4.png"))); // NOI18N
         LabelButtonModificar5.setText("INSCRIPCION");
 
         javax.swing.GroupLayout ButtonInscLayout = new javax.swing.GroupLayout(ButtonInsc);
@@ -265,6 +269,7 @@ public class fin extends javax.swing.JFrame {
         LabelButtonModificar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         LabelButtonModificar.setForeground(new java.awt.Color(221, 214, 204));
         LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/icon1.png"))); // NOI18N
         LabelButtonModificar.setText("AJUSTES");
 
         javax.swing.GroupLayout ButtonAjustesLayout = new javax.swing.GroupLayout(ButtonAjustes);
@@ -446,6 +451,7 @@ public class fin extends javax.swing.JFrame {
     private void ButtonPrincMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonPrincMouseExited
         ButtonPrinc.setBackground(new Color(25, 34, 43));
         LabelButtonModificar2.setForeground(new Color(221, 214, 204));
+        
     }//GEN-LAST:event_ButtonPrincMouseExited
 
     private void ButtonAlumnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnMouseEntered

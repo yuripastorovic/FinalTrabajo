@@ -146,6 +146,9 @@
                           <Color blue="cc" green="d6" red="dd" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/finaltrabajo/vistas/icon/icon3.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="PRINCIPAL"/>
                       </Properties>
                     </Component>
@@ -187,6 +190,9 @@
                           <Color blue="cc" green="d6" red="dd" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/finaltrabajo/vistas/icon/icon5.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="ALUMNOS"/>
                       </Properties>
                     </Component>
@@ -228,6 +234,9 @@
                           <Color blue="cc" green="d6" red="dd" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/finaltrabajo/vistas/icon/icon2.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="CURSOS"/>
                       </Properties>
                     </Component>
@@ -272,6 +281,9 @@
                           <Color blue="cc" green="d6" red="dd" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/finaltrabajo/vistas/icon/icon4.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="INSCRIPCION"/>
                       </Properties>
                     </Component>
@@ -313,6 +325,9 @@
                           <Color blue="cc" green="d6" red="dd" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/finaltrabajo/vistas/icon/icon1.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="AJUSTES"/>
                       </Properties>
                     </Component>

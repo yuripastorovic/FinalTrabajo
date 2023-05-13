@@ -86,7 +86,7 @@ public class Cursos extends javax.swing.JFrame {
         CBHoras.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         CBHoras.setForeground(new java.awt.Color(221, 214, 204));
         CBHoras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CBHoras.setText("NUEVO ALUMNO");
+        CBHoras.setText("NUEVO CURSO");
 
         javax.swing.GroupLayout ALTALayout = new javax.swing.GroupLayout(ALTA);
         ALTA.setLayout(ALTALayout);
