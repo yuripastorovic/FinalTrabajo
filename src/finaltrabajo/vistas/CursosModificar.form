@@ -48,23 +48,23 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" max="32767" attributes="0"/>
+                              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="26" pref="26" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="CampoNombre" max="32767" attributes="0"/>
+                      <Component id="CampoNombre" alignment="0" max="32767" attributes="0"/>
                       <Component id="CampoApellido" alignment="0" max="32767" attributes="0"/>
                       <Component id="CampoCorreo" alignment="0" max="32767" attributes="0"/>
-                      <Component id="CampoTelefono" alignment="0" pref="190" max="32767" attributes="0"/>
+                      <Component id="CampoTelefono" alignment="0" pref="172" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="388" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="ButtonAlta" min="-2" max="-2" attributes="0"/>
+                  <Component id="ButtonModificar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -88,8 +88,8 @@
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="CampoTelefono" min="-2" pref="25" max="-2" attributes="0"/>
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
-                  <Component id="ButtonAlta" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="ButtonModificar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -221,34 +221,37 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CampoTelefonoMouseClicked"/>
           </Events>
         </Component>
-        <Container class="javax.swing.JPanel" name="ButtonAlta">
+        <Container class="javax.swing.JPanel" name="ButtonModificar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="2b" green="22" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Crear_alumno"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonAltaMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonAltaMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonAltaMousePressed"/>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonAltaMouseReleased"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonModificarModificar_press"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonModificarMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonModificarMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonModificarMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonModificarMouseReleased"/>
           </Events>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="LabelButtonAlta" alignment="1" pref="100" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
+                      <Component id="LabelButtonModificar" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="LabelButtonAlta" alignment="1" pref="35" max="32767" attributes="0"/>
+                  <Component id="LabelButtonModificar" alignment="1" pref="35" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="LabelButtonAlta">
+            <Component class="javax.swing.JLabel" name="LabelButtonModificar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto Black" size="12" style="0"/>

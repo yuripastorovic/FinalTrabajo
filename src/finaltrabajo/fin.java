@@ -59,17 +59,6 @@ public class fin extends javax.swing.JFrame {
         this.PanelContenedor.repaint();
     }
 
-    public void initContenedor(JPanel p) {
-
-        p.setSize(this.PanelContenedor.getWidth(), this.PanelContenedor.getHeight());
-        p.setLocation(0, 0);
-        this.PanelContenedor.removeAll();
-        this.PanelContenedor.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        this.PanelContenedor.revalidate();
-        this.PanelContenedor.repaint();
-
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -77,11 +66,16 @@ public class fin extends javax.swing.JFrame {
         PanelFondo = new javax.swing.JPanel();
         PanelMenu = new javax.swing.JPanel();
         PanelBotonera = new javax.swing.JPanel();
-        ButtonPrincipal1 = new javax.swing.JButton();
-        ButtonPrincipal = new javax.swing.JButton();
-        ButtonPrincipal2 = new javax.swing.JButton();
-        ButtonPrincipal3 = new javax.swing.JButton();
-        ButtonPrincipal4 = new javax.swing.JButton();
+        ButtonPrinc = new javax.swing.JPanel();
+        LabelButtonModificar2 = new javax.swing.JLabel();
+        ButtonAlumn = new javax.swing.JPanel();
+        LabelButtonModificar3 = new javax.swing.JLabel();
+        ButtonCurso = new javax.swing.JPanel();
+        LabelButtonModificar4 = new javax.swing.JLabel();
+        ButtonInsc = new javax.swing.JPanel();
+        LabelButtonModificar5 = new javax.swing.JLabel();
+        ButtonAjustes = new javax.swing.JPanel();
+        LabelButtonModificar = new javax.swing.JLabel();
         PanelHeader = new javax.swing.JPanel();
         PanelHora = new javax.swing.JPanel();
         LabelTime = new javax.swing.JLabel();
@@ -97,85 +91,209 @@ public class fin extends javax.swing.JFrame {
 
         PanelBotonera.setBackground(new java.awt.Color(25, 34, 43));
         PanelBotonera.setForeground(new java.awt.Color(221, 214, 204));
-        PanelBotonera.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelBotonera.setLayout(new java.awt.GridLayout(5, 1));
 
-        ButtonPrincipal1.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonPrincipal1.setForeground(new java.awt.Color(221, 214, 204));
-        ButtonPrincipal1.setText("Principal");
-        ButtonPrincipal1.setBorder(null);
-        ButtonPrincipal1.setBorderPainted(false);
-        ButtonPrincipal1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ButtonPrincipal1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonPrincipal1ActionPerformed(evt);
+        ButtonPrinc.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonPrinc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Principal_action(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ButtonPrincMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ButtonPrincMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ButtonPrincMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ButtonPrincMouseReleased(evt);
             }
         });
-        PanelBotonera.add(ButtonPrincipal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 44));
 
-        ButtonPrincipal.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonPrincipal.setForeground(new java.awt.Color(221, 214, 204));
-        ButtonPrincipal.setText("Alumnos");
-        ButtonPrincipal.setBorder(null);
-        ButtonPrincipal.setBorderPainted(false);
-        ButtonPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ButtonPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonPrincipalActionPerformed(evt);
+        LabelButtonModificar2.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar2.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar2.setText("PRINCIPAL");
+
+        javax.swing.GroupLayout ButtonPrincLayout = new javax.swing.GroupLayout(ButtonPrinc);
+        ButtonPrinc.setLayout(ButtonPrincLayout);
+        ButtonPrincLayout.setHorizontalGroup(
+            ButtonPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ButtonPrincLayout.setVerticalGroup(
+            ButtonPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+        );
+
+        PanelBotonera.add(ButtonPrinc);
+
+        ButtonAlumn.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAlumn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Alumn_action(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ButtonAlumnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ButtonAlumnMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ButtonAlumnMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ButtonAlumnMouseReleased(evt);
             }
         });
-        PanelBotonera.add(ButtonPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 260, 44));
 
-        ButtonPrincipal2.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonPrincipal2.setForeground(new java.awt.Color(221, 214, 204));
-        ButtonPrincipal2.setText("Cursos");
-        ButtonPrincipal2.setBorder(null);
-        ButtonPrincipal2.setBorderPainted(false);
-        ButtonPrincipal2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ButtonPrincipal2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonPrincipal2ActionPerformed(evt);
+        LabelButtonModificar3.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar3.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar3.setText("ALUMNOS");
+
+        javax.swing.GroupLayout ButtonAlumnLayout = new javax.swing.GroupLayout(ButtonAlumn);
+        ButtonAlumn.setLayout(ButtonAlumnLayout);
+        ButtonAlumnLayout.setHorizontalGroup(
+            ButtonAlumnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ButtonAlumnLayout.setVerticalGroup(
+            ButtonAlumnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+        );
+
+        PanelBotonera.add(ButtonAlumn);
+
+        ButtonCurso.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonCurso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Curso_action(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ButtonCursoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ButtonCursoMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ButtonCursoMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ButtonCursoMouseReleased(evt);
             }
         });
-        PanelBotonera.add(ButtonPrincipal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 260, 44));
 
-        ButtonPrincipal3.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonPrincipal3.setForeground(new java.awt.Color(221, 214, 204));
-        ButtonPrincipal3.setText("Inscripciones");
-        ButtonPrincipal3.setBorder(null);
-        ButtonPrincipal3.setBorderPainted(false);
-        ButtonPrincipal3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ButtonPrincipal3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonPrincipal3ActionPerformed(evt);
+        LabelButtonModificar4.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar4.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar4.setText("CURSOS");
+
+        javax.swing.GroupLayout ButtonCursoLayout = new javax.swing.GroupLayout(ButtonCurso);
+        ButtonCurso.setLayout(ButtonCursoLayout);
+        ButtonCursoLayout.setHorizontalGroup(
+            ButtonCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ButtonCursoLayout.setVerticalGroup(
+            ButtonCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+        );
+
+        PanelBotonera.add(ButtonCurso);
+
+        ButtonInsc.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonInsc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Inscrip_action(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ButtonInscMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ButtonInscMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ButtonInscMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ButtonInscMouseReleased(evt);
             }
         });
-        PanelBotonera.add(ButtonPrincipal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 260, 44));
 
-        ButtonPrincipal4.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonPrincipal4.setForeground(new java.awt.Color(221, 214, 204));
-        ButtonPrincipal4.setText("Ajustes");
-        ButtonPrincipal4.setBorder(null);
-        ButtonPrincipal4.setBorderPainted(false);
-        ButtonPrincipal4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ButtonPrincipal4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonPrincipal4ActionPerformed(evt);
+        LabelButtonModificar5.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar5.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar5.setText("INSCRIPCION");
+
+        javax.swing.GroupLayout ButtonInscLayout = new javax.swing.GroupLayout(ButtonInsc);
+        ButtonInsc.setLayout(ButtonInscLayout);
+        ButtonInscLayout.setHorizontalGroup(
+            ButtonInscLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtonInscLayout.createSequentialGroup()
+                .addComponent(LabelButtonModificar5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+        ButtonInscLayout.setVerticalGroup(
+            ButtonInscLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+        );
+
+        PanelBotonera.add(ButtonInsc);
+
+        ButtonAjustes.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAjustes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ajustes_action(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ButtonAjustesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ButtonAjustesMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ButtonAjustesMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ButtonAjustesMouseReleased(evt);
             }
         });
-        PanelBotonera.add(ButtonPrincipal4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 260, 44));
+
+        LabelButtonModificar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar.setText("AJUSTES");
+
+        javax.swing.GroupLayout ButtonAjustesLayout = new javax.swing.GroupLayout(ButtonAjustes);
+        ButtonAjustes.setLayout(ButtonAjustesLayout);
+        ButtonAjustesLayout.setHorizontalGroup(
+            ButtonAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+        );
+        ButtonAjustesLayout.setVerticalGroup(
+            ButtonAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+        );
+
+        PanelBotonera.add(ButtonAjustes);
 
         javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
         PanelMenu.setLayout(PanelMenuLayout);
         PanelMenuLayout.setHorizontalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBotonera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PanelBotonera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelMenuLayout.setVerticalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PanelBotonera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(176, 176, 176))
+            .addGroup(PanelMenuLayout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addComponent(PanelBotonera, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PanelHeader.setBackground(new java.awt.Color(184, 67, 87));
@@ -227,7 +345,7 @@ public class fin extends javax.swing.JFrame {
         PanelHeaderLayout.setHorizontalGroup(
             PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelHeaderLayout.createSequentialGroup()
-                .addGap(0, 202, Short.MAX_VALUE)
+                .addGap(0, 317, Short.MAX_VALUE)
                 .addComponent(PanelFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(PanelHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -259,19 +377,19 @@ public class fin extends javax.swing.JFrame {
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
+            .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addGap(134, 134, 134)
+                .addContainerGap(134, Short.MAX_VALUE)
                 .addComponent(PanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,30 +410,139 @@ public class fin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPrincipalActionPerformed
-        Alumnos bbb = new Alumnos();
-        showPanel(bbb.getFondo());
-    }//GEN-LAST:event_ButtonPrincipalActionPerformed
-
-    private void ButtonPrincipal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPrincipal1ActionPerformed
-        Principal bbb = new Principal();
-        showPanel(bbb.getFondo());
-    }//GEN-LAST:event_ButtonPrincipal1ActionPerformed
-
-    private void ButtonPrincipal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPrincipal2ActionPerformed
-        Cursos bbb = new Cursos();
-        showPanel(bbb.getFondo());
-    }//GEN-LAST:event_ButtonPrincipal2ActionPerformed
-
-    private void ButtonPrincipal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPrincipal3ActionPerformed
-        Inscripciones bbb = new Inscripciones();
-        showPanel(bbb.getFondo());
-    }//GEN-LAST:event_ButtonPrincipal3ActionPerformed
-
-    private void ButtonPrincipal4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPrincipal4ActionPerformed
+    private void Ajustes_action(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_action
         Ajustes bbb = new Ajustes();
         showPanel(bbb.getFondo());
-    }//GEN-LAST:event_ButtonPrincipal4ActionPerformed
+    }//GEN-LAST:event_Ajustes_action
+
+    private void Principal_action(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Principal_action
+        Principal bbb = new Principal();
+        showPanel(bbb.getFondo());
+        //ButtonPrinc.setBackground(new Color(184, 67, 87));
+        //LabelButtonModificar2.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_Principal_action
+
+    private void Alumn_action(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Alumn_action
+        Alumnos bbb = new Alumnos();
+        showPanel(bbb.getFondo());
+    }//GEN-LAST:event_Alumn_action
+
+    private void Curso_action(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Curso_action
+        Cursos bbb = new Cursos();
+        showPanel(bbb.getFondo());
+    }//GEN-LAST:event_Curso_action
+
+    private void Inscrip_action(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Inscrip_action
+        Inscripciones bbb = new Inscripciones();
+        showPanel(bbb.getFondo());
+    }//GEN-LAST:event_Inscrip_action
+
+    private void ButtonPrincMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonPrincMouseEntered
+        ButtonPrinc.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar2.setForeground(new Color(25, 34, 43));
+
+    }//GEN-LAST:event_ButtonPrincMouseEntered
+
+    private void ButtonPrincMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonPrincMouseExited
+        ButtonPrinc.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar2.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ButtonPrincMouseExited
+
+    private void ButtonAlumnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnMouseEntered
+        ButtonAlumn.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar3.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonAlumnMouseEntered
+
+    private void ButtonAlumnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnMouseExited
+        ButtonAlumn.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar3.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ButtonAlumnMouseExited
+
+    private void ButtonCursoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCursoMouseEntered
+        ButtonCurso.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar4.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonCursoMouseEntered
+
+    private void ButtonCursoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCursoMouseExited
+        ButtonCurso.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar4.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ButtonCursoMouseExited
+
+    private void ButtonInscMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInscMouseEntered
+        // TODO add your handling code here:ButtonInsc
+        ButtonInsc.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar5.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonInscMouseEntered
+
+    private void ButtonInscMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInscMouseExited
+        // TODO add your handling code here:
+        ButtonInsc.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar5.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ButtonInscMouseExited
+
+    private void ButtonAjustesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAjustesMouseEntered
+        // TODO add your handling code here: ButtonAjustes
+        ButtonAjustes.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonAjustesMouseEntered
+
+    private void ButtonAjustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAjustesMouseExited
+        // TODO add your handling code here:
+        ButtonAjustes.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ButtonAjustesMouseExited
+
+    private void ButtonPrincMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonPrincMouseReleased
+          ButtonPrinc.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar2.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonPrincMouseReleased
+
+    private void ButtonPrincMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonPrincMousePressed
+        ButtonPrinc.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar2.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_ButtonPrincMousePressed
+
+    private void ButtonAlumnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnMousePressed
+        ButtonAlumn.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar3.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_ButtonAlumnMousePressed
+
+    private void ButtonAlumnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnMouseReleased
+        ButtonAlumn.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar3.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonAlumnMouseReleased
+
+    private void ButtonCursoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCursoMousePressed
+        ButtonCurso.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar4.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_ButtonCursoMousePressed
+
+    private void ButtonCursoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCursoMouseReleased
+     ButtonCurso.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar4.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonCursoMouseReleased
+
+    private void ButtonInscMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInscMousePressed
+      ButtonInsc.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar5.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_ButtonInscMousePressed
+
+    private void ButtonInscMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInscMouseReleased
+        ButtonInsc.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar5.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonInscMouseReleased
+
+    private void ButtonAjustesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAjustesMousePressed
+        // TODO add your handling code here:
+        ButtonAjustes.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_ButtonAjustesMousePressed
+
+    private void ButtonAjustesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAjustesMouseReleased
+        // TODO add your handling code here:
+        ButtonAjustes.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonAjustesMouseReleased
 
     /**
      * @param args the command line arguments
@@ -353,11 +580,16 @@ public class fin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonPrincipal;
-    private javax.swing.JButton ButtonPrincipal1;
-    private javax.swing.JButton ButtonPrincipal2;
-    private javax.swing.JButton ButtonPrincipal3;
-    private javax.swing.JButton ButtonPrincipal4;
+    private javax.swing.JPanel ButtonAjustes;
+    private javax.swing.JPanel ButtonAlumn;
+    private javax.swing.JPanel ButtonCurso;
+    private javax.swing.JPanel ButtonInsc;
+    private javax.swing.JPanel ButtonPrinc;
+    private javax.swing.JLabel LabelButtonModificar;
+    private javax.swing.JLabel LabelButtonModificar2;
+    private javax.swing.JLabel LabelButtonModificar3;
+    private javax.swing.JLabel LabelButtonModificar4;
+    private javax.swing.JLabel LabelButtonModificar5;
     private javax.swing.JLabel LabelDate;
     private javax.swing.JLabel LabelTime;
     private javax.swing.JPanel PanelBotonera;
