@@ -26,18 +26,98 @@ public class JORGE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelFondo = new javax.swing.JPanel();
+        PanelMenu = new javax.swing.JPanel();
+        PanelHeader = new javax.swing.JPanel();
+        PanelInfo = new javax.swing.JPanel();
+        HoraLabel = new javax.swing.JLabel();
+        PanelContenido = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        PanelFondo.setBackground(new java.awt.Color(0, 102, 102));
+        PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PanelMenu.setBackground(new java.awt.Color(0, 255, 255));
+
+        javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
+        PanelMenu.setLayout(PanelMenuLayout);
+        PanelMenuLayout.setHorizontalGroup(
+            PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        PanelMenuLayout.setVerticalGroup(
+            PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        PanelFondo.add(PanelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 580));
+
+        PanelHeader.setBackground(new java.awt.Color(0, 255, 255));
+
+        javax.swing.GroupLayout PanelHeaderLayout = new javax.swing.GroupLayout(PanelHeader);
+        PanelHeader.setLayout(PanelHeaderLayout);
+        PanelHeaderLayout.setHorizontalGroup(
+            PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PanelHeaderLayout.setVerticalGroup(
+            PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 77, Short.MAX_VALUE)
+        );
+
+        PanelFondo.add(PanelHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 6, 720, -1));
+
+        PanelInfo.setBackground(new java.awt.Color(0, 255, 255));
+
+        javax.swing.GroupLayout PanelInfoLayout = new javax.swing.GroupLayout(PanelInfo);
+        PanelInfo.setLayout(PanelInfoLayout);
+        PanelInfoLayout.setHorizontalGroup(
+            PanelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInfoLayout.createSequentialGroup()
+                .addContainerGap(324, Short.MAX_VALUE)
+                .addComponent(HoraLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        PanelInfoLayout.setVerticalGroup(
+            PanelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInfoLayout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(HoraLabel)
+                .addGap(33, 33, 33))
+        );
+
+        HoraLabel.setText(utiles.getFechaActual());
+
+        PanelFondo.add(PanelInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 89, 720, -1));
+
+        PanelContenido.setBackground(new java.awt.Color(0, 255, 255));
+
+        javax.swing.GroupLayout PanelContenidoLayout = new javax.swing.GroupLayout(PanelContenido);
+        PanelContenido.setLayout(PanelContenidoLayout);
+        PanelContenidoLayout.setHorizontalGroup(
+            PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PanelContenidoLayout.setVerticalGroup(
+            PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 334, Short.MAX_VALUE)
+        );
+
+        PanelFondo.add(PanelContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 702, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 906, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        PanelFondo.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +158,11 @@ public class JORGE extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel HoraLabel;
+    private javax.swing.JPanel PanelContenido;
+    private javax.swing.JPanel PanelFondo;
+    javax.swing.JPanel PanelHeader;
+    private javax.swing.JPanel PanelInfo;
+    private javax.swing.JPanel PanelMenu;
     // End of variables declaration//GEN-END:variables
 }
