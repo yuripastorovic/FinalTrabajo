@@ -50,11 +50,11 @@ public class fin extends javax.swing.JFrame {
         timer.start();
     }
 
-    private void showPanel(JPanel p) {
-        p.setSize(this.PanelContenedor.getWidth(), this.PanelContenedor.getHeight());
-        p.setLocation(0, 0);
+    private void showPanel(JPanel panel) {
+        panel.setSize(this.PanelContenedor.getWidth(), this.PanelContenedor.getHeight());
+        panel.setLocation(0, 0);
         this.PanelContenedor.removeAll();
-        this.PanelContenedor.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        this.PanelContenedor.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
         this.PanelContenedor.revalidate();
         this.PanelContenedor.repaint();
     }

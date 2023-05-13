@@ -18,10 +18,21 @@ public class Alumnos extends javax.swing.JFrame {
     public Alumnos() {
         initComponents();
     }
+
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
+
+    private void showPanel(JPanel panel) {
+        panel.setSize(this.contenedor.getWidth(), this.contenedor.getHeight());
+        panel.setLocation(0, 0);
+        this.contenedor.removeAll();
+        this.contenedor.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        this.contenedor.revalidate();
+        this.contenedor.repaint();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,29 +43,122 @@ public class Alumnos extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        PanelFaldon = new javax.swing.JPanel();
+        ButtonAltaAlumno = new javax.swing.JButton();
+        ButtonBaja = new javax.swing.JButton();
+        ButtonModificar = new javax.swing.JButton();
+        ButtonBuscar = new javax.swing.JButton();
+        ButtonMostrar = new javax.swing.JButton();
+        contenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("alumnos");
+        PanelFondo.setBackground(new java.awt.Color(184, 67, 87));
+
+        PanelFaldon.setBackground(new java.awt.Color(25, 34, 43));
+        PanelFaldon.setLayout(new java.awt.GridLayout(1, 5));
+
+        ButtonAltaAlumno.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAltaAlumno.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        ButtonAltaAlumno.setForeground(new java.awt.Color(221, 214, 204));
+        ButtonAltaAlumno.setText("NUEVO ALUMNO");
+        ButtonAltaAlumno.setBorder(null);
+        ButtonAltaAlumno.setBorderPainted(false);
+        ButtonAltaAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAltaAlumnoActionPerformed(evt);
+            }
+        });
+        PanelFaldon.add(ButtonAltaAlumno);
+
+        ButtonBaja.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonBaja.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        ButtonBaja.setForeground(new java.awt.Color(221, 214, 204));
+        ButtonBaja.setText("BAJA ALUMNO");
+        ButtonBaja.setActionCommand("");
+        ButtonBaja.setBorder(null);
+        ButtonBaja.setBorderPainted(false);
+        ButtonBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonBajaActionPerformed(evt);
+            }
+        });
+        PanelFaldon.add(ButtonBaja);
+
+        ButtonModificar.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonModificar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        ButtonModificar.setForeground(new java.awt.Color(221, 214, 204));
+        ButtonModificar.setText("MODIFICAR");
+        ButtonModificar.setToolTipText("");
+        ButtonModificar.setActionCommand("");
+        ButtonModificar.setBorder(null);
+        ButtonModificar.setBorderPainted(false);
+        ButtonModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonModificarActionPerformed(evt);
+            }
+        });
+        PanelFaldon.add(ButtonModificar);
+
+        ButtonBuscar.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonBuscar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        ButtonBuscar.setForeground(new java.awt.Color(221, 214, 204));
+        ButtonBuscar.setText("BUSCAR");
+        ButtonBuscar.setActionCommand("");
+        ButtonBuscar.setBorder(null);
+        ButtonBuscar.setBorderPainted(false);
+        ButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonBuscarActionPerformed(evt);
+            }
+        });
+        PanelFaldon.add(ButtonBuscar);
+
+        ButtonMostrar.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonMostrar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        ButtonMostrar.setForeground(new java.awt.Color(221, 214, 204));
+        ButtonMostrar.setText("MOSTRAR TODOS");
+        ButtonMostrar.setActionCommand("");
+        ButtonMostrar.setBorder(null);
+        ButtonMostrar.setBorderPainted(false);
+        ButtonMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonMostrarActionPerformed(evt);
+            }
+        });
+        PanelFaldon.add(ButtonMostrar);
+
+        contenedor.setBackground(new java.awt.Color(0, 255, 0));
+
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 328, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelFaldon, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel1)
-                .addContainerGap(397, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(jLabel1)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addComponent(PanelFaldon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -74,6 +178,27 @@ public class Alumnos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAltaAlumnoActionPerformed
+        AlumnosAlta bbb = new AlumnosAlta();
+        showPanel(bbb.getFondo());
+    }//GEN-LAST:event_ButtonAltaAlumnoActionPerformed
+
+    private void ButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonModificarActionPerformed
+
+    private void ButtonBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBajaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonBajaActionPerformed
+
+    private void ButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonBuscarActionPerformed
+
+    private void ButtonMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMostrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonMostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,7 +236,13 @@ public class Alumnos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonAltaAlumno;
+    private javax.swing.JButton ButtonBaja;
+    private javax.swing.JButton ButtonBuscar;
+    private javax.swing.JButton ButtonModificar;
+    private javax.swing.JButton ButtonMostrar;
+    private javax.swing.JPanel PanelFaldon;
     private javax.swing.JPanel PanelFondo;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel contenedor;
     // End of variables declaration//GEN-END:variables
 }
