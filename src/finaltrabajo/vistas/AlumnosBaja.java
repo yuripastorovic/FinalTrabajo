@@ -20,6 +20,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
+
     public AlumnosBaja() {
         initComponents();
         comboBox1();
@@ -35,30 +36,30 @@ public class AlumnosBaja extends javax.swing.JFrame {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-    
-    private void comboBox1(){
-        String arrayString[]=bd.leerIdNombreApellidoAlumnosExistentes();
+
+    private void comboBox1() {
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
         ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
-    private void comboBox2(){
-        String arrayString[]=bd.leerIdTelefonosAlumnosExistentes();
+
+    private void comboBox2() {
+        String arrayString[] = bd.leerIdTelefonosAlumnosExistentes();
         ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
+
     //---------------------------------------------------------------------------------------------------------------------------
-    private void metodoameterenelbotonbaja(){
-        String[] partes ;
-        if(ComboNombre.isEnabled()){
-            partes =ComboNombre.getSelectedObjects().toString().split(",");
-        }else{
-            partes =ComboTelefono.getSelectedObjects().toString().split(",");
+    private void metodoameterenelbotonbaja() {
+        String[] partes;
+        if (ComboNombre.isEnabled()) {
+            partes = ComboNombre.getSelectedObjects().toString().split(",");
+        } else {
+            partes = ComboTelefono.getSelectedObjects().toString().split(",");
         }
-        
+
         String id = partes[0].trim();
         bd.modificarExistenciaAlumno(Integer.valueOf(id));
     }
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,6 +83,8 @@ public class AlumnosBaja extends javax.swing.JFrame {
         Alineador = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaNew = new javax.swing.JTable();
+        ButtonRetirar = new javax.swing.JPanel();
+        LabelButtonModificar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,7 +97,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre.setSelectedIndex(-1);
         ComboNombre.setBorder(null);
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,7 +115,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ComboTelefono.setBackground(new java.awt.Color(25, 34, 43));
         ComboTelefono.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboTelefono.setForeground(new java.awt.Color(221, 214, 204));
-        ComboTelefono.setSelectedIndex(-1);
         ComboTelefono.setBorder(null);
         ComboTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,6 +219,43 @@ public class AlumnosBaja extends javax.swing.JFrame {
 
         Alineador.add(jScrollPane1);
 
+        ButtonRetirar.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonRetirar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonRetirarModificar_press(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ButtonRetirarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ButtonRetirarMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ButtonRetirarMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ButtonRetirarMouseReleased(evt);
+            }
+        });
+
+        LabelButtonModificar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar.setText("DESMATRICULAR");
+
+        javax.swing.GroupLayout ButtonRetirarLayout = new javax.swing.GroupLayout(ButtonRetirar);
+        ButtonRetirar.setLayout(ButtonRetirarLayout);
+        ButtonRetirarLayout.setHorizontalGroup(
+            ButtonRetirarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonRetirarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(LabelButtonModificar))
+        );
+        ButtonRetirarLayout.setVerticalGroup(
+            ButtonRetirarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
@@ -242,7 +280,9 @@ public class AlumnosBaja extends javax.swing.JFrame {
                                     .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(LabelInfo1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                        .addComponent(BotonReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotonReset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonRetirar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
             .addComponent(Alineador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -268,7 +308,9 @@ public class AlumnosBaja extends javax.swing.JFrame {
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(BotonReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonRetirar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -286,7 +328,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
         this.ComboTelefono.setEnabled(false);
     }//GEN-LAST:event_ComboNombreActionPerformed
@@ -301,18 +343,18 @@ public class AlumnosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonResetBoton_reset
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
-        
+
         TablaNew.setModel(modelo);
         String[] partes;
-        if(ComboNombre.isEnabled()){
-            partes =ComboNombre.getSelectedObjects().toString().split(",");
-        }else{
-            partes =ComboTelefono.getSelectedObjects().toString().split(",");
+        if (ComboNombre.isEnabled()) {
+            partes = ComboNombre.getSelectedObjects().toString().split(",");
+        } else {
+            partes = ComboTelefono.getSelectedObjects().toString().split(",");
         }
-        
+
         String id = partes[0].trim();
-        String datos[]= new String[1];
-        datos[0]=bd.leerDatosUnAlumnoExistente(Integer.valueOf(id));
+        String datos[] = new String[1];
+        datos[0] = bd.leerDatosUnAlumnoExistente(Integer.valueOf(id));
         modelo.addRow(datos);
     }//GEN-LAST:event_BotonBuscar_buscar
 
@@ -356,6 +398,40 @@ public class AlumnosBaja extends javax.swing.JFrame {
         buscar.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BotonBuscarMouseReleased
 
+    private void ButtonRetirarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarModificar_press
+        /*
+        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String id = partes[0].trim();
+        bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
+         */
+        ComboNombre.setSelectedIndex(-1);
+        ComboNombre.setBackground(new Color(189, 146, 64));
+        ComboNombre.setForeground(new Color(25, 34, 43));
+        ComboTelefono.setSelectedIndex(-1);
+        ComboTelefono.setBackground(new Color(189, 146, 64));
+        ComboTelefono.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonRetirarModificar_press
+
+    private void ButtonRetirarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarMouseEntered
+        ButtonRetirar.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonRetirarMouseEntered
+
+    private void ButtonRetirarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarMouseExited
+        ButtonRetirar.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ButtonRetirarMouseExited
+
+    private void ButtonRetirarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarMousePressed
+        ButtonRetirar.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_ButtonRetirarMousePressed
+
+    private void ButtonRetirarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarMouseReleased
+        ButtonRetirar.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ButtonRetirarMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -395,8 +471,10 @@ public class AlumnosBaja extends javax.swing.JFrame {
     private javax.swing.JPanel Alineador;
     private javax.swing.JPanel BotonBuscar;
     private javax.swing.JPanel BotonReset;
+    private javax.swing.JPanel ButtonRetirar;
     private javax.swing.JComboBox<String> ComboNombre;
     private javax.swing.JComboBox<String> ComboTelefono;
+    private javax.swing.JLabel LabelButtonModificar;
     private javax.swing.JLabel LabelInfo;
     private javax.swing.JLabel LabelInfo1;
     private javax.swing.JLabel LabelNombreC;
