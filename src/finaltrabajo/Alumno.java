@@ -15,6 +15,7 @@ public class Alumno {
     private String apellido;
     private String telefono;
     private String correo;
+    private boolean matriculado;
 
     public Alumno(int id, String nombre, String apellido, String telefono, String correo) {
         this.id = id;
@@ -22,10 +23,19 @@ public class Alumno {
         this.apellido = apellido;
         this.telefono = telefono;
         this.correo = correo;
+        this.matriculado=true;
     }
-
+    
     public String toCSV() {
         return id + "," + nombre + "," + apellido + "," + telefono + "," + correo;
+    }
+    
+    public boolean getMatriculado() {
+        return matriculado;
+    }
+
+    public void setMatriculado(boolean matriculado) {
+        this.matriculado = matriculado;
     }
 
     public int getId() {

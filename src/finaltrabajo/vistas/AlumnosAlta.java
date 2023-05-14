@@ -4,6 +4,7 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -16,8 +17,10 @@ public class AlumnosAlta extends javax.swing.JFrame {
     /**
      * Creates new form AlumnosAlta
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
     public AlumnosAlta() {
         initComponents();
+        bd.crearDB();
     }
 
     public JPanel getFondo() {
@@ -262,6 +265,13 @@ public class AlumnosAlta extends javax.swing.JFrame {
     private void ButtonAltaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMousePressed
         ButtonAlta.setBackground(new Color(184, 67, 87));
         LabelButtonAlta.setForeground(new Color(189, 146, 64));
+        
+        if(!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())){
+            bd.insertarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
+        }else{
+            //aqui va un pop up de que avisa de que el alumno ya existe 
+        }
+        
     }//GEN-LAST:event_ButtonAltaMousePressed
 
     private void ButtonAltaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseReleased

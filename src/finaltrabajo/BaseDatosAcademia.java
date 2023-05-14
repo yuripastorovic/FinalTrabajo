@@ -56,6 +56,7 @@ public class BaseDatosAcademia {
                 "   apellido VARCHAR(25) NOT NULL," +
                 "   correo VARCHAR(25) NOT NULL,"+
                 "   telefono VARCHAR(25) NOT NULL,"+
+                "   existe BIT DEFAULT 0 NOT NULL,"+
                 "   PRIMARY KEY (id)" +
                 ");");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Cursos(" +
@@ -63,6 +64,7 @@ public class BaseDatosAcademia {
                 "   nombre VARCHAR(25) NOT NULL," +
                 "   descripcion VARCHAR(25) NOT NULL," +
                 "   horas VARCHAR(25) NOT NULL,"+
+                "   existe BIT DEFAULT 0 NOT NULL,"+    
                 "   PRIMARY KEY (id)" +
                 ");");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Inscripciones(" +
@@ -70,8 +72,9 @@ public class BaseDatosAcademia {
                 "   id_alumno INTEGER DEFAULT '0'," +
                 "   id_curso INTEGER DEFAULT '0'," +
                 "   fInicio DATE DEFAULT GETDATE() NOT NULL,"+
-                "   fFin DATE DEFAULT NOT NULL,"+
+                "   fFin DATE DEFAULT GETDATE() NOT NULL,"+
                 "   calificacion VARCHAR(25)DEFAULT 'NO CALIFICADO' NOT NULL,"+
+                "   existe BIT DEFAULT 0 NOT NULL,"+     
                 "   PRIMARY KEY (id)" +
                 "   CONSTRAINT fk_alumno_alumnos FOREIGN KEY(id_alumno)REFERENCES id(Alumnos) ON UPDATE CASCADE ON DELETE SET DEFAULT" +
                 "   CONSTRAINT fk_curso_cursos FOREIGN KEY(id_curso)REFERENCES id(Cursos) ON UPDATE CASCADE ON DELETE SET DEFAULT" +
@@ -166,7 +169,8 @@ public class BaseDatosAcademia {
                     String apellido = rs.getString(3);
                     String correo = rs.getString(4);
                     String telefono = rs.getString(5);
-                    pw.write(id+","+nombre+","+apellido+","+correo+","+telefono+"\n");
+                    String existe = rs.getString(6);
+                    pw.write(id+","+nombre+","+apellido+","+correo+","+telefono+","+existe+"\n");
                 }
                 stmt.close();
             }catch (SQLException ex) {
@@ -206,7 +210,8 @@ public class BaseDatosAcademia {
                     String nombre = rs.getString(2);
                     String descripcion = rs.getString(3);
                     String horas = rs.getString(4);
-                    pw.write(id+","+nombre+","+descripcion+","+horas+"\n");
+                    String existe = rs.getString(5);
+                    pw.write(id+","+nombre+","+descripcion+","+horas+","+existe+"\n");
                 }
                 stmt.close();
             }catch (SQLException ex) {
@@ -247,8 +252,9 @@ public class BaseDatosAcademia {
                     String id_curso = rs.getString(3);
                     String fec_inicio = rs.getString(4);
                     String fec_fin = rs.getString(5);
-                    String calificacion = rs.getString(5);
-                    pw.write(id+","+id_alumno+","+id_curso+","+fec_inicio+","+fec_fin+","+calificacion+"\n");
+                    String calificacion = rs.getString(6);
+                    String existe = rs.getString(7);
+                    pw.write(id+","+id_alumno+","+id_curso+","+fec_inicio+","+fec_fin+","+calificacion+","+existe+"\n");
                 }
                 stmt.close();
             }catch (SQLException ex) {
@@ -270,12 +276,12 @@ public class BaseDatosAcademia {
                 
     }
     
-    public String leerDatosAlumnos(){
+    public String leerDatosAlumnosExistente(){
         Statement stmt;
         String cadenaDatos="";
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Alumnos ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Alumnos WHERE Alumnos.existe=0 ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -290,12 +296,12 @@ public class BaseDatosAcademia {
             }
             return cadenaDatos;
     }
-    public String leerDatosCursos(){
+    public String leerDatosCursosExistente(){
         Statement stmt;
         String cadenaDatos="";
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Cursos ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Cursos WHERE Cursos.existe=0 ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -309,12 +315,12 @@ public class BaseDatosAcademia {
             }
             return cadenaDatos;
     }
-    public String leerDatosInscripciones(){
+    public String leerDatosInscripcionesExistente(){
         Statement stmt;
         String cadenaDatos="";
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Incripciones ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Incripciones WHERE Inscripciones.existe=0;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String id_alumno = rs.getString(2);
@@ -365,12 +371,12 @@ public class BaseDatosAcademia {
         } 
     }
     
-    public String leerDatosUnAlumnos(int id_alumno){
+    public String leerDatosUnAlumnoExistente(int id_alumno){
         Statement stmt;
         String cadenaDatos="";
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Alumnos WHERE Alumnos.id="+id_alumno+" ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Alumnos WHERE Alumnos.id="+id_alumno+" AND Alumnos.existe=0 ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -385,12 +391,12 @@ public class BaseDatosAcademia {
             }
             return cadenaDatos;
     }
-    public String leerDatosUnCursos(int id_curso){
+    public String leerDatosUnCursoExistente(int id_curso){
         Statement stmt;
         String cadenaDatos="";
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Cursos WHERE Cursos.id="+id_curso+" ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Cursos WHERE Cursos.id="+id_curso+" AND Cursos.existe=0 ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -404,12 +410,12 @@ public class BaseDatosAcademia {
             }
             return cadenaDatos;
     }
-    public String leerDatosUnInscripciones(int id_inscripcion){
+    public String leerDatosUnInscripcioneExistente(int id_inscripcion){
         Statement stmt;
         String cadenaDatos="";
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Inscripciones WHERE Inscripciones.id="+id_inscripcion+" ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Inscripciones WHERE Inscripciones.id="+id_inscripcion+" AND Inscripciones.existe=0 ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String id_alumno = rs.getString(2);
@@ -426,16 +432,17 @@ public class BaseDatosAcademia {
             return cadenaDatos;
     }
     
-    public String[] leerNombresAlumnos(){
+    public String[] leerIdNombreApellidoAlumnosExistentes(){
         Statement stmt;
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.nombre FROM Alumnos  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.nombre FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
-                    arrayDatos.add(id +" "+ nombre);
+                    String apellido  = rs.getString(3);
+                    arrayDatos.add(id +" "+ nombre+" "+apellido);
                 }
                 stmt.close();
             }catch (SQLException ex) {
@@ -447,12 +454,12 @@ public class BaseDatosAcademia {
         }
             return cadenaDatos;
     }
-    public String[] leerNombresCursos(){
+    public String[] leerIdNombresCursosExistentes(){
         Statement stmt;
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Cursos.id , Cursos.nombre FROM Cursos  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Cursos.id , Cursos.nombre FROM Cursos WHERE Cursos.existe=0  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -468,12 +475,12 @@ public class BaseDatosAcademia {
         }
             return cadenaDatos;
     }
-    public String[] leerNombresInscripciones(){
+    public String[] leerIdNombresInscripcionesExistentes(){
         Statement stmt;
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Inscripciones.id , Inscripciones.id_alumno , Inscripciones.id_cursos FROM Inscripciones  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Inscripciones.id , Inscripciones.id_alumno , Inscripciones.id_cursos FROM Inscripciones WHERE Inscripciones.existe=0  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String id_alumno = rs.getString(2);
@@ -491,13 +498,35 @@ public class BaseDatosAcademia {
             return cadenaDatos;
     }
     
+    public String[] leerIdTelefonosAlumnosExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.nombre FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String nombre = rs.getString(2);
+                    String telefono = rs.getString(5);
+                    arrayDatos.add(id +" "+ telefono);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
     //--estos metodos tiene que comprobar mas cosas aparte del id 
-    public boolean confirmarAlumno(int id){
+    public boolean confirmarAlumno(String nombre,String apellido,String correo,String telefono){
         Statement stmt;
         boolean confirmar=false;
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT COUNT(Alumnos.id) FROM Alumnos WHERE Alumnos.id="+id+" ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT COUNT(Alumnos.id) FROM Alumnos WHERE Alumnos.nombre="+nombre+" AND Alumnos.apellido="+apellido+" AND Alumnos.correo="+correo+" AND Alumnos.telefono="+telefono+";");//SELECT
                 while (rs.next()) {
                     String ids = rs.getString(1);
                     if(ids.equals("1")){
@@ -512,12 +541,12 @@ public class BaseDatosAcademia {
             }
             return confirmar;
     }
-    public boolean confirmarCurso(int id){
+    public boolean confirmarCurso(String nombre,String descripcion,String horas){
         Statement stmt;
         boolean confirmar=false;
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT COUNT(Cursos.id) FROM Cursos WHERE Cursos.id="+id+" ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT COUNT(Cursos.id) FROM Cursos WHERE Cursos.descripcion="+descripcion+" AND Cursos.horas="+horas+" ;");//SELECT
                 while (rs.next()) {
                     String ids = rs.getString(1);
                     if(ids.equals("1")){
@@ -532,12 +561,12 @@ public class BaseDatosAcademia {
             }
             return confirmar;
     }
-    public boolean confirmarInscripcion(int id){
+    public boolean confirmarInscripcion(int id_alumno,int id_curso,String fInicio){
         Statement stmt;
         boolean confirmar=false;
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT COUNT(Inscripciones.id) FROM Inscripciones WHERE Inscripciones.id="+id+" ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT COUNT(Inscripciones.id) FROM Inscripciones WHERE Inscripciones.id_alumno="+id_alumno+" AND Inscripciones.id_curso="+id_curso+" AND Inscripciones.fInicio="+fInicio+" ;");//SELECT
                 while (rs.next()) {
                     String ids = rs.getString(1);
                     if(ids.equals("1")){
@@ -580,6 +609,40 @@ public class BaseDatosAcademia {
         try {
             stmt = this.conn.createStatement();
             stmt.executeUpdate("UPDATE Inscripciones SET id_alumno="+id_alumno+","+"id_curso="+id_curso+","+"fInicio="+fInicio+","+"fFin="+fFin+","+"calificacion="+calificacion+" WHERE id="+id+";");
+            this.conn.commit();
+            stmt.close();
+        }catch (SQLException ex) {
+            ex.printStackTrace();
+        }        
+    }
+    
+    public void modificarExistenciaAlumno(int id ){
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Alumnos SET existe=1 WHERE id="+id+";");
+            this.conn.commit();
+            stmt.close();
+        }catch (SQLException ex) {
+            ex.printStackTrace();
+        }        
+    }
+    public void modificarExistenciaCursos(int id ){
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Cursos SET existe=1 WHERE id="+id+";");
+            this.conn.commit();
+            stmt.close();
+        }catch (SQLException ex) {
+            ex.printStackTrace();
+        }        
+    }
+    public void modificarExistenciaInscripcione(int id ){
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Inscripciones SET existe=1 WHERE id="+id+";");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {

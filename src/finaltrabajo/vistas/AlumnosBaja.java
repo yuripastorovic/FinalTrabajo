@@ -4,8 +4,10 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,15 +18,28 @@ public class AlumnosBaja extends javax.swing.JFrame {
     /**
      * Creates new form AlumnosBaja
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private DefaultTableModel modelo = new DefaultTableModel();
     public AlumnosBaja() {
         initComponents();
+        bd.crearDB();
+        comboBox1();
+        comboBox2();
     }
 
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-
+    
+    private void comboBox1(){
+        String arrayString[]=bd.leerIdNombreApellidoAlumnosExistentes();
+        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+    private void comboBox2(){
+        String arrayString[]=bd.leerIdTelefonosAlumnosExistentes();
+        ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,7 +75,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboNombre.setSelectedIndex(-1);
         ComboNombre.setBorder(null);
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +94,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ComboTelefono.setBackground(new java.awt.Color(25, 34, 43));
         ComboTelefono.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboTelefono.setForeground(new java.awt.Color(221, 214, 204));
-        ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboTelefono.setSelectedIndex(-1);
         ComboTelefono.setBorder(null);
         ComboTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +267,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
         this.ComboTelefono.setEnabled(false);
     }//GEN-LAST:event_ComboNombreActionPerformed
@@ -269,7 +282,8 @@ public class AlumnosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonResetBoton_reset
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
-
+        //no esta terminado falta meterle los datos
+        TablaNew.setModel(modelo);
     }//GEN-LAST:event_BotonBuscar_buscar
 
     private void BotonResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseEntered
