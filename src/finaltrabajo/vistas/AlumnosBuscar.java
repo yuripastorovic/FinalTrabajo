@@ -184,15 +184,23 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         TablaNew.setForeground(new java.awt.Color(221, 214, 204));
         TablaNew.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "NOMBRE", "APELLIDO", "CORREO", "TELEFONO"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         TablaNew.setGridColor(new java.awt.Color(189, 146, 64));
         TablaNew.setSelectionBackground(new java.awt.Color(184, 67, 87));
         TablaNew.setSelectionForeground(new java.awt.Color(25, 34, 43));
@@ -293,6 +301,8 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     }//GEN-LAST:event_Boton_buscar
 
     private void Boton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_reset
+        comboBox1();
+        comboBox2();
         this.ComboTelefono.setEnabled(true);
         this.ComboNombre.setEnabled(true);
     }//GEN-LAST:event_Boton_reset

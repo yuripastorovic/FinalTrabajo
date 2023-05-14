@@ -4,8 +4,10 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,13 +18,26 @@ public class CursosBaja extends javax.swing.JFrame {
     /**
      * Creates new form CursosBaja
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private DefaultTableModel modelo = new DefaultTableModel();
     public CursosBaja() {
+        comboBox1();
+        comboBox2();
         initComponents();
     }
 
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
+    }
+    private void comboBox1() {
+        String arrayString[] = bd.leerIdNombresCursosExistentes();
+        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+
+    private void comboBox2() {
+        String arrayString[] = bd.leerIdHorasCursosExistentes();
+        ComboHoras.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
 
     /**
@@ -187,7 +202,7 @@ public class CursosBaja extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -342,6 +357,8 @@ public class CursosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboHorasActionPerformed
 
     private void BotonResetBoton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetBoton_reset
+        comboBox1();
+        comboBox2();
         ComboHoras.setEnabled(true);
         ComboNombre.setEnabled(true);
         ComboHoras.setBackground(new Color(25, 34, 43));
@@ -371,7 +388,23 @@ public class CursosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonResetMouseReleased
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        
+        TablaNew.setModel(modelo);
+        String[] partes;
+        if (ComboNombre.isEnabled()) {
+            partes = ComboNombre.getSelectedObjects().toString().split(",");
+        } else {
+            partes = ComboHoras.getSelectedObjects().toString().split(",");
+        }
 
+        String id = partes[0].trim();
+        String datos[] = new String[1];
+        datos[0] = bd.leerDatosUnCursoExistente(Integer.valueOf(id));
+        modelo.addRow(datos);
+        
     }//GEN-LAST:event_BotonBuscar_buscar
 
     private void BotonBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseEntered
@@ -395,6 +428,20 @@ public class CursosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonBuscarMouseReleased
 
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        
+        String[] partes;
+        if (ComboNombre.isEnabled()) {
+            partes = ComboNombre.getSelectedObjects().toString().split(",");
+        } else {
+            partes = ComboHoras.getSelectedObjects().toString().split(",");
+        }
+        
+        String id = partes[0].trim();
+        bd.modificarExistenciaCursos(Integer.valueOf(id));
+        
         ComboNombre.setSelectedIndex(-1);
         ComboHoras.setSelectedIndex(-1);
     }//GEN-LAST:event_ButtonModificarModificar_press

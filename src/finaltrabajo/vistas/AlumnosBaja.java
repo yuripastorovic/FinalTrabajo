@@ -190,15 +190,23 @@ public class AlumnosBaja extends javax.swing.JFrame {
         TablaNew.setForeground(new java.awt.Color(221, 214, 204));
         TablaNew.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "NOMBRE", "APELLIDO", "CORREO", "TELEFONO"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         TablaNew.setGridColor(new java.awt.Color(189, 146, 64));
         TablaNew.setSelectionBackground(new java.awt.Color(184, 67, 87));
         TablaNew.setSelectionForeground(new java.awt.Color(25, 34, 43));
@@ -325,6 +333,8 @@ public class AlumnosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboTelefonoActionPerformed
 
     private void BotonResetBoton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetBoton_reset
+        comboBox1();
+        comboBox2();
         this.ComboTelefono.setEnabled(true);
         this.ComboNombre.setEnabled(true);
     }//GEN-LAST:event_BotonResetBoton_reset
@@ -408,6 +418,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
 
         String id = partes[0].trim();
         bd.modificarExistenciaAlumno(Integer.valueOf(id));
+        
         ComboNombre.setSelectedIndex(-1);
         ComboNombre.setBackground(new Color(189, 146, 64));
         ComboNombre.setForeground(new Color(25, 34, 43));

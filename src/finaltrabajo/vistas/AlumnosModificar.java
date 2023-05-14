@@ -278,6 +278,7 @@ public class AlumnosModificar extends javax.swing.JFrame {
         CampoApellido.setText("");
         CampoCorreo.setText("");
         CampoTelefono.setText("");
+        comboBox1();
 
     }//GEN-LAST:event_Modificar_press
 

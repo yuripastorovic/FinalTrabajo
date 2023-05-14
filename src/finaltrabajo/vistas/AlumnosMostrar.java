@@ -135,15 +135,23 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         TablaNew.setForeground(new java.awt.Color(221, 214, 204));
         TablaNew.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "NOMBRE", "APELLIDO", "CORREO", "TELEFONO"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         TablaNew.setGridColor(new java.awt.Color(189, 146, 64));
         TablaNew.setSelectionBackground(new java.awt.Color(184, 67, 87));
         TablaNew.setSelectionForeground(new java.awt.Color(25, 34, 43));

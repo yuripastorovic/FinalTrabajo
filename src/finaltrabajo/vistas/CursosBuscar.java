@@ -4,8 +4,10 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,12 +18,25 @@ public class CursosBuscar extends javax.swing.JFrame {
     /**
      * Creates new form CursosBuscar
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private DefaultTableModel modelo = new DefaultTableModel();
     public CursosBuscar() {
+        comboBox1();
+        comboBox2();
         initComponents();
     }
 public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
+    }
+private void comboBox1() {
+        String arrayString[] = bd.leerIdNombresCursosExistentes();
+        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+
+    private void comboBox2() {
+        String arrayString[] = bd.leerIdHorasCursosExistentes();
+        ComboHoras.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -316,7 +331,22 @@ public JPanel getFondo() {
     }//GEN-LAST:event_BotonResetMouseReleased
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        
+        TablaNew.setModel(modelo);
+        String[] partes;
+        if (ComboNombre.isEnabled()) {
+            partes = ComboNombre.getSelectedObjects().toString().split(",");
+        } else {
+            partes = ComboHoras.getSelectedObjects().toString().split(",");
+        }
 
+        String id = partes[0].trim();
+        String datos[] = new String[1];
+        datos[0] = bd.leerDatosUnCursoExistente(Integer.valueOf(id));
+        modelo.addRow(datos);
     }//GEN-LAST:event_BotonBuscar_buscar
 
     private void BotonBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseEntered

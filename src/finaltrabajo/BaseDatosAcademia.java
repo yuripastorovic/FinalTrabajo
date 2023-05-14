@@ -588,7 +588,7 @@ public class BaseDatosAcademia {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
                     String telefono = rs.getString(5);
-                    arrayDatos.add(id +" "+ telefono);
+                    arrayDatos.add(id +","+ telefono);
                 }
                 stmt.close();
             }catch (SQLException ex) {
@@ -610,7 +610,7 @@ public class BaseDatosAcademia {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
                     String apellido  = rs.getString(3);
-                    arrayDatos.add(id +" "+ nombre+" "+apellido);
+                    arrayDatos.add(id +","+ nombre+","+apellido);
                 }
                 stmt.close();
             }catch (SQLException ex) {
@@ -631,7 +631,7 @@ public class BaseDatosAcademia {
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
-                    arrayDatos.add(id+" "+nombre);
+                    arrayDatos.add(id+","+nombre);
                 }
                 stmt.close();
             }catch (SQLException ex) {
@@ -643,6 +643,28 @@ public class BaseDatosAcademia {
         }
             return cadenaDatos;
     }
+    public String[] leerIdHorasCursosExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Cursos.id , Cursos.nombre FROM Cursos WHERE Cursos.existe=0  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String horas = rs.getString(4);
+                    arrayDatos.add(id+","+horas);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
+    
     public String[] leerIdNombresInscripcionesExistentes(){
         Statement stmt;
         ArrayList<String> arrayDatos=new ArrayList();

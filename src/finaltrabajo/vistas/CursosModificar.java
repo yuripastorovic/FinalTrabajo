@@ -4,6 +4,7 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -16,12 +17,18 @@ public class CursosModificar extends javax.swing.JFrame {
     /**
      * Creates new form CursosModificar
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
     public CursosModificar() {
+        comboBox1();
         initComponents();
     }
 public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
+    }
+private void comboBox1() {
+        String arrayString[] = bd.leerIdNombresCursosExistentes();
+        CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -237,6 +244,11 @@ public JPanel getFondo() {
     }//GEN-LAST:event_CampoNombreMouseClicked
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
+        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String id = partes[0].trim();
+        bd.modificarCursos(Integer.valueOf(id), CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
+        
+        
         CampoNombre.setText("");
         TextAreaDescr.setText("");
         CBHoras.setSelectedIndex(-1);
@@ -246,6 +258,8 @@ public JPanel getFondo() {
         TextAreaDescr.setForeground(new Color(221, 214, 204));
         CampoNombre.setBackground(new Color(25, 34, 43));
         CampoNombre.setForeground(new Color(221, 214, 204));
+        
+        comboBox1();
     }//GEN-LAST:event_ButtonAltaCrear_alumno
 
     private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered
@@ -280,7 +294,18 @@ public JPanel getFondo() {
     }//GEN-LAST:event_CBHorasActionPerformed
 
     private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
-        // TODO add your handling code here:
+        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String id = partes[0].trim();
+        String[] partesTF = bd.leerDatosUnCursoExistente(Integer.valueOf(id)).toString().split(",");
+        CampoNombre.setText(partesTF[1]);
+        TextAreaDescr.setText(partesTF[2]);
+        //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
+        //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
+        //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
+        //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
+        //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
+        //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
+                        
     }//GEN-LAST:event_CBHoras1ActionPerformed
 
     /**
