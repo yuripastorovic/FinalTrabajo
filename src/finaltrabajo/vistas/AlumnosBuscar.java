@@ -274,7 +274,10 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboNombreActionPerformed
 
     private void Boton_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_buscar
-        System.out.println("Here");
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        
         TablaNew.setModel(modelo);
         String[] partes;
         if(ComboNombre.isEnabled()){

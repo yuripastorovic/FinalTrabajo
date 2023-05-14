@@ -47,19 +47,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
 
-    //---------------------------------------------------------------------------------------------------------------------------
-    private void metodoameterenelbotonbaja() {
-        String[] partes;
-        if (ComboNombre.isEnabled()) {
-            partes = ComboNombre.getSelectedObjects().toString().split(",");
-        } else {
-            partes = ComboTelefono.getSelectedObjects().toString().split(",");
-        }
-
-        String id = partes[0].trim();
-        bd.modificarExistenciaAlumno(Integer.valueOf(id));
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -343,7 +330,11 @@ public class AlumnosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonResetBoton_reset
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
-
+        
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        
         TablaNew.setModel(modelo);
         String[] partes;
         if (ComboNombre.isEnabled()) {
@@ -404,6 +395,19 @@ public class AlumnosBaja extends javax.swing.JFrame {
         String id = partes[0].trim();
         bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
          */
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        
+        String[] partes;
+        if (ComboNombre.isEnabled()) {
+            partes = ComboNombre.getSelectedObjects().toString().split(",");
+        } else {
+            partes = ComboTelefono.getSelectedObjects().toString().split(",");
+        }
+
+        String id = partes[0].trim();
+        bd.modificarExistenciaAlumno(Integer.valueOf(id));
         ComboNombre.setSelectedIndex(-1);
         ComboNombre.setBackground(new Color(189, 146, 64));
         ComboNombre.setForeground(new Color(25, 34, 43));
