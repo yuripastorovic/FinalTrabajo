@@ -65,8 +65,11 @@ public class AlumnosModificar extends javax.swing.JFrame {
         CampoNombre.setBackground(new java.awt.Color(25, 34, 43));
         CampoNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CampoNombre.setForeground(new java.awt.Color(196, 190, 181));
-        CampoNombre.setText("   Introduzca nombre");
+        CampoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CampoNombre.setText("Introduzca nombre");
         CampoNombre.setBorder(null);
+        CampoNombre.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        CampoNombre.setSelectionColor(new java.awt.Color(184, 67, 87));
         CampoNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CampoNombreMouseClicked(evt);
@@ -76,8 +79,11 @@ public class AlumnosModificar extends javax.swing.JFrame {
         CampoApellido.setBackground(new java.awt.Color(25, 34, 43));
         CampoApellido.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CampoApellido.setForeground(new java.awt.Color(196, 190, 181));
-        CampoApellido.setText("   Introduzca apellido");
+        CampoApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CampoApellido.setText("Introduzca apellido");
         CampoApellido.setBorder(null);
+        CampoApellido.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        CampoApellido.setSelectionColor(new java.awt.Color(184, 67, 87));
         CampoApellido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CampoApellidoMouseClicked(evt);
@@ -91,8 +97,11 @@ public class AlumnosModificar extends javax.swing.JFrame {
         CampoCorreo.setBackground(new java.awt.Color(25, 34, 43));
         CampoCorreo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CampoCorreo.setForeground(new java.awt.Color(196, 190, 181));
-        CampoCorreo.setText("   Introduzca correo");
+        CampoCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CampoCorreo.setText("Introduzca correo");
         CampoCorreo.setBorder(null);
+        CampoCorreo.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        CampoCorreo.setSelectionColor(new java.awt.Color(184, 67, 87));
         CampoCorreo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CampoCorreoMouseClicked(evt);
@@ -110,9 +119,11 @@ public class AlumnosModificar extends javax.swing.JFrame {
         CampoTelefono.setBackground(new java.awt.Color(25, 34, 43));
         CampoTelefono.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CampoTelefono.setForeground(new java.awt.Color(196, 190, 181));
-        CampoTelefono.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        CampoTelefono.setText("   Introduzca telefono");
+        CampoTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CampoTelefono.setText("Introduzca telefono");
         CampoTelefono.setBorder(null);
+        CampoTelefono.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        CampoTelefono.setSelectionColor(new java.awt.Color(184, 67, 87));
         CampoTelefono.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CampoTelefonoMouseClicked(evt);
@@ -187,15 +198,15 @@ public class AlumnosModificar extends javax.swing.JFrame {
                     .addComponent(CBHoras1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(CampoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CampoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CampoTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampoTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                     .addComponent(jLabel4)
-                    .addComponent(CampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(CampoCorreo)
+                    .addComponent(CampoApellido)
+                    .addComponent(CampoNombre))
                 .addGap(133, 133, 133))
         );
         PanelFondoLayout.setVerticalGroup(

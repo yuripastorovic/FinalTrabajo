@@ -132,8 +132,11 @@ public class AjustesBBDD extends javax.swing.JFrame {
         CampoPuerto.setBackground(new java.awt.Color(25, 34, 43));
         CampoPuerto.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CampoPuerto.setForeground(new java.awt.Color(196, 190, 181));
-        CampoPuerto.setText("   Introduzca Puerto");
+        CampoPuerto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CampoPuerto.setText("Introduzca Puerto");
         CampoPuerto.setBorder(null);
+        CampoPuerto.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        CampoPuerto.setSelectionColor(new java.awt.Color(184, 67, 87));
         CampoPuerto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CampoPuertoMouseClicked(evt);

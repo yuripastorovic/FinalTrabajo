@@ -56,8 +56,11 @@ public class CursosAlta extends javax.swing.JFrame {
         CampoNombre.setBackground(new java.awt.Color(25, 34, 43));
         CampoNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CampoNombre.setForeground(new java.awt.Color(196, 190, 181));
-        CampoNombre.setText("   Introduzca nombre");
+        CampoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CampoNombre.setText("Introduzca nombre");
         CampoNombre.setBorder(null);
+        CampoNombre.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        CampoNombre.setSelectionColor(new java.awt.Color(184, 67, 87));
         CampoNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CampoNombreMouseClicked(evt);
@@ -112,8 +115,12 @@ public class CursosAlta extends javax.swing.JFrame {
         TextAreaDescr.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         TextAreaDescr.setForeground(new java.awt.Color(196, 190, 181));
         TextAreaDescr.setRows(5);
-        TextAreaDescr.setText("  Introduzca una descripcion del curso");
+        TextAreaDescr.setText("Introduzca una descripcion del curso");
+        TextAreaDescr.setToolTipText("");
+        TextAreaDescr.setAlignmentX(5.0F);
         TextAreaDescr.setBorder(null);
+        TextAreaDescr.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        TextAreaDescr.setSelectionColor(new java.awt.Color(184, 67, 87));
         TextAreaDescr.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TextAreaDescrMouseClicked(evt);

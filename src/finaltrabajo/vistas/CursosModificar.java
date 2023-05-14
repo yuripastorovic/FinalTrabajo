@@ -56,7 +56,11 @@ public JPanel getFondo() {
         CampoNombre.setBackground(new java.awt.Color(25, 34, 43));
         CampoNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CampoNombre.setForeground(new java.awt.Color(196, 190, 181));
+        CampoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CampoNombre.setText("Introduzca nombre del curso");
         CampoNombre.setBorder(null);
+        CampoNombre.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        CampoNombre.setSelectionColor(new java.awt.Color(184, 67, 87));
         CampoNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CampoNombreMouseClicked(evt);
@@ -111,7 +115,11 @@ public JPanel getFondo() {
         TextAreaDescr.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         TextAreaDescr.setForeground(new java.awt.Color(196, 190, 181));
         TextAreaDescr.setRows(5);
+        TextAreaDescr.setText("Introduzca descripcion del curso");
+        TextAreaDescr.setAlignmentX(5.0F);
         TextAreaDescr.setBorder(null);
+        TextAreaDescr.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        TextAreaDescr.setSelectionColor(new java.awt.Color(184, 67, 87));
         TextAreaDescr.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TextAreaDescrMouseClicked(evt);
@@ -169,13 +177,12 @@ public JPanel getFondo() {
                             .addComponent(CBHoras1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(CBHoras, 0, 202, Short.MAX_VALUE)
-                                .addComponent(CampoNombre))
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(40, 40, 40))))
+                            .addComponent(jLabel2)
+                            .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                            .addComponent(CBHoras, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(52, 52, 52))))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
