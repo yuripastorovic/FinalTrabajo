@@ -44,6 +44,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
         String arrayString[]=bd.leerIdTelefonosAlumnosExistentes();
         ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
+    //---------------------------------------------------------------------------------------------------------------------------
     private void metodoameterenelbotonbaja(){
         String[] partes ;
         if(ComboNombre.isEnabled()){
@@ -300,7 +301,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonResetBoton_reset
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
-        //no esta terminado falta meterle los datos
+        
         TablaNew.setModel(modelo);
         String[] partes;
         if(ComboNombre.isEnabled()){
