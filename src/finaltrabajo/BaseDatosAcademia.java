@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  */
 public class BaseDatosAcademia {
     
-    private String puerto = "3307";
+    private String puerto = "3306";
     private String ip = "localhost";
     private String usuario = "root";
     private String passw = "";
@@ -49,7 +49,7 @@ public class BaseDatosAcademia {
         try {
             stmt = this.conn.createStatement();
             stmt.executeUpdate("create database if not exists Jorge_Pastor_Miguel_Gonzalez_Academia");
-            stmt.executeUpdate("use academia");
+            stmt.executeUpdate("use Jorge_Pastor_Miguel_Gonzalez_Academia");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Alumnos(" +
                 "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL," +
                 "   nombre VARCHAR(25) NOT NULL," +

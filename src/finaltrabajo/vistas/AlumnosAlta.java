@@ -20,7 +20,6 @@ public class AlumnosAlta extends javax.swing.JFrame {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     public AlumnosAlta() {
         initComponents();
-        bd.crearDB();
     }
 
     public JPanel getFondo() {

@@ -25,9 +25,11 @@ public class fin extends javax.swing.JFrame {
     /**
      * Creates new form fin
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
     public fin() {
         initComponents();
         rfresh();
+        bd.crearDB();
 
     }
 

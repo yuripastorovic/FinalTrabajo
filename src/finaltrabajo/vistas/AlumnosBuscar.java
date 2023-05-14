@@ -4,8 +4,10 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,13 +18,30 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     /**
      * Creates new form AlumnosBuscar
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private DefaultTableModel modelo = new DefaultTableModel();
     public AlumnosBuscar() {
         initComponents();
+        comboBox1();
+        comboBox2();
+        modelo.addColumn("ID");
+        modelo.addColumn("NOMBRE");
+        modelo.addColumn("APELLIDO");
+        modelo.addColumn("CORREO");
+        modelo.addColumn("TELEFONO");
     }
 
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
+    }
+    private void comboBox1(){
+        String arrayString[]=bd.leerIdNombreApellidoAlumnosExistentes();
+        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+    private void comboBox2(){
+        String arrayString[]=bd.leerIdTelefonosAlumnosExistentes();
+        ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
 
     /**
@@ -256,6 +275,18 @@ public class AlumnosBuscar extends javax.swing.JFrame {
 
     private void Boton_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_buscar
         System.out.println("Here");
+        TablaNew.setModel(modelo);
+        String[] partes;
+        if(ComboNombre.isEnabled()){
+            partes =ComboNombre.getSelectedObjects().toString().split(",");
+        }else{
+            partes =ComboTelefono.getSelectedObjects().toString().split(",");
+        }
+        
+        String id = partes[0].trim();
+        String datos[]= new String[1];
+        datos[0]=bd.leerDatosUnAlumnoExistente(Integer.valueOf(id));
+        modelo.addRow(datos);
     }//GEN-LAST:event_Boton_buscar
 
     private void Boton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_reset

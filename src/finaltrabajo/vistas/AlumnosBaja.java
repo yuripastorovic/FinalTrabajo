@@ -22,9 +22,13 @@ public class AlumnosBaja extends javax.swing.JFrame {
     private DefaultTableModel modelo = new DefaultTableModel();
     public AlumnosBaja() {
         initComponents();
-        bd.crearDB();
         comboBox1();
         comboBox2();
+        modelo.addColumn("ID");
+        modelo.addColumn("NOMBRE");
+        modelo.addColumn("APELLIDO");
+        modelo.addColumn("CORREO");
+        modelo.addColumn("TELEFONO");
     }
 
     public JPanel getFondo() {
@@ -40,6 +44,20 @@ public class AlumnosBaja extends javax.swing.JFrame {
         String arrayString[]=bd.leerIdTelefonosAlumnosExistentes();
         ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
+    private void metodoameterenelbotonbaja(){
+        String[] partes ;
+        if(ComboNombre.isEnabled()){
+            partes =ComboNombre.getSelectedObjects().toString().split(",");
+        }else{
+            partes =ComboTelefono.getSelectedObjects().toString().split(",");
+        }
+        
+        String id = partes[0].trim();
+        bd.modificarExistenciaAlumno(Integer.valueOf(id));
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -284,6 +302,17 @@ public class AlumnosBaja extends javax.swing.JFrame {
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
         //no esta terminado falta meterle los datos
         TablaNew.setModel(modelo);
+        String[] partes;
+        if(ComboNombre.isEnabled()){
+            partes =ComboNombre.getSelectedObjects().toString().split(",");
+        }else{
+            partes =ComboTelefono.getSelectedObjects().toString().split(",");
+        }
+        
+        String id = partes[0].trim();
+        String datos[]= new String[1];
+        datos[0]=bd.leerDatosUnAlumnoExistente(Integer.valueOf(id));
+        modelo.addRow(datos);
     }//GEN-LAST:event_BotonBuscar_buscar
 
     private void BotonResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseEntered
