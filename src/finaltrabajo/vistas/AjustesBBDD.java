@@ -35,36 +35,42 @@ public class AjustesBBDD extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
-        ButtonModificar = new javax.swing.JPanel();
+        MODIFICAR = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        ButtonModificar1 = new javax.swing.JPanel();
+        CONECTAR = new javax.swing.JPanel();
         LabelButtonModificar1 = new javax.swing.JLabel();
         nameLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        CampoPuerto1 = new javax.swing.JTextField();
+        PASS = new javax.swing.JPasswordField();
         nameLabel1 = new javax.swing.JLabel();
-        CampoPuerto = new javax.swing.JTextField();
         nameLabel = new javax.swing.JLabel();
         nameLabel3 = new javax.swing.JLabel();
-        CampoPuerto2 = new javax.swing.JTextField();
+        USER = new javax.swing.JTextField();
+        PUERTO = new javax.swing.JTextField();
+        IP = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PanelFondo.setBackground(new java.awt.Color(221, 214, 204));
 
-        ButtonModificar.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+        MODIFICAR.setBackground(new java.awt.Color(25, 34, 43));
+        MODIFICAR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonModificarModificar_press(evt);
+                MODIFICARModificar_press(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ButtonModificarMouseEntered(evt);
+                MODIFICARMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ButtonModificarMouseExited(evt);
+                MODIFICARMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MODIFICARMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                MODIFICARMouseReleased(evt);
             }
         });
 
@@ -73,16 +79,16 @@ public class AjustesBBDD extends javax.swing.JFrame {
         LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelButtonModificar.setText("MODIFICAR");
 
-        javax.swing.GroupLayout ButtonModificarLayout = new javax.swing.GroupLayout(ButtonModificar);
-        ButtonModificar.setLayout(ButtonModificarLayout);
-        ButtonModificarLayout.setHorizontalGroup(
-            ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonModificarLayout.createSequentialGroup()
+        javax.swing.GroupLayout MODIFICARLayout = new javax.swing.GroupLayout(MODIFICAR);
+        MODIFICAR.setLayout(MODIFICARLayout);
+        MODIFICARLayout.setHorizontalGroup(
+            MODIFICARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MODIFICARLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(LabelButtonModificar))
         );
-        ButtonModificarLayout.setVerticalGroup(
-            ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        MODIFICARLayout.setVerticalGroup(
+            MODIFICARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
@@ -94,22 +100,22 @@ public class AjustesBBDD extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(25, 34, 43));
         jLabel1.setText("<html><body>Este programa esta conectado<br>\ncon una base de datos MriaDB.<br>\nAsegurese de que ha encendido<br>\nla base de datos, antes de encender<br> \nel programa.<br>\nAsegurese de que el puerto de <br>\nconexion entre la aplicacion y <br>\nla de datos es el mismo \n</body></html>");
 
-        ButtonModificar1.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonModificar1.addMouseListener(new java.awt.event.MouseAdapter() {
+        CONECTAR.setBackground(new java.awt.Color(25, 34, 43));
+        CONECTAR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonModificar1Modificar_press(evt);
+                CONECTARModificar_clicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ButtonModificar1MouseEntered(evt);
+                CONECTARMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ButtonModificar1MouseExited(evt);
+                CONECTARMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                ButtonModificar1MousePressed(evt);
+                CONECTARMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                ButtonModificar1MouseReleased(evt);
+                CONECTARMouseReleased(evt);
             }
         });
 
@@ -118,16 +124,16 @@ public class AjustesBBDD extends javax.swing.JFrame {
         LabelButtonModificar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelButtonModificar1.setText("CONECTAR");
 
-        javax.swing.GroupLayout ButtonModificar1Layout = new javax.swing.GroupLayout(ButtonModificar1);
-        ButtonModificar1.setLayout(ButtonModificar1Layout);
-        ButtonModificar1Layout.setHorizontalGroup(
-            ButtonModificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonModificar1Layout.createSequentialGroup()
+        javax.swing.GroupLayout CONECTARLayout = new javax.swing.GroupLayout(CONECTAR);
+        CONECTAR.setLayout(CONECTARLayout);
+        CONECTARLayout.setHorizontalGroup(
+            CONECTARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CONECTARLayout.createSequentialGroup()
                 .addGap(0, 128, Short.MAX_VALUE)
                 .addComponent(LabelButtonModificar1))
         );
-        ButtonModificar1Layout.setVerticalGroup(
-            ButtonModificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        CONECTARLayout.setVerticalGroup(
+            CONECTARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
@@ -138,7 +144,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonModificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CONECTAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -148,7 +154,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ButtonModificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CONECTAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -169,52 +175,19 @@ public class AjustesBBDD extends javax.swing.JFrame {
         nameLabel2.setForeground(new java.awt.Color(25, 34, 43));
         nameLabel2.setText("CONTRASEÑA");
 
-        jPasswordField1.setBackground(new java.awt.Color(25, 34, 43));
-        jPasswordField1.setForeground(new java.awt.Color(196, 190, 181));
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField1.setText("jPasswordField1");
-
-        CampoPuerto1.setBackground(new java.awt.Color(25, 34, 43));
-        CampoPuerto1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        CampoPuerto1.setForeground(new java.awt.Color(196, 190, 181));
-        CampoPuerto1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoPuerto1.setText("Introduzca Usuario");
-        CampoPuerto1.setBorder(null);
-        CampoPuerto1.setSelectedTextColor(new java.awt.Color(25, 34, 43));
-        CampoPuerto1.setSelectionColor(new java.awt.Color(184, 67, 87));
-        CampoPuerto1.addMouseListener(new java.awt.event.MouseAdapter() {
+        PASS.setBackground(new java.awt.Color(25, 34, 43));
+        PASS.setForeground(new java.awt.Color(196, 190, 181));
+        PASS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PASS.setText("jPasswordField1");
+        PASS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CampoPuerto1MouseClicked(evt);
-            }
-        });
-        CampoPuerto1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoPuerto1ActionPerformed(evt);
+                PASSMouseClicked(evt);
             }
         });
 
         nameLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         nameLabel1.setForeground(new java.awt.Color(25, 34, 43));
         nameLabel1.setText("USUARIO");
-
-        CampoPuerto.setBackground(new java.awt.Color(25, 34, 43));
-        CampoPuerto.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        CampoPuerto.setForeground(new java.awt.Color(196, 190, 181));
-        CampoPuerto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoPuerto.setText("Introduzca Puerto");
-        CampoPuerto.setBorder(null);
-        CampoPuerto.setSelectedTextColor(new java.awt.Color(25, 34, 43));
-        CampoPuerto.setSelectionColor(new java.awt.Color(184, 67, 87));
-        CampoPuerto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CampoPuertoMouseClicked(evt);
-            }
-        });
-        CampoPuerto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoPuertoActionPerformed(evt);
-            }
-        });
 
         nameLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         nameLabel.setForeground(new java.awt.Color(25, 34, 43));
@@ -224,22 +197,45 @@ public class AjustesBBDD extends javax.swing.JFrame {
         nameLabel3.setForeground(new java.awt.Color(25, 34, 43));
         nameLabel3.setText("IP CONEXION");
 
-        CampoPuerto2.setBackground(new java.awt.Color(25, 34, 43));
-        CampoPuerto2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        CampoPuerto2.setForeground(new java.awt.Color(196, 190, 181));
-        CampoPuerto2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoPuerto2.setText("Introduzca Puerto");
-        CampoPuerto2.setBorder(null);
-        CampoPuerto2.setSelectedTextColor(new java.awt.Color(25, 34, 43));
-        CampoPuerto2.setSelectionColor(new java.awt.Color(184, 67, 87));
-        CampoPuerto2.addMouseListener(new java.awt.event.MouseAdapter() {
+        USER.setBackground(new java.awt.Color(25, 34, 43));
+        USER.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        USER.setForeground(new java.awt.Color(196, 190, 181));
+        USER.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        USER.setText("Introduzca nombre");
+        USER.setBorder(null);
+        USER.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        USER.setSelectionColor(new java.awt.Color(184, 67, 87));
+        USER.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CampoPuerto2MouseClicked(evt);
+                USERMouseClicked(evt);
             }
         });
-        CampoPuerto2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoPuerto2ActionPerformed(evt);
+
+        PUERTO.setBackground(new java.awt.Color(25, 34, 43));
+        PUERTO.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        PUERTO.setForeground(new java.awt.Color(196, 190, 181));
+        PUERTO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PUERTO.setText("Introduzca nombre");
+        PUERTO.setBorder(null);
+        PUERTO.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        PUERTO.setSelectionColor(new java.awt.Color(184, 67, 87));
+        PUERTO.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PUERTOMouseClicked(evt);
+            }
+        });
+
+        IP.setBackground(new java.awt.Color(25, 34, 43));
+        IP.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        IP.setForeground(new java.awt.Color(196, 190, 181));
+        IP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        IP.setText("Introduzca nombre");
+        IP.setBorder(null);
+        IP.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        IP.setSelectionColor(new java.awt.Color(184, 67, 87));
+        IP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IPMouseClicked(evt);
             }
         });
 
@@ -248,17 +244,17 @@ public class AjustesBBDD extends javax.swing.JFrame {
         PanelFondoLayout.setHorizontalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addContainerGap(345, Short.MAX_VALUE)
-                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CampoPuerto, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                .addGap(345, 345, 345)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(CampoPuerto2, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                     .addComponent(nameLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(CampoPuerto1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                     .addComponent(nameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1)
+                    .addComponent(PASS)
                     .addComponent(nameLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(ButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(MODIFICAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(USER)
+                    .addComponent(PUERTO, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(IP, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -266,24 +262,24 @@ public class AjustesBBDD extends javax.swing.JFrame {
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addComponent(nameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CampoPuerto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PUERTO, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nameLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CampoPuerto2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(IP, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nameLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CampoPuerto1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(USER, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(nameLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PASS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MODIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -305,66 +301,78 @@ public class AjustesBBDD extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
+    private void MODIFICARModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARModificar_press
 
-    }//GEN-LAST:event_ButtonModificarModificar_press
+    }//GEN-LAST:event_MODIFICARModificar_press
 
-    private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered
-        ButtonModificar.setBackground(new Color(189, 146, 64));
+    private void MODIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseEntered
+        MODIFICAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ButtonModificarMouseEntered
+    }//GEN-LAST:event_MODIFICARMouseEntered
 
-    private void ButtonModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseExited
-        ButtonModificar.setBackground(new Color(25, 34, 43));
+    private void MODIFICARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseExited
+        MODIFICAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
-    }//GEN-LAST:event_ButtonModificarMouseExited
+    }//GEN-LAST:event_MODIFICARMouseExited
 
-    private void ButtonModificar1Modificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificar1Modificar_press
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonModificar1Modificar_press
+    private void CONECTARModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARModificar_clicked
+        CONECTAR.setBackground(new Color(184, 67, 87));
+        CONECTAR.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_CONECTARModificar_clicked
 
-    private void ButtonModificar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificar1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonModificar1MouseEntered
+    private void CONECTARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseEntered
+        CONECTAR.setBackground(new Color(184,67,87));
+        LabelButtonModificar1.setForeground(new Color(25,34,43));
+    }//GEN-LAST:event_CONECTARMouseEntered
 
-    private void ButtonModificar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificar1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonModificar1MouseExited
+    private void CONECTARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseExited
+        CONECTAR.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar1.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_CONECTARMouseExited
 
-    private void ButtonModificar1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificar1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonModificar1MousePressed
+    private void CONECTARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMousePressed
+        CONECTAR.setBackground(new Color(221,214,204));
+        LabelButtonModificar1.setForeground(new Color(25,34,43));
+    }//GEN-LAST:event_CONECTARMousePressed
 
-    private void ButtonModificar1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificar1MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonModificar1MouseReleased
+    private void CONECTARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseReleased
+        CONECTAR.setBackground(new Color(189, 146, 64));
+        CONECTAR.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_CONECTARMouseReleased
 
-    private void CampoPuertoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoPuertoMouseClicked
-        CampoPuerto.setText("");
-        CampoPuerto.setBackground(new Color(25, 34, 43));
-        CampoPuerto.setForeground(new Color(189, 146, 64));
+    private void USERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_USERMouseClicked
+        USER.setText("");
+        USER.setBackground(new Color(189, 146, 64));
+        USER.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_USERMouseClicked
 
-    }//GEN-LAST:event_CampoPuertoMouseClicked
+    private void PUERTOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PUERTOMouseClicked
+        PUERTO.setText("");
+        PUERTO.setBackground(new Color(189, 146, 64));
+        PUERTO.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_PUERTOMouseClicked
 
-    private void CampoPuertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoPuertoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoPuertoActionPerformed
+    private void IPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IPMouseClicked
+        IP.setText("");
+        IP.setBackground(new Color(189, 146, 64));
+        IP.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_IPMouseClicked
 
-    private void CampoPuerto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoPuerto1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoPuerto1MouseClicked
+    private void PASSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PASSMouseClicked
+        PASS.setText("");
+        PASS.setBackground(new Color(189, 146, 64));
+        PASS.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_PASSMouseClicked
 
-    private void CampoPuerto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoPuerto1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoPuerto1ActionPerformed
+    private void MODIFICARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMousePressed
+        MODIFICAR.setBackground(new Color(184, 67, 87));
+        MODIFICAR.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_MODIFICARMousePressed
 
-    private void CampoPuerto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoPuerto2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoPuerto2MouseClicked
-
-    private void CampoPuerto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoPuerto2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoPuerto2ActionPerformed
+    private void MODIFICARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseReleased
+        MODIFICAR.setBackground(new Color(189, 146, 64));
+        MODIFICAR.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_MODIFICARMouseReleased
 
     /**
      * @param args the command line arguments
@@ -402,18 +410,18 @@ public class AjustesBBDD extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ButtonModificar;
-    private javax.swing.JPanel ButtonModificar1;
-    private javax.swing.JTextField CampoPuerto;
-    private javax.swing.JTextField CampoPuerto1;
-    private javax.swing.JTextField CampoPuerto2;
+    private javax.swing.JPanel CONECTAR;
+    private javax.swing.JTextField IP;
     private javax.swing.JLabel LabelButtonModificar;
     private javax.swing.JLabel LabelButtonModificar1;
+    private javax.swing.JPanel MODIFICAR;
+    private javax.swing.JPasswordField PASS;
+    private javax.swing.JTextField PUERTO;
     private javax.swing.JPanel PanelFondo;
+    private javax.swing.JTextField USER;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel nameLabel1;
     private javax.swing.JLabel nameLabel2;

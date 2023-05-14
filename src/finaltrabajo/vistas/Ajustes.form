@@ -103,9 +103,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                      <Component id="BUSCAR" min="-2" max="-2" attributes="0"/>
+                      <Component id="Ajustes_bbdd" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                      <Component id="BAJA" min="-2" max="-2" attributes="0"/>
+                      <Component id="Ajustes_local" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="159" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -115,26 +115,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="BUSCAR" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="BAJA" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="Ajustes_bbdd" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="Ajustes_local" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="BUSCAR">
+            <Container class="javax.swing.JPanel" name="Ajustes_bbdd">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="2b" green="22" red="19" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BUSCARBuscar_alum"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BUSCARMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BUSCARMouseExited"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BUSCARMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BUSCARMouseReleased"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_bbddBuscar_alum"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_bbddMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_bbddMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_bbddMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_bbddMouseReleased"/>
               </Events>
 
               <Layout>
@@ -164,18 +164,18 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="BAJA">
+            <Container class="javax.swing.JPanel" name="Ajustes_local">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="2b" green="22" red="19" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BAJABaja_alum"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BAJAMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BAJAMouseExited"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BAJAMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BAJAMouseReleased"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_localBaja_alum"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_localMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_localMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_localMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Ajustes_localMouseReleased"/>
               </Events>
 
               <Layout>

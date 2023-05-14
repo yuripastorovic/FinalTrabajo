@@ -46,9 +46,9 @@ public class Ajustes extends javax.swing.JFrame {
         PanelFondo = new javax.swing.JPanel();
         contenedor = new javax.swing.JPanel();
         PanelFaldon = new javax.swing.JPanel();
-        BUSCAR = new javax.swing.JPanel();
+        Ajustes_bbdd = new javax.swing.JPanel();
         LabelButtonModificar4 = new javax.swing.JLabel();
-        BAJA = new javax.swing.JPanel();
+        Ajustes_local = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,22 +70,22 @@ public class Ajustes extends javax.swing.JFrame {
 
         PanelFaldon.setBackground(new java.awt.Color(25, 34, 43));
 
-        BUSCAR.setBackground(new java.awt.Color(25, 34, 43));
-        BUSCAR.addMouseListener(new java.awt.event.MouseAdapter() {
+        Ajustes_bbdd.setBackground(new java.awt.Color(25, 34, 43));
+        Ajustes_bbdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BUSCARBuscar_alum(evt);
+                Ajustes_bbddBuscar_alum(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BUSCARMouseEntered(evt);
+                Ajustes_bbddMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                BUSCARMouseExited(evt);
+                Ajustes_bbddMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                BUSCARMousePressed(evt);
+                Ajustes_bbddMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                BUSCARMouseReleased(evt);
+                Ajustes_bbddMouseReleased(evt);
             }
         });
 
@@ -94,33 +94,33 @@ public class Ajustes extends javax.swing.JFrame {
         LabelButtonModificar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelButtonModificar4.setText("BASE DE DATOS");
 
-        javax.swing.GroupLayout BUSCARLayout = new javax.swing.GroupLayout(BUSCAR);
-        BUSCAR.setLayout(BUSCARLayout);
-        BUSCARLayout.setHorizontalGroup(
-            BUSCARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Ajustes_bbddLayout = new javax.swing.GroupLayout(Ajustes_bbdd);
+        Ajustes_bbdd.setLayout(Ajustes_bbddLayout);
+        Ajustes_bbddLayout.setHorizontalGroup(
+            Ajustes_bbddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
-        BUSCARLayout.setVerticalGroup(
-            BUSCARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Ajustes_bbddLayout.setVerticalGroup(
+            Ajustes_bbddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        BAJA.setBackground(new java.awt.Color(25, 34, 43));
-        BAJA.addMouseListener(new java.awt.event.MouseAdapter() {
+        Ajustes_local.setBackground(new java.awt.Color(25, 34, 43));
+        Ajustes_local.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BAJABaja_alum(evt);
+                Ajustes_localBaja_alum(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BAJAMouseEntered(evt);
+                Ajustes_localMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                BAJAMouseExited(evt);
+                Ajustes_localMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                BAJAMousePressed(evt);
+                Ajustes_localMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                BAJAMouseReleased(evt);
+                Ajustes_localMouseReleased(evt);
             }
         });
 
@@ -129,14 +129,14 @@ public class Ajustes extends javax.swing.JFrame {
         LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelButtonModificar.setText("COPIAS LOCALES");
 
-        javax.swing.GroupLayout BAJALayout = new javax.swing.GroupLayout(BAJA);
-        BAJA.setLayout(BAJALayout);
-        BAJALayout.setHorizontalGroup(
-            BAJALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Ajustes_localLayout = new javax.swing.GroupLayout(Ajustes_local);
+        Ajustes_local.setLayout(Ajustes_localLayout);
+        Ajustes_localLayout.setHorizontalGroup(
+            Ajustes_localLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
-        BAJALayout.setVerticalGroup(
-            BAJALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Ajustes_localLayout.setVerticalGroup(
+            Ajustes_localLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
@@ -146,9 +146,9 @@ public class Ajustes extends javax.swing.JFrame {
             PanelFaldonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFaldonLayout.createSequentialGroup()
                 .addGap(151, 151, 151)
-                .addComponent(BUSCAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Ajustes_bbdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(157, 157, 157)
-                .addComponent(BAJA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Ajustes_local, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(159, Short.MAX_VALUE))
         );
         PanelFaldonLayout.setVerticalGroup(
@@ -156,8 +156,8 @@ public class Ajustes extends javax.swing.JFrame {
             .addGroup(PanelFaldonLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(PanelFaldonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BUSCAR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BAJA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Ajustes_bbdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ajustes_local, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
@@ -198,56 +198,56 @@ public class Ajustes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BUSCARBuscar_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARBuscar_alum
+    private void Ajustes_bbddBuscar_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddBuscar_alum
         AjustesBBDD bbb = new AjustesBBDD();
         showPanel(bbb.getFondo());
-    }//GEN-LAST:event_BUSCARBuscar_alum
+    }//GEN-LAST:event_Ajustes_bbddBuscar_alum
 
-    private void BUSCARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseEntered
+    private void Ajustes_bbddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddMouseEntered
         // TODO add your handling code here:
-        BUSCAR.setBackground(new Color(189, 146, 64));
+        Ajustes_bbdd.setBackground(new Color(189, 146, 64));
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_BUSCARMouseEntered
+    }//GEN-LAST:event_Ajustes_bbddMouseEntered
 
-    private void BUSCARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseExited
-        BUSCAR.setBackground(new Color(25, 34, 43));
+    private void Ajustes_bbddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddMouseExited
+        Ajustes_bbdd.setBackground(new Color(25, 34, 43));
         LabelButtonModificar4.setForeground(new Color(221, 214, 204));
-    }//GEN-LAST:event_BUSCARMouseExited
+    }//GEN-LAST:event_Ajustes_bbddMouseExited
 
-    private void BUSCARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMousePressed
-        BUSCAR.setBackground(new Color(184, 67, 87));
+    private void Ajustes_bbddMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddMousePressed
+        Ajustes_bbdd.setBackground(new Color(184, 67, 87));
         LabelButtonModificar4.setForeground(new Color(189, 146, 64));
-    }//GEN-LAST:event_BUSCARMousePressed
+    }//GEN-LAST:event_Ajustes_bbddMousePressed
 
-    private void BUSCARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseReleased
-        BUSCAR.setBackground(new Color(189, 146, 64));
+    private void Ajustes_bbddMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddMouseReleased
+        Ajustes_bbdd.setBackground(new Color(189, 146, 64));
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_BUSCARMouseReleased
+    }//GEN-LAST:event_Ajustes_bbddMouseReleased
 
-    private void BAJABaja_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJABaja_alum
+    private void Ajustes_localBaja_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localBaja_alum
         AjustesLocal bbb = new AjustesLocal();
         showPanel(bbb.getFondo());
-    }//GEN-LAST:event_BAJABaja_alum
+    }//GEN-LAST:event_Ajustes_localBaja_alum
 
-    private void BAJAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseEntered
-        BAJA.setBackground(new Color(189, 146, 64));
+    private void Ajustes_localMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localMouseEntered
+        Ajustes_local.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_BAJAMouseEntered
+    }//GEN-LAST:event_Ajustes_localMouseEntered
 
-    private void BAJAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseExited
-        BAJA.setBackground(new Color(25, 34, 43));
+    private void Ajustes_localMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localMouseExited
+        Ajustes_local.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
-    }//GEN-LAST:event_BAJAMouseExited
+    }//GEN-LAST:event_Ajustes_localMouseExited
 
-    private void BAJAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMousePressed
-        BAJA.setBackground(new Color(184, 67, 87));
+    private void Ajustes_localMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localMousePressed
+        Ajustes_local.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(189, 146, 64));
-    }//GEN-LAST:event_BAJAMousePressed
+    }//GEN-LAST:event_Ajustes_localMousePressed
 
-    private void BAJAMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseReleased
-        BAJA.setBackground(new Color(189, 146, 64));
+    private void Ajustes_localMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localMouseReleased
+        Ajustes_local.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_BAJAMouseReleased
+    }//GEN-LAST:event_Ajustes_localMouseReleased
 
     /**
      * @param args the command line arguments
@@ -285,8 +285,8 @@ public class Ajustes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BAJA;
-    private javax.swing.JPanel BUSCAR;
+    private javax.swing.JPanel Ajustes_bbdd;
+    private javax.swing.JPanel Ajustes_local;
     private javax.swing.JLabel LabelButtonModificar;
     private javax.swing.JLabel LabelButtonModificar4;
     private javax.swing.JPanel PanelFaldon;
