@@ -4,6 +4,7 @@
  */
 package finaltrabajo.vistas;
 
+import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -22,6 +23,14 @@ public class Inscripciones extends javax.swing.JFrame {
         JPanel fondo = PanelFondo;
         return fondo;
     }
+    private void showPanel(JPanel panel) {
+        panel.setSize(this.contenedor.getWidth(), this.contenedor.getHeight());
+        panel.setLocation(0, 0);
+        this.contenedor.removeAll();
+        this.contenedor.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        this.contenedor.revalidate();
+        this.contenedor.repaint();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,40 +41,189 @@ public class Inscripciones extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        PanelFaldon = new javax.swing.JPanel();
+        ALTA_BAJA = new javax.swing.JPanel();
+        LabelButtonModificar4 = new javax.swing.JLabel();
+        CALIFICAR = new javax.swing.JPanel();
+        LabelButtonModificar3 = new javax.swing.JLabel();
+        MOSTRAR = new javax.swing.JPanel();
+        LabelButtonModificar = new javax.swing.JLabel();
+        contenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(654, 357));
+        setPreferredSize(new java.awt.Dimension(757, 322));
 
-        PanelFondo.setBackground(new java.awt.Color(0, 0, 0));
+        PanelFondo.setBackground(new java.awt.Color(184, 67, 87));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("INSCRIPCIONES");
+        PanelFaldon.setBackground(new java.awt.Color(25, 34, 43));
+
+        ALTA_BAJA.setBackground(new java.awt.Color(25, 34, 43));
+        ALTA_BAJA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ALTA_BAJABuscar_alum(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ALTA_BAJAMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ALTA_BAJAMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ALTA_BAJAMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ALTA_BAJAMouseReleased(evt);
+            }
+        });
+
+        LabelButtonModificar4.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar4.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar4.setText("ALTA / BAJA INSCRIPCION");
+
+        javax.swing.GroupLayout ALTA_BAJALayout = new javax.swing.GroupLayout(ALTA_BAJA);
+        ALTA_BAJA.setLayout(ALTA_BAJALayout);
+        ALTA_BAJALayout.setHorizontalGroup(
+            ALTA_BAJALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ALTA_BAJALayout.setVerticalGroup(
+            ALTA_BAJALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
+        CALIFICAR.setBackground(new java.awt.Color(25, 34, 43));
+        CALIFICAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CALIFICARModi_alum(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CALIFICARMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CALIFICARMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                CALIFICARMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                CALIFICARMouseReleased(evt);
+            }
+        });
+
+        LabelButtonModificar3.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar3.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar3.setText("CALIFICAR");
+
+        javax.swing.GroupLayout CALIFICARLayout = new javax.swing.GroupLayout(CALIFICAR);
+        CALIFICAR.setLayout(CALIFICARLayout);
+        CALIFICARLayout.setHorizontalGroup(
+            CALIFICARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+        );
+        CALIFICARLayout.setVerticalGroup(
+            CALIFICARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
+        MOSTRAR.setBackground(new java.awt.Color(25, 34, 43));
+        MOSTRAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MOSTRARBaja_alum(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MOSTRARMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MOSTRARMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MOSTRARMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                MOSTRARMouseReleased(evt);
+            }
+        });
+
+        LabelButtonModificar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar.setText("MOSTRAR INSCRIPCIONES");
+
+        javax.swing.GroupLayout MOSTRARLayout = new javax.swing.GroupLayout(MOSTRAR);
+        MOSTRAR.setLayout(MOSTRARLayout);
+        MOSTRARLayout.setHorizontalGroup(
+            MOSTRARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        MOSTRARLayout.setVerticalGroup(
+            MOSTRARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout PanelFaldonLayout = new javax.swing.GroupLayout(PanelFaldon);
+        PanelFaldon.setLayout(PanelFaldonLayout);
+        PanelFaldonLayout.setHorizontalGroup(
+            PanelFaldonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelFaldonLayout.createSequentialGroup()
+                .addGap(151, 151, 151)
+                .addComponent(ALTA_BAJA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CALIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MOSTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(171, Short.MAX_VALUE))
+        );
+        PanelFaldonLayout.setVerticalGroup(
+            PanelFaldonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelFaldonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(PanelFaldonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ALTA_BAJA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CALIFICAR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MOSTRAR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        contenedor.setBackground(new java.awt.Color(0, 255, 0));
+
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 322, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelFaldon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(jLabel1)
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jLabel1)
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addComponent(PanelFaldon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,6 +234,82 @@ public class Inscripciones extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ALTA_BAJABuscar_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJABuscar_alum
+        InscripcionesAddDel bbb = new InscripcionesAddDel();
+        showPanel(bbb.getFondo());
+    }//GEN-LAST:event_ALTA_BAJABuscar_alum
+
+    private void ALTA_BAJAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMouseEntered
+        // TODO add your handling code here:
+        ALTA_BAJA.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar4.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ALTA_BAJAMouseEntered
+
+    private void ALTA_BAJAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMouseExited
+        ALTA_BAJA.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar4.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_ALTA_BAJAMouseExited
+
+    private void ALTA_BAJAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMousePressed
+        ALTA_BAJA.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar4.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_ALTA_BAJAMousePressed
+
+    private void ALTA_BAJAMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMouseReleased
+        ALTA_BAJA.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar4.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_ALTA_BAJAMouseReleased
+
+    private void CALIFICARModi_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARModi_alum
+        InscripcionesGestion bbb = new InscripcionesGestion();
+        showPanel(bbb.getFondo());
+    }//GEN-LAST:event_CALIFICARModi_alum
+
+    private void CALIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMouseEntered
+        CALIFICAR.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar3.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_CALIFICARMouseEntered
+
+    private void CALIFICARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMouseExited
+        CALIFICAR.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar3.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_CALIFICARMouseExited
+
+    private void CALIFICARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMousePressed
+        CALIFICAR.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar3.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_CALIFICARMousePressed
+
+    private void CALIFICARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMouseReleased
+        CALIFICAR.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar3.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_CALIFICARMouseReleased
+
+    private void MOSTRARBaja_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARBaja_alum
+        InscripcionesMostrar bbb = new InscripcionesMostrar();
+        showPanel(bbb.getFondo());
+    }//GEN-LAST:event_MOSTRARBaja_alum
+
+    private void MOSTRARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseEntered
+        MOSTRAR.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_MOSTRARMouseEntered
+
+    private void MOSTRARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseExited
+        MOSTRAR.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_MOSTRARMouseExited
+
+    private void MOSTRARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMousePressed
+        MOSTRAR.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_MOSTRARMousePressed
+
+    private void MOSTRARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseReleased
+        MOSTRAR.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_MOSTRARMouseReleased
 
     /**
      * @param args the command line arguments
@@ -113,7 +347,14 @@ public class Inscripciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ALTA_BAJA;
+    private javax.swing.JPanel CALIFICAR;
+    private javax.swing.JLabel LabelButtonModificar;
+    private javax.swing.JLabel LabelButtonModificar3;
+    private javax.swing.JLabel LabelButtonModificar4;
+    private javax.swing.JPanel MOSTRAR;
+    private javax.swing.JPanel PanelFaldon;
     private javax.swing.JPanel PanelFondo;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel contenedor;
     // End of variables declaration//GEN-END:variables
 }
