@@ -4,6 +4,7 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -16,6 +17,7 @@ public class AlumnosModificar extends javax.swing.JFrame {
     /**
      * Creates new form AlumnosModificar
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
     public AlumnosModificar() {
         initComponents();
     }
@@ -24,7 +26,11 @@ public class AlumnosModificar extends javax.swing.JFrame {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-
+    
+    private void comboBox1(){
+        String arrayString[]=bd.leerIdNombreApellidoAlumnosExistentes();
+        CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -253,6 +259,10 @@ public class AlumnosModificar extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoTelefonoMouseClicked
 
     private void Modificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_press
+        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String id = partes[0].trim();
+        bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
+        
         CampoNombre.setText("");
         CampoApellido.setText("");
         CampoCorreo.setText("");
@@ -282,6 +292,13 @@ public class AlumnosModificar extends javax.swing.JFrame {
 
     private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
         // TODO add your handling code here:
+        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String id = partes[0].trim();
+        String[] partesTF = bd.leerDatosUnAlumnoExistente(Integer.valueOf(id)).toString().split(",");
+        CampoNombre.setText(partesTF[1]);
+        CampoApellido.setText(partesTF[2]);
+        CampoCorreo.setText(partesTF[3]);
+        CampoTelefono.setText(partesTF[4]);
     }//GEN-LAST:event_CBHoras1ActionPerformed
 
     /**

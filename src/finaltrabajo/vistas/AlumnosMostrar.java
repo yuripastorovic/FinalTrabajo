@@ -4,8 +4,10 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,13 +18,22 @@ public class AlumnosMostrar extends javax.swing.JFrame {
     /**
      * Creates new form AlumnosMostrar
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private DefaultTableModel modelo = new DefaultTableModel();
     public AlumnosMostrar() {
         initComponents();
+        modelo.addColumn("ID");
+        modelo.addColumn("NOMBRE");
+        modelo.addColumn("APELLIDO");
+        modelo.addColumn("CORREO");
+        modelo.addColumn("TELEFONO");
     }
-
+    
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
+        
         return fondo;
+        
     }
 
     /**
@@ -192,7 +203,12 @@ public class AlumnosMostrar extends javax.swing.JFrame {
      * @param evt
      */
     private void MostrarAlumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarAlumnos
-
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        TablaNew.setModel(modelo);
+        String datos[]= bd.leerStringArrayAlumnosExistentes();
+        modelo.addRow(datos);
     }//GEN-LAST:event_MostrarAlumnos
     /**
      * Debe borrar el contenido de la tabla y mostrar la tabla alumnos boolean
@@ -201,7 +217,13 @@ public class AlumnosMostrar extends javax.swing.JFrame {
      * @param evt
      */
     private void MostrarExalumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarExalumnos
-
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        TablaNew.setModel(modelo);
+        String datos[]= bd.leerStringArrayAlumnosNoExistentes();
+        modelo.addRow(datos);
+        
     }//GEN-LAST:event_MostrarExalumnos
 
     private void BotonExalumnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseEntered

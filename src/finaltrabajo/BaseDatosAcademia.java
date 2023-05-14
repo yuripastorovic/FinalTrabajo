@@ -337,6 +337,152 @@ public class BaseDatosAcademia {
             return cadenaDatos;
     }
     
+    public String[] leerStringArrayAlumnosExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.* FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String nombre = rs.getString(2);
+                    String apellido  = rs.getString(3);
+                    String correo  = rs.getString(4);
+                    String telefono  = rs.getString(5);
+                    arrayDatos.add(id+","+ nombre+","+apellido + ","+correo+","+telefono);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
+    public String[] leerStringArrayCursosExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Cursos.* FROM Cursos WHERE Cursos.existe=0  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String nombre = rs.getString(2);
+                    String descripcion  = rs.getString(3);
+                    String horas  = rs.getString(4);
+                    arrayDatos.add(id+","+ nombre+","+descripcion + ","+horas);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
+    public String[] leerStringArrayInscripcionesExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Inscripciones.* FROM Inscripciones WHERE Inscripciones.existe=0  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String id_alumno = rs.getString(2);
+                    String id_curso  = rs.getString(3);
+                    String fInicio  = rs.getString(4);
+                    String fFin  = rs.getString(4);
+                    String calificacion  = rs.getString(4);
+                    arrayDatos.add(id+","+ id_alumno+","+id_curso + ","+fInicio+ ","+fFin+ ","+calificacion);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
+    
+    public String[] leerStringArrayAlumnosNoExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.* FROM Alumnos WHERE Alumnos.existe=1  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String nombre = rs.getString(2);
+                    String apellido  = rs.getString(3);
+                    String correo  = rs.getString(4);
+                    String telefono  = rs.getString(5);
+                    arrayDatos.add(id+","+ nombre+","+apellido + ","+correo+","+telefono);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
+    public String[] leerStringArrayCursosNoExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Cursos.* FROM Cursos WHERE Cursos.existe=1  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String nombre = rs.getString(2);
+                    String descripcion  = rs.getString(3);
+                    String horas  = rs.getString(4);
+                    arrayDatos.add(id+","+ nombre+","+descripcion + ","+horas);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
+    public String[] leerStringArrayInscripcionesNoExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Inscripciones.* FROM Inscripciones WHERE Inscripciones.existe=0  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String id_alumno = rs.getString(2);
+                    String id_curso  = rs.getString(3);
+                    String fInicio  = rs.getString(4);
+                    String fFin  = rs.getString(4);
+                    String calificacion  = rs.getString(4);
+                    arrayDatos.add(id+","+ id_alumno+","+id_curso + ","+fInicio+ ","+fFin+ ","+calificacion);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
+    
     public void eliminarDatosAlumnnos(int id){
         Statement stmt;
         try {
@@ -432,6 +578,28 @@ public class BaseDatosAcademia {
             return cadenaDatos;
     }
     
+    public String[] leerIdTelefonosAlumnosExistentes(){
+        Statement stmt;
+        ArrayList<String> arrayDatos=new ArrayList();
+            try {
+                stmt = this.conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.nombre FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
+                while (rs.next()) {
+                    String id = rs.getString(1);
+                    String nombre = rs.getString(2);
+                    String telefono = rs.getString(5);
+                    arrayDatos.add(id +" "+ telefono);
+                }
+                stmt.close();
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            String[] cadenaDatos= new String[arrayDatos.size()];
+            for (int i = 0; i <arrayDatos.size(); i++) {
+            cadenaDatos[i]=arrayDatos.get(i);
+        }
+            return cadenaDatos;
+    }
     public String[] leerIdNombreApellidoAlumnosExistentes(){
         Statement stmt;
         ArrayList<String> arrayDatos=new ArrayList();
@@ -498,29 +666,6 @@ public class BaseDatosAcademia {
             return cadenaDatos;
     }
     
-    public String[] leerIdTelefonosAlumnosExistentes(){
-        Statement stmt;
-        ArrayList<String> arrayDatos=new ArrayList();
-            try {
-                stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.nombre FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
-                while (rs.next()) {
-                    String id = rs.getString(1);
-                    String nombre = rs.getString(2);
-                    String telefono = rs.getString(5);
-                    arrayDatos.add(id +" "+ telefono);
-                }
-                stmt.close();
-            }catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-            String[] cadenaDatos= new String[arrayDatos.size()];
-            for (int i = 0; i <arrayDatos.size(); i++) {
-            cadenaDatos[i]=arrayDatos.get(i);
-        }
-            return cadenaDatos;
-    }
-    //--estos metodos tiene que comprobar mas cosas aparte del id 
     public boolean confirmarAlumno(String nombre,String apellido,String correo,String telefono){
         Statement stmt;
         boolean confirmar=false;
