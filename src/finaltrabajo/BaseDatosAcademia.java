@@ -664,7 +664,6 @@ public class BaseDatosAcademia {
         }
             return cadenaDatos;
     }
-    
     public String[] leerIdNombresInscripcionesExistentes(){
         Statement stmt;
         ArrayList<String> arrayDatos=new ArrayList();
