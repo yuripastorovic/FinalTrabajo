@@ -71,13 +71,13 @@ public class BaseDatosAcademia {
                 "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL," +
                 "   id_alumno INTEGER DEFAULT '0'," +
                 "   id_curso INTEGER DEFAULT '0'," +
-                "   fInicio DATE DEFAULT GETDATE() NOT NULL,"+
-                "   fFin DATE DEFAULT GETDATE() NOT NULL,"+
+                "   fInicio smalldatetime DEFAULT GETDATE() NOT NULL,"+
+                "   fFin smalldatetime DEFAULT '0000-00-00 00:00:00' NOT NULL,"+
                 "   calificacion VARCHAR(25)DEFAULT 'NO CALIFICADO' NOT NULL,"+
                 "   existe BIT DEFAULT 0 NOT NULL,"+     
                 "   PRIMARY KEY (id)" +
-                "   CONSTRAINT fk_alumno_alumnos FOREIGN KEY(id_alumno)REFERENCES id(Alumnos) ON UPDATE CASCADE ON DELETE SET DEFAULT" +
-                "   CONSTRAINT fk_curso_cursos FOREIGN KEY(id_curso)REFERENCES id(Cursos) ON UPDATE CASCADE ON DELETE SET DEFAULT" +
+                "   CONSTRAINT fk_alumno_alumnos FOREIGN KEY(id_alumno)REFERENCES id(Alumnos) ON UPDATE CASCADE ON DELETE CASCADE" +
+                "   CONSTRAINT fk_curso_cursos FOREIGN KEY(id_curso)REFERENCES id(Cursos) ON UPDATE CASCADE ON DELETE CASCADE" +
                 ");"
                 /* no se como hacer esta mierda
                 stmt.executeUpdate("DELIMITER |"+
@@ -119,7 +119,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Alumnos VALUES ("+nombre+","+apellido+","+correo+","+telefono+");");
+            stmt.executeUpdate("INSERT INTO Alumnos(nombre ,apellido ,correo ,telefono) VALUES ("+nombre+","+apellido+","+correo+","+telefono+");");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
@@ -130,7 +130,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos VALUES ("+nombre+","+descripcion+","+horas+");");
+            stmt.executeUpdate("INSERT INTO Cursos (nombre,descripcion,horas) VALUES ("+nombre+","+descripcion+","+horas+");");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
@@ -141,7 +141,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos VALUES ("+id_alumno+","+id_curso+","+fInicio+","+fFin+","+calificacion+");");
+            stmt.executeUpdate("INSERT INTO Cursos (id_alumno,id_curso)VALUES ("+id_alumno+","+id_curso+");");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
