@@ -35,27 +35,25 @@ public class AjustesBBDD extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
+        imagen_png = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         MODIFICAR = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        CONECTAR = new javax.swing.JPanel();
-        LabelButtonModificar1 = new javax.swing.JLabel();
-        MariaDB_logo = new javax.swing.JLabel();
-        nameLabel2 = new javax.swing.JLabel();
         PASS = new javax.swing.JPasswordField();
-        nameLabel1 = new javax.swing.JLabel();
-        nameLabel = new javax.swing.JLabel();
-        nameLabel3 = new javax.swing.JLabel();
+        nameLabel2 = new javax.swing.JLabel();
         USER = new javax.swing.JTextField();
-        PUERTO = new javax.swing.JTextField();
+        nameLabel1 = new javax.swing.JLabel();
         IP = new javax.swing.JTextField();
-        imagen_png = new javax.swing.JLabel();
+        nameLabel3 = new javax.swing.JLabel();
+        PUERTO = new javax.swing.JTextField();
+        nameLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(642, 332));
 
         PanelFondo.setBackground(new java.awt.Color(221, 214, 204));
+
+        imagen_png.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/BBDD.png"))); // NOI18N
 
         MODIFICAR.setBackground(new java.awt.Color(25, 34, 43));
         MODIFICAR.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -94,97 +92,6 @@ public class AjustesBBDD extends javax.swing.JFrame {
             .addComponent(LabelButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        jPanel1.setBackground(new java.awt.Color(184, 67, 87));
-
-        jPanel2.setBackground(new java.awt.Color(189, 146, 64));
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(25, 34, 43));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("<html><body>Este programa esta conectado<br>\ncon una base de datos MriaDB.<br>\nAsegurese de que ha encendido<br>\nla base de datos, antes de encender<br> \nel programa.<br>\nAsegurese de que el puerto de <br>\nconexion entre la aplicacion y <br>\nla de datos es el mismo \n</body></html>");
-
-        CONECTAR.setBackground(new java.awt.Color(25, 34, 43));
-        CONECTAR.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CONECTARModificar_clicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CONECTARMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CONECTARMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                CONECTARMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                CONECTARMouseReleased(evt);
-            }
-        });
-
-        LabelButtonModificar1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        LabelButtonModificar1.setForeground(new java.awt.Color(221, 214, 204));
-        LabelButtonModificar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelButtonModificar1.setText("CONECTAR");
-
-        javax.swing.GroupLayout CONECTARLayout = new javax.swing.GroupLayout(CONECTAR);
-        CONECTAR.setLayout(CONECTARLayout);
-        CONECTARLayout.setHorizontalGroup(
-            CONECTARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CONECTARLayout.createSequentialGroup()
-                .addGap(0, 128, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar1))
-        );
-        CONECTARLayout.setVerticalGroup(
-            CONECTARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonModificar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-        );
-
-        MariaDB_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/MariaDB.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CONECTAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MariaDB_logo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(MariaDB_logo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(CONECTAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 33, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        nameLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        nameLabel2.setForeground(new java.awt.Color(25, 34, 43));
-        nameLabel2.setText("CONTRASEÑA");
-
         PASS.setBackground(new java.awt.Color(25, 34, 43));
         PASS.setForeground(new java.awt.Color(196, 190, 181));
         PASS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -195,17 +102,9 @@ public class AjustesBBDD extends javax.swing.JFrame {
             }
         });
 
-        nameLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        nameLabel1.setForeground(new java.awt.Color(25, 34, 43));
-        nameLabel1.setText("USUARIO");
-
-        nameLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        nameLabel.setForeground(new java.awt.Color(25, 34, 43));
-        nameLabel.setText("PUERTO CONEXIÓN XAPPM");
-
-        nameLabel3.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        nameLabel3.setForeground(new java.awt.Color(25, 34, 43));
-        nameLabel3.setText("IP CONEXION");
+        nameLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        nameLabel2.setForeground(new java.awt.Color(25, 34, 43));
+        nameLabel2.setText("CONTRASEÑA");
 
         USER.setBackground(new java.awt.Color(25, 34, 43));
         USER.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -221,19 +120,9 @@ public class AjustesBBDD extends javax.swing.JFrame {
             }
         });
 
-        PUERTO.setBackground(new java.awt.Color(25, 34, 43));
-        PUERTO.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        PUERTO.setForeground(new java.awt.Color(196, 190, 181));
-        PUERTO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PUERTO.setText("Introduzca nombre");
-        PUERTO.setBorder(null);
-        PUERTO.setSelectedTextColor(new java.awt.Color(25, 34, 43));
-        PUERTO.setSelectionColor(new java.awt.Color(184, 67, 87));
-        PUERTO.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PUERTOMouseClicked(evt);
-            }
-        });
+        nameLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        nameLabel1.setForeground(new java.awt.Color(25, 34, 43));
+        nameLabel1.setText("USUARIO");
 
         IP.setBackground(new java.awt.Color(25, 34, 43));
         IP.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -249,72 +138,109 @@ public class AjustesBBDD extends javax.swing.JFrame {
             }
         });
 
-        imagen_png.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/BBDD.png"))); // NOI18N
+        nameLabel3.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        nameLabel3.setForeground(new java.awt.Color(25, 34, 43));
+        nameLabel3.setText("IP CONEXION");
+
+        PUERTO.setBackground(new java.awt.Color(25, 34, 43));
+        PUERTO.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        PUERTO.setForeground(new java.awt.Color(196, 190, 181));
+        PUERTO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PUERTO.setText("Introduzca nombre");
+        PUERTO.setBorder(null);
+        PUERTO.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        PUERTO.setSelectionColor(new java.awt.Color(184, 67, 87));
+        PUERTO.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PUERTOMouseClicked(evt);
+            }
+        });
+
+        nameLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        nameLabel.setForeground(new java.awt.Color(25, 34, 43));
+        nameLabel.setText("PUERTO CONEXIÓN XAPPM");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(2, 2, 2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PASS)
+                    .addComponent(USER, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(MODIFICAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nameLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nameLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(nameLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18))
+                    .addComponent(IP)
+                    .addComponent(PUERTO, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(nameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PUERTO, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nameLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IP, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nameLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(USER, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(nameLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PASS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MODIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(imagen_png)
-                .addGap(44, 44, 44)
-                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(nameLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(nameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(PASS)
-                    .addComponent(nameLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(MODIFICAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(USER)
-                    .addComponent(PUERTO, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(IP, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addComponent(imagen_png, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                        .addComponent(nameLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PUERTO, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nameLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(IP, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nameLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(USER, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(nameLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PASS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MODIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                        .addComponent(imagen_png, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))))
+                    .addComponent(imagen_png)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 757, Short.MAX_VALUE)
+            .addGap(0, 642, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelFondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(PanelFondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 322, Short.MAX_VALUE)
+            .addGap(0, 332, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
         );
 
         pack();
@@ -333,31 +259,6 @@ public class AjustesBBDD extends javax.swing.JFrame {
         MODIFICAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
     }//GEN-LAST:event_MODIFICARMouseExited
-
-    private void CONECTARModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARModificar_clicked
-        CONECTAR.setBackground(new Color(184, 67, 87));
-        CONECTAR.setForeground(new Color(189, 146, 64));
-    }//GEN-LAST:event_CONECTARModificar_clicked
-
-    private void CONECTARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseEntered
-        CONECTAR.setBackground(new Color(184,67,87));
-        LabelButtonModificar1.setForeground(new Color(25,34,43));
-    }//GEN-LAST:event_CONECTARMouseEntered
-
-    private void CONECTARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseExited
-        CONECTAR.setBackground(new Color(25, 34, 43));
-        LabelButtonModificar1.setForeground(new Color(221, 214, 204));
-    }//GEN-LAST:event_CONECTARMouseExited
-
-    private void CONECTARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMousePressed
-        CONECTAR.setBackground(new Color(221,214,204));
-        LabelButtonModificar1.setForeground(new Color(25,34,43));
-    }//GEN-LAST:event_CONECTARMousePressed
-
-    private void CONECTARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseReleased
-        CONECTAR.setBackground(new Color(189, 146, 64));
-        CONECTAR.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_CONECTARMouseReleased
 
     private void USERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_USERMouseClicked
         USER.setText("");
@@ -429,20 +330,15 @@ public class AjustesBBDD extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CONECTAR;
     private javax.swing.JTextField IP;
     private javax.swing.JLabel LabelButtonModificar;
-    private javax.swing.JLabel LabelButtonModificar1;
     private javax.swing.JPanel MODIFICAR;
-    private javax.swing.JLabel MariaDB_logo;
     private javax.swing.JPasswordField PASS;
     private javax.swing.JTextField PUERTO;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JTextField USER;
     private javax.swing.JLabel imagen_png;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel nameLabel1;
     private javax.swing.JLabel nameLabel2;

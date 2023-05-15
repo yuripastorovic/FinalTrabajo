@@ -30,7 +30,6 @@ public class fin extends javax.swing.JFrame {
         initComponents();
         rfresh();
         //bd.crearDB();
-
     }
 
     /**
