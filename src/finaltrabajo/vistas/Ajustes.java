@@ -45,6 +45,8 @@ public class Ajustes extends javax.swing.JFrame {
 
         PanelFondo = new javax.swing.JPanel();
         contenedor = new javax.swing.JPanel();
+        settings_img = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         PanelFaldon = new javax.swing.JPanel();
         Ajustes_bbdd = new javax.swing.JPanel();
         LabelButtonModificar4 = new javax.swing.JLabel();
@@ -55,17 +57,30 @@ public class Ajustes extends javax.swing.JFrame {
 
         PanelFondo.setBackground(new java.awt.Color(184, 67, 87));
 
-        contenedor.setBackground(new java.awt.Color(0, 255, 0));
+        contenedor.setBackground(new java.awt.Color(221, 214, 204));
+
+        settings_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/setting_img.png"))); // NOI18N
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/ajustes_txt.png"))); // NOI18N
 
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(contenedorLayout.createSequentialGroup()
+                .addGap(213, 213, 213)
+                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(settings_img))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 322, Short.MAX_VALUE)
+            .addGroup(contenedorLayout.createSequentialGroup()
+                .addComponent(settings_img, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jLabel1)
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         PanelFaldon.setBackground(new java.awt.Color(25, 34, 43));
@@ -149,7 +164,7 @@ public class Ajustes extends javax.swing.JFrame {
                 .addComponent(Ajustes_bbdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(157, 157, 157)
                 .addComponent(Ajustes_local, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         PanelFaldonLayout.setVerticalGroup(
             PanelFaldonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,8 +191,8 @@ public class Ajustes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
                 .addComponent(PanelFaldon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,9 +205,7 @@ public class Ajustes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -292,6 +305,8 @@ public class Ajustes extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFaldon;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JPanel contenedor;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel settings_img;
     // End of variables declaration//GEN-END:variables
 
 }

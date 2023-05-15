@@ -56,6 +56,8 @@ public class Cursos extends javax.swing.JFrame {
         MOSTRAR = new javax.swing.JPanel();
         LabelButtonModificar5 = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
+        cursos_txt = new javax.swing.JLabel();
+        cursos_img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(654, 357));
@@ -251,7 +253,7 @@ public class Cursos extends javax.swing.JFrame {
                 .addComponent(MODIFY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BAJA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(MOSTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         PanelFaldonLayout.setVerticalGroup(
@@ -266,17 +268,26 @@ public class Cursos extends javax.swing.JFrame {
                     .addComponent(MOSTRAR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        contenedor.setBackground(new java.awt.Color(0, 255, 0));
+        contenedor.setBackground(new java.awt.Color(221, 214, 204));
+
+        cursos_txt.setBackground(new java.awt.Color(221, 214, 204));
+        cursos_txt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/texto.png"))); // NOI18N
+
+        cursos_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/Cursos.png"))); // NOI18N
 
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 757, Short.MAX_VALUE)
+            .addGroup(contenedorLayout.createSequentialGroup()
+                .addComponent(cursos_txt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cursos_img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 322, Short.MAX_VALUE)
+            .addComponent(cursos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cursos_img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
@@ -487,5 +498,7 @@ public class Cursos extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFaldon;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JPanel contenedor;
+    private javax.swing.JLabel cursos_img;
+    private javax.swing.JLabel cursos_txt;
     // End of variables declaration//GEN-END:variables
 }

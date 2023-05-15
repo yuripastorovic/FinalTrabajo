@@ -84,6 +84,8 @@ public class fin extends javax.swing.JFrame {
         PanelFecha = new javax.swing.JPanel();
         LabelDate = new javax.swing.JLabel();
         PanelContenedor = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -366,18 +368,34 @@ public class fin extends javax.swing.JFrame {
                     .addComponent(PanelFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        PanelContenedor.setBackground(new java.awt.Color(51, 255, 0));
+        PanelContenedor.setBackground(new java.awt.Color(221, 214, 204));
         PanelContenedor.setPreferredSize(new java.awt.Dimension(654, 375));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/frontal.jpg"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(25, 34, 43));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("BIENVENIDO A LA UNIVERSIDAD DE MIGUEL Y JORGE");
 
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
         PanelContenedor.setLayout(PanelContenedorLayout);
         PanelContenedorLayout.setHorizontalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(103, 103, 103))
         );
         PanelContenedorLayout.setVerticalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 369, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
@@ -607,5 +625,7 @@ public class fin extends javax.swing.JFrame {
     private javax.swing.JPanel PanelHeader;
     private javax.swing.JPanel PanelHora;
     private javax.swing.JPanel PanelMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

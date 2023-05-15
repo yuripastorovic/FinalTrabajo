@@ -56,6 +56,7 @@ public class Alumnos extends javax.swing.JFrame {
         MOSTRAR = new javax.swing.JPanel();
         LabelButtonModificar5 = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
+        Image_png = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -268,15 +269,17 @@ public class Alumnos extends javax.swing.JFrame {
 
         contenedor.setBackground(new java.awt.Color(0, 255, 0));
 
+        Image_png.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/alumnos.jpg"))); // NOI18N
+
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 757, Short.MAX_VALUE)
+            .addComponent(Image_png, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 322, Short.MAX_VALUE)
+            .addComponent(Image_png, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
@@ -481,6 +484,7 @@ public class Alumnos extends javax.swing.JFrame {
     private javax.swing.JPanel ALTA;
     private javax.swing.JPanel BAJA;
     private javax.swing.JPanel BUSCAR;
+    private javax.swing.JLabel Image_png;
     private javax.swing.JLabel LabelButtonModificar;
     private javax.swing.JLabel LabelButtonModificar1;
     private javax.swing.JLabel LabelButtonModificar3;

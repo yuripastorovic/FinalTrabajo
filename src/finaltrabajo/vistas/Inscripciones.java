@@ -49,6 +49,8 @@ public class Inscripciones extends javax.swing.JFrame {
         MOSTRAR = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
+        curso_img = new javax.swing.JLabel();
+        insc_txt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(757, 322));
@@ -185,17 +187,29 @@ public class Inscripciones extends javax.swing.JFrame {
                     .addComponent(MOSTRAR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        contenedor.setBackground(new java.awt.Color(0, 255, 0));
+        contenedor.setBackground(new java.awt.Color(221, 214, 204));
+
+        curso_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/inscripcion.png"))); // NOI18N
+
+        insc_txt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/inscrip_txt.png"))); // NOI18N
 
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(contenedorLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(curso_img)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(insc_txt)
+                .addGap(44, 44, 44))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 322, Short.MAX_VALUE)
+            .addGroup(contenedorLayout.createSequentialGroup()
+                .addComponent(curso_img)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(insc_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
@@ -356,5 +370,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFaldon;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JPanel contenedor;
+    private javax.swing.JLabel curso_img;
+    private javax.swing.JLabel insc_txt;
     // End of variables declaration//GEN-END:variables
 }
