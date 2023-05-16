@@ -21,7 +21,7 @@ public class Ajustes extends javax.swing.JFrame {
     }
 
     private void showPanel(JPanel panel) {
-        panel.setSize(642, 332);
+        panel.setSize(this.contenedor.getWidth(), this.contenedor.getHeight());
         panel.setLocation(0, 0);
         this.contenedor.removeAll();
         this.contenedor.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -68,23 +68,23 @@ public class Ajustes extends javax.swing.JFrame {
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(69, Short.MAX_VALUE)
                 .addComponent(settings_img)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLayout.createSequentialGroup()
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedorLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(settings_img, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(113, 113, 113)
+                        .addComponent(jLabel1))
                     .addGroup(contenedorLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel1)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGap(46, 46, 46)
+                        .addComponent(settings_img, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         PanelFaldon.setBackground(new java.awt.Color(25, 34, 43));
@@ -195,15 +195,15 @@ public class Ajustes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
                 .addComponent(PanelFaldon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

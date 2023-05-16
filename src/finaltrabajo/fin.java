@@ -28,6 +28,7 @@ public class fin extends javax.swing.JFrame {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     public fin() {
         initComponents();
+        setLocationRelativeTo(null);
         rfresh();
         bd.crearDB();
     }

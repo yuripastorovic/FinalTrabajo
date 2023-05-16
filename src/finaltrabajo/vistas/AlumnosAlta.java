@@ -146,13 +146,16 @@ public class AlumnosAlta extends javax.swing.JFrame {
         LabelButtonAlta.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         LabelButtonAlta.setForeground(new java.awt.Color(221, 214, 204));
         LabelButtonAlta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelButtonAlta.setText("MODIFICAR");
+        LabelButtonAlta.setText("AGRGAR ALUMNO");
 
         javax.swing.GroupLayout ButtonAltaLayout = new javax.swing.GroupLayout(ButtonAlta);
         ButtonAlta.setLayout(ButtonAltaLayout);
         ButtonAltaLayout.setHorizontalGroup(
             ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAltaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelButtonAlta)
+                .addContainerGap())
         );
         ButtonAltaLayout.setVerticalGroup(
             ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

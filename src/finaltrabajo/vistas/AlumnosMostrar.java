@@ -210,6 +210,8 @@ public class AlumnosMostrar extends javax.swing.JFrame {
     private void MostrarAlumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarAlumnos
         for (int i = 0; i <modelo.getRowCount(); i++) {
             modelo.removeRow(i);
+            i--;
+            
         }
         TablaNew.setModel(modelo);
         String datitos[]=bd.leerStringArrayAlumnosExistentes();
@@ -228,6 +230,8 @@ public class AlumnosMostrar extends javax.swing.JFrame {
     private void MostrarExalumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarExalumnos
         for (int i = 0; i <modelo.getRowCount(); i++) {
             modelo.removeRow(i);
+            i--;
+            System.out.println(modelo.getRowCount());
         }
         
         TablaNew.setModel(modelo);
