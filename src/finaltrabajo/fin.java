@@ -29,7 +29,7 @@ public class fin extends javax.swing.JFrame {
     public fin() {
         initComponents();
         rfresh();
-        //bd.crearDB();
+        bd.crearDB();
     }
 
     /**

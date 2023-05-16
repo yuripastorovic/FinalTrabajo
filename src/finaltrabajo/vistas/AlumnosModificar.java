@@ -20,6 +20,7 @@ public class AlumnosModificar extends javax.swing.JFrame {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     public AlumnosModificar() {
         initComponents();
+        comboBox1();
     }
 
     public JPanel getFondo() {
@@ -170,9 +171,7 @@ public class AlumnosModificar extends javax.swing.JFrame {
         CBHoras1.setBackground(new java.awt.Color(25, 34, 43));
         CBHoras1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CBHoras1.setForeground(new java.awt.Color(221, 214, 204));
-        CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CBHoras1.setSelectedIndex(-1);
-        CBHoras1.setBorder(null);
         CBHoras1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CBHoras1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,7 +269,7 @@ public class AlumnosModificar extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoTelefonoMouseClicked
 
     private void Modificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_press
-        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String[] partes= CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
         
@@ -304,7 +303,7 @@ public class AlumnosModificar extends javax.swing.JFrame {
 
     private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
         // TODO add your handling code here:
-        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String[] partes= CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         String[] partesTF = bd.leerDatosUnAlumnoExistente(Integer.valueOf(id)).toString().split(",");
         CampoNombre.setText(partesTF[1]);

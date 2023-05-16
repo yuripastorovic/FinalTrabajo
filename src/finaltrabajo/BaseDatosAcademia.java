@@ -38,10 +38,12 @@ public class BaseDatosAcademia {
         this.passw = psw;
         this.db = db;        
         conectar();
+        crearDB();
     }
     
     public BaseDatosAcademia(){
         conectar();
+        crearDB();
     }
     
     public void crearDB(){
@@ -69,15 +71,15 @@ public class BaseDatosAcademia {
                 ");");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Inscripciones(" +
                 "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL," +
-                "   id_alumno INTEGER DEFAULT '0'," +
-                "   id_curso INTEGER DEFAULT '0'," +
-                "   fInicio smalldatetime DEFAULT GETDATE() NOT NULL,"+
-                "   fFin smalldatetime DEFAULT '0000-00-00 00:00:00' NOT NULL,"+
+                "   id_alumno INTEGER UNSIGNED DEFAULT '0'," +
+                "   id_curso INTEGER UNSIGNED DEFAULT '0'," +
+                "   fInicio VARCHAR(25) DEFAULT 'GETDATE()' NOT NULL,"+
+                "   fFin VARCHAR(25) DEFAULT 'GETDATE()' NOT NULL,"+
                 "   calificacion VARCHAR(25)DEFAULT 'NO CALIFICADO' NOT NULL,"+
                 "   existe BIT DEFAULT 0 NOT NULL,"+     
-                "   PRIMARY KEY (id)" +
-                "   CONSTRAINT fk_alumno_alumnos FOREIGN KEY(id_alumno)REFERENCES id(Alumnos) ON UPDATE CASCADE ON DELETE CASCADE" +
-                "   CONSTRAINT fk_curso_cursos FOREIGN KEY(id_curso)REFERENCES id(Cursos) ON UPDATE CASCADE ON DELETE CASCADE" +
+                "   PRIMARY KEY (id)," +
+                "   CONSTRAINT fk_alumno_alumnos FOREIGN KEY (id_alumno) REFERENCES Alumnos(id) ON UPDATE CASCADE ON DELETE CASCADE ," +
+                "   CONSTRAINT fk_curso_cursos FOREIGN KEY (id_curso) REFERENCES Cursos(id) ON UPDATE CASCADE ON DELETE CASCADE " +
                 ");"
                 /* no se como hacer esta mierda
                 stmt.executeUpdate("DELIMITER |"+
@@ -119,7 +121,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Alumnos(nombre ,apellido ,correo ,telefono) VALUES ("+nombre+","+apellido+","+correo+","+telefono+");");
+            stmt.executeUpdate("INSERT INTO Alumnos( nombre , apellido , correo , telefono) VALUES ('"+nombre+"' , '"+apellido+"' , '"+correo+"' , '"+telefono+"' );");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
@@ -130,7 +132,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos (nombre,descripcion,horas) VALUES ("+nombre+","+descripcion+","+horas+");");
+            stmt.executeUpdate("INSERT INTO Cursos (nombre,descripcion,horas) VALUES ('"+nombre+"','"+descripcion+"','"+horas+"');");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
@@ -141,7 +143,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos (id_alumno,id_curso)VALUES ("+id_alumno+","+id_curso+");");
+            stmt.executeUpdate("INSERT INTO Cursos (id_alumno,id_curso)VALUES ('"+id_alumno+"','"+id_curso+"');");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
@@ -342,7 +344,7 @@ public class BaseDatosAcademia {
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Alumnos.* FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.* FROM Alumnos WHERE Alumnos.existe='0'  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -415,7 +417,7 @@ public class BaseDatosAcademia {
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Alumnos.* FROM Alumnos WHERE Alumnos.existe=1  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.* FROM Alumnos WHERE Alumnos.existe='1'  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -522,14 +524,17 @@ public class BaseDatosAcademia {
         String cadenaDatos="";
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Alumnos WHERE Alumnos.id="+id_alumno+" AND Alumnos.existe=0 ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Alumnos WHERE Alumnos.id='"+id_alumno+"' AND Alumnos.existe='0' ;");//SELECT
                 while (rs.next()) {
+                    System.out.println("hey1");
+                            
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
                     String apellido = rs.getString(3);
                     String correo = rs.getString(4);
                     String telefono = rs.getString(5);
-                    cadenaDatos=cadenaDatos+(id+","+nombre+","+apellido+","+correo+","+telefono+"\n");
+                    System.out.println("hey2");
+                    cadenaDatos=(id+","+nombre+","+apellido+","+correo+","+telefono);
                 }
                 stmt.close();
             }catch (SQLException ex) {
@@ -583,11 +588,10 @@ public class BaseDatosAcademia {
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.nombre FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.telefono FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
-                    String nombre = rs.getString(2);
-                    String telefono = rs.getString(5);
+                    String telefono = rs.getString(2);
                     arrayDatos.add(id +","+ telefono);
                 }
                 stmt.close();
@@ -605,7 +609,7 @@ public class BaseDatosAcademia {
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.nombre FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Alumnos.id ,Alumnos.nombre,Alumnos.apellido FROM Alumnos WHERE Alumnos.existe=0  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -692,7 +696,7 @@ public class BaseDatosAcademia {
         boolean confirmar=false;
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT COUNT(Alumnos.id) FROM Alumnos WHERE Alumnos.nombre="+nombre+" AND Alumnos.apellido="+apellido+" AND Alumnos.correo="+correo+" AND Alumnos.telefono="+telefono+";");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT COUNT(Alumnos.id) FROM Alumnos WHERE Alumnos.nombre='"+nombre+"' AND Alumnos.apellido='"+apellido+"' AND Alumnos.correo='"+correo+"' AND Alumnos.telefono='"+telefono+"';");//SELECT
                 while (rs.next()) {
                     String ids = rs.getString(1);
                     if(ids.equals("1")){
@@ -752,7 +756,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("UPDATE Alumnos SET nombre="+nombre+","+"apellido="+apellido+","+"correo="+correo+","+" telefono="+telefono+" WHERE id="+id+";");
+            stmt.executeUpdate("UPDATE Alumnos SET nombre='"+nombre+"',"+"apellido='"+apellido+"',"+"correo='"+correo+"',"+" telefono='"+telefono+"' WHERE id='"+id+"';");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {

@@ -84,7 +84,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre.setBorder(null);
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboNombreActionPerformed(evt);
@@ -102,7 +101,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ComboTelefono.setBackground(new java.awt.Color(25, 34, 43));
         ComboTelefono.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboTelefono.setForeground(new java.awt.Color(221, 214, 204));
-        ComboTelefono.setBorder(null);
         ComboTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboTelefonoActionPerformed(evt);
@@ -190,9 +188,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
         TablaNew.setForeground(new java.awt.Color(221, 214, 204));
         TablaNew.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -348,14 +343,12 @@ public class AlumnosBaja extends javax.swing.JFrame {
         TablaNew.setModel(modelo);
         String[] partes;
         if (ComboNombre.isEnabled()) {
-            partes = ComboNombre.getSelectedObjects().toString().split(",");
+            partes = ComboNombre.getSelectedItem().toString().split(",");
         } else {
-            partes = ComboTelefono.getSelectedObjects().toString().split(",");
+            partes = ComboTelefono.getSelectedItem().toString().split(",");
         }
-
         String id = partes[0].trim();
-        String datos[] = new String[1];
-        datos[0] = bd.leerDatosUnAlumnoExistente(Integer.valueOf(id));
+        String datos[] = bd.leerDatosUnAlumnoExistente(Integer.valueOf(id)).split(",");
         modelo.addRow(datos);
     }//GEN-LAST:event_BotonBuscar_buscar
 
@@ -411,9 +404,9 @@ public class AlumnosBaja extends javax.swing.JFrame {
         
         String[] partes;
         if (ComboNombre.isEnabled()) {
-            partes = ComboNombre.getSelectedObjects().toString().split(",");
+            partes = ComboNombre.getSelectedItem().toString().split(",");
         } else {
-            partes = ComboTelefono.getSelectedObjects().toString().split(",");
+            partes = ComboTelefono.getSelectedItem().toString().split(",");
         }
 
         String id = partes[0].trim();

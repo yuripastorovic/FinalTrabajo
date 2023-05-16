@@ -135,9 +135,6 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         TablaNew.setForeground(new java.awt.Color(221, 214, 204));
         TablaNew.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -215,8 +212,12 @@ public class AlumnosMostrar extends javax.swing.JFrame {
             modelo.removeRow(i);
         }
         TablaNew.setModel(modelo);
-        String datos[]= bd.leerStringArrayAlumnosExistentes();
-        modelo.addRow(datos);
+        String datitos[]=bd.leerStringArrayAlumnosExistentes();
+        for (int i = 0; i < bd.leerStringArrayAlumnosExistentes().length; i++) {
+            modelo.addRow(datitos[i].split(","));
+        }
+                
+        
     }//GEN-LAST:event_MostrarAlumnos
     /**
      * Debe borrar el contenido de la tabla y mostrar la tabla alumnos boolean
@@ -228,9 +229,12 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         for (int i = 0; i <modelo.getRowCount(); i++) {
             modelo.removeRow(i);
         }
+        
         TablaNew.setModel(modelo);
-        String datos[]= bd.leerStringArrayAlumnosNoExistentes();
-        modelo.addRow(datos);
+        String datitos[]= bd.leerStringArrayAlumnosNoExistentes();
+        for (int i = 0; i < bd.leerStringArrayAlumnosNoExistentes().length; i++) {
+            modelo.addRow(datitos[i].split(","));
+        }
         
     }//GEN-LAST:event_MostrarExalumnos
 

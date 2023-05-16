@@ -80,7 +80,6 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
         ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboNombre.setSelectedIndex(-1);
-        ComboNombre.setBorder(null);
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboNombreActionPerformed(evt);
@@ -100,7 +99,6 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         ComboTelefono.setForeground(new java.awt.Color(221, 214, 204));
         ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboTelefono.setSelectedIndex(-1);
-        ComboTelefono.setBorder(null);
         ComboTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboTelefonoActionPerformed(evt);
@@ -184,9 +182,6 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         TablaNew.setForeground(new java.awt.Color(221, 214, 204));
         TablaNew.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -289,15 +284,14 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         TablaNew.setModel(modelo);
         String[] partes;
         if(ComboNombre.isEnabled()){
-            partes =ComboNombre.getSelectedObjects().toString().split(",");
+            partes =ComboNombre.getSelectedItem().toString().split(",");
         }else{
-            partes =ComboTelefono.getSelectedObjects().toString().split(",");
+            partes =ComboTelefono.getSelectedItem().toString().split(",");
         }
+        String id = partes[0];
+        String[] datitos=bd.leerDatosUnAlumnoExistente(Integer.parseInt(id)).split(",");
         
-        String id = partes[0].trim();
-        String datos[]= new String[1];
-        datos[0]=bd.leerDatosUnAlumnoExistente(Integer.valueOf(id));
-        modelo.addRow(datos);
+        modelo.addRow(datitos);
     }//GEN-LAST:event_Boton_buscar
 
     private void Boton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_reset
