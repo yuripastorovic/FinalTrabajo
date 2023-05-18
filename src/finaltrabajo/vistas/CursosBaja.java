@@ -21,9 +21,9 @@ public class CursosBaja extends javax.swing.JFrame {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
     public CursosBaja() {
+        initComponents();
         comboBox1();
         comboBox2();
-        initComponents();
     }
 
     public JPanel getFondo() {
@@ -395,9 +395,9 @@ public class CursosBaja extends javax.swing.JFrame {
         TablaNew.setModel(modelo);
         String[] partes;
         if (ComboNombre.isEnabled()) {
-            partes = ComboNombre.getSelectedObjects().toString().split(",");
+            partes = ComboNombre.getSelectedItem().toString().split(",");
         } else {
-            partes = ComboHoras.getSelectedObjects().toString().split(",");
+            partes = ComboHoras.getSelectedItem().toString().split(",");
         }
 
         String id = partes[0].trim();
@@ -434,9 +434,9 @@ public class CursosBaja extends javax.swing.JFrame {
         
         String[] partes;
         if (ComboNombre.isEnabled()) {
-            partes = ComboNombre.getSelectedObjects().toString().split(",");
+            partes = ComboNombre.getSelectedItem().toString().split(",");
         } else {
-            partes = ComboHoras.getSelectedObjects().toString().split(",");
+            partes = ComboHoras.getSelectedItem().toString().split(",");
         }
         
         String id = partes[0].trim();

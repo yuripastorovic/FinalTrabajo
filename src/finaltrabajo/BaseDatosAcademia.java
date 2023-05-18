@@ -121,7 +121,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Alumnos( nombre , apellido , correo , telefono) VALUES ('"+nombre+"' , '"+apellido+"' , '"+correo+"' , '"+telefono+"' );");
+            stmt.executeUpdate("INSERT INTO Alumnos( nombre , apellido , correo , telefono ) VALUES ('"+nombre+"' , '"+apellido+"' , '"+correo+"' , '"+telefono+"' );");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
@@ -132,7 +132,7 @@ public class BaseDatosAcademia {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos (nombre,descripcion,horas) VALUES ('"+nombre+"','"+descripcion+"','"+horas+"');");
+            stmt.executeUpdate("INSERT INTO Cursos( nombre , descripcion , horas ) VALUES ('"+nombre+"' , '"+descripcion+"' , '"+horas+"' );");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {
@@ -716,7 +716,7 @@ public class BaseDatosAcademia {
         boolean confirmar=false;
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT COUNT(Cursos.id) FROM Cursos WHERE Cursos.descripcion="+descripcion+" AND Cursos.horas="+horas+" ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT COUNT(Cursos.id) FROM Cursos WHERE Cursos.descripcion='"+descripcion+"' AND Cursos.horas='"+horas+"';");//SELECT
                 while (rs.next()) {
                     String ids = rs.getString(1);
                     if(ids.equals("1")){

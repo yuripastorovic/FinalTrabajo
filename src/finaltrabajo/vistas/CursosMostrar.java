@@ -22,6 +22,10 @@ public class CursosMostrar extends javax.swing.JFrame {
     private DefaultTableModel modelo = new DefaultTableModel();
     public CursosMostrar() {
         initComponents();
+        modelo.addColumn("ID");
+        modelo.addColumn("NOMBRE");
+        modelo.addColumn("DESCRIPCION");
+        modelo.addColumn("HORAS");
     }
 public JPanel getFondo() {
         JPanel fondo = PanelFondo;
@@ -197,11 +201,14 @@ public JPanel getFondo() {
 
     private void BotonExalumnosMostrarExalumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMostrarExalumnos
         for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
+            modelo.removeRow(0);
+            i--;
         }
         TablaNew.setModel(modelo);
         String datos[]= bd.leerStringArrayCursosNoExistentes();
-        modelo.addRow(datos);
+        for (int i = 0; i < bd.leerStringArrayCursosExistentes().length; i++) {
+            modelo.addRow(datos[i].split(","));
+        }
     }//GEN-LAST:event_BotonExalumnosMostrarExalumnos
 
     private void BotonExalumnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseEntered
@@ -226,11 +233,14 @@ public JPanel getFondo() {
 
     private void ButtonAlumnosMostrarAlumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMostrarAlumnos
         for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
+            modelo.removeRow(0);
+            i--;
         }
         TablaNew.setModel(modelo);
-        String datos[]= bd.leerStringArrayCursosExistentes();
-        modelo.addRow(datos);
+        String datos[]= bd.leerStringArrayCursosNoExistentes();
+        for (int i = 0; i < bd.leerStringArrayCursosNoExistentes().length; i++) {
+            modelo.addRow(datos[i].split(","));
+        }
     }//GEN-LAST:event_ButtonAlumnosMostrarAlumnos
 
     private void ButtonAlumnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMouseEntered

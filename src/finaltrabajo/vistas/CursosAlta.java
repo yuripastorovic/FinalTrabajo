@@ -135,7 +135,7 @@ public class CursosAlta extends javax.swing.JFrame {
         CBHoras.setBackground(new java.awt.Color(25, 34, 43));
         CBHoras.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CBHoras.setForeground(new java.awt.Color(221, 214, 204));
-        CBHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7" }));
         CBHoras.setBorder(null);
         CBHoras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CBHoras.addActionListener(new java.awt.event.ActionListener() {
@@ -216,7 +216,7 @@ public class CursosAlta extends javax.swing.JFrame {
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
         if(!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(),CBHoras.getSelectedItem().toString() )){
-            bd.insertarCurso(CampoNombre.getText(), TextAreaDescr.getText(),CBHoras.getSelectedItem().toString());
+            bd.insertarCurso(CampoNombre.getText().trim(), TextAreaDescr.getText().trim(),CBHoras.getSelectedItem().toString().trim());
         }else{
             //aqui va un pop up de que avisa de que el curso ya existe--------------------------------------------------------------------------------------------------------- 
             //------------------------------------------------------------------------------------------------------------------------------------------------------------------

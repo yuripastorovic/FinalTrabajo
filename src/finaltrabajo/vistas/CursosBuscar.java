@@ -21,9 +21,9 @@ public class CursosBuscar extends javax.swing.JFrame {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
     public CursosBuscar() {
+        initComponents();
         comboBox1();
         comboBox2();
-        initComponents();
     }
 public JPanel getFondo() {
         JPanel fondo = PanelFondo;
@@ -338,9 +338,9 @@ private void comboBox1() {
         TablaNew.setModel(modelo);
         String[] partes;
         if (ComboNombre.isEnabled()) {
-            partes = ComboNombre.getSelectedObjects().toString().split(",");
+            partes = ComboNombre.getSelectedItem().toString().split(",");
         } else {
-            partes = ComboHoras.getSelectedObjects().toString().split(",");
+            partes = ComboHoras.getSelectedItem().toString().split(",");
         }
 
         String id = partes[0].trim();

@@ -19,8 +19,8 @@ public class CursosModificar extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     public CursosModificar() {
-        comboBox1();
         initComponents();
+        comboBox1();
     }
 public JPanel getFondo() {
         JPanel fondo = PanelFondo;
@@ -137,8 +137,7 @@ private void comboBox1() {
         CBHoras.setBackground(new java.awt.Color(25, 34, 43));
         CBHoras.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CBHoras.setForeground(new java.awt.Color(221, 214, 204));
-        CBHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        CBHoras.setSelectedIndex(-1);
+        CBHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7" }));
         CBHoras.setBorder(null);
         CBHoras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CBHoras.addActionListener(new java.awt.event.ActionListener() {
@@ -244,7 +243,7 @@ private void comboBox1() {
     }//GEN-LAST:event_CampoNombreMouseClicked
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
-        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String[] partes= CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         bd.modificarCursos(Integer.valueOf(id), CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
         
@@ -294,11 +293,12 @@ private void comboBox1() {
     }//GEN-LAST:event_CBHorasActionPerformed
 
     private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
-        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
+        String[] partes= CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         String[] partesTF = bd.leerDatosUnCursoExistente(Integer.valueOf(id)).toString().split(",");
         CampoNombre.setText(partesTF[1]);
         TextAreaDescr.setText(partesTF[2]);
+        CBHoras.setSelectedItem(partesTF[3]);
         //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
         //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
         //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
