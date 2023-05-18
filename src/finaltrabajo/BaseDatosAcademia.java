@@ -368,7 +368,7 @@ public class BaseDatosAcademia {
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Cursos.* FROM Cursos WHERE Cursos.existe=0  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Cursos.* FROM Cursos WHERE Cursos.existe='0'  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
@@ -441,7 +441,7 @@ public class BaseDatosAcademia {
         ArrayList<String> arrayDatos=new ArrayList();
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT Cursos.* FROM Cursos WHERE Cursos.existe=1  ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT Cursos.* FROM Cursos WHERE Cursos.existe='1'  ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
