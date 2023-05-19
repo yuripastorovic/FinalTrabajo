@@ -38,6 +38,8 @@ public class AjustesLocal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         CONECTAR = new javax.swing.JPanel();
         LabelButtonModificar1 = new javax.swing.JLabel();
+        GENERAR_INFORMES = new javax.swing.JPanel();
+        LabelButtonModificar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,6 +126,41 @@ public class AjustesLocal extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        GENERAR_INFORMES.setBackground(new java.awt.Color(25, 34, 43));
+        GENERAR_INFORMES.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GENERAR_INFORMESModificar_press(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                GENERAR_INFORMESMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                GENERAR_INFORMESMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                GENERAR_INFORMESMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                GENERAR_INFORMESMouseReleased(evt);
+            }
+        });
+
+        LabelButtonModificar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar.setText("GENERAR INFORMES");
+
+        javax.swing.GroupLayout GENERAR_INFORMESLayout = new javax.swing.GroupLayout(GENERAR_INFORMES);
+        GENERAR_INFORMES.setLayout(GENERAR_INFORMESLayout);
+        GENERAR_INFORMESLayout.setHorizontalGroup(
+            GENERAR_INFORMESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+        );
+        GENERAR_INFORMESLayout.setVerticalGroup(
+            GENERAR_INFORMESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
@@ -131,10 +168,20 @@ public class AjustesLocal extends javax.swing.JFrame {
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addContainerGap(542, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelFondoLayout.createSequentialGroup()
+                    .addGap(292, 292, 292)
+                    .addComponent(GENERAR_INFORMES, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(292, 292, 292)))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelFondoLayout.createSequentialGroup()
+                    .addGap(132, 132, 132)
+                    .addComponent(GENERAR_INFORMES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(132, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -158,6 +205,9 @@ public class AjustesLocal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CONECTARModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARModificar_clicked
+        
+        
+        
         CONECTAR.setBackground(new Color(184, 67, 87));
         CONECTAR.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_CONECTARModificar_clicked
@@ -181,6 +231,30 @@ public class AjustesLocal extends javax.swing.JFrame {
         CONECTAR.setBackground(new Color(189, 146, 64));
         CONECTAR.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CONECTARMouseReleased
+
+    private void GENERAR_INFORMESModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESModificar_press
+
+    }//GEN-LAST:event_GENERAR_INFORMESModificar_press
+
+    private void GENERAR_INFORMESMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMouseEntered
+        GENERAR_INFORMES.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_GENERAR_INFORMESMouseEntered
+
+    private void GENERAR_INFORMESMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMouseExited
+        GENERAR_INFORMES.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar.setForeground(new Color(221, 214, 204));
+    }//GEN-LAST:event_GENERAR_INFORMESMouseExited
+
+    private void GENERAR_INFORMESMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMousePressed
+        GENERAR_INFORMES.setBackground(new Color(184, 67, 87));
+        GENERAR_INFORMES.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_GENERAR_INFORMESMousePressed
+
+    private void GENERAR_INFORMESMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMouseReleased
+        GENERAR_INFORMES.setBackground(new Color(189, 146, 64));
+        GENERAR_INFORMES.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_GENERAR_INFORMESMouseReleased
 
     /**
      * @param args the command line arguments
@@ -219,6 +293,8 @@ public class AjustesLocal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CONECTAR;
+    private javax.swing.JPanel GENERAR_INFORMES;
+    private javax.swing.JLabel LabelButtonModificar;
     private javax.swing.JLabel LabelButtonModificar1;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JLabel jLabel1;

@@ -48,8 +48,6 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
 
         PanelFondo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        ButtonAlta = new javax.swing.JPanel();
-        LabelButtonAlta = new javax.swing.JLabel();
         ComboNombre = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         ComboNota = new javax.swing.JComboBox<>();
@@ -63,41 +61,6 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 34, 43));
         jLabel1.setText("SELECCIONE ALUMNO");
-
-        ButtonAlta.setBackground(new java.awt.Color(255, 0, 51));
-        ButtonAlta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonAltaCrear_alumno(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ButtonAltaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ButtonAltaMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ButtonAltaMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                ButtonAltaMouseReleased(evt);
-            }
-        });
-
-        LabelButtonAlta.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        LabelButtonAlta.setForeground(new java.awt.Color(221, 214, 204));
-        LabelButtonAlta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelButtonAlta.setText("DESMATRICULAR ALUMNO");
-
-        javax.swing.GroupLayout ButtonAltaLayout = new javax.swing.GroupLayout(ButtonAlta);
-        ButtonAlta.setLayout(ButtonAltaLayout);
-        ButtonAltaLayout.setHorizontalGroup(
-            ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        ButtonAltaLayout.setVerticalGroup(
-            ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-        );
 
         ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -177,8 +140,7 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ComboNota, 0, 190, Short.MAX_VALUE)
                             .addComponent(jLabel2)
-                            .addComponent(ButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ButtonAlta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(ButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         PanelFondoLayout.setVerticalGroup(
@@ -194,9 +156,7 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
                 .addComponent(ComboNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(ButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,30 +174,6 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
-
-    }//GEN-LAST:event_ButtonAltaCrear_alumno
-
-    private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered
-        ButtonAlta.setBackground(new Color(189, 146, 64));
-        LabelButtonAlta.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ButtonAltaMouseEntered
-
-    private void ButtonAltaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseExited
-        ButtonAlta.setBackground(new Color(25, 34, 43));
-        LabelButtonAlta.setForeground(new Color(221, 214, 204));
-    }//GEN-LAST:event_ButtonAltaMouseExited
-
-    private void ButtonAltaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMousePressed
-        ButtonAlta.setBackground(new Color(184, 67, 87));
-        LabelButtonAlta.setForeground(new Color(189, 146, 64));
-    }//GEN-LAST:event_ButtonAltaMousePressed
-
-    private void ButtonAltaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseReleased
-        ButtonAlta.setBackground(new Color(189, 146, 64));
-        LabelButtonAlta.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ButtonAltaMouseReleased
 
     private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
         ComboNombre.setBackground(new Color(189, 146, 64));
@@ -317,11 +253,9 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ButtonAlta;
     private javax.swing.JPanel ButtonModificar;
     private javax.swing.JComboBox<String> ComboNombre;
     private javax.swing.JComboBox<String> ComboNota;
-    private javax.swing.JLabel LabelButtonAlta;
     private javax.swing.JLabel LabelButtonModificar;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JLabel jLabel1;
