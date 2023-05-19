@@ -41,6 +41,10 @@ public JPanel getFondo() {
         ComboNombre1 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        ComboCurso = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        ComboCurso1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,27 +113,66 @@ public JPanel getFondo() {
         jLabel3.setForeground(new java.awt.Color(25, 34, 43));
         jLabel3.setText("SELECCIONE VER INSCRIPCIONES DE UN ALUMNO O UN EXALUMNO");
 
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(25, 34, 43));
+        jLabel4.setText("SELECCIONE CURSO");
+
+        ComboCurso.setBackground(new java.awt.Color(25, 34, 43));
+        ComboCurso.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        ComboCurso.setForeground(new java.awt.Color(221, 214, 204));
+        ComboCurso.setBorder(null);
+        ComboCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboCursoActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(25, 34, 43));
+        jLabel5.setText("SELECCIONE EXCURSO");
+
+        ComboCurso1.setBackground(new java.awt.Color(25, 34, 43));
+        ComboCurso1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        ComboCurso1.setForeground(new java.awt.Color(221, 214, 204));
+        ComboCurso1.setBorder(null);
+        ComboCurso1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboCurso1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addGap(4, 4, 4)
-                .addComponent(Alineador, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
+                .addComponent(Alineador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(5, 5, 5))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addGap(0, 197, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(156, 156, 156))
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(69, 69, 69)
+                            .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(ComboNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(156, 156, 156))
+                            .addComponent(ComboNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(ComboCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(ComboCurso1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +188,15 @@ public JPanel getFondo() {
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ComboCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ComboCurso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Alineador, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
                 .addContainerGap())
@@ -173,6 +224,14 @@ public JPanel getFondo() {
     private void ComboNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombre1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboNombre1ActionPerformed
+
+    private void ComboCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboCursoActionPerformed
+
+    private void ComboCurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCurso1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboCurso1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,6 +270,8 @@ public JPanel getFondo() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Alineador;
+    private javax.swing.JComboBox<String> ComboCurso;
+    private javax.swing.JComboBox<String> ComboCurso1;
     private javax.swing.JComboBox<String> ComboNombre;
     private javax.swing.JComboBox<String> ComboNombre1;
     private javax.swing.JPanel PanelFondo;
@@ -218,6 +279,8 @@ public JPanel getFondo() {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -64,7 +64,7 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(25, 34, 43));
         jLabel1.setText("SELECCIONE ALUMNO");
 
-        ButtonAlta.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAlta.setBackground(new java.awt.Color(255, 0, 51));
         ButtonAlta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ButtonAltaCrear_alumno(evt);
