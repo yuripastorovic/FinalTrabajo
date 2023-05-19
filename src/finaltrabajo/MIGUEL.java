@@ -4,6 +4,10 @@
  */
 package finaltrabajo;
 //-------------------------------------------------------------------clase base de datos, y funcionalidades de esta MARIADLB+jar
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  *
  * @author Jorge
@@ -15,6 +19,11 @@ public class MIGUEL {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println(getHoraDATE());
+                
     }
-    
+    public static String getHoraDATE() {
+        String hora = new SimpleDateFormat("dd-MM-yyyy - HH:mm:ss ").format(Calendar.getInstance().getTime());
+        return hora;
+    }
 }

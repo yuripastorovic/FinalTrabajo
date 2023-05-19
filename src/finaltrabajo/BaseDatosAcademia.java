@@ -14,7 +14,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -73,8 +75,8 @@ public class BaseDatosAcademia {
                 "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL," +
                 "   id_alumno INTEGER UNSIGNED DEFAULT '0'," +
                 "   id_curso INTEGER UNSIGNED DEFAULT '0'," +
-                "   fInicio VARCHAR(25) DEFAULT 'GETDATE()' NOT NULL,"+
-                "   fFin VARCHAR(25) DEFAULT 'GETDATE()' NOT NULL,"+
+                "   fInicio VARCHAR(25) DEFAULT '"+getHoraDATE()+"' NOT NULL,"+
+                "   fFin VARCHAR(25) DEFAULT 'SIN FINALIZAR' NOT NULL,"+
                 "   calificacion VARCHAR(25)DEFAULT 'NO CALIFICADO' NOT NULL,"+
                 "   existe BIT DEFAULT 0 NOT NULL,"+     
                 "   PRIMARY KEY (id)," +
@@ -116,7 +118,10 @@ public class BaseDatosAcademia {
             }   
         }
     }
-    
+    public static String getHoraDATE() {
+        String hora = new SimpleDateFormat("dd-MM-yyyy - HH:mm:ss ").format(Calendar.getInstance().getTime());
+        return hora;
+    }
     public void insertarAlumno(String nombre, String apellido, String correo, String telefono){
         Statement stmt;
         try {
@@ -139,11 +144,11 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }        
     }
-    public void insertarInscripcion(int id_alumno, int id_curso, String fInicio, String fFin,String calificacion){//--mirar como se van a introducir fecha fin y calificacion
+    public void insertarInscripcion(int id_alumno, int id_curso,String fInicio){//--mirar como se van a introducir fecha fin y calificacion
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos (id_alumno,id_curso)VALUES ('"+id_alumno+"','"+id_curso+"');");
+            stmt.executeUpdate("INSERT INTO Cursos(id_alumno , id_curso , fInicio )VALUES ('"+id_alumno+"' , '"+id_curso+"' , '"+fInicio+"' ) ;");
             this.conn.commit();
             stmt.close();
         }catch (SQLException ex) {

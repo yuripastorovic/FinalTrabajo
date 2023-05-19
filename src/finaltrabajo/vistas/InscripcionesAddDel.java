@@ -4,6 +4,7 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -16,13 +17,24 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
     /**
      * Creates new form InscripcionesAdd
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
     public InscripcionesAddDel() {
         initComponents();
+        comboBox1();
+        comboBox2();
     }
 
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
+    }
+    private void comboBox1() {
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
+        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+    private void comboBox2() {
+        String arrayString[] = bd.leerIdNombresCursosExistentes();
+        ComboNota.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
 
     /**
@@ -238,7 +250,14 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboNotaActionPerformed
 
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
-
+        
+        String fInicio = bd.getHoraDATE();
+        if(bd.confirmarInscripcion(Integer.valueOf(ComboNombre.getSelectedItem().toString()) , Integer.valueOf(ComboNota.getSelectedItem().toString()) , fInicio)){
+            bd.insertarInscripcion(Integer.valueOf(ComboNombre.getSelectedItem().toString()) , Integer.valueOf(ComboNota.getSelectedItem().toString()) , fInicio);
+        }else{
+            //popuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopup
+            //con el popup que te dice que ya existe esa inscripcion 
+        }
     }//GEN-LAST:event_ButtonModificarModificar_press
 
     private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered
