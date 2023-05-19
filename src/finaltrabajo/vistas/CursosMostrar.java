@@ -205,7 +205,7 @@ public JPanel getFondo() {
             i--;
         }
         TablaNew.setModel(modelo);
-        String datos[]= bd.leerStringArrayCursosNoExistentes();
+        String datos[]= bd.leerStringArrayCursosExistentes();
         for (int i = 0; i < bd.leerStringArrayCursosExistentes().length; i++) {
             modelo.addRow(datos[i].split(","));
         }
