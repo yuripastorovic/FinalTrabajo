@@ -4,38 +4,40 @@
  */
 package finaltrabajo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jorge
  */
-public class Alumno {
+public class Alumno implements Serializable {
 
     private int id;
     private String nombre;
     private String apellido;
     private String telefono;
     private String correo;
-    private boolean matriculado;
+    private int existe;
 
-    public Alumno(int id, String nombre, String apellido, String telefono, String correo) {
+    public Alumno(int id, String nombre, String apellido, String telefono, String correo, int valor) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.correo = correo;
-        this.matriculado=true;
-    }
-    
-    public String toCSV() {
-        return id + "," + nombre + "," + apellido + "," + telefono + "," + correo;
-    }
-    
-    public boolean getMatriculado() {
-        return matriculado;
+        this.existe = valor;
     }
 
-    public void setMatriculado(boolean matriculado) {
-        this.matriculado = matriculado;
+    public String toCSV() {
+        return id + "," + nombre + "," + apellido + "," + telefono + "," + correo + "," + existe;
+    }
+
+    public int getMatriculado() {
+        return existe;
+    }
+
+    public void setMatriculado(int matriculado) {
+        this.existe = matriculado;
     }
 
     public int getId() {
