@@ -294,7 +294,7 @@ public class BaseDatosAcademia {
             Statement stmt;
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Incripciones ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Inscripciones ;");//SELECT
                 while (rs.next()) {
                     String id = rs.getString(1);
                     String id_alumno = rs.getString(2);
