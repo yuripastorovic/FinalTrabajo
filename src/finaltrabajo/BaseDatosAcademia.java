@@ -25,6 +25,14 @@ import java.util.logging.Logger;
  *
  * @author javier.ortiz
  */
+
+//          int y = JOptionPane.showConfirmDialog(
+//                    this,
+//                    "Estas seguro de querer borrar el curso "+this.listaCursos.getSelectedValue().split(" ")[0]+"?",
+//                    "Confirmación de borrado",
+//                    JOptionPane.YES_NO_OPTION);
+//            if (y == JOptionPane.OK_OPTION) {sentencia a poner}
+
 public class BaseDatosAcademia {
     
     private String puerto = "3306";
