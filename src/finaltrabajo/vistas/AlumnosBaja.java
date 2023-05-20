@@ -400,7 +400,8 @@ public class AlumnosBaja extends javax.swing.JFrame {
         bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
          */
         for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
+            modelo.removeRow(0);
+            i--;
         }
         
         String[] partes;

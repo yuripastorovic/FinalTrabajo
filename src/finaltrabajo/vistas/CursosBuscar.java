@@ -332,7 +332,8 @@ private void comboBox1() {
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
         for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
+            modelo.removeRow(0);
+            i--;
         }
         
         TablaNew.setModel(modelo);
