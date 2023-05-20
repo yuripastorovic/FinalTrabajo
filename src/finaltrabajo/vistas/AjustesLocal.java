@@ -37,8 +37,9 @@ public class AjustesLocal extends javax.swing.JFrame {
         PanelFondo = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        CONECTAR = new javax.swing.JPanel();
+        CARGAR_LOCAL = new javax.swing.JPanel();
+        LabelButtonModificar2 = new javax.swing.JLabel();
+        COPIA_LOCAL = new javax.swing.JPanel();
         LabelButtonModificar1 = new javax.swing.JLabel();
         GENERAR_INFORMES = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
@@ -51,81 +52,78 @@ public class AjustesLocal extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(189, 146, 64));
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(25, 34, 43));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("<html><body>Este programa esta conectado<br>\ncon una base de datos MriaDB.<br>\nAsegurese de que ha encendido<br>\nla base de datos, antes de encender<br> \nel programa.<br>\nAsegurese de que el puerto de <br>\nconexion entre la aplicacion y <br>\nla de datos es el mismo \n</body></html>");
-
-        CONECTAR.setBackground(new java.awt.Color(25, 34, 43));
-        CONECTAR.addMouseListener(new java.awt.event.MouseAdapter() {
+        CARGAR_LOCAL.setBackground(new java.awt.Color(25, 34, 43));
+        CARGAR_LOCAL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CONECTARModificar_clicked(evt);
+                CARGAR_LOCALModificar_clicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CONECTARMouseEntered(evt);
+                CARGAR_LOCALMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                CONECTARMouseExited(evt);
+                CARGAR_LOCALMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                CONECTARMousePressed(evt);
+                CARGAR_LOCALMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                CONECTARMouseReleased(evt);
+                CARGAR_LOCALMouseReleased(evt);
+            }
+        });
+
+        LabelButtonModificar2.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        LabelButtonModificar2.setForeground(new java.awt.Color(221, 214, 204));
+        LabelButtonModificar2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelButtonModificar2.setText("CARGAR LOCAL");
+
+        javax.swing.GroupLayout CARGAR_LOCALLayout = new javax.swing.GroupLayout(CARGAR_LOCAL);
+        CARGAR_LOCAL.setLayout(CARGAR_LOCALLayout);
+        CARGAR_LOCALLayout.setHorizontalGroup(
+            CARGAR_LOCALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CARGAR_LOCALLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(LabelButtonModificar2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        CARGAR_LOCALLayout.setVerticalGroup(
+            CARGAR_LOCALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelButtonModificar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
+        COPIA_LOCAL.setBackground(new java.awt.Color(25, 34, 43));
+        COPIA_LOCAL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                COPIA_LOCALModificar_clicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                COPIA_LOCALMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                COPIA_LOCALMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                COPIA_LOCALMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                COPIA_LOCALMouseReleased(evt);
             }
         });
 
         LabelButtonModificar1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         LabelButtonModificar1.setForeground(new java.awt.Color(221, 214, 204));
         LabelButtonModificar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelButtonModificar1.setText("CONECTAR");
+        LabelButtonModificar1.setText("GEN COPIA LOCAL");
 
-        javax.swing.GroupLayout CONECTARLayout = new javax.swing.GroupLayout(CONECTAR);
-        CONECTAR.setLayout(CONECTARLayout);
-        CONECTARLayout.setHorizontalGroup(
-            CONECTARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CONECTARLayout.createSequentialGroup()
-                .addGap(0, 128, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar1))
+        javax.swing.GroupLayout COPIA_LOCALLayout = new javax.swing.GroupLayout(COPIA_LOCAL);
+        COPIA_LOCAL.setLayout(COPIA_LOCALLayout);
+        COPIA_LOCALLayout.setHorizontalGroup(
+            COPIA_LOCALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, COPIA_LOCALLayout.createSequentialGroup()
+                .addGap(0, 29, Short.MAX_VALUE)
+                .addComponent(LabelButtonModificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        CONECTARLayout.setVerticalGroup(
-            CONECTARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        COPIA_LOCALLayout.setVerticalGroup(
+            COPIA_LOCALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CONECTAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                .addComponent(CONECTAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         GENERAR_INFORMES.setBackground(new java.awt.Color(25, 34, 43));
@@ -156,11 +154,51 @@ public class AjustesLocal extends javax.swing.JFrame {
         GENERAR_INFORMES.setLayout(GENERAR_INFORMESLayout);
         GENERAR_INFORMESLayout.setHorizontalGroup(
             GENERAR_INFORMESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GENERAR_INFORMESLayout.createSequentialGroup()
+                .addGap(0, 20, Short.MAX_VALUE)
+                .addComponent(LabelButtonModificar))
         );
         GENERAR_INFORMESLayout.setVerticalGroup(
             GENERAR_INFORMESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(GENERAR_INFORMES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CARGAR_LOCAL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(COPIA_LOCAL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(CARGAR_LOCAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(GENERAR_INFORMES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(COPIA_LOCAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(178, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
@@ -170,69 +208,53 @@ public class AjustesLocal extends javax.swing.JFrame {
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addContainerGap(542, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PanelFondoLayout.createSequentialGroup()
-                    .addGap(292, 292, 292)
-                    .addComponent(GENERAR_INFORMES, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(292, 292, 292)))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PanelFondoLayout.createSequentialGroup()
-                    .addGap(132, 132, 132)
-                    .addComponent(GENERAR_INFORMES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(132, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CONECTARModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARModificar_clicked
+    private void COPIA_LOCALModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALModificar_clicked
         
         
         
-        CONECTAR.setBackground(new Color(184, 67, 87));
-        CONECTAR.setForeground(new Color(189, 146, 64));
-    }//GEN-LAST:event_CONECTARModificar_clicked
+        COPIA_LOCAL.setBackground(new Color(184, 67, 87));
+        COPIA_LOCAL.setForeground(new Color(189, 146, 64));
+    }//GEN-LAST:event_COPIA_LOCALModificar_clicked
 
-    private void CONECTARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseEntered
-        CONECTAR.setBackground(new Color(184,67,87));
+    private void COPIA_LOCALMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseEntered
+        COPIA_LOCAL.setBackground(new Color(184,67,87));
         LabelButtonModificar1.setForeground(new Color(25,34,43));
-    }//GEN-LAST:event_CONECTARMouseEntered
+    }//GEN-LAST:event_COPIA_LOCALMouseEntered
 
-    private void CONECTARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseExited
-        CONECTAR.setBackground(new Color(25, 34, 43));
+    private void COPIA_LOCALMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseExited
+        COPIA_LOCAL.setBackground(new Color(25, 34, 43));
         LabelButtonModificar1.setForeground(new Color(221, 214, 204));
-    }//GEN-LAST:event_CONECTARMouseExited
+    }//GEN-LAST:event_COPIA_LOCALMouseExited
 
-    private void CONECTARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMousePressed
-        CONECTAR.setBackground(new Color(221,214,204));
+    private void COPIA_LOCALMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMousePressed
+        COPIA_LOCAL.setBackground(new Color(221,214,204));
         LabelButtonModificar1.setForeground(new Color(25,34,43));
-    }//GEN-LAST:event_CONECTARMousePressed
+    }//GEN-LAST:event_COPIA_LOCALMousePressed
 
-    private void CONECTARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseReleased
-        CONECTAR.setBackground(new Color(189, 146, 64));
-        CONECTAR.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_CONECTARMouseReleased
+    private void COPIA_LOCALMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseReleased
+        COPIA_LOCAL.setBackground(new Color(189, 146, 64));
+        COPIA_LOCAL.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_COPIA_LOCALMouseReleased
 
     private void GENERAR_INFORMESModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESModificar_press
         bd.guardarEnFicheroTextoAlumnos("informeAlumnos.txt");
@@ -259,6 +281,26 @@ public class AjustesLocal extends javax.swing.JFrame {
         GENERAR_INFORMES.setBackground(new Color(189, 146, 64));
         GENERAR_INFORMES.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_GENERAR_INFORMESMouseReleased
+
+    private void CARGAR_LOCALModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALModificar_clicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CARGAR_LOCALModificar_clicked
+
+    private void CARGAR_LOCALMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CARGAR_LOCALMouseEntered
+
+    private void CARGAR_LOCALMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CARGAR_LOCALMouseExited
+
+    private void CARGAR_LOCALMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CARGAR_LOCALMousePressed
+
+    private void CARGAR_LOCALMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CARGAR_LOCALMouseReleased
 
     /**
      * @param args the command line arguments
@@ -296,12 +338,13 @@ public class AjustesLocal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CONECTAR;
+    private javax.swing.JPanel CARGAR_LOCAL;
+    private javax.swing.JPanel COPIA_LOCAL;
     private javax.swing.JPanel GENERAR_INFORMES;
     private javax.swing.JLabel LabelButtonModificar;
     private javax.swing.JLabel LabelButtonModificar1;
+    private javax.swing.JLabel LabelButtonModificar2;
     private javax.swing.JPanel PanelFondo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
