@@ -2,6 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
+
+//FALTAN DOS COSAS POR HACER TSTEAR COMO UN ANIMAL , BLOQUEAR Y CONFIRMAR LOS DATOS INTRODUCIDOS , BLOQUEAR LOS BOTONES HASTA QUE SE METAN DATOS EN TODASPARTES Y METER LOS POPUPS EN LOS ALTA
 package finaltrabajo;
 
 import finaltrabajo.vistas.Ajustes;
