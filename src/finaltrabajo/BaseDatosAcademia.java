@@ -1343,11 +1343,11 @@ public class BaseDatosAcademia {
         return cadenaDatos;
     }
 
-    public void insertarTodasAlumno(int id, String nombre, String apellido, String correo, String telefono, String existe) {
+    public void insertarTodasAlumno(int id, String nombre, String apellido, String correo, String telefono, int existe) {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Alumnos( id , nombre , apellido , correo , telefono ) VALUES (" + id + " , '" + nombre + "' , '" + apellido + "' , '" + correo + "' , '" + telefono + "' , '" + existe + "' );");
+            stmt.executeUpdate("INSERT INTO Alumnos( id , nombre , apellido , correo , telefono , existe ) VALUES (" + id + " , '" + nombre + "' , '" + apellido + "' , '" + correo + "' , '" + telefono + "' , '" + existe + "' );");
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
@@ -1355,11 +1355,11 @@ public class BaseDatosAcademia {
         }
     }
 
-    public void insertarTodasCurso(int id, String nombre, String descripcion, String horas, String existe) {
+    public void insertarTodasCurso(int id, String nombre, String descripcion, String horas, int existe) {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos( id , nombre , descripcion , horas ) VALUES (" + id + " , '" + nombre + "' , '" + descripcion + "' , '" + horas + "' , '" + existe + "' );");
+            stmt.executeUpdate("INSERT INTO Cursos( id , nombre , descripcion , horas , existe ) VALUES (" + id + " , '" + nombre + "' , '" + descripcion + "' , '" + horas + "' , '" + existe + "' );");
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
@@ -1367,11 +1367,11 @@ public class BaseDatosAcademia {
         }
     }
 
-    public void insertarTodasInscripcion(int id, int id_alumno, int id_curso, String fInicio, String existe) {//--mirar como se van a introducir fecha fin y calificacion
+    public void insertarTodasInscripcion(int id, int id_alumno, int id_curso, String fInicio, String fFin,String calificacion, int existe) {//--mirar como se van a introducir fecha fin y calificacion
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Inscripciones(id , id_alumno , id_curso , fInicio )VALUES (" + id + " , " + id_alumno + " , " + id_curso + " , '" + fInicio + "' , '" + existe + "' ) ;");
+            stmt.executeUpdate("INSERT INTO Inscripciones(id , id_alumno , id_curso , fInicio , fFin , calificacion , existe )VALUES (" + id + " , " + id_alumno + " , " + id_curso + " , '" + fInicio + "' , '" + fFin + "' , '" + calificacion + "' , '" + existe + "' ) ;");
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
