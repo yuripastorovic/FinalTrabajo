@@ -355,6 +355,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="AlumnosBuscar_TablaNew"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>

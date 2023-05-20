@@ -106,6 +106,7 @@ public class fin extends javax.swing.JFrame {
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         movimiento.setBackground(new java.awt.Color(0, 255, 0));
+        movimiento.setOpaque(false);
         movimiento.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 movimientoMouseDragged(evt);
