@@ -41,8 +41,10 @@ public class Serializador implements Serializable {
             String descr =ac.getCursos().get(i).getDescripcion();
             int horas =ac.getCursos().get(i).getHoras();
             int existe = ac.getCursos().get(i).getExiste();
-            bd.insertarTodasCurso(id, nombre, descr, horas, existe);
+            bd.insertarTodasCurso(id, nombre, descr, ""+horas, existe);
+            
         }
+        
         for(int i=0; i<ac.getInscripciones().size();i++){
             int id = ac.getInscripciones().get(i).getId();
             int idAlum = ac.getInscripciones().get(i).getAlumno().getId();
@@ -51,7 +53,7 @@ public class Serializador implements Serializable {
             String fechaF = ac.getInscripciones().get(i).getfFin();
             int nota = ac.getInscripciones().get(i).getNota();
             int existe = ac.getInscripciones().get(i).getExiste();
-            bd.insertarTodasInscripcion(id, idAlum, idCurso, fechaI, fechaF, nota, existe);
+            bd.insertarTodasInscripcion(id, idAlum, idCurso, fechaI, fechaF, ""+nota, existe);
 
 
         }
