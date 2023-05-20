@@ -668,7 +668,7 @@ public class BaseDatosAcademia {
         String cadenaDatos="";
             try {
                 stmt = this.conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Alumnos WHERE Alumnos.id='"+id_alumno+"' AND Alumnos.existe='0' ;");//SELECT
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Alumnos WHERE Alumnos.id='"+id_alumno+"' AND Alumnos.existe=0 ;");//SELECT
                     String id = rs.getString(1);
                     String nombre = rs.getString(2);
                     String apellido = rs.getString(3);
