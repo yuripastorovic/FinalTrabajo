@@ -26,6 +26,10 @@ public class Serializador implements Serializable {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
 
     public void uploadLocal() {
+        bd.tirarBD();
+        bd=new BaseDatosAcademia();
+        
+        this.ac=this.leerDatos1("copi.test");
         for (int i = 0; i < ac.getAlumnos().size(); i++) {
             int id = ac.getAlumnos().get(i).getId();
             String nombre = ac.getAlumnos().get(i).getNombre();
@@ -51,17 +55,16 @@ public class Serializador implements Serializable {
             int idCurso= ac.getInscripciones().get(i).getAlumno().getId();
             String fechaI = ac.getInscripciones().get(i).getfInicio();
             String fechaF = ac.getInscripciones().get(i).getfFin();
-            int nota = ac.getInscripciones().get(i).getNota();
+            String nota = ac.getInscripciones().get(i).getNota();
             int existe = ac.getInscripciones().get(i).getExiste();
-            bd.insertarTodasInscripcion(id, idAlum, idCurso, fechaI, fechaF, ""+nota, existe);
-
-
+            bd.insertarTodasInscripcion(id, idAlum, idCurso, fechaI, fechaF, ""+nota, existe);  
         }
+        System.out.println("La base de datos ha sido actualizada.");
     }
 
     public void copiaLocal() {
-        for (int i = 0; i < bd.leerDatosCursosExistente().length(); i++) {    ///////////////////////se nececita un ArrayTodosLosAlumnos 
-            String dateAlum[] = bd.leerStringArrayAlumnosExistentes();
+        for (int i = 0; i < bd.leerStringArrayTodasAlumnos().length; i++) {    ///////////////////////se nececita un ArrayTodosLosAlumnos 
+            String dateAlum[] = bd.leerStringArrayTodasAlumnos();
             String partes[] = dateAlum[i].split(",");
             int id = Integer.parseInt(partes[0]);
             String nombre = partes[1];
@@ -72,8 +75,8 @@ public class Serializador implements Serializable {
             Alumno a1 = new Alumno(id, nombre, apellido, telefono, correo, existe);
             ac.getAlumnos().add(a1);
         }
-        for (int i = 0; i < bd.leerStringArrayCursosExistentes().length; i++) {    ///////////////////////se nececita un ArrayTodosLosCursos
-            String dateCurs[] = bd.leerStringArrayCursosExistentes();
+        for (int i = 0; i < bd.leerStringArrayTodasCursos().length; i++) {    ///////////////////////se nececita un ArrayTodosLosCursos
+            String dateCurs[] = bd.leerStringArrayTodasCursos();
             String partes[] = dateCurs[i].split(",");
             int id = Integer.parseInt(partes[0]);
             String nombre = partes[1];
@@ -83,8 +86,8 @@ public class Serializador implements Serializable {
             Curso c1 = new Curso(id, nombre, descr, horas, existe);;
             ac.getCursos().add(c1);
         }
-        for (int i = 0; i < bd.leerStringArrayInscripcionesAlumnosExistentes().length; i++) {    ///////////////////////se nececita un ArrayTodosLasInscripciones
-            String dateCurs[] = bd.leerStringArrayCursosExistentes();
+        for (int i = 0; i < bd.leerStringArrayTodasInscripciones().length; i++) {    ///////////////////////se nececita un ArrayTodosLasInscripciones
+            String dateCurs[] = bd.leerStringArrayTodasInscripciones();
             String partes[] = dateCurs[i].split(",");
             int id = Integer.parseInt(partes[0]);
             int idAlum = Integer.parseInt(partes[1]);
@@ -103,13 +106,15 @@ public class Serializador implements Serializable {
             }
             String fechaI = partes[3];
             String fechaF = partes[4];
-            int nota = Integer.parseInt(partes[5]);
+            String nota = partes[5];
             int existe = Integer.parseInt(partes[6]);
             //exts
             Inscripcion i1 = new Inscripcion(id, selecAlum, selecCurso, fechaI, fechaF, nota, existe);;
             ac.getInscripciones().add(i1);
         }
-
+        this.escribirDatos(ac, "copi.test");
+        System.out.println("Coplia local generada correctamente");
+        
     }
 
     public void escribirDatos(Academia academia, String dirFichero) {
@@ -131,7 +136,7 @@ public class Serializador implements Serializable {
             bufOut = new BufferedOutputStream(fileOut);
             objOut = new ObjectOutputStream(bufOut);
             objOut.writeObject(academia);///////////////////////////////////////////////////////
-            System.out.println("los datos se han copiado exitosamente en" + dirFichero);
+            System.out.println("los datos se han copiado exitosamente en: " + dirFichero);
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {

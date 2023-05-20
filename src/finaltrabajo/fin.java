@@ -24,13 +24,15 @@ public class fin extends javax.swing.JFrame {
 
     //Inicializamos la BBDD
     private BaseDatosAcademia bd = new BaseDatosAcademia();
+   
+    
     //Necesario para poder arrastar la ventana
     int xEje, yEje;
 
     public fin() {
         // Iniciamos componenetes
         initComponents();
-        //setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
         //Actualizamos la hora
         rfresh();
         //Creamos / Conectamos con la BBDD

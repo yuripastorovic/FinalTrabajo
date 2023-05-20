@@ -5,6 +5,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Serializador;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -18,13 +19,17 @@ public class AjustesLocal extends javax.swing.JFrame {
      * Creates new form AjustesLocal
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private Serializador sc = new Serializador();
+
     public AjustesLocal() {
         initComponents();
     }
- public JPanel getFondo() {
+
+    public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -229,16 +234,15 @@ public class AjustesLocal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void COPIA_LOCALModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALModificar_clicked
-        
-        
-        
+        sc.copiaLocal();
+
         COPIA_LOCAL.setBackground(new Color(184, 67, 87));
         COPIA_LOCAL.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_COPIA_LOCALModificar_clicked
 
     private void COPIA_LOCALMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseEntered
-        COPIA_LOCAL.setBackground(new Color(184,67,87));
-        LabelButtonModificar1.setForeground(new Color(25,34,43));
+        COPIA_LOCAL.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_COPIA_LOCALMouseEntered
 
     private void COPIA_LOCALMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseExited
@@ -247,8 +251,8 @@ public class AjustesLocal extends javax.swing.JFrame {
     }//GEN-LAST:event_COPIA_LOCALMouseExited
 
     private void COPIA_LOCALMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMousePressed
-        COPIA_LOCAL.setBackground(new Color(221,214,204));
-        LabelButtonModificar1.setForeground(new Color(25,34,43));
+        COPIA_LOCAL.setBackground(new Color(221, 214, 204));
+        LabelButtonModificar1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_COPIA_LOCALMousePressed
 
     private void COPIA_LOCALMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseReleased
@@ -283,7 +287,7 @@ public class AjustesLocal extends javax.swing.JFrame {
     }//GEN-LAST:event_GENERAR_INFORMESMouseReleased
 
     private void CARGAR_LOCALModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALModificar_clicked
-        // TODO add your handling code here:
+       sc.uploadLocal();
     }//GEN-LAST:event_CARGAR_LOCALModificar_clicked
 
     private void CARGAR_LOCALMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseEntered

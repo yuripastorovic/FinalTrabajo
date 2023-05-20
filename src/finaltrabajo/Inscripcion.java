@@ -17,10 +17,10 @@ public class Inscripcion implements Serializable {
     private Curso curso;
     private String fInicio;
     private String fFin;
-    private int nota;
+    private String nota;
     private int existe;
 
-    public Inscripcion(int id, Alumno alumno, Curso curso, String fInicio, String fFin, int nota, int valor) {
+    public Inscripcion(int id, Alumno alumno, Curso curso, String fInicio, String fFin, String nota, int valor) {
         this.id = id;
         this.alumno = alumno;
         this.curso = curso;
@@ -62,7 +62,7 @@ public class Inscripcion implements Serializable {
         return fFin;
     }
 
-    public int getNota() {
+    public String getNota() {
         return nota;
     }
 

@@ -55,6 +55,18 @@ public class BaseDatosAcademia {
         crearDB();
     }
 
+    public void tirarBD() {
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("DROP DATABASE Jorge_Pastor_Miguel_Gonzalez_Academia");
+            this.conn.commit();
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public void crearDB() {
         Statement stmt;
         try {
@@ -63,29 +75,29 @@ public class BaseDatosAcademia {
             stmt.executeUpdate("use Jorge_Pastor_Miguel_Gonzalez_Academia");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Alumnos("
                     + "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL,"
-                    + "   nombre VARCHAR(25) NOT NULL,"
-                    + "   apellido VARCHAR(25) NOT NULL,"
-                    + "   correo VARCHAR(25) NOT NULL,"
-                    + "   telefono VARCHAR(25) NOT NULL,"
-                    + "   existe BIT DEFAULT 0 NOT NULL,"
+                    + "   nombre VARCHAR(250) NOT NULL,"
+                    + "   apellido VARCHAR(250) NOT NULL,"
+                    + "   correo VARCHAR(250) NOT NULL,"
+                    + "   telefono VARCHAR(250) NOT NULL,"
+                    + "   existe INTEGER DEFAULT 0 NOT NULL,"
                     + "   PRIMARY KEY (id)"
                     + ");");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Cursos("
                     + "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL,"
-                    + "   nombre VARCHAR(25) NOT NULL,"
-                    + "   descripcion VARCHAR(25) NOT NULL,"
-                    + "   horas VARCHAR(25) NOT NULL,"
-                    + "   existe BIT DEFAULT 0 NOT NULL,"
+                    + "   nombre VARCHAR(250) NOT NULL,"
+                    + "   descripcion VARCHAR(250) NOT NULL,"
+                    + "   horas VARCHAR(250) NOT NULL,"
+                    + "   existe INTEGER DEFAULT 0 NOT NULL,"
                     + "   PRIMARY KEY (id)"
                     + ");");
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Inscripciones("
                     + "   id INTEGER UNSIGNED AUTO_INCREMENT NOT NULL,"
                     + "   id_alumno INTEGER UNSIGNED DEFAULT '0',"
                     + "   id_curso INTEGER UNSIGNED DEFAULT '0',"
-                    + "   fInicio VARCHAR(25) NOT NULL,"
-                    + "   fFin VARCHAR(25) DEFAULT 'SIN FINALIZAR' NOT NULL,"
-                    + "   calificacion VARCHAR(25)DEFAULT 'NO CALIFICADO' NOT NULL,"
-                    + "   existe BIT DEFAULT 0 NOT NULL,"
+                    + "   fInicio VARCHAR(250) NOT NULL,"
+                    + "   fFin VARCHAR(250) DEFAULT 'SIN FINALIZAR' NOT NULL,"
+                    + "   calificacion VARCHAR(250)DEFAULT 'NO CALIFICADO' NOT NULL,"
+                    + "   existe INTEGER DEFAULT 0 NOT NULL,"
                     + "   PRIMARY KEY (id),"
                     + "   CONSTRAINT fk_alumno_alumnos FOREIGN KEY (id_alumno) REFERENCES Alumnos(id) ON UPDATE CASCADE ON DELETE CASCADE ,"
                     + "   CONSTRAINT fk_curso_cursos FOREIGN KEY (id_curso) REFERENCES Cursos(id) ON UPDATE CASCADE ON DELETE CASCADE "
@@ -1367,7 +1379,7 @@ public class BaseDatosAcademia {
         }
     }
 
-    public void insertarTodasInscripcion(int id, int id_alumno, int id_curso, String fInicio, String fFin,String calificacion, int existe) {//--mirar como se van a introducir fecha fin y calificacion
+    public void insertarTodasInscripcion(int id, int id_alumno, int id_curso, String fInicio, String fFin, String calificacion, int existe) {//--mirar como se van a introducir fecha fin y calificacion
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
