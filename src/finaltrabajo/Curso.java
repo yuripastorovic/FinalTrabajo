@@ -4,26 +4,38 @@
  */
 package finaltrabajo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jorge
  */
-public class Curso {
+public class Curso implements Serializable {
 
     private int id;
     private String nombre;
     private String descripcion;
     private int horas;
+    private int existe;
 
-    public Curso(int id, String nombre, String descripcion, int horas) {
+    public Curso(int id, String nombre, String descripcion, int horas, int valor) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.horas = horas;
+        this.existe = valor;
     }
 
     public String toCSV() {
-        return id + "," + nombre + "," + descripcion + "," + horas;
+        return id + "," + nombre + "," + descripcion + "," + horas+","+existe;
+    }
+
+    public int getExiste() {
+        return existe;
+    }
+
+    public void setExiste(int existe) {
+        this.existe = existe;
     }
 
     public int getId() {
@@ -62,5 +74,4 @@ public class Curso {
     public String toString() {
         return "Curso{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", horas=" + horas + '}';
     }
-
 }

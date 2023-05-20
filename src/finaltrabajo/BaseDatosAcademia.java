@@ -131,6 +131,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+
     public void insertarCurso(String nombre, String descripcion, String horas) {
         Statement stmt;
         try {
@@ -142,6 +143,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+
     public void insertarInscripcion(int id_alumno, int id_curso, String fInicio) {//--mirar como se van a introducir fecha fin y calificacion
         Statement stmt;
         try {
@@ -205,6 +207,7 @@ public class BaseDatosAcademia {
         }
 
     }
+
     public void guardarEnFicheroTextoCursos(String dirFichero) {
         File fDatos = new File(dirFichero);
         if (!(fDatos.exists())) {
@@ -255,6 +258,7 @@ public class BaseDatosAcademia {
         }
 
     }
+
     public void guardarEnFicheroTextoInscripciones(String dirFichero) {
         File fDatos = new File(dirFichero);
         if (!(fDatos.exists())) {
@@ -328,6 +332,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String leerDatosCursosExistente() {
         Statement stmt;
         String cadenaDatos = "";
@@ -347,6 +352,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String leerDatosInscripcionesExistente() {
         Statement stmt;
         String cadenaDatos = "";
@@ -368,7 +374,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
-    
+
     public String[] leerStringArrayAlumnosExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -393,6 +399,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayCursosExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -416,6 +423,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayInscripcionesExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -441,6 +449,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayInscripcionesAlumnosExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -466,6 +475,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayInscripcionesCursosExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -491,6 +501,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayAlumnosNoExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -515,6 +526,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayCursosNoExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -538,6 +550,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayInscripcionesNoExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -563,6 +576,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayInscripcionesAlumnosNoExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -588,6 +602,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayInscripcionesCursosNoExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -625,6 +640,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+
     public void eliminarDatosCursos(int id) {
         Statement stmt;
         try {
@@ -636,6 +652,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+
     public void eliminarDatosInscripciones(int id) {
         Statement stmt;
         try {
@@ -655,12 +672,12 @@ public class BaseDatosAcademia {
             stmt = this.conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT Alumnos.* FROM Alumnos WHERE Alumnos.id=" + id_alumno + " AND Alumnos.existe=0 ;");//SELECT
             while (rs.next()) {
-            String id = rs.getString(1);
-            String nombre = rs.getString(2);
-            String apellido = rs.getString(3);
-            String correo = rs.getString(4);
-            String telefono = rs.getString(5);
-            cadenaDatos = (id + "," + nombre + "," + apellido + "," + correo + "," + telefono);
+                String id = rs.getString(1);
+                String nombre = rs.getString(2);
+                String apellido = rs.getString(3);
+                String correo = rs.getString(4);
+                String telefono = rs.getString(5);
+                cadenaDatos = (id + "," + nombre + "," + apellido + "," + correo + "," + telefono);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -668,6 +685,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String leerDatosUnCursoExistente(int id_curso) {
         Statement stmt;
         String cadenaDatos = "";
@@ -675,11 +693,11 @@ public class BaseDatosAcademia {
             stmt = this.conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM Cursos WHERE Cursos.id=" + id_curso + " AND Cursos.existe=0 ;");//SELECT
             while (rs.next()) {
-            String id = rs.getString(1);
-            String nombre = rs.getString(2);
-            String descripcion = rs.getString(3);
-            String horas = rs.getString(4);
-            cadenaDatos = cadenaDatos + (id + "," + nombre + "," + descripcion + "," + horas + "\n");
+                String id = rs.getString(1);
+                String nombre = rs.getString(2);
+                String descripcion = rs.getString(3);
+                String horas = rs.getString(4);
+                cadenaDatos = cadenaDatos + (id + "," + nombre + "," + descripcion + "," + horas + "\n");
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -687,6 +705,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String leerDatosUnInscripcioneExistente(int id_inscripcion) {
         Statement stmt;
         String cadenaDatos = "";
@@ -694,13 +713,13 @@ public class BaseDatosAcademia {
             stmt = this.conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM Inscripciones WHERE Inscripciones.id=" + id_inscripcion + " AND Inscripciones.existe=0 ;");//SELECT
             while (rs.next()) {
-            String id = rs.getString(1);
-            String id_alumno = rs.getString(2);
-            String id_curso = rs.getString(3);
-            String fec_inicio = rs.getString(4);
-            String fec_fin = rs.getString(5);
-            String calificacion = rs.getString(6);
-            cadenaDatos = cadenaDatos + (id + "," + id_alumno + "," + id_curso + "," + fec_inicio + "," + fec_fin + "," + calificacion );
+                String id = rs.getString(1);
+                String id_alumno = rs.getString(2);
+                String id_curso = rs.getString(3);
+                String fec_inicio = rs.getString(4);
+                String fec_fin = rs.getString(5);
+                String calificacion = rs.getString(6);
+                cadenaDatos = cadenaDatos + (id + "," + id_alumno + "," + id_curso + "," + fec_inicio + "," + fec_fin + "," + calificacion);
             }
 
             stmt.close();
@@ -709,6 +728,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String leerInscripcionConAlumnoYCursoQueExista(int id_alumno, int id_curso) {
         Statement stmt;
         String cadenaDatos = "";
@@ -716,13 +736,13 @@ public class BaseDatosAcademia {
             stmt = this.conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT Inscripciones.* FROM Inscripciones WHERE Inscripciones.fFin='SIN FINALIZAR' AND Inscripciones.id_curso=" + id_curso + " AND Inscripciones.id_alumno=" + id_alumno + " AND Inscripciones.existe=0 ;");//SELECT
             while (rs.next()) {
-            String id = rs.getString(1);
-            String id_alumno1 = rs.getString(2);
-            String id_curso1 = rs.getString(3);
-            String fInicio = rs.getString(4);
-            String fFin = rs.getString(5);
-            String calificacion = rs.getString(6);
-            cadenaDatos = cadenaDatos + (id + "," + id_alumno1 + "," + id_curso1 + "," + fInicio + "," + fFin + "," + calificacion);
+                String id = rs.getString(1);
+                String id_alumno1 = rs.getString(2);
+                String id_curso1 = rs.getString(3);
+                String fInicio = rs.getString(4);
+                String fFin = rs.getString(5);
+                String calificacion = rs.getString(6);
+                cadenaDatos = cadenaDatos + (id + "," + id_alumno1 + "," + id_curso1 + "," + fInicio + "," + fFin + "," + calificacion);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -752,6 +772,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdNombreApellidoAlumnosExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -774,6 +795,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdNombresCursosExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -795,6 +817,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdHorasCursosExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -816,6 +839,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdNombresInscripcionesExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -838,6 +862,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdId_alumnoNombreId_cursoNombreInscripcionesExistentes() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -850,7 +875,7 @@ public class BaseDatosAcademia {
                 String alumno_nombre = rs.getString(3);
                 String id_curso = rs.getString(4);
                 String curso_nombre = rs.getString(5);
-                arrayDatos.add(id + "," + id_alumno + "," + alumno_nombre+ "," + id_curso+ "," + curso_nombre);
+                arrayDatos.add(id + "," + id_alumno + "," + alumno_nombre + "," + id_curso + "," + curso_nombre);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -862,7 +887,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
-    
+
     public String[] leerIdNombreApellidoAlumnosExistentesEnCurso(int id_curso) {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -885,6 +910,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdNombresCursosExistentesConAlumno(int id_alumno) {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -906,6 +932,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerInscripcionesConAlumnoExistente(int id_alumno) {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -931,6 +958,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerInscripcionesConCursoExistente(int id_curso) {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -956,6 +984,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerInscripcionesConAlumnoNoExistente(int id_alumno) {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -981,6 +1010,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerInscripcionesConCursoNoExistente(int id_curso) {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -1006,7 +1036,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
-    
+
     public String[] leerIdNombreApellidoAlumnosExistentesInscritos() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -1017,7 +1047,7 @@ public class BaseDatosAcademia {
                 String id = rs.getString(1);
                 String nombre = rs.getString(2);
                 String apellido = rs.getString(3);
-                arrayDatos.add(id + "," + nombre + "," + apellido );
+                arrayDatos.add(id + "," + nombre + "," + apellido);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -1029,6 +1059,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdNombreHorasCursosExistentesInscritos() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -1039,7 +1070,7 @@ public class BaseDatosAcademia {
                 String id = rs.getString(1);
                 String nombre = rs.getString(2);
                 String horas = rs.getString(3);
-                arrayDatos.add(id + "," + nombre + "," + horas );
+                arrayDatos.add(id + "," + nombre + "," + horas);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -1051,6 +1082,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdNombreApellidoAlumnosNoExistentesInscritos() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -1061,7 +1093,7 @@ public class BaseDatosAcademia {
                 String id = rs.getString(1);
                 String nombre = rs.getString(2);
                 String apellido = rs.getString(3);
-                arrayDatos.add(id + "," + nombre + "," + apellido );
+                arrayDatos.add(id + "," + nombre + "," + apellido);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -1073,6 +1105,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerIdNombreHorasCursosNoExistentesInscritos() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -1083,7 +1116,7 @@ public class BaseDatosAcademia {
                 String id = rs.getString(1);
                 String nombre = rs.getString(2);
                 String horas = rs.getString(3);
-                arrayDatos.add(id + "," + nombre + "," + horas );
+                arrayDatos.add(id + "," + nombre + "," + horas);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -1095,7 +1128,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
-    
+
     public boolean confirmarAlumno(String nombre, String apellido, String correo, String telefono) {
         Statement stmt;
         boolean confirmar = false;
@@ -1116,6 +1149,7 @@ public class BaseDatosAcademia {
         }
         return confirmar;
     }
+
     public boolean confirmarCurso(String nombre, String descripcion, String horas) {
         Statement stmt;
         boolean confirmar = false;
@@ -1136,6 +1170,7 @@ public class BaseDatosAcademia {
         }
         return confirmar;
     }
+
     public boolean confirmarInscripcion(int id_alumno, int id_curso, String fInicio) {
         Statement stmt;
         boolean confirmar = false;
@@ -1168,6 +1203,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+
     public void modificarCursos(int id, String nombre, String descripcion, String horas) {
         Statement stmt;
         try {
@@ -1179,6 +1215,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+
     public void modificarInscripciones(int id, int id_alumno, int id_curso, String fFin, String calificacion) {
         Statement stmt;
         try {
@@ -1190,7 +1227,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
-    
+
     public void modificarExistenciaAlumno(int id) {
         Statement stmt;
         try {
@@ -1202,6 +1239,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+
     public void modificarExistenciaCursos(int id) {
         Statement stmt;
         try {
@@ -1213,6 +1251,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+
     public void modificarExistenciaInscripcione(int id) {
         Statement stmt;
         try {
@@ -1224,7 +1263,7 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
-    
+
     //estos metodos son para ti jorge
     public String[] leerStringArrayTodasAlumnos() {
         Statement stmt;
@@ -1239,7 +1278,7 @@ public class BaseDatosAcademia {
                 String correo = rs.getString(4);
                 String telefono = rs.getString(5);
                 String existe = rs.getString(6);
-                arrayDatos.add(id + "," + nombre + "," + apellido + "," + correo + "," + telefono+","+existe);
+                arrayDatos.add(id + "," + nombre + "," + apellido + "," + correo + "," + telefono + "," + existe);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -1251,6 +1290,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayTodasCursos() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -1263,7 +1303,7 @@ public class BaseDatosAcademia {
                 String descripcion = rs.getString(3);
                 String horas = rs.getString(4);
                 String existe = rs.getString(5);
-                arrayDatos.add(id + "," + nombre + "," + descripcion + "," + horas+","+existe);
+                arrayDatos.add(id + "," + nombre + "," + descripcion + "," + horas + "," + existe);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -1275,6 +1315,7 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
+
     public String[] leerStringArrayTodasInscripciones() {
         Statement stmt;
         ArrayList<String> arrayDatos = new ArrayList();
@@ -1289,7 +1330,7 @@ public class BaseDatosAcademia {
                 String fFin = rs.getString(5);
                 String calificacion = rs.getString(6);
                 String existe = rs.getString(7);
-                arrayDatos.add(id + "," + id_alumno + "," + id_curso + "," + fInicio + "," + fFin + "," + calificacion+","+existe);
+                arrayDatos.add(id + "," + id_alumno + "," + id_curso + "," + fInicio + "," + fFin + "," + calificacion + "," + existe);
             }
             stmt.close();
         } catch (SQLException ex) {
@@ -1301,35 +1342,12 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
-    
-    
-    public void insertarTodasAlumno(int id , String nombre, String apellido, String correo, String telefono , String existe) {
+
+    public void insertarTodasAlumno(int id, String nombre, String apellido, String correo, String telefono, String existe) {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Alumnos( id , nombre , apellido , correo , telefono ) VALUES (" +id+ " , '" + nombre + "' , '" + apellido + "' , '" + correo + "' , '" + telefono + "' , '"+existe+"' );");
-            this.conn.commit();
-            stmt.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-    public void insertarTodasCurso(int id , String nombre, String descripcion, String horas,String existe) {
-        Statement stmt;
-        try {
-            stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Cursos( id , nombre , descripcion , horas ) VALUES (" +id+ " , '" + nombre + "' , '" + descripcion + "' , '" + horas + "' , '"+existe+"' );");
-            this.conn.commit();
-            stmt.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-    public void insertarTodasInscripcion(int id , int id_alumno, int id_curso, String fInicio, String existe) {//--mirar como se van a introducir fecha fin y calificacion
-        Statement stmt;
-        try {
-            stmt = this.conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Inscripciones(id , id_alumno , id_curso , fInicio )VALUES (" +id+ " , " + id_alumno + " , " + id_curso + " , '" + fInicio + "' , '"+existe+"' ) ;");
+            stmt.executeUpdate("INSERT INTO Alumnos( id , nombre , apellido , correo , telefono ) VALUES (" + id + " , '" + nombre + "' , '" + apellido + "' , '" + correo + "' , '" + telefono + "' , '" + existe + "' );");
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
@@ -1337,5 +1355,28 @@ public class BaseDatosAcademia {
         }
     }
 
-    
+    public void insertarTodasCurso(int id, String nombre, String descripcion, String horas, String existe) {
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("INSERT INTO Cursos( id , nombre , descripcion , horas ) VALUES (" + id + " , '" + nombre + "' , '" + descripcion + "' , '" + horas + "' , '" + existe + "' );");
+            this.conn.commit();
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void insertarTodasInscripcion(int id, int id_alumno, int id_curso, String fInicio, String existe) {//--mirar como se van a introducir fecha fin y calificacion
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("INSERT INTO Inscripciones(id , id_alumno , id_curso , fInicio )VALUES (" + id + " , " + id_alumno + " , " + id_curso + " , '" + fInicio + "' , '" + existe + "' ) ;");
+            this.conn.commit();
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }
