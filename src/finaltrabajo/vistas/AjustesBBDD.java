@@ -4,7 +4,13 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import javax.swing.JPanel;
 
 /**
@@ -165,7 +171,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
 
         nameLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         nameLabel.setForeground(new java.awt.Color(25, 34, 43));
-        nameLabel.setText("PUERTO CONEXIÓN XAPPM");
+        nameLabel.setText("PUERTO CONEXIÓN XAAMP");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -345,6 +351,38 @@ public class AjustesBBDD extends javax.swing.JFrame {
 
     private void MODIFICARModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARModificar_press
         //aaaaaaaaaaaaaaaaaaa boton modificar
+        String parametros = "ip = "+IP.getText()+"\n"+"puerto = "+PUERTO.getText()+"\n"+"db = "+"\n"+"usuario = "+USER.getText()+"\n"+"password = "+PASS.getPassword()+"\n";
+        String dirFichero = "conf.prop";
+        File fDatos = new File(dirFichero);
+        if (!(fDatos.exists())) {
+            try {
+                File comprobacion = new File(dirFichero);
+                comprobacion.createNewFile();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        FileOutputStream fileOut = null;
+        BufferedOutputStream bufOut = null;
+        ObjectOutputStream objOut = null;
+        try {
+            fileOut = new FileOutputStream(dirFichero);
+            bufOut = new BufferedOutputStream(fileOut);
+            objOut = new ObjectOutputStream(bufOut);
+            objOut.writeObject(parametros);///////////////////////////////////////////////////////
+            System.out.println("los datos se han copiado exitosamente en: " + dirFichero);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                objOut.close();
+                bufOut.close();
+                fileOut.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_MODIFICARModificar_press
 
     private void MODIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseEntered
@@ -413,6 +451,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
 
     private void CONECTARModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARModificar_clicked
        //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaboton conectar
+        BaseDatosAcademia bc = new BaseDatosAcademia();
         CONECTAR.setBackground(new Color(184, 67, 87));
         CONECTAR.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_CONECTARModificar_clicked

@@ -5,10 +5,15 @@
  */
 package finaltrabajo;
 
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,8 +23,7 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.HashMap;
 
 /**
  *
@@ -40,19 +44,102 @@ public class BaseDatosAcademia {
     private String db = "";
     private Connection conn = null;
 
-    public BaseDatosAcademia(String ip, String port, String user, String psw, String db) {
-        this.puerto = port;
-        this.ip = ip;
-        this.usuario = user;
-        this.passw = psw;
-        this.db = db;
-        conectar();
-        crearDB();
-    }
-
     public BaseDatosAcademia() {
-        conectar();
+        String dirFichero = "conf.prop";
+        String parametrosString = "ip = " + this.ip + "\n" + "puerto = " + this.puerto + "\n" + "db = " + "\n" + "usuario = " + this.usuario + "\n" + "password = " + this.passw + "\n";
+        File fDatos = new File(dirFichero);
+        if (!(fDatos.exists())) {
+            try {
+                File comprobacion = new File(dirFichero);
+                comprobacion.createNewFile();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            FileOutputStream fileOut = null;
+            BufferedOutputStream bufOut = null;
+            ObjectOutputStream objOut = null;
+            try {
+                fileOut = new FileOutputStream(dirFichero);
+                bufOut = new BufferedOutputStream(fileOut);
+                objOut = new ObjectOutputStream(bufOut);
+                objOut.writeObject(parametrosString);///////////////////////////////////////////////////////
+                System.out.println("los datos se han copiado exitosamente en: " + dirFichero);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    objOut.close();
+                    bufOut.close();
+                    fileOut.close();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        FileReader fR = null;
+        BufferedReader bR = null;
+        String linea = null;
+        HashMap<String, String> parametros = new HashMap<String, String>();
+        try {
+            fR = new FileReader(dirFichero);
+            bR = new BufferedReader(fR);
+            int cont = 1;
+            while ((linea = bR.readLine()) != null) {
+                System.out.println("num linea " + cont + " " + linea);
+                cont++;
+                linea = linea.trim();
+                if (linea.length() != 0) {
+                    String valores[] = linea.split("=");
+                    if (valores.length == 2) {
+                        if (parametros.containsKey(valores[0])) {
+                            System.out.println("ERROR PARAMETROS YA DEFINIDO");
+                        } else {
+                            parametros.put(valores[0].trim(), valores[1].trim());
+                        }
+                    } else if (valores.length == 1) {
+                        if (parametros.containsKey(valores[0])) {
+                            System.out.println("ERROR PARAMETROS YA DEFINIDO");
+                        } else {
+                            parametros.put(valores[0].trim(), "");
+                        }
+                    }
+                }
+                for (String clave : parametros.keySet()) {
+                    System.out.println(clave + ":" + parametros.get(clave));
+                    switch (clave) {
+                        case "ip":
+                            this.ip = parametros.get(clave);
+                            break;
+                        case "puerto":
+                            this.puerto = parametros.get(clave);
+                            break;
+                        case "usuario":
+                            this.usuario = parametros.get(clave);
+                            break;
+                        case "password":
+                            this.passw = parametros.get(clave);
+                            break;
+                        case "db":
+                            this.db = parametros.get(clave);
+                            break;
+                    }
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bR.close();
+                fR.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+
+        }
         crearDB();
+        conectar();
     }
 
     public void tirarBD() {
