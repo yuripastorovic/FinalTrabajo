@@ -281,17 +281,6 @@ private void comboBox1() {
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ButtonAltaMouseReleased
 
-    private void TextAreaDescrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextAreaDescrMouseClicked
-        TextAreaDescr.setText("");
-        TextAreaDescr.setBackground(new Color(189, 146, 64));
-        TextAreaDescr.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_TextAreaDescrMouseClicked
-
-    private void CBHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHorasActionPerformed
-        CBHoras.setBackground(new Color(189, 146, 64));
-        CBHoras.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_CBHorasActionPerformed
-
     private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
         String[] partes= CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
@@ -301,6 +290,17 @@ private void comboBox1() {
         CBHoras.setSelectedItem(partesTF[3]);
                         
     }//GEN-LAST:event_CBHoras1ActionPerformed
+
+    private void CBHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHorasActionPerformed
+        CBHoras.setBackground(new Color(189, 146, 64));
+        CBHoras.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_CBHorasActionPerformed
+
+    private void TextAreaDescrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextAreaDescrMouseClicked
+        TextAreaDescr.setText("");
+        TextAreaDescr.setBackground(new Color(189, 146, 64));
+        TextAreaDescr.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_TextAreaDescrMouseClicked
 
     /**
      * @param args the command line arguments

@@ -328,7 +328,7 @@ public class Alumnos extends javax.swing.JFrame {
     }//GEN-LAST:event_Alta_alum
 
     private void Modi_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modi_alum
-        AlumnosModificar bbb = new AlumnosModificar();
+        AlumnosModificar2 bbb = new AlumnosModificar2();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_Modi_alum
 
