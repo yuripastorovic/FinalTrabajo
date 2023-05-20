@@ -389,7 +389,7 @@ public class CursosBaja extends javax.swing.JFrame {
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
         for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(0);
+            modelo.removeRow(i);
             i--;
         }
         
@@ -430,7 +430,7 @@ public class CursosBaja extends javax.swing.JFrame {
 
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
         for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(0);
+            modelo.removeRow(i);
             i--;
         }
         

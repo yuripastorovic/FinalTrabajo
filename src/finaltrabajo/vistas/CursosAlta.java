@@ -20,10 +20,7 @@ public class CursosAlta extends javax.swing.JFrame {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     public CursosAlta() {
         initComponents();
-    }
-    //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------
-    //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------    
-    //falta meter horas a el combo box de horas-----------------------------------------------------------------------------------------------------------------------------    
+    }    
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;

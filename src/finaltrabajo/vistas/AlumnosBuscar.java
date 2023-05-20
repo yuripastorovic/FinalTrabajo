@@ -278,7 +278,7 @@ public class AlumnosBuscar extends javax.swing.JFrame {
 
     private void Boton_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_buscar
         for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(0);
+            modelo.removeRow(i);
             i--;
         }
         

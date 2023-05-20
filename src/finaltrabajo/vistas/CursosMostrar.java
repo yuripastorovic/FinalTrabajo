@@ -205,8 +205,8 @@ public JPanel getFondo() {
             i--;
         }
         TablaNew.setModel(modelo);
-        String datos[]= bd.leerStringArrayCursosExistentes();
-        for (int i = 0; i < bd.leerStringArrayCursosExistentes().length; i++) {
+        String datos[]= bd.leerStringArrayCursosNoExistentes();
+        for (int i = 0; i < bd.leerStringArrayCursosNoExistentes().length; i++) {
             modelo.addRow(datos[i].split(","));
         }
     }//GEN-LAST:event_BotonExalumnosMostrarExalumnos
@@ -232,15 +232,18 @@ public JPanel getFondo() {
     }//GEN-LAST:event_BotonExalumnosMouseReleased
 
     private void ButtonAlumnosMostrarAlumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMostrarAlumnos
+        
+        
         for (int i = 0; i <modelo.getRowCount(); i++) {
             modelo.removeRow(0);
             i--;
         }
         TablaNew.setModel(modelo);
-        String datos[]= bd.leerStringArrayCursosNoExistentes();
-        for (int i = 0; i < bd.leerStringArrayCursosNoExistentes().length; i++) {
+        String datos[]= bd.leerStringArrayCursosExistentes();
+        for (int i = 0; i < bd.leerStringArrayCursosExistentes().length; i++) {
             modelo.addRow(datos[i].split(","));
         }
+        
     }//GEN-LAST:event_ButtonAlumnosMostrarAlumnos
 
     private void ButtonAlumnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMouseEntered

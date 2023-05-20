@@ -62,7 +62,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
            String[] partes = ComboNombre.getSelectedItem().toString().split(",");
            String[] partes1 = ComboCurso.getSelectedItem().toString().split(",");
             for (int i = 0; i <modelo.getRowCount(); i++) {
-                modelo.removeRow(0);
+                modelo.removeRow(i);
                 i--;
             }
 
@@ -74,7 +74,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         }else if((!ComboNombre.isEnabled()&& ComboCurso.isEnabled())){
             String[] partes = ComboNombre.getSelectedItem().toString().split(",");
             for (int i = 0; i <modelo.getRowCount(); i++) {
-                modelo.removeRow(0);
+                modelo.removeRow(i);
                 i--;
             }
             TablaNew.setModel(modelo);
@@ -86,7 +86,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         }else if((ComboNombre.isEnabled()&& !ComboCurso.isEnabled())){
            String[] partes1 = ComboCurso.getSelectedItem().toString().split(",");
             for (int i = 0; i <modelo.getRowCount(); i++) {
-                modelo.removeRow(0);
+                modelo.removeRow(i);
                 i--;
             }
 

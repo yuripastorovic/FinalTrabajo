@@ -93,8 +93,6 @@ private void comboBox1() {
         ComboHoras.setBackground(new java.awt.Color(25, 34, 43));
         ComboHoras.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboHoras.setForeground(new java.awt.Color(221, 214, 204));
-        ComboHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComboHoras.setSelectedIndex(-1);
         ComboHoras.setBorder(null);
         ComboHoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,7 +330,7 @@ private void comboBox1() {
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
         for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(0);
+            modelo.removeRow(i);
             i--;
         }
         
