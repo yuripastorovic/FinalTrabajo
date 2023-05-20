@@ -4,6 +4,7 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -16,6 +17,7 @@ public class AjustesLocal extends javax.swing.JFrame {
     /**
      * Creates new form AjustesLocal
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
     public AjustesLocal() {
         initComponents();
     }
@@ -233,7 +235,9 @@ public class AjustesLocal extends javax.swing.JFrame {
     }//GEN-LAST:event_CONECTARMouseReleased
 
     private void GENERAR_INFORMESModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESModificar_press
-
+        bd.guardarEnFicheroTextoAlumnos("informeAlumnos.txt");
+        bd.guardarEnFicheroTextoCursos("informeCursos.txt");
+        bd.guardarEnFicheroTextoInscripciones("informeInscripciones.txt");
     }//GEN-LAST:event_GENERAR_INFORMESModificar_press
 
     private void GENERAR_INFORMESMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMouseEntered

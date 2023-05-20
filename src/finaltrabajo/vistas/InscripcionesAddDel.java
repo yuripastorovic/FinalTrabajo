@@ -183,13 +183,15 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
     private void ComboNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNotaActionPerformed
         ComboNota.setBackground(new Color(189, 146, 64));
         ComboNota.setForeground(new Color(25, 34, 43));
+        
     }//GEN-LAST:event_ComboNotaActionPerformed
 
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
-        
+        String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+        String[] partes1 = ComboNota.getSelectedItem().toString().split(",");
         String fInicio = bd.getHoraDATE();
-        if(bd.confirmarInscripcion(Integer.valueOf(ComboNombre.getSelectedItem().toString()) , Integer.valueOf(ComboNota.getSelectedItem().toString()) , fInicio)){
-            bd.insertarInscripcion(Integer.valueOf(ComboNombre.getSelectedItem().toString()) , Integer.valueOf(ComboNota.getSelectedItem().toString()) , fInicio);
+        if(bd.confirmarInscripcion(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio)){
+            bd.insertarInscripcion(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio);
         }else{
             //popuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopup
             //con el popup que te dice que ya existe esa inscripcion 

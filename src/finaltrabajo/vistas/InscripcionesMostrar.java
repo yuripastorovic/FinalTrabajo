@@ -4,8 +4,10 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,12 +18,38 @@ public class InscripcionesMostrar extends javax.swing.JFrame {
     /**
      * Creates new form InscripcionesMostrar
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private DefaultTableModel modelo = new DefaultTableModel();
     public InscripcionesMostrar() {
         initComponents();
+        comboBox1();
+        comboBox2();
+        modelo.addColumn("ID");
+        modelo.addColumn("ID_ALUMNO");
+        modelo.addColumn("ID_CURSO");
+        modelo.addColumn("FECHA_INICIO");
+        modelo.addColumn("FECHA_FIN");
+        modelo.addColumn("NOTA");
     }
 public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
+    }
+private void comboBox1() {
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
+        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+private void comboBox2() {
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
+        ComboNombre1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+private void comboBox3() {
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
+        ComboCurso.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+private void comboBox4() {
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
+        ComboCurso1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -217,20 +245,59 @@ public JPanel getFondo() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i--;
+        }
+        TablaNew.setModel(modelo);
+        String datitos[]=bd.leerStringArrayInscripcionesExistentes();
+        for (int i = 0; i < bd.leerStringArrayInscripcionesAlumnosExistentes().length; i++) {
+            modelo.addRow(datitos[i].split(","));
+        }
         ComboNombre.setBackground(new Color(189, 146, 64));
         ComboNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboNombreActionPerformed
 
     private void ComboNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombre1ActionPerformed
-        // TODO add your handling code here:
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i--;
+        }
+        TablaNew.setModel(modelo);
+        String datitos[]=bd.leerStringArrayInscripcionesExistentes();
+        for (int i = 0; i < bd.leerStringArrayInscripcionesAlumnosNoExistentes().length; i++) {
+            modelo.addRow(datitos[i].split(","));
+        }
+        ComboNombre1.setBackground(new Color(189, 146, 64));
+        ComboNombre1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboNombre1ActionPerformed
 
     private void ComboCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCursoActionPerformed
-        // TODO add your handling code here:
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i--;
+        }
+        TablaNew.setModel(modelo);
+        String datitos[]=bd.leerStringArrayInscripcionesExistentes();
+        for (int i = 0; i < bd.leerStringArrayInscripcionesCursosExistentes().length; i++) {
+            modelo.addRow(datitos[i].split(","));
+        }
+        ComboCurso.setBackground(new Color(189, 146, 64));
+        ComboCurso.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboCursoActionPerformed
 
     private void ComboCurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCurso1ActionPerformed
-        // TODO add your handling code here:
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i--;
+        }
+        TablaNew.setModel(modelo);
+        String datitos[]=bd.leerStringArrayInscripcionesExistentes();
+        for (int i = 0; i < bd.leerStringArrayInscripcionesCursosNoExistentes().length; i++) {
+            modelo.addRow(datitos[i].split(","));
+        }
+        ComboCurso1.setBackground(new Color(189, 146, 64));
+        ComboCurso1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboCurso1ActionPerformed
 
     /**

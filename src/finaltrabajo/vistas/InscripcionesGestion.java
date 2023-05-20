@@ -4,8 +4,10 @@
  */
 package finaltrabajo.vistas;
 
+import finaltrabajo.BaseDatosAcademia;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,13 +18,99 @@ public class InscripcionesGestion extends javax.swing.JFrame {
     /**
      * Creates new form InscripcionesAluCurs
      */
+    private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private DefaultTableModel modelo = new DefaultTableModel();
     public InscripcionesGestion() {
         initComponents();
+        comboBox1();
+        comboBox2();
+        modelo.addColumn("ID");
+        modelo.addColumn("ID_ALUMNO");
+        modelo.addColumn("ID_CURSO");
+        modelo.addColumn("FECHA_INICIO");
+        modelo.addColumn("FECHA_FIN");
+        modelo.addColumn("NOTA");
+        ponerInscripcionesTabla();
     }
-public JPanel getFondo() {
+    public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
+    private void comboBox1() {
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
+        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+    private void comboBox1Returns(){
+        String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentesEnCurso(Integer.valueOf(partes[0]));
+        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+        actualizarInscripcionesTabla();
+    }
+    
+    private void comboBox2() {
+        String arrayString[] = bd.leerIdNombresCursosExistentes();
+        ComboCurso.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+    }
+    private void comboBox2Returns(){
+        String[] partes = ComboCurso.getSelectedItem().toString().split(",");
+        String arrayString[] = bd.leerIdNombresCursosExistentesConAlumno(Integer.valueOf(partes[0]));
+        ComboCurso.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+        actualizarInscripcionesTabla();
+    }
+    private void actualizarInscripcionesTabla(){
+        if(ComboNombre.isEnabled()&& ComboCurso.isEnabled()){
+           String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+           String[] partes1 = ComboCurso.getSelectedItem().toString().split(",");
+            for (int i = 0; i <modelo.getRowCount(); i++) {
+                modelo.removeRow(0);
+                i--;
+            }
+
+            TablaNew.setModel(modelo);
+            String id_alumno = partes[0].trim();
+            String id_curso = partes[0].trim();
+            String datos[] = bd.leerInscripcionConAlumnoYCursoQueExista( Integer.valueOf(id_alumno), Integer.valueOf(id_curso)).split(",");
+            modelo.addRow(datos); 
+        }else if((!ComboNombre.isEnabled()&& ComboCurso.isEnabled())){
+            String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+            for (int i = 0; i <modelo.getRowCount(); i++) {
+                modelo.removeRow(0);
+                i--;
+            }
+            TablaNew.setModel(modelo);
+            String id_alumno = partes[0].trim();
+            String datos[] = bd.leerInscripcionesConAlumnoExistente(Integer.valueOf(id_alumno));
+            for (int i = 0; i < bd.leerStringArrayAlumnosExistentes().length; i++) {
+                modelo.addRow(datos[i].split(","));
+            } 
+        }else if((ComboNombre.isEnabled()&& !ComboCurso.isEnabled())){
+           String[] partes1 = ComboCurso.getSelectedItem().toString().split(",");
+            for (int i = 0; i <modelo.getRowCount(); i++) {
+                modelo.removeRow(0);
+                i--;
+            }
+
+            TablaNew.setModel(modelo);
+            String id_curso = partes1[0].trim();
+            String datos[] = bd.leerInscripcionesConCursoExistente(Integer.valueOf(id_curso));
+            for (int i = 0; i < bd.leerStringArrayAlumnosExistentes().length; i++) {
+                modelo.addRow(datos[i].split(","));
+            } 
+        }
+        
+    }
+    private void ponerInscripcionesTabla(){
+        for (int i = 0; i <modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i--;
+        }
+        TablaNew.setModel(modelo);
+        String datitos[]=bd.leerStringArrayInscripcionesExistentes();
+        for (int i = 0; i < bd.leerStringArrayInscripcionesExistentes().length; i++) {
+            modelo.addRow(datitos[i].split(","));
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -285,8 +373,18 @@ public JPanel getFondo() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
-
-
+        String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+        String[] partes1 = ComboCurso.getSelectedItem().toString().split(",");
+        
+        String id_alumno = partes[0].trim();
+        String id_curso = partes[0].trim();
+        String datos[] = bd.leerInscripcionConAlumnoYCursoQueExista( Integer.valueOf(id_alumno), Integer.valueOf(id_curso)).split(",");
+        String nota = "ABANDONO";
+        String fFin= "ABANDONO";
+        bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2]) , datos[3] , fFin , nota);
+        comboBox1();
+        comboBox2();
+        ponerInscripcionesTabla();
     }//GEN-LAST:event_ButtonAltaCrear_alumno
 
     private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered
@@ -310,16 +408,30 @@ public JPanel getFondo() {
     }//GEN-LAST:event_ButtonAltaMouseReleased
 
     private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
+        comboBox2Returns();
+        this.ComboNombre.setEnabled(false);
         ComboNombre.setBackground(new Color(189, 146, 64));
         ComboNombre.setForeground(new Color(25, 34, 43));    }//GEN-LAST:event_ComboNombreActionPerformed
 
     private void ComboNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNotaActionPerformed
         ComboNota.setBackground(new Color(189, 146, 64));
         ComboNota.setForeground(new Color(25, 34, 43));
+        this.ButtonAlta.setEnabled(false);
     }//GEN-LAST:event_ComboNotaActionPerformed
 
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
-
+        String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+        String[] partes1 = ComboCurso.getSelectedItem().toString().split(",");
+        
+        String id_alumno = partes[0].trim();
+        String id_curso = partes[0].trim();
+        String datos[] = bd.leerInscripcionConAlumnoYCursoQueExista( Integer.valueOf(id_alumno), Integer.valueOf(id_curso)).split(",");
+        String nota = ComboNota.getSelectedItem().toString();
+        String fFin= bd.getHoraDATE();
+        bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2]) , datos[3] , fFin , nota);
+        comboBox1();
+        comboBox2();
+        ponerInscripcionesTabla();
     }//GEN-LAST:event_ButtonModificarModificar_press
 
     private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered
@@ -343,7 +455,10 @@ public JPanel getFondo() {
     }//GEN-LAST:event_ButtonModificarMouseReleased
 
     private void ComboCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCursoActionPerformed
-        // TODO add your handling code here:
+        comboBox1Returns();
+        this.ComboCurso.setEnabled(false);
+        ComboCurso.setBackground(new Color(189, 146, 64));
+        ComboCurso.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboCursoActionPerformed
 
     /**
