@@ -5,6 +5,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +21,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
+    private Herramientas h1 = new Herramientas();
     public InscripcionesGestion() {
         initComponents();
         modelo.addColumn("ID");
@@ -296,15 +298,25 @@ public class InscripcionesGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
+        if(ComboNombre.getSelectedIndex()!=-1 && ComboNota.getSelectedIndex()==-1){
         String[] partes = ComboNombre.getSelectedItem().toString().split(",");
-        
         String id_alumno = partes[1].trim();
         String id_curso = partes[3].trim();
         String datos[] = bd.leerInscripcionConAlumnoYCursoQueExista( Integer.valueOf(id_alumno), Integer.valueOf(id_curso)).split(",");
         String nota = "ABANDONO";
         String fFin= "ABANDONO";
         bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2])  , fFin , nota);
+        h1.popUp1("GESTION INSCRIPCION", "SE HA DESMATRICULADO AL ALUMNO DEL CURSO", "OK", "favicon-32x32.png");
         comboBox1();
+        ComboNombre.setSelectedIndex(-1);
+        ComboNota.setSelectedIndex(-1);
+        ComboNombre.setBackground(new Color (25, 34, 43));
+        ComboNombre.setForeground(new Color (221, 214, 204));
+        ComboNota.setBackground(new Color(25, 34, 43));
+        ComboNota.setForeground(new Color (221, 214, 204));
+        }else{
+            h1.popUp1("GESTION INSCRIPCION", "PORFAVOR SELECCIONE UN ALUMNO ", "OK", "favicon-32x32.png");
+        }
     }//GEN-LAST:event_ButtonAltaCrear_alumno
 
     private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered
@@ -341,6 +353,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboNotaActionPerformed
 
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
+        if(!(ComboNombre.getSelectedIndex()==-1 || ComboNota.getSelectedIndex()==-1)){
         String[] partes = ComboNombre.getSelectedItem().toString().split(",");
         String id_alumno = partes[1].trim();
         String id_curso = partes[3].trim();
@@ -349,11 +362,17 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         String fFin= bd.getHoraDATE();
         System.out.println("id="+datos[0] +"    id_alumno="+ datos[1] +"   id_curso="+ datos[2]+ "   fecha fin="+fFin+"  nota="+ nota);
         bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2])  , fFin , nota);
+        h1.popUp1("GESTION INSCRIPCION", "ALUMNO CALIFICADO EXITOSAMENTE", "OK", "favicon-32x32.png");
         comboBox1();
+        ComboNombre.setSelectedIndex(-1);
+        ComboNota.setSelectedIndex(-1);
         ComboNombre.setBackground(new Color (25, 34, 43));
         ComboNombre.setForeground(new Color (221, 214, 204));
         ComboNota.setBackground(new Color(25, 34, 43));
         ComboNota.setForeground(new Color (221, 214, 204));
+        }else{
+            h1.popUp1("GESTION INSCRIPCION", "PORFAVOR SELECCIONE UN ALUMNO Y UNA NOTA", "OK", "favicon-32x32.png");
+        }
     }//GEN-LAST:event_ButtonModificarModificar_press
 
     private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered

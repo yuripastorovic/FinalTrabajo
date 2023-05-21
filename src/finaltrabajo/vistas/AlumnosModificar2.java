@@ -20,6 +20,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private Herramientas h1 = new Herramientas();
+
     public AlumnosModificar2() {
         initComponents();
         comboBox1();
@@ -268,11 +269,21 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoNombreMouseClicked
 
     private void Modificar_Crear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_Crear_alumno
+        if (!(CBHoras1.getSelectedIndex() == -1
+                || CampoNombre.getText().trim().equals("")
+                || CampoApellido.getText().trim().equals("")
+                || CampoCorreo.getText().trim().equals("")
+                || CampoTelefono.getText().trim().equals("")
+                || CampoNombre.getText().trim().equals("Introduzca nombre")
+                || CampoApellido.getText().trim().equals("Introduzca apellido")
+                || CampoCorreo.getText().trim().equals("Introduzca correo")
+                || CampoTelefono.getText().trim().equals("Introduzca telefono"))) {
+
         String[] partes = CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
         h1.popUp1("MODIFICAR ALUMNO", "ALUMNO MODIFICADO", "OK", "favicon-32x32.png");
-        
+        comboBox1();
         CampoNombre.setText("Introduzca nombre");
         CampoApellido.setText("Introduzca apellido");
         CampoCorreo.setText("Introduzca correo");
@@ -285,7 +296,13 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         CampoCorreo.setForeground(new Color(221, 214, 204));
         CampoTelefono.setBackground(new Color(25, 34, 43));
         CampoTelefono.setForeground(new Color(221, 214, 204));
-        comboBox1();
+        CBHoras1.setBackground(new Color(25, 34, 43));
+        CBHoras1.setForeground(new Color(221, 214, 204));
+        CBHoras1.setSelectedIndex(-1);
+        }else{
+            h1.popUp1("MODIFICAR ALUMNO", "PORFAVOR ELIJA Y MODIFIQUE UN ALUMNO CORRECTAMENTE", "OK", "favicon-32x32.png");
+        }
+
     }//GEN-LAST:event_Modificar_Crear_alumno
 
     private void Modificar_MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_MouseEntered
@@ -312,7 +329,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         String[] partes = CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         String[] partesTF = bd.leerDatosUnAlumnoExistente(Integer.valueOf(id)).toString().split(",");
-        
+
         CampoNombre.setText(partesTF[1]);
         CampoApellido.setText(partesTF[2]);
         CampoCorreo.setText(partesTF[3]);
@@ -333,7 +350,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoTelefonoMouseClicked
 
     private void CampoCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoCorreoMouseClicked
-       CampoCorreo.setText("");
+        CampoCorreo.setText("");
         CampoCorreo.setBackground(new Color(189, 146, 64));
         CampoCorreo.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoCorreoMouseClicked
@@ -363,8 +380,6 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AlumnosModificar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
- 
-      
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

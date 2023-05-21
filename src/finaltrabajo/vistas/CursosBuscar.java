@@ -5,6 +5,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +21,8 @@ public class CursosBuscar extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
+    private Herramientas h1 = new Herramientas();
+
     public CursosBuscar() {
         initComponents();
         comboBox1();
@@ -28,13 +31,15 @@ public class CursosBuscar extends javax.swing.JFrame {
         modelo.addColumn("NOMBRE");
         modelo.addColumn("DESCRIPCION");
         modelo.addColumn("HORAS");
-        
+
     }
-public JPanel getFondo() {
+
+    public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-private void comboBox1() {
+
+    private void comboBox1() {
         String arrayString[] = bd.leerIdNombresCursosExistentes();
         ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
@@ -43,6 +48,7 @@ private void comboBox1() {
         String arrayString[] = bd.leerIdHorasCursosExistentes();
         ComboHoras.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -331,23 +337,25 @@ private void comboBox1() {
     }//GEN-LAST:event_BotonResetMouseReleased
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
-        for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
-            i--;
-        }
-        
-        TablaNew.setModel(modelo);
-        String[] partes;
-        if (ComboNombre.isEnabled()) {
-            partes = ComboNombre.getSelectedItem().toString().split(",");
+        if (!(ComboNombre.getSelectedIndex() == -1 && ComboHoras.getSelectedIndex() == -1)) {
+            for (int i = 0; i < modelo.getRowCount(); i++) {
+                modelo.removeRow(i);
+                i--;
+            }
+            TablaNew.setModel(modelo);
+            String[] partes;
+            if (ComboNombre.isEnabled()) {
+                partes = ComboNombre.getSelectedItem().toString().split(",");
+            } else {
+                partes = ComboHoras.getSelectedItem().toString().split(",");
+            }
+            String id = partes[0].trim();
+            String datos[] = new String[1];
+            datos = bd.leerDatosUnCursoExistente(Integer.valueOf(id)).split(",");
+            modelo.addRow(datos);
         } else {
-            partes = ComboHoras.getSelectedItem().toString().split(",");
+            h1.popUp1("BAJA CURSO", "PORFAVOR SELECCIONE UN CURSO", "OK", "favicon-32x32.png");
         }
-
-        String id = partes[0].trim();
-        String datos[] = new String[1];
-        datos = bd.leerDatosUnCursoExistente(Integer.valueOf(id)).split(",");
-        modelo.addRow(datos);
     }//GEN-LAST:event_BotonBuscar_buscar
 
     private void BotonBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseEntered

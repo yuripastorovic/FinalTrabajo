@@ -20,9 +20,11 @@ public class CursosAlta extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private Herramientas h1 = new Herramientas();
+
     public CursosAlta() {
         initComponents();
-    }    
+    }
+
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
@@ -214,29 +216,39 @@ public class CursosAlta extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoNombreMouseClicked
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
-        if(!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(),CBHoras.getSelectedItem().toString() )){
-            h1.popUp1("ALTA CURSO", "CURSO CREADO", "OK", "favicon-32x32.png");
-            bd.insertarCurso(CampoNombre.getText().trim(), TextAreaDescr.getText().trim(),CBHoras.getSelectedItem().toString().trim());
-        }else{
-            if (bd.confirmarCursoNoExistente(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
-                int resultado = h1.popUp2("ALTA CURSO", "ESTE CURSO EXISTE PERO ESTA DESMATRICULADO", "READMITIR", "CANCELAR", "favicon-32x32.png");
-                if(resultado==0){
-                    int id = bd.retornarIdCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
-                    bd.modificarExistenciaCursosANoExistente(id);
-                }
+        if (!(CampoNombre.getText().trim().equals("")
+                || TextAreaDescr.getText().trim().equals("")
+                || CampoNombre.getText().trim().equals("Introduzca nombre")
+                || TextAreaDescr.getText().trim().equals("Introduzca descripcion del curso")
+                || CBHoras.getSelectedIndex() == -1)) {
+
+            if (!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
+                h1.popUp1("ALTA CURSO", "CURSO CREADO", "OK", "favicon-32x32.png");
+                bd.insertarCurso(CampoNombre.getText().trim(), TextAreaDescr.getText().trim(), CBHoras.getSelectedItem().toString().trim());
             } else {
-                h1.popUp1("ALTA CURSO", "CURSO YA EXISTENTE", "OK", "favicon-32x32.png");
+                if (bd.confirmarCursoNoExistente(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
+                    int resultado = h1.popUp2("ALTA CURSO", "ESTE CURSO EXISTE PERO ESTA DESMATRICULADO", "READMITIR", "CANCELAR", "favicon-32x32.png");
+                    if (resultado == 0) {
+                        int id = bd.retornarIdCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
+                        bd.modificarExistenciaCursosANoExistente(id);
+                    }
+                } else {
+                    h1.popUp1("ALTA CURSO", "CURSO YA EXISTENTE", "OK", "favicon-32x32.png");
+                }
             }
-        }  
-        CampoNombre.setText("Introduzca nombre");
-        TextAreaDescr.setText("Introduzca descripcion del curso");
-        CBHoras.setSelectedIndex(-1);
-        CBHoras.setBackground(new Color(25, 34, 43));
-        CBHoras.setForeground(new Color(221, 214, 204));
-        TextAreaDescr.setBackground(new Color(25, 34, 43));
-        TextAreaDescr.setForeground(new Color(221, 214, 204));
-        CampoNombre.setBackground(new Color(25, 34, 43));
-        CampoNombre.setForeground(new Color(221, 214, 204));
+            CampoNombre.setText("Introduzca nombre");
+            TextAreaDescr.setText("Introduzca descripcion del curso");
+            CBHoras.setSelectedIndex(-1);
+            CBHoras.setBackground(new Color(25, 34, 43));
+            CBHoras.setForeground(new Color(221, 214, 204));
+            TextAreaDescr.setBackground(new Color(25, 34, 43));
+            TextAreaDescr.setForeground(new Color(221, 214, 204));
+            CampoNombre.setBackground(new Color(25, 34, 43));
+            CampoNombre.setForeground(new Color(221, 214, 204));
+        } else {
+            h1.popUp1("ALTA CURSO", "PORFAVOR REYENE BIEN LOS DATOS", "OK", "favicon-32x32.png");
+        }
+
     }//GEN-LAST:event_ButtonAltaCrear_alumno
 
     private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered

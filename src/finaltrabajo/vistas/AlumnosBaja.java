@@ -349,12 +349,12 @@ public class AlumnosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonResetBoton_reset
 
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
-        
-        for (int i = 0; i <modelo.getRowCount(); i++) {
+
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
             i--;
         }
-        
+
         TablaNew.setModel(modelo);
         String[] partes;
         if (ComboNombre.isEnabled()) {
@@ -408,32 +408,31 @@ public class AlumnosBaja extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonBuscarMouseReleased
 
     private void ButtonRetirarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarModificar_press
-        /*
-        String[] partes= CBHoras1.getSelectedObjects().toString().split(",");
-        String id = partes[0].trim();
-        bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
-         */
-        for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(0);
-            i--;
-        }
-        
-        String[] partes;
-        if (ComboNombre.isEnabled()) {
-            partes = ComboNombre.getSelectedItem().toString().split(",");
-        } else {
-            partes = ComboTelefono.getSelectedItem().toString().split(",");
-        }
 
-        String id = partes[0].trim();
-        bd.modificarExistenciaAlumno(Integer.valueOf(id));
-        h1.popUp1("BAJA ALUMNO", "ALUMNO DESMATRICULADO", "OK", "favicon-32x32.png");
-        ComboNombre.setSelectedIndex(-1);
-        ComboNombre.setBackground(new Color(189, 146, 64));
-        ComboNombre.setForeground(new Color(25, 34, 43));
-        ComboTelefono.setSelectedIndex(-1);
-        ComboTelefono.setBackground(new Color(189, 146, 64));
-        ComboTelefono.setForeground(new Color(25, 34, 43));
+        if (!(ComboNombre.getSelectedIndex() == -1 && ComboTelefono.getSelectedIndex() == -1)) {
+
+            for (int i = 0; i < modelo.getRowCount(); i++) {
+                modelo.removeRow(0);
+                i--;
+            }
+            String[] partes;
+            if (ComboNombre.isEnabled()) {
+                partes = ComboNombre.getSelectedItem().toString().split(",");
+            } else {
+                partes = ComboTelefono.getSelectedItem().toString().split(",");
+            }
+            String id = partes[0].trim();
+            bd.modificarExistenciaAlumno(Integer.valueOf(id));
+            h1.popUp1("BAJA ALUMNO", "ALUMNO DESMATRICULADO", "OK", "favicon-32x32.png");
+            ComboNombre.setSelectedIndex(-1);
+            ComboNombre.setBackground(new Color(189, 146, 64));
+            ComboNombre.setForeground(new Color(25, 34, 43));
+            ComboTelefono.setSelectedIndex(-1);
+            ComboTelefono.setBackground(new Color(189, 146, 64));
+            ComboTelefono.setForeground(new Color(25, 34, 43));
+        } else {
+            h1.popUp1("BAJA ALUMNO", "PORFAVOR ELIGE UN ALUMNO", "OK", "favicon-32x32.png");
+        }
     }//GEN-LAST:event_ButtonRetirarModificar_press
 
     private void ButtonRetirarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarMouseEntered

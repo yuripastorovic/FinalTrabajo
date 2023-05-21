@@ -190,29 +190,33 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboNotaActionPerformed
 
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
-        String[] partes = ComboNombre.getSelectedItem().toString().split(",");
-        String[] partes1 = ComboNota.getSelectedItem().toString().split(",");
-        String fInicio = bd.getHoraDATE();
-        if (!bd.confirmarInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio)) {
-            h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION CREADA", "OK", "favicon-32x32.png");
-            bd.insertarInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio);
-        } else {
-            if (bd.confirmarInscripcionNoExistente(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio)) {
-                int resultado = h1.popUp2("ALTA INSCRIPCION", "ESTA INSCRIPCION EXISTE PERO ESTA INEXISTENTE", "READMITIR", "CANCELAR", "favicon-32x32.png");
-                if (resultado == 0) {
-                    int id = bd.retornarIdInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio);
-                    bd.modificarExistenciaANoInscripcione(id);
-                }
+        if (!(ComboNombre.getSelectedIndex() == -1 || ComboNota.getSelectedIndex() == -1)) {
+            String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+            String[] partes1 = ComboNota.getSelectedItem().toString().split(",");
+            String fInicio = bd.getHoraDATE();
+            if (!bd.confirmarInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio)) {
+                h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION CREADA", "OK", "favicon-32x32.png");
+                bd.insertarInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio);
             } else {
-                h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION YA EXISTENTE", "OK", "favicon-32x32.png");
+                if (bd.confirmarInscripcionNoExistente(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio)) {
+                    int resultado = h1.popUp2("ALTA INSCRIPCION", "ESTA INSCRIPCION EXISTE PERO ESTA INEXISTENTE", "READMITIR", "CANCELAR", "favicon-32x32.png");
+                    if (resultado == 0) {
+                        int id = bd.retornarIdInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio);
+                        bd.modificarExistenciaANoInscripcione(id);
+                    }
+                } else {
+                    h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION YA EXISTENTE", "OK", "favicon-32x32.png");
+                }
             }
+            ComboNombre.setSelectedIndex(-1);
+            ComboNota.setSelectedIndex(-1);
+            ComboNombre.setBackground(new Color(25, 34, 43));
+            ComboNombre.setForeground(new Color(221, 214, 204));
+            ComboNota.setBackground(new Color(25, 34, 43));
+            ComboNota.setForeground(new Color(221, 214, 204));
+        } else {
+            h1.popUp1("ALTA INSCRIPCION", "PORFAVOR SELECCIONE UN ALUMNO Y UN CURSO", "OK", "favicon-32x32.png");
         }
-        ComboNombre.setSelectedIndex(-1);
-        ComboNota.setSelectedIndex(-1);
-        ComboNombre.setBackground(new Color(25, 34, 43));
-        ComboNombre.setForeground(new Color(221, 214, 204));
-        ComboNota.setBackground(new Color(25, 34, 43));
-        ComboNota.setForeground(new Color(221, 214, 204));
     }//GEN-LAST:event_ButtonModificarModificar_press
 
     private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered

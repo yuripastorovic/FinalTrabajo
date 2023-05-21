@@ -245,13 +245,23 @@ private void comboBox1() {
     }//GEN-LAST:event_CampoNombreMouseClicked
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
+        if(!( CBHoras1.getSelectedIndex()==-1 || CBHoras.getSelectedIndex()==-1 
+                || CampoNombre.getText().trim().equals("")
+                || TextAreaDescr.getText().trim().equals("")
+                || CampoNombre.getText().trim().equals("Introduzca nombre")
+                || TextAreaDescr.getText().trim().equals("Introduzca descripcion del curso")
+                )){
+            
+        
         String[] partes= CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         bd.modificarCursos(Integer.valueOf(id), CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
         h1.popUp1("MODIFICAR CURSO", "CURSO MODIFICADO", "OK", "favicon-32x32.png");
-        
         CampoNombre.setText("Introduzca nombre");
         TextAreaDescr.setText("Introduzca descripcion del curso");
+        CBHoras1.setSelectedIndex(-1);
+        CBHoras1.setBackground(new Color(25, 34, 43));
+        CBHoras1.setForeground(new Color(221, 214, 204));
         CBHoras.setSelectedIndex(-1);
         CBHoras.setBackground(new Color(25, 34, 43));
         CBHoras.setForeground(new Color(221, 214, 204));
@@ -259,8 +269,10 @@ private void comboBox1() {
         TextAreaDescr.setForeground(new Color(221, 214, 204));
         CampoNombre.setBackground(new Color(25, 34, 43));
         CampoNombre.setForeground(new Color(221, 214, 204));
-        
         comboBox1();
+        }else{
+            h1.popUp1("MODIFICAR CURSO", "PORFAVOR REYENE BIEN LOS DATOS", "OK", "favicon-32x32.png");
+        }
     }//GEN-LAST:event_ButtonAltaCrear_alumno
 
     private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered

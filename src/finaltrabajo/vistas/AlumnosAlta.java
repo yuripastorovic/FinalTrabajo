@@ -253,35 +253,44 @@ public class AlumnosAlta extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoTelefonoMouseClicked
 
     private void Crear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crear_alumno
-
-        if (!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
-            bd.insertarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
-            h1.popUp1("ALTA ALUMNO", "ALUMNO CREADO", "OK", "favicon-32x32.png");
-        } else {
-            if (bd.confirmarAlumnoNoExistente(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
-                int resultado = h1.popUp2("ALTA ALUMNO", "ESTE ALUMNO EXISTE PERO ESTA DESMATRICULADO", "READMITIR", "CANCELAR", "favicon-32x32.png");
-                if(resultado==0){
-                    int id = bd.retornarIdAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
-                    bd.modificarExistenciaAlumnoANoExistente(id);
-                }
+        if (!(CampoNombre.getText().trim().equals("")
+                || CampoApellido.getText().trim().equals("")
+                || CampoCorreo.getText().trim().equals("")
+                || CampoTelefono.getText().trim().equals("")
+                || CampoNombre.getText().trim().equals("Introduzca nombre")
+                ||CampoApellido.getText().trim().equals("Introduzca apellido")
+                || CampoCorreo.getText().trim().equals("Introduzca correo")
+                || CampoTelefono.getText().trim().equals("Introduzca telefono"))) {
+            if (!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
+                bd.insertarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
+                h1.popUp1("ALTA ALUMNO", "ALUMNO CREADO", "OK", "favicon-32x32.png");
             } else {
-                h1.popUp1("ALTA ALUMNO", "ALUMNO YA EXISTENTE", "OK", "favicon-32x32.png");
+                if (bd.confirmarAlumnoNoExistente(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
+                    int resultado = h1.popUp2("ALTA ALUMNO", "ESTE ALUMNO EXISTE PERO ESTA DESMATRICULADO", "READMITIR", "CANCELAR", "favicon-32x32.png");
+                    if (resultado == 0) {
+                        int id = bd.retornarIdAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
+                        bd.modificarExistenciaAlumnoANoExistente(id);
+                    }
+                } else {
+                    h1.popUp1("ALTA ALUMNO", "ALUMNO YA EXISTENTE", "OK", "favicon-32x32.png");
+                }
             }
-        }
-        
-        CampoNombre.setText("Introduzca nombre");
-        CampoApellido.setText("Introduzca apellido");
-        CampoCorreo.setText("Introduzca correo");
-        CampoTelefono.setText("Introduzca telefono");
-        CampoNombre.setBackground(new Color(25, 34, 43));
-        CampoNombre.setForeground(new Color(221, 214, 204));
-        CampoApellido.setBackground(new Color(25, 34, 43));
-        CampoApellido.setForeground(new Color(221, 214, 204));
-        CampoCorreo.setBackground(new Color(25, 34, 43));
-        CampoCorreo.setForeground(new Color(221, 214, 204));
-        CampoTelefono.setBackground(new Color(25, 34, 43));
-        CampoTelefono.setForeground(new Color(221, 214, 204));
 
+            CampoNombre.setText("Introduzca nombre");
+            CampoApellido.setText("Introduzca apellido");
+            CampoCorreo.setText("Introduzca correo");
+            CampoTelefono.setText("Introduzca telefono");
+            CampoNombre.setBackground(new Color(25, 34, 43));
+            CampoNombre.setForeground(new Color(221, 214, 204));
+            CampoApellido.setBackground(new Color(25, 34, 43));
+            CampoApellido.setForeground(new Color(221, 214, 204));
+            CampoCorreo.setBackground(new Color(25, 34, 43));
+            CampoCorreo.setForeground(new Color(221, 214, 204));
+            CampoTelefono.setBackground(new Color(25, 34, 43));
+            CampoTelefono.setForeground(new Color(221, 214, 204));
+        } else {
+            h1.popUp1("ALTA ALUMNO", "PORFAVOR REYENE BIEN LOS CAMPOS", "OK", "favicon-32x32.png");
+        }
 
     }//GEN-LAST:event_Crear_alumno
 
