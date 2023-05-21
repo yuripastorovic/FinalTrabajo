@@ -317,8 +317,6 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     private void Boton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_reset
         ComboTelefono.setEnabled(true);
         ComboNombre.setEnabled(true);
-        ComboTelefono.setSelectedIndex(-1);
-        ComboNombre.setSelectedIndex(-1);
         comboBox1();
         comboBox2();
     }//GEN-LAST:event_Boton_reset
