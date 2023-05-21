@@ -203,9 +203,12 @@ public class BaseDatosAcademia {
             Class.forName("org.mariadb.jdbc.Driver");
             this.conn = DriverManager.getConnection("jdbc:mariadb://" + this.ip + ":" + this.puerto + "/" + this.db, this.usuario, this.passw);
         } catch (Exception ex) {
-            //poner un popup que avise que no se ha podido conectar
-            h1.popUp2("NO SE HA PODIDO CONECTAR A LA BBDD", "VAYA A AJUSTESBBDD Y CONFIGURE LA CONEXION\nDESEA VOLVER A LA CONFIGURACION ORIGINAL?", "SI","NO", "favicon-32x32.png");
-            ex.printStackTrace();
+            int ayuda = h1.popUp2("NO SE HA PODIDO CONECTAR A LA BBDD", "VAYA A AJUSTESBBDD Y CONFIGURE LA CONEXION\nDESEA VOLVER A LA CONFIGURACION ORIGINAL?", "SI","NO", "favicon-32x32.png");
+            if(ayuda==0){
+                String dirFichero = "conf.prop";
+                File fDatos = new File(dirFichero);
+                fDatos.delete();
+            }
         }
     }
 
