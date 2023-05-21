@@ -294,7 +294,7 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboNombreActionPerformed
 
     private void Boton_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_buscar
-        if (ComboTelefono.isEnabled() && ComboNombre.isEnabled()) {
+        if (!(ComboTelefono.isEnabled() && ComboNombre.isEnabled())) {
             for (int i = 0; i < modelo.getRowCount(); i++) {
                 modelo.removeRow(i);
                 i--;

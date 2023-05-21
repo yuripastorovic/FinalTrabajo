@@ -260,10 +260,8 @@ private void comboBox1() {
         h1.popUp1("MODIFICAR CURSO", "CURSO MODIFICADO", "OK", "favicon-32x32.png");
         CampoNombre.setText("Introduzca nombre");
         TextAreaDescr.setText("Introduzca descripcion del curso");
-        CBHoras1.setSelectedIndex(-1);
         CBHoras1.setBackground(new Color(25, 34, 43));
         CBHoras1.setForeground(new Color(221, 214, 204));
-        CBHoras.setSelectedIndex(-1);
         CBHoras.setBackground(new Color(25, 34, 43));
         CBHoras.setForeground(new Color(221, 214, 204));
         TextAreaDescr.setBackground(new Color(25, 34, 43));

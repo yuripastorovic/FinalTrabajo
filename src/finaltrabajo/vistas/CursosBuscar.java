@@ -309,9 +309,7 @@ public class CursosBuscar extends javax.swing.JFrame {
 
     private void BotonResetBoton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetBoton_reset
         ComboHoras.setEnabled(true);
-        ComboHoras.setSelectedIndex(-1);
         ComboNombre.setEnabled(true);
-        ComboNombre.setSelectedIndex(-1);
         ComboHoras.setBackground(new Color(25, 34, 43));
         ComboHoras.setForeground(new Color(221, 214, 204));
         ComboNombre.setBackground(new Color(25, 34, 43));

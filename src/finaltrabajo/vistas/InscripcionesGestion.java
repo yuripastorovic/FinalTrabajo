@@ -310,8 +310,6 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2])  , fFin , nota);
         h1.popUp1("GESTION INSCRIPCION", "SE HA DESMATRICULADO AL ALUMNO DEL CURSO", "OK", "favicon-32x32.png");
         comboBox1();
-        ComboNombre.setSelectedIndex(-1);
-        ComboNota.setSelectedIndex(-1);
         ComboNombre.setBackground(new Color (25, 34, 43));
         ComboNombre.setForeground(new Color (221, 214, 204));
         ComboNota.setBackground(new Color(25, 34, 43));
@@ -366,8 +364,6 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2])  , fFin , nota);
         h1.popUp1("GESTION INSCRIPCION", "ALUMNO CALIFICADO EXITOSAMENTE", "OK", "favicon-32x32.png");
         comboBox1();
-        ComboNombre.setSelectedIndex(-1);
-        ComboNota.setSelectedIndex(-1);
         ComboNombre.setBackground(new Color (25, 34, 43));
         ComboNombre.setForeground(new Color (221, 214, 204));
         ComboNota.setBackground(new Color(25, 34, 43));

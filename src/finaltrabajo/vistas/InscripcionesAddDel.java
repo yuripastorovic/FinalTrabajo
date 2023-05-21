@@ -209,8 +209,6 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
                     h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION YA EXISTENTE", "OK", "favicon-32x32.png");
                 }
             }
-            ComboNombre.setSelectedIndex(-1);
-            ComboNota.setSelectedIndex(-1);
             ComboNombre.setBackground(new Color(25, 34, 43));
             ComboNombre.setForeground(new Color(221, 214, 204));
             ComboNota.setBackground(new Color(25, 34, 43));

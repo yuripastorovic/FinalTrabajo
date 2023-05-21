@@ -299,7 +299,6 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         CampoTelefono.setForeground(new Color(221, 214, 204));
         CBHoras1.setBackground(new Color(25, 34, 43));
         CBHoras1.setForeground(new Color(221, 214, 204));
-        CBHoras1.setSelectedIndex(-1);
         }else{
             h1.popUp1("MODIFICAR ALUMNO", "PORFAVOR ELIJA Y MODIFIQUE UN ALUMNO CORRECTAMENTE", "OK", "favicon-32x32.png");
         }

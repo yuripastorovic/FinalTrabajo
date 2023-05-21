@@ -427,10 +427,8 @@ public class AlumnosBaja extends javax.swing.JFrame {
             String id = partes[0].trim();
             bd.modificarExistenciaAlumno(Integer.valueOf(id));
             h1.popUp1("BAJA ALUMNO", "ALUMNO DESMATRICULADO", "OK", "favicon-32x32.png");
-            ComboNombre.setSelectedIndex(-1);
             ComboNombre.setBackground(new Color(189, 146, 64));
             ComboNombre.setForeground(new Color(25, 34, 43));
-            ComboTelefono.setSelectedIndex(-1);
             ComboTelefono.setBackground(new Color(189, 146, 64));
             ComboTelefono.setForeground(new Color(25, 34, 43));
         } else {

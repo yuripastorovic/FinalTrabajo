@@ -455,8 +455,6 @@ public class CursosBaja extends javax.swing.JFrame {
             String id = partes[0].trim();
             bd.modificarExistenciaCursos(Integer.valueOf(id));
             h1.popUp1("BAJA CURSO", "CURSO DESMATRICULADO", "OK", "favicon-32x32.png");
-            ComboNombre.setSelectedIndex(-1);
-            ComboHoras.setSelectedIndex(-1);
         } else {
             h1.popUp1("BAJA CURSO", "PORFAVOR SELECCIONE UN CURSO", "OK", "favicon-32x32.png");
         }
