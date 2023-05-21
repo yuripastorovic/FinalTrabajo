@@ -118,7 +118,6 @@ private void comboBox4() {
         ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre.setBorder(null);
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboNombreActionPerformed(evt);
@@ -128,7 +127,6 @@ private void comboBox4() {
         ComboNombre1.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNombre1.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre1.setBorder(null);
         ComboNombre1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboNombre1ActionPerformed(evt);
@@ -150,7 +148,6 @@ private void comboBox4() {
         ComboCurso.setBackground(new java.awt.Color(25, 34, 43));
         ComboCurso.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboCurso.setForeground(new java.awt.Color(221, 214, 204));
-        ComboCurso.setBorder(null);
         ComboCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboCursoActionPerformed(evt);
@@ -164,7 +161,6 @@ private void comboBox4() {
         ComboCurso1.setBackground(new java.awt.Color(25, 34, 43));
         ComboCurso1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboCurso1.setForeground(new java.awt.Color(221, 214, 204));
-        ComboCurso1.setBorder(null);
         ComboCurso1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboCurso1ActionPerformed(evt);
@@ -183,7 +179,7 @@ private void comboBox4() {
                 .addContainerGap()
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(0, 197, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(156, 156, 156))
                     .addGroup(PanelFondoLayout.createSequentialGroup()

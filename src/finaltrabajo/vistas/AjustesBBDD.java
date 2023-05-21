@@ -49,14 +49,14 @@ public static Color BEIGE=new Color(221, 214, 204);
         jPanel1 = new javax.swing.JPanel();
         MODIFICAR = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
-        PASS = new javax.swing.JPasswordField();
         nameLabel2 = new javax.swing.JLabel();
-        USER = new javax.swing.JTextField();
+        PASS = new javax.swing.JTextField();
         nameLabel1 = new javax.swing.JLabel();
         IP = new javax.swing.JTextField();
         nameLabel3 = new javax.swing.JLabel();
         PUERTO = new javax.swing.JTextField();
         nameLabel = new javax.swing.JLabel();
+        USER = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -110,31 +110,21 @@ public static Color BEIGE=new Color(221, 214, 204);
             .addComponent(LabelButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        PASS.setBackground(new java.awt.Color(25, 34, 43));
-        PASS.setForeground(new java.awt.Color(196, 190, 181));
-        PASS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PASS.setText("jPasswordField1");
-        PASS.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PASSMouseClicked(evt);
-            }
-        });
-
         nameLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         nameLabel2.setForeground(new java.awt.Color(25, 34, 43));
         nameLabel2.setText("CONTRASEÑA");
 
-        USER.setBackground(new java.awt.Color(25, 34, 43));
-        USER.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        USER.setForeground(new java.awt.Color(196, 190, 181));
-        USER.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        USER.setText("Introduzca usuario");
-        USER.setBorder(null);
-        USER.setSelectedTextColor(new java.awt.Color(25, 34, 43));
-        USER.setSelectionColor(new java.awt.Color(184, 67, 87));
-        USER.addMouseListener(new java.awt.event.MouseAdapter() {
+        PASS.setBackground(new java.awt.Color(25, 34, 43));
+        PASS.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        PASS.setForeground(new java.awt.Color(196, 190, 181));
+        PASS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PASS.setText("Introduzca usuario");
+        PASS.setBorder(null);
+        PASS.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        PASS.setSelectionColor(new java.awt.Color(184, 67, 87));
+        PASS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                USERMouseClicked(evt);
+                PASSMouseClicked(evt);
             }
         });
 
@@ -178,6 +168,20 @@ public static Color BEIGE=new Color(221, 214, 204);
         nameLabel.setForeground(new java.awt.Color(25, 34, 43));
         nameLabel.setText("PUERTO CONEXIÓN XAAMP");
 
+        USER.setBackground(new java.awt.Color(25, 34, 43));
+        USER.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        USER.setForeground(new java.awt.Color(196, 190, 181));
+        USER.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        USER.setText("Introduzca usuario");
+        USER.setBorder(null);
+        USER.setSelectedTextColor(new java.awt.Color(25, 34, 43));
+        USER.setSelectionColor(new java.awt.Color(184, 67, 87));
+        USER.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                USERMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -185,8 +189,7 @@ public static Color BEIGE=new Color(221, 214, 204);
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(2, 2, 2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PASS)
-                    .addComponent(USER, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PASS, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(MODIFICAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,6 +203,11 @@ public static Color BEIGE=new Color(221, 214, 204);
                     .addComponent(IP)
                     .addComponent(PUERTO, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(USER)
+                    .addGap(16, 16, 16)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,15 +222,18 @@ public static Color BEIGE=new Color(221, 214, 204);
                 .addComponent(IP, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nameLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(USER, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(43, 43, 43)
                 .addComponent(nameLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PASS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(PASS, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MODIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(147, Short.MAX_VALUE)
+                    .addComponent(USER, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(92, 92, 92)))
         );
 
         jPanel2.setBackground(new java.awt.Color(184, 67, 87));
@@ -357,7 +368,7 @@ public static Color BEIGE=new Color(221, 214, 204);
 
     private void MODIFICARModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARModificar_press
         //aaaaaaaaaaaaaaaaaaa boton modificar
-        String parametros = "ip = "+IP.getText()+"\n"+"puerto = "+PUERTO.getText()+"\n"+"db = "+"\n"+"usuario = "+USER.getText()+"\n"+"password = "+PASS.getPassword()+"\n";
+        String parametros = "ip = "+IP.getText()+"\n"+"puerto = "+PUERTO.getText()+"\n"+"db = "+"\n"+"usuario = "+PASS.getText()+"\n"+"password = "+PASS.getText()+"\n";
         String dirFichero = "conf.prop";
         File fDatos = new File(dirFichero);
         if (!(fDatos.exists())) {
@@ -396,9 +407,9 @@ public static Color BEIGE=new Color(221, 214, 204);
         IP.setText("Introduzca IP");
         IP.setBackground(AZUL);
         IP.setForeground(BEIGE);
-        USER.setText("Introduzca usuario");
-        USER.setBackground(AZUL);
-        USER.setForeground(BEIGE);
+        PASS.setText("Introduzca usuario");
+        PASS.setBackground(AZUL);
+        PASS.setForeground(BEIGE);
         PASS.setBackground(AZUL);
         PASS.setForeground(BEIGE);
         PASS.setText("*********");
@@ -414,11 +425,11 @@ public static Color BEIGE=new Color(221, 214, 204);
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
     }//GEN-LAST:event_MODIFICARMouseExited
 
-    private void USERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_USERMouseClicked
-        USER.setText("");
-        USER.setBackground(new Color(189, 146, 64));
-        USER.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_USERMouseClicked
+    private void PASSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PASSMouseClicked
+        PASS.setText("");
+        PASS.setBackground(new Color(189, 146, 64));
+        PASS.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_PASSMouseClicked
 
     private void PUERTOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PUERTOMouseClicked
         PUERTO.setText("");
@@ -431,12 +442,6 @@ public static Color BEIGE=new Color(221, 214, 204);
         IP.setBackground(new Color(189, 146, 64));
         IP.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_IPMouseClicked
-
-    private void PASSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PASSMouseClicked
-        PASS.setText("");
-        PASS.setBackground(new Color(189, 146, 64));
-        PASS.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_PASSMouseClicked
 
     private void MODIFICARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMousePressed
         MODIFICAR.setBackground(new Color(184, 67, 87));
@@ -474,6 +479,10 @@ public static Color BEIGE=new Color(221, 214, 204);
         CONECTAR.setBackground(new Color(184, 67, 87));
         CONECTAR.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_CONECTARModificar_clicked
+
+    private void USERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_USERMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_USERMouseClicked
 
     /**
      * @param args the command line arguments
@@ -517,7 +526,7 @@ public static Color BEIGE=new Color(221, 214, 204);
     private javax.swing.JLabel LabelButtonModificar1;
     private javax.swing.JPanel MODIFICAR;
     private javax.swing.JLabel MariaDB_logo;
-    private javax.swing.JPasswordField PASS;
+    private javax.swing.JTextField PASS;
     private javax.swing.JTextField PUERTO;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JTextField USER;
