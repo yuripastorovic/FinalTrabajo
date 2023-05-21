@@ -193,6 +193,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
+            h1.popUp1("BBDD NO EXISTE", "NO SE HA PODIDO CREAR LA BBDD\nDEBIO A QUE NO SE HA PODIDO CONECTAR\nREVISE AJUSTES BBDD", "OK", "favicon-32x32.png");
             ex.printStackTrace();
         }
     }
@@ -203,7 +204,7 @@ public class BaseDatosAcademia {
             this.conn = DriverManager.getConnection("jdbc:mariadb://" + this.ip + ":" + this.puerto + "/" + this.db, this.usuario, this.passw);
         } catch (Exception ex) {
             //poner un popup que avise que no se ha podido conectar
-            h1.popUp1("NO SE HA PODIDO CONECTAR A LA BBDD", "VAYA A AJUSTESBBDD Y CONFIGURE LA CONEXION", "OK", "favicon-32x32.png");
+            h1.popUp2("NO SE HA PODIDO CONECTAR A LA BBDD", "VAYA A AJUSTESBBDD Y CONFIGURE LA CONEXION\nDESEA VOLVER A LA CONFIGURACION ORIGINAL?", "SI","NO", "favicon-32x32.png");
             ex.printStackTrace();
         }
     }
