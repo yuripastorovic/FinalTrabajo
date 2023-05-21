@@ -47,9 +47,9 @@ public class BaseDatosAcademia {
     
     public BaseDatosAcademia() {
         String dirFichero = "conf.prop";
-        String parametrosString = "ip = " + this.ip + "\n" + "puerto = " + this.puerto + "\n" + "db = " + "\n" + "usuario = " + this.usuario + "\n" + "password = " + this.passw + "\n";
         File fDatos = new File(dirFichero);
         if (!(fDatos.exists())) {
+            String parametrosString = "ip = " + this.ip + "\n" + "puerto = " + this.puerto + "\n" + "db = " + "\n" + "usuario = " + this.usuario + "\n" + "password = " + this.passw + "\n";
             try {
                 File comprobacion = new File(dirFichero);
                 comprobacion.createNewFile();
@@ -87,7 +87,6 @@ public class BaseDatosAcademia {
             bR = new BufferedReader(fR);
             int cont = 1;
             while ((linea = bR.readLine()) != null) {
-                System.out.println("num linea " + cont + " " + linea);
                 cont++;
                 linea = linea.trim();
                 if (linea.length() != 0) {
@@ -107,7 +106,6 @@ public class BaseDatosAcademia {
                     }
                 }
                 for (String clave : parametros.keySet()) {
-                    System.out.println(clave + ":" + parametros.get(clave));
                     switch (clave) {
                         case "ip":
                             this.ip = parametros.get(clave);
