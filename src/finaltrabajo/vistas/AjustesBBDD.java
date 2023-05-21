@@ -18,14 +18,15 @@ import javax.swing.JPanel;
  *
  * @author yuripastorovic
  */
-
 public class AjustesBBDD extends javax.swing.JFrame {
-public static Color AZUL= new Color(25, 34, 43);
-public static Color BEIGE=new Color(221, 214, 204);
+
+    public static Color AZUL = new Color(25, 34, 43);
+    public static Color BEIGE = new Color(221, 214, 204);
     /**
      * Creates new form AjustesBBDD
      */
     private Herramientas h1 = new Herramientas();
+
     public AjustesBBDD() {
         initComponents();
     }
@@ -118,13 +119,18 @@ public static Color BEIGE=new Color(221, 214, 204);
         PASS.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         PASS.setForeground(new java.awt.Color(196, 190, 181));
         PASS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PASS.setText("Introduzca usuario");
+        PASS.setText("*********");
         PASS.setBorder(null);
         PASS.setSelectedTextColor(new java.awt.Color(25, 34, 43));
         PASS.setSelectionColor(new java.awt.Color(184, 67, 87));
         PASS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PASSMouseClicked(evt);
+            }
+        });
+        PASS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PASSActionPerformed(evt);
             }
         });
 
@@ -365,54 +371,66 @@ public static Color BEIGE=new Color(221, 214, 204);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void MODIFICARModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARModificar_press
         //aaaaaaaaaaaaaaaaaaa boton modificar
-        String parametros = "ip = "+IP.getText()+"\n"+"puerto = "+PUERTO.getText()+"\n"+"db = "+"\n"+"usuario = "+PASS.getText()+"\n"+"password = "+PASS.getText()+"\n";
-        String dirFichero = "conf.prop";
-        File fDatos = new File(dirFichero);
-        if (!(fDatos.exists())) {
-            try {
-                File comprobacion = new File(dirFichero);
-                comprobacion.createNewFile();
+        if (!(IP.getText().trim().equals("")
+                || PUERTO.getText().trim().equals("")
+                || USER.getText().trim().equals("")
+                || PASS.getText().trim().equals("")
+                || IP.getText().trim().equals("Introduzca IP")
+                || PUERTO.getText().trim().equals("Introduzca Puerto")
+                || USER.getText().trim().equals("Introduzca usuario")
+                || PASS.getText().trim().equals("*********"))) {
 
-            } catch (Exception e) {
-                e.printStackTrace();
+            String parametros = "ip = " + IP.getText() + "\n" + "puerto = " + PUERTO.getText() + "\n" + "db = " + "\n" + "usuario = " + USER.getText() + "\n" + "password = " + PASS.getText() + "\n";
+            String dirFichero = "conf.prop";
+            File fDatos = new File(dirFichero);
+            if (!(fDatos.exists())) {
+                try {
+                    File comprobacion = new File(dirFichero);
+                    comprobacion.createNewFile();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        FileOutputStream fileOut = null;
-        BufferedOutputStream bufOut = null;
-        ObjectOutputStream objOut = null;
-        try {
-            fileOut = new FileOutputStream(dirFichero);
-            bufOut = new BufferedOutputStream(fileOut);
-            objOut = new ObjectOutputStream(bufOut);
-            objOut.writeObject(parametros);///////////////////////////////////////////////////////
-            System.out.println("los datos se han copiado exitosamente en: " + dirFichero);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
+            FileOutputStream fileOut = null;
+            BufferedOutputStream bufOut = null;
+            ObjectOutputStream objOut = null;
             try {
-                objOut.close();
-                bufOut.close();
-                fileOut.close();
-            } catch (Exception ex) {
+                fileOut = new FileOutputStream(dirFichero);
+                bufOut = new BufferedOutputStream(fileOut);
+                objOut = new ObjectOutputStream(bufOut);
+                objOut.writeObject(parametros);///////////////////////////////////////////////////////
+                System.out.println("los datos se han ESCRITO EN : " + dirFichero);
+            } catch (IOException ex) {
                 ex.printStackTrace();
+            } finally {
+                try {
+                    objOut.close();
+                    bufOut.close();
+                    fileOut.close();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
+            h1.popUp1("AjustesBBDD", "MODIFICACION REALIZADA", "OK", "favicon-32x32.png");
+            PUERTO.setBackground(AZUL);
+            PUERTO.setForeground(BEIGE);
+            PUERTO.setText("Introduzca Puerto");
+            IP.setText("Introduzca IP");
+            IP.setBackground(AZUL);
+            IP.setForeground(BEIGE);
+            PASS.setText("Introduzca usuario");
+            PASS.setBackground(AZUL);
+            PASS.setForeground(BEIGE);
+            PASS.setBackground(AZUL);
+            PASS.setForeground(BEIGE);
+            PASS.setText("*********");
+        } else {
+            h1.popUp1("AjustesBBDD", "PORFAVOR INTRODUCE BIEN LOS DATOS", "OK", "favicon-32x32.png");
         }
-        h1.popUp1("AjustesBBDD", "MODIFICACION REALIZADA", "OK", "favicon-32x32.png");
-        PUERTO.setBackground(AZUL);
-        PUERTO.setForeground(BEIGE);
-        PUERTO.setText("Introduzca Puerto");
-        IP.setText("Introduzca IP");
-        IP.setBackground(AZUL);
-        IP.setForeground(BEIGE);
-        PASS.setText("Introduzca usuario");
-        PASS.setBackground(AZUL);
-        PASS.setForeground(BEIGE);
-        PASS.setBackground(AZUL);
-        PASS.setForeground(BEIGE);
-        PASS.setText("*********");
     }//GEN-LAST:event_MODIFICARModificar_press
 
     private void MODIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseEntered
@@ -459,8 +477,8 @@ public static Color BEIGE=new Color(221, 214, 204);
     }//GEN-LAST:event_CONECTARMouseReleased
 
     private void CONECTARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMousePressed
-        CONECTAR.setBackground(new Color(221,214,204));
-        LabelButtonModificar1.setForeground(new Color(25,34,43));
+        CONECTAR.setBackground(new Color(221, 214, 204));
+        LabelButtonModificar1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CONECTARMousePressed
 
     private void CONECTARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseExited
@@ -469,12 +487,12 @@ public static Color BEIGE=new Color(221, 214, 204);
     }//GEN-LAST:event_CONECTARMouseExited
 
     private void CONECTARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseEntered
-        CONECTAR.setBackground(new Color(184,67,87));
-        LabelButtonModificar1.setForeground(new Color(25,34,43));
+        CONECTAR.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CONECTARMouseEntered
 
     private void CONECTARModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARModificar_clicked
-       //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaboton conectar
+        //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaboton conectar
         BaseDatosAcademia bc = new BaseDatosAcademia();
         CONECTAR.setBackground(new Color(184, 67, 87));
         CONECTAR.setForeground(new Color(189, 146, 64));
@@ -483,6 +501,10 @@ public static Color BEIGE=new Color(221, 214, 204);
     private void USERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_USERMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_USERMouseClicked
+
+    private void PASSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PASSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PASSActionPerformed
 
     /**
      * @param args the command line arguments

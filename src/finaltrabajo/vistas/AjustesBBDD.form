@@ -227,7 +227,7 @@
                   <Color blue="b5" green="be" red="c4" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Introduzca usuario"/>
+                <Property name="text" type="java.lang.String" value="*********"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -240,6 +240,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PASSMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PASSActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="nameLabel1">
