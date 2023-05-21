@@ -138,8 +138,9 @@ public class BaseDatosAcademia {
             }
 
         }
-        crearDB();
+        
         conectar();
+        crearDB();
     }
 
     public void tirarBD() {
