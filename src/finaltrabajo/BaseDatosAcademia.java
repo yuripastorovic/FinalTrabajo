@@ -43,7 +43,8 @@ public class BaseDatosAcademia {
     private String passw = "";
     private String db = "";
     private Connection conn = null;
-
+    private Herramientas h1 = new Herramientas();
+    
     public BaseDatosAcademia() {
         String dirFichero = "conf.prop";
         String parametrosString = "ip = " + this.ip + "\n" + "puerto = " + this.puerto + "\n" + "db = " + "\n" + "usuario = " + this.usuario + "\n" + "password = " + this.passw + "\n";
@@ -203,6 +204,8 @@ public class BaseDatosAcademia {
             Class.forName("org.mariadb.jdbc.Driver");
             this.conn = DriverManager.getConnection("jdbc:mariadb://" + this.ip + ":" + this.puerto + "/" + this.db, this.usuario, this.passw);
         } catch (Exception ex) {
+            //poner un popup que avise que no se ha podido conectar
+            h1.popUp1("NO SE HA PODIDO CONECTAR A LA BBDD", "VAYA A AJUSTESBBDD Y CONFIGURE LA CONEXION", "OK", "favicon-32x32.png");
             ex.printStackTrace();
         }
     }
@@ -1228,7 +1231,55 @@ public class BaseDatosAcademia {
         }
         return cadenaDatos;
     }
-
+    
+    
+    public int retornarIdAlumno(String nombre, String apellido, String correo, String telefono){
+        Statement stmt;
+        int id=-1;
+        try {
+            stmt = this.conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT  Alumnos.id FROM Alumnos WHERE Alumnos.nombre='" + nombre + "' AND Alumnos.apellido='" + apellido + "' AND Alumnos.correo='" + correo + "' AND Alumnos.telefono='" + telefono + "';");//SELECT
+            while (rs.next()) {
+                id = Integer.valueOf(rs.getString(1));
+            }
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return id;
+    }
+    public int retornarIdCurso(String nombre, String descripcion, String horas) {
+        Statement stmt;
+        int id=-1;
+        try {
+            stmt = this.conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT Cursos.id FROM Cursos WHERE Cursos.descripcion='" + descripcion + "' AND Cursos.horas='" + horas + "';");//SELECT
+            while (rs.next()) {
+                id = Integer.valueOf(rs.getString(1));
+            }
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return id;
+    }
+    public int retornarIdInscripcion(int id_alumno, int id_curso, String fInicio) {
+        Statement stmt;
+        int id=-1;
+        try {
+            stmt = this.conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT Inscripciones.id FROM Inscripciones WHERE Inscripciones.id_alumno=" + id_alumno + " AND Inscripciones.id_curso=" + id_curso + " AND Inscripciones.fInicio='" + fInicio + "' ;");//SELECT
+            while (rs.next()) {
+                id = Integer.valueOf(rs.getString(1));
+            }
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return id;
+    }
+    
+    
     public boolean confirmarAlumno(String nombre, String apellido, String correo, String telefono) {
         Statement stmt;
         boolean confirmar = false;
@@ -1249,13 +1300,53 @@ public class BaseDatosAcademia {
         }
         return confirmar;
     }
-
+    public boolean confirmarAlumnoNoExistente(String nombre, String apellido, String correo, String telefono) {
+        Statement stmt;
+        boolean confirmar = false;
+        try {
+            stmt = this.conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT COUNT(Alumnos.id) FROM Alumnos WHERE Alumnos.existe=1 AND Alumnos.nombre='" + nombre + "' AND Alumnos.apellido='" + apellido + "' AND Alumnos.correo='" + correo + "' AND Alumnos.telefono='" + telefono + "' ;");//SELECT
+            while (rs.next()) {
+                String ids = rs.getString(1);
+                if (ids.equals("1")) {
+                    confirmar = true;
+                } else {
+                    confirmar = false;
+                }
+            }
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return confirmar;
+    }
+    
     public boolean confirmarCurso(String nombre, String descripcion, String horas) {
         Statement stmt;
         boolean confirmar = false;
         try {
             stmt = this.conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT COUNT(Cursos.id) FROM Cursos WHERE Cursos.descripcion='" + descripcion + "' AND Cursos.horas='" + horas + "';");//SELECT
+            while (rs.next()) {
+                String ids = rs.getString(1);
+                if (ids.equals("1")) {
+                    confirmar = true;
+                } else {
+                    confirmar = false;
+                }
+            }
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return confirmar;
+    }
+     public boolean confirmarCursoNoExistente(String nombre, String descripcion, String horas) {
+        Statement stmt;
+        boolean confirmar = false;
+        try {
+            stmt = this.conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT COUNT(Cursos.id) FROM Cursos WHERE Cursos.existe=1 AND Cursos.descripcion='" + descripcion + "' AND Cursos.horas='" + horas + "';");//SELECT
             while (rs.next()) {
                 String ids = rs.getString(1);
                 if (ids.equals("1")) {
@@ -1291,7 +1382,27 @@ public class BaseDatosAcademia {
         }
         return confirmar;
     }
-
+    public boolean confirmarInscripcionNoExistente(int id_alumno, int id_curso, String fInicio) {
+        Statement stmt;
+        boolean confirmar = false;
+        try {
+            stmt = this.conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT COUNT(Inscripciones.id) FROM Inscripciones WHERE Inscripciones.existe=1 AND Inscripciones.id_alumno=" + id_alumno + " AND Inscripciones.id_curso=" + id_curso + " AND Inscripciones.fInicio='" + fInicio + "' ;");//SELECT
+            while (rs.next()) {
+                String ids = rs.getString(1);
+                if (ids.equals("1")) {
+                    confirmar = true;
+                } else {
+                    confirmar = false;
+                }
+            }
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return confirmar;
+    }
+    
     public void modificarAlumno(int id, String nombre, String apellido, String correo, String telefono) {
         Statement stmt;
         try {
@@ -1303,7 +1414,6 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
-
     public void modificarCursos(int id, String nombre, String descripcion, String horas) {
         Statement stmt;
         try {
@@ -1315,7 +1425,6 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
-
     public void modificarInscripciones(int id, int id_alumno, int id_curso, String fFin, String calificacion) {
         Statement stmt;
         try {
@@ -1339,6 +1448,17 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
+    public void modificarExistenciaAlumnoANoExistente(int id) {
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Alumnos SET existe=0 WHERE id=" + id + ";");
+            this.conn.commit();
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     public void modificarExistenciaCursos(int id) {
         Statement stmt;
@@ -1351,12 +1471,34 @@ public class BaseDatosAcademia {
             ex.printStackTrace();
         }
     }
-
+    public void modificarExistenciaCursosANoExistente(int id) {
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Cursos SET existe=0 WHERE id=" + id + ";");
+            this.conn.commit();
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     public void modificarExistenciaInscripcione(int id) {
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
             stmt.executeUpdate("UPDATE Inscripciones SET existe=1 WHERE id=" + id + ";");
+            this.conn.commit();
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    public void modificarExistenciaANoInscripcione(int id) {
+        Statement stmt;
+        try {
+            stmt = this.conn.createStatement();
+            stmt.executeUpdate("UPDATE Inscripciones SET existe=0 WHERE id=" + id + ";");
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {

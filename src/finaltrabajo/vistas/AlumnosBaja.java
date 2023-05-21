@@ -5,6 +5,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +21,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
+    private Herramientas h1 = new Herramientas();
 
     public AlumnosBaja() {
         initComponents();
@@ -413,7 +415,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
 
         String id = partes[0].trim();
         bd.modificarExistenciaAlumno(Integer.valueOf(id));
-        
+        h1.popUp1("BAJA ALUMNO", "ALUMNO DESMATRICULADO", "OK", "favicon-32x32.png");
         ComboNombre.setSelectedIndex(-1);
         ComboNombre.setBackground(new Color(189, 146, 64));
         ComboNombre.setForeground(new Color(25, 34, 43));

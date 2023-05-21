@@ -258,12 +258,12 @@ public class AlumnosAlta extends javax.swing.JFrame {
             bd.insertarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
             h1.popUp1("ALTA ALUMNO", "ALUMNO CREADO", "OK", "favicon-32x32.png");
         } else {
-            if (true) {
-                int resultado = h1.popUp2("ALTA ALUMNO", "ALUMNO CREADO", "0", "1", "favicon-32x32.png");
+            if (bd.confirmarAlumnoNoExistente(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
+                int resultado = h1.popUp2("ALTA ALUMNO", "ESTE ALUMNO EXISTE PERO ESTA DESMATRICULADO", "READMITIR", "CANCELAR", "favicon-32x32.png");
                 if(resultado==0){
-                
+                    int id = bd.retornarIdAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
+                    bd.modificarExistenciaAlumnoANoExistente(id);
                 }
-                
             } else {
                 h1.popUp1("ALTA ALUMNO", "ALUMNO YA EXISTENTE", "OK", "favicon-32x32.png");
             }

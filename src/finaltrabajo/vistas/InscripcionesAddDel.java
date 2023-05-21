@@ -8,6 +8,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -21,6 +22,7 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
      * Creates new form InscripcionesAdd
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private Herramientas h1 = new Herramientas();
     public InscripcionesAddDel() {
         initComponents();
         comboBox1();
@@ -194,10 +196,18 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         String[] partes1 = ComboNota.getSelectedItem().toString().split(",");
         String fInicio = bd.getHoraDATE();
         if(!bd.confirmarInscripcion(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio)){
+            h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION CREADA", "OK", "favicon-32x32.png");
             bd.insertarInscripcion(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio);
         }else{
-            //popuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopuppopup
-            //con el popup que te dice que ya existe esa inscripcion 
+            if (bd.confirmarInscripcionNoExistente(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio)) {
+                int resultado = h1.popUp2("ALTA INSCRIPCION", "ESTA INSCRIPCION EXISTE PERO ESTA INEXISTENTE", "READMITIR", "CANCELAR", "favicon-32x32.png");
+                if(resultado==0){
+                    int id = bd.retornarIdInscripcion(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio);
+                    bd.modificarExistenciaANoInscripcione(id);
+                }
+            } else {
+                h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION YA EXISTENTE", "OK", "favicon-32x32.png");
+            }
         }
     }//GEN-LAST:event_ButtonModificarModificar_press
 

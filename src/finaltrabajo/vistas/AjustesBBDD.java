@@ -5,6 +5,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -17,11 +18,13 @@ import javax.swing.JPanel;
  *
  * @author yuripastorovic
  */
+
 public class AjustesBBDD extends javax.swing.JFrame {
 
     /**
      * Creates new form AjustesBBDD
      */
+    private Herramientas h1 = new Herramientas();
     public AjustesBBDD() {
         initComponents();
     }
@@ -383,6 +386,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
                 ex.printStackTrace();
             }
         }
+        h1.popUp1("AjustesBBDD", "MODIFICACION REALIZADA", "OK", "favicon-32x32.png");
     }//GEN-LAST:event_MODIFICARModificar_press
 
     private void MODIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseEntered

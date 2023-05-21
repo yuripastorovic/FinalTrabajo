@@ -5,6 +5,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +21,7 @@ public class CursosBaja extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
+    private Herramientas h1 = new Herramientas();
     public CursosBaja() {
         initComponents();
         comboBox1();
@@ -449,7 +451,7 @@ public class CursosBaja extends javax.swing.JFrame {
         
         String id = partes[0].trim();
         bd.modificarExistenciaCursos(Integer.valueOf(id));
-        
+        h1.popUp1("BAJA CURSO", "CURSO DESMATRICULADO", "OK", "favicon-32x32.png");
         ComboNombre.setSelectedIndex(-1);
         ComboHoras.setSelectedIndex(-1);
     }//GEN-LAST:event_ButtonModificarModificar_press

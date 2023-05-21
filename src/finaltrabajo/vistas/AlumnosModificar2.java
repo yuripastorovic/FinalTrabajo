@@ -5,6 +5,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -18,7 +19,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
      * Creates new form CursosModificar
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
-
+    private Herramientas h1 = new Herramientas();
     public AlumnosModificar2() {
         initComponents();
         comboBox1();
@@ -268,7 +269,8 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         String[] partes = CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
-
+        h1.popUp1("MODIFICAR ALUMNO", "ALUMNO MODIFICADO", "OK", "favicon-32x32.png");
+        
         CampoNombre.setText("");
         CampoApellido.setText("");
         CampoCorreo.setText("");
@@ -300,6 +302,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         String[] partes = CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         String[] partesTF = bd.leerDatosUnAlumnoExistente(Integer.valueOf(id)).toString().split(",");
+        
         CampoNombre.setText(partesTF[1]);
         CampoApellido.setText(partesTF[2]);
         CampoCorreo.setText(partesTF[3]);

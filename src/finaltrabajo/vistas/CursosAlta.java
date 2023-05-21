@@ -1,6 +1,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -18,6 +19,7 @@ public class CursosAlta extends javax.swing.JFrame {
      * Creates new form CursosAlta
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private Herramientas h1 = new Herramientas();
     public CursosAlta() {
         initComponents();
     }    
@@ -213,17 +215,18 @@ public class CursosAlta extends javax.swing.JFrame {
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
         if(!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(),CBHoras.getSelectedItem().toString() )){
+            h1.popUp1("ALTA CURSO", "CURSO CREADO", "OK", "favicon-32x32.png");
             bd.insertarCurso(CampoNombre.getText().trim(), TextAreaDescr.getText().trim(),CBHoras.getSelectedItem().toString().trim());
         }else{
-            //aqui va un pop up de que avisa de que el curso ya existe--------------------------------------------------------------------------------------------------------- 
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            if (bd.confirmarCursoNoExistente(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
+                int resultado = h1.popUp2("ALTA CURSO", "ESTE CURSO EXISTE PERO ESTA DESMATRICULADO", "READMITIR", "CANCELAR", "favicon-32x32.png");
+                if(resultado==0){
+                    int id = bd.retornarIdCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
+                    bd.modificarExistenciaCursosANoExistente(id);
+                }
+            } else {
+                h1.popUp1("ALTA CURSO", "CURSO YA EXISTENTE", "OK", "favicon-32x32.png");
+            }
         }
         
         

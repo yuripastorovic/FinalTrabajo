@@ -5,6 +5,7 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -17,6 +18,7 @@ public class CursosModificar extends javax.swing.JFrame {
     /**
      * Creates new form CursosModificar
      */
+    private Herramientas h1 = new Herramientas();
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     public CursosModificar() {
         initComponents();
@@ -246,7 +248,7 @@ private void comboBox1() {
         String[] partes= CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         bd.modificarCursos(Integer.valueOf(id), CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
-        
+        h1.popUp1("MODIFICAR CURSO", "CURSO MODIFICADO", "OK", "favicon-32x32.png");
         
         CampoNombre.setText("");
         TextAreaDescr.setText("");
