@@ -22,44 +22,59 @@ import java.sql.Statement;
  */
 public class Serializador implements Serializable {
 
+    private Herramientas h1 = new Herramientas();
     Academia ac = new Academia();
     private BaseDatosAcademia bd = new BaseDatosAcademia();
 
     public void uploadLocal() {
+        this.ac = this.leerDatos1("copi.test");
         bd.tirarBD();
-        bd=new BaseDatosAcademia();
-        
-        this.ac=this.leerDatos1("copi.test");
-        for (int i = 0; i < ac.getAlumnos().size(); i++) {
-            int id = ac.getAlumnos().get(i).getId();
-            String nombre = ac.getAlumnos().get(i).getNombre();
-            String apellido = ac.getAlumnos().get(i).getApellido();
-            String correo = ac.getAlumnos().get(i).getCorreo();
-            String tlf = ac.getAlumnos().get(i).getTelefono();
-            int existe = ac.getAlumnos().get(i).getMatriculado();
-            bd.insertarTodasAlumno(id, nombre, apellido, correo, tlf, existe);
+        bd = new BaseDatosAcademia();
+        if (ac != null) {
+            if (ac.getAlumnos().size() != 0) {
+                for (int i = 0; i < ac.getAlumnos().size(); i++) {
+                    int id = ac.getAlumnos().get(i).getId();
+                    String nombre = ac.getAlumnos().get(i).getNombre();
+                    String apellido = ac.getAlumnos().get(i).getApellido();
+                    String correo = ac.getAlumnos().get(i).getCorreo();
+                    String tlf = ac.getAlumnos().get(i).getTelefono();
+                    int existe = ac.getAlumnos().get(i).getMatriculado();
+                    bd.insertarTodasAlumno(id, nombre, apellido, correo, tlf, existe);
+                }
+            }
+            if (ac.getCursos().size() != 0) {
+                for (int i = 0; i < ac.getCursos().size(); i++) {
+                    int id = ac.getCursos().get(i).getId();
+                    String nombre = ac.getCursos().get(i).getNombre();
+                    String descr = ac.getCursos().get(i).getDescripcion();
+                    int horas = ac.getCursos().get(i).getHoras();
+                    int existe = ac.getCursos().get(i).getExiste();
+                    bd.insertarTodasCurso(id, nombre, descr, "" + horas, existe);
+
+                }
+            }
+            if (ac.getInscripciones().size() != 0) {
+                for (int i = 0; i < ac.getInscripciones().size(); i++) {
+                    int id = ac.getInscripciones().get(i).getId();
+                    int idAlum = ac.getInscripciones().get(i).getAlumno().getId();
+                    int idCurso = ac.getInscripciones().get(i).getAlumno().getId();
+                    String fechaI = ac.getInscripciones().get(i).getfInicio();
+                    String fechaF = ac.getInscripciones().get(i).getfFin();
+                    String nota = ac.getInscripciones().get(i).getNota();
+                    int existe = ac.getInscripciones().get(i).getExiste();
+                    bd.insertarTodasInscripcion(id, idAlum, idCurso, fechaI, fechaF, "" + nota, existe);
+                }
+            }
+            h1.popUp1("AJUSTES LOCAL", "La base de datos ha sido actualizada.", "OK", "favicon-32x32.png");
+            System.out.println("La base de datos ha sido actualizada.");
+        } else {
+            int respuesta = h1.popUp2("AJUSTES LOCAL", "NO EXISTE UNA COPIA LOCAL,\nCARGAR DAROS BORRARA LA BASE DE DATOS\nBorrar datos", "SI", "NO", "favicon-32x32.png");
+            if (respuesta == 0) {
+                h1.popUp1("AJUSTES LOCAL", "La base de datos ha sido borrada", "OK", "favicon-32x32.png");
+            }
+
         }
-        for (int i = 0; i < ac.getCursos().size(); i++) {
-            int id =ac.getCursos().get(i).getId();
-            String nombre =ac.getCursos().get(i).getNombre();
-            String descr =ac.getCursos().get(i).getDescripcion();
-            int horas =ac.getCursos().get(i).getHoras();
-            int existe = ac.getCursos().get(i).getExiste();
-            bd.insertarTodasCurso(id, nombre, descr, ""+horas, existe);
-            
-        }
-        
-        for(int i=0; i<ac.getInscripciones().size();i++){
-            int id = ac.getInscripciones().get(i).getId();
-            int idAlum = ac.getInscripciones().get(i).getAlumno().getId();
-            int idCurso= ac.getInscripciones().get(i).getAlumno().getId();
-            String fechaI = ac.getInscripciones().get(i).getfInicio();
-            String fechaF = ac.getInscripciones().get(i).getfFin();
-            String nota = ac.getInscripciones().get(i).getNota();
-            int existe = ac.getInscripciones().get(i).getExiste();
-            bd.insertarTodasInscripcion(id, idAlum, idCurso, fechaI, fechaF, ""+nota, existe);  
-        }
-        System.out.println("La base de datos ha sido actualizada.");
+
     }
 
     public void copiaLocal() {
@@ -113,8 +128,9 @@ public class Serializador implements Serializable {
             ac.getInscripciones().add(i1);
         }
         this.escribirDatos(ac, "copi.test");
+
         System.out.println("Coplia local generada correctamente");
-        
+
     }
 
     public void escribirDatos(Academia academia, String dirFichero) {
