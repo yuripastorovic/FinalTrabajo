@@ -263,6 +263,8 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
 
     private void CampoNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoNombreMouseClicked
         CampoNombre.setText("");
+        CampoNombre.setBackground(new Color(189, 146, 64));
+        CampoNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoNombreMouseClicked
 
     private void Modificar_Crear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_Crear_alumno
@@ -271,10 +273,18 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
         h1.popUp1("MODIFICAR ALUMNO", "ALUMNO MODIFICADO", "OK", "favicon-32x32.png");
         
-        CampoNombre.setText("");
-        CampoApellido.setText("");
-        CampoCorreo.setText("");
-        CampoTelefono.setText("");
+        CampoNombre.setText("Introduzca nombre");
+        CampoApellido.setText("Introduzca apellido");
+        CampoCorreo.setText("Introduzca correo");
+        CampoTelefono.setText("Introduzca telefono");
+        CampoNombre.setBackground(new Color(25, 34, 43));
+        CampoNombre.setForeground(new Color(221, 214, 204));
+        CampoApellido.setBackground(new Color(25, 34, 43));
+        CampoApellido.setForeground(new Color(221, 214, 204));
+        CampoCorreo.setBackground(new Color(25, 34, 43));
+        CampoCorreo.setForeground(new Color(221, 214, 204));
+        CampoTelefono.setBackground(new Color(25, 34, 43));
+        CampoTelefono.setForeground(new Color(221, 214, 204));
         comboBox1();
     }//GEN-LAST:event_Modificar_Crear_alumno
 
@@ -312,14 +322,20 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
 
     private void CampoApellidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoApellidoMouseClicked
         CampoApellido.setText("");
+        CampoApellido.setBackground(new Color(189, 146, 64));
+        CampoApellido.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoApellidoMouseClicked
 
     private void CampoTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoTelefonoMouseClicked
         CampoTelefono.setText("");
+        CampoTelefono.setBackground(new Color(189, 146, 64));
+        CampoTelefono.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoTelefonoMouseClicked
 
     private void CampoCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoCorreoMouseClicked
-        CampoCorreo.setText("");
+       CampoCorreo.setText("");
+        CampoCorreo.setBackground(new Color(189, 146, 64));
+        CampoCorreo.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoCorreoMouseClicked
 
     /**

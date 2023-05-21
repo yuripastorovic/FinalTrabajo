@@ -268,10 +268,11 @@ public class AlumnosAlta extends javax.swing.JFrame {
                 h1.popUp1("ALTA ALUMNO", "ALUMNO YA EXISTENTE", "OK", "favicon-32x32.png");
             }
         }
-        CampoNombre.setText("");
-        CampoApellido.setText("");
-        CampoCorreo.setText("");
-        CampoTelefono.setText("");
+        
+        CampoNombre.setText("Introduzca nombre");
+        CampoApellido.setText("Introduzca apellido");
+        CampoCorreo.setText("Introduzca correo");
+        CampoTelefono.setText("Introduzca telefono");
         CampoNombre.setBackground(new Color(25, 34, 43));
         CampoNombre.setForeground(new Color(221, 214, 204));
         CampoApellido.setBackground(new Color(25, 34, 43));
