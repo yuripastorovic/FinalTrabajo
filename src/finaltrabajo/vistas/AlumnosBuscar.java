@@ -22,6 +22,7 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
     private Herramientas h1 = new Herramientas();
+
     public AlumnosBuscar() {
         initComponents();
         comboBox1();
@@ -37,12 +38,14 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-    private void comboBox1(){
-        String arrayString[]=bd.leerIdNombreApellidoAlumnosExistentes();
+
+    private void comboBox1() {
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
         ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
-    private void comboBox2(){
-        String arrayString[]=bd.leerIdTelefonosAlumnosExistentes();
+
+    private void comboBox2() {
+        String arrayString[] = bd.leerIdTelefonosAlumnosExistentes();
         ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
 
@@ -291,22 +294,22 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboNombreActionPerformed
 
     private void Boton_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_buscar
-        if (!(ComboTelefono.isEnabled() && ComboNombre.isEnabled())) {
-        for (int i = 0; i <modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
-            i--;
-        }
-        TablaNew.setModel(modelo);
-        String[] partes;
-        if(ComboNombre.isEnabled()){
-            partes =ComboNombre.getSelectedItem().toString().split(",");
-        }else{
-            partes =ComboTelefono.getSelectedItem().toString().split(",");
-        }
-        String id = partes[0];
-        String[] datitos=bd.leerDatosUnAlumnoExistente(Integer.parseInt(id)).split(",");
-        modelo.addRow(datitos);
-        }else{
+        if (ComboTelefono.isEnabled() && ComboNombre.isEnabled()) {
+            for (int i = 0; i < modelo.getRowCount(); i++) {
+                modelo.removeRow(i);
+                i--;
+            }
+            TablaNew.setModel(modelo);
+            String[] partes;
+            if (ComboNombre.isEnabled()) {
+                partes = ComboNombre.getSelectedItem().toString().split(",");
+            } else {
+                partes = ComboTelefono.getSelectedItem().toString().split(",");
+            }
+            String id = partes[0];
+            String[] datitos = bd.leerDatosUnAlumnoExistente(Integer.parseInt(id)).split(",");
+            modelo.addRow(datitos);
+        } else {
             h1.popUp1("BUSCAR ALUMNO", "PORFAVOR ELIGE UN ALUMNO", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_Boton_buscar
@@ -314,10 +317,10 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     private void Boton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_reset
         ComboTelefono.setEnabled(true);
         ComboNombre.setEnabled(true);
-        comboBox1();
-        comboBox2();
         ComboTelefono.setSelectedIndex(-1);
         ComboNombre.setSelectedIndex(-1);
+        comboBox1();
+        comboBox2();
     }//GEN-LAST:event_Boton_reset
 
     private void BotonResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseEntered
@@ -341,7 +344,7 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonResetMouseReleased
 
     private void BotonBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseEntered
-      BotonBuscar.setBackground(new Color(189, 146, 64));
+        BotonBuscar.setBackground(new Color(189, 146, 64));
         buscar.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BotonBuscarMouseEntered
 
@@ -351,12 +354,12 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonBuscarMouseExited
 
     private void BotonBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMousePressed
-       BotonBuscar.setBackground(new Color(184, 67, 87));
+        BotonBuscar.setBackground(new Color(184, 67, 87));
         buscar.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_BotonBuscarMousePressed
 
     private void BotonBuscarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseReleased
-      BotonBuscar.setBackground(new Color(189, 146, 64));
+        BotonBuscar.setBackground(new Color(189, 146, 64));
         buscar.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BotonBuscarMouseReleased
 
