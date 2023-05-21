@@ -368,7 +368,9 @@ public class CursosBaja extends javax.swing.JFrame {
         comboBox1();
         comboBox2();
         ComboHoras.setEnabled(true);
+        ComboHoras.setSelectedIndex(-1);
         ComboNombre.setEnabled(true);
+        ComboNombre.setSelectedIndex(-1);
         ComboHoras.setBackground(new Color(25, 34, 43));
         ComboHoras.setForeground(new Color(221, 214, 204));
         ComboNombre.setBackground(new Color(25, 34, 43));

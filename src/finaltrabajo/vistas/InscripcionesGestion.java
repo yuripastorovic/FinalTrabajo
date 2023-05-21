@@ -350,6 +350,10 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         System.out.println("id="+datos[0] +"    id_alumno="+ datos[1] +"   id_curso="+ datos[2]+ "   fecha fin="+fFin+"  nota="+ nota);
         bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2])  , fFin , nota);
         comboBox1();
+        ComboNombre.setBackground(new Color (25, 34, 43));
+        ComboNombre.setForeground(new Color (221, 214, 204));
+        ComboNota.setBackground(new Color(25, 34, 43));
+        ComboNota.setForeground(new Color (221, 214, 204));
     }//GEN-LAST:event_ButtonModificarModificar_press
 
     private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered

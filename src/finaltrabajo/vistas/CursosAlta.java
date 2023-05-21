@@ -227,14 +227,9 @@ public class CursosAlta extends javax.swing.JFrame {
             } else {
                 h1.popUp1("ALTA CURSO", "CURSO YA EXISTENTE", "OK", "favicon-32x32.png");
             }
-        }
-        
-        
-        
-        
-        
-        CampoNombre.setText("");
-        TextAreaDescr.setText("");
+        }  
+        CampoNombre.setText("Introduzca nombre");
+        TextAreaDescr.setText("Introduzca descripcion del curso");
         CBHoras.setSelectedIndex(-1);
         CBHoras.setBackground(new Color(25, 34, 43));
         CBHoras.setForeground(new Color(221, 214, 204));

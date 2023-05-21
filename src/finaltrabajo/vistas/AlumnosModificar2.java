@@ -31,7 +31,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
     }
 
     private void comboBox1() {
-        String arrayString[] = bd.leerIdNombresCursosExistentes();
+        String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
         CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
 
@@ -64,7 +64,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 34, 43));
-        jLabel1.setText("NOMBRE ");
+        jLabel1.setText("NOMBRE");
 
         CampoNombre.setBackground(new java.awt.Color(25, 34, 43));
         CampoNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N

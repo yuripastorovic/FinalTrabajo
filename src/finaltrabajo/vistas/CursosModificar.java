@@ -250,8 +250,8 @@ private void comboBox1() {
         bd.modificarCursos(Integer.valueOf(id), CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
         h1.popUp1("MODIFICAR CURSO", "CURSO MODIFICADO", "OK", "favicon-32x32.png");
         
-        CampoNombre.setText("");
-        TextAreaDescr.setText("");
+        CampoNombre.setText("Introduzca nombre");
+        TextAreaDescr.setText("Introduzca descripcion del curso");
         CBHoras.setSelectedIndex(-1);
         CBHoras.setBackground(new Color(25, 34, 43));
         CBHoras.setForeground(new Color(221, 214, 204));

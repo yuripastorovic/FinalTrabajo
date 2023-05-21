@@ -2,9 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
-
-
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
@@ -23,6 +20,7 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private Herramientas h1 = new Herramientas();
+
     public InscripcionesAddDel() {
         initComponents();
         comboBox1();
@@ -33,10 +31,12 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         JPanel fondo = PanelFondo;
         return fondo;
     }
+
     private void comboBox1() {
         String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
         ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
+
     private void comboBox2() {
         String arrayString[] = bd.leerIdNombresCursosExistentes();
         ComboNota.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
@@ -70,7 +70,6 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre.setBorder(null);
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboNombreActionPerformed(evt);
@@ -86,7 +85,6 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         ComboNota.setForeground(new java.awt.Color(221, 214, 204));
         ComboNota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         ComboNota.setSelectedIndex(-1);
-        ComboNota.setBorder(null);
         ComboNota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboNotaActionPerformed(evt);
@@ -155,11 +153,11 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ComboNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addGap(47, 47, 47)
                 .addComponent(ButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(101, Short.MAX_VALUE))
         );
@@ -188,27 +186,33 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
     private void ComboNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNotaActionPerformed
         ComboNota.setBackground(new Color(189, 146, 64));
         ComboNota.setForeground(new Color(25, 34, 43));
-        
+
     }//GEN-LAST:event_ComboNotaActionPerformed
 
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
         String[] partes = ComboNombre.getSelectedItem().toString().split(",");
         String[] partes1 = ComboNota.getSelectedItem().toString().split(",");
         String fInicio = bd.getHoraDATE();
-        if(!bd.confirmarInscripcion(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio)){
+        if (!bd.confirmarInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio)) {
             h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION CREADA", "OK", "favicon-32x32.png");
-            bd.insertarInscripcion(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio);
-        }else{
-            if (bd.confirmarInscripcionNoExistente(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio)) {
+            bd.insertarInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio);
+        } else {
+            if (bd.confirmarInscripcionNoExistente(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio)) {
                 int resultado = h1.popUp2("ALTA INSCRIPCION", "ESTA INSCRIPCION EXISTE PERO ESTA INEXISTENTE", "READMITIR", "CANCELAR", "favicon-32x32.png");
-                if(resultado==0){
-                    int id = bd.retornarIdInscripcion(Integer.valueOf(partes[0]) , Integer.valueOf(partes1[0]) , fInicio);
+                if (resultado == 0) {
+                    int id = bd.retornarIdInscripcion(Integer.valueOf(partes[0]), Integer.valueOf(partes1[0]), fInicio);
                     bd.modificarExistenciaANoInscripcione(id);
                 }
             } else {
                 h1.popUp1("ALTA INSCRIPCION", "INSCRIPCION YA EXISTENTE", "OK", "favicon-32x32.png");
             }
         }
+        ComboNombre.setSelectedIndex(-1);
+        ComboNota.setSelectedIndex(-1);
+        ComboNombre.setBackground(new Color(25, 34, 43));
+        ComboNombre.setForeground(new Color(221, 214, 204));
+        ComboNota.setBackground(new Color(25, 34, 43));
+        ComboNota.setForeground(new Color(221, 214, 204));
     }//GEN-LAST:event_ButtonModificarModificar_press
 
     private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered

@@ -287,23 +287,27 @@ public class AjustesLocal extends javax.swing.JFrame {
     }//GEN-LAST:event_GENERAR_INFORMESMouseReleased
 
     private void CARGAR_LOCALModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALModificar_clicked
-       sc.uploadLocal();
+        sc.uploadLocal();
     }//GEN-LAST:event_CARGAR_LOCALModificar_clicked
 
     private void CARGAR_LOCALMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseEntered
-        // TODO add your handling code here:
+        CARGAR_LOCAL.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar2.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CARGAR_LOCALMouseEntered
 
     private void CARGAR_LOCALMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseExited
-        // TODO add your handling code here:
+       CARGAR_LOCAL.setBackground(new Color(25, 34, 43));
+        LabelButtonModificar2.setForeground(new Color(221, 214, 204));
     }//GEN-LAST:event_CARGAR_LOCALMouseExited
 
     private void CARGAR_LOCALMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMousePressed
-        // TODO add your handling code here:
+       CARGAR_LOCAL.setBackground(new Color(184, 67, 87));
+        LabelButtonModificar2.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_CARGAR_LOCALMousePressed
 
     private void CARGAR_LOCALMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseReleased
-        // TODO add your handling code here:
+        CARGAR_LOCAL.setBackground(new Color(189, 146, 64));
+        LabelButtonModificar2.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CARGAR_LOCALMouseReleased
 
     /**

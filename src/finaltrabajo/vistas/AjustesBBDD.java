@@ -20,7 +20,8 @@ import javax.swing.JPanel;
  */
 
 public class AjustesBBDD extends javax.swing.JFrame {
-
+public static Color AZUL= new Color(25, 34, 43);
+public static Color BEIGE=new Color(221, 214, 204);
     /**
      * Creates new form AjustesBBDD
      */
@@ -126,7 +127,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
         USER.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         USER.setForeground(new java.awt.Color(196, 190, 181));
         USER.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        USER.setText("Introduzca nombre");
+        USER.setText("Introduzca usuario");
         USER.setBorder(null);
         USER.setSelectedTextColor(new java.awt.Color(25, 34, 43));
         USER.setSelectionColor(new java.awt.Color(184, 67, 87));
@@ -144,7 +145,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
         IP.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         IP.setForeground(new java.awt.Color(196, 190, 181));
         IP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        IP.setText("Introduzca nombre");
+        IP.setText("Introduzca IP");
         IP.setBorder(null);
         IP.setSelectedTextColor(new java.awt.Color(25, 34, 43));
         IP.setSelectionColor(new java.awt.Color(184, 67, 87));
@@ -162,7 +163,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
         PUERTO.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         PUERTO.setForeground(new java.awt.Color(196, 190, 181));
         PUERTO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PUERTO.setText("Introduzca nombre");
+        PUERTO.setText("Introduzca Puerto");
         PUERTO.setBorder(null);
         PUERTO.setSelectedTextColor(new java.awt.Color(25, 34, 43));
         PUERTO.setSelectionColor(new java.awt.Color(184, 67, 87));
@@ -301,7 +302,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -387,6 +388,18 @@ public class AjustesBBDD extends javax.swing.JFrame {
             }
         }
         h1.popUp1("AjustesBBDD", "MODIFICACION REALIZADA", "OK", "favicon-32x32.png");
+        PUERTO.setBackground(AZUL);
+        PUERTO.setForeground(BEIGE);
+        PUERTO.setText("Introduzca Puerto");
+        IP.setText("Introduzca IP");
+        IP.setBackground(AZUL);
+        IP.setForeground(BEIGE);
+        USER.setText("Introduzca usuario");
+        USER.setBackground(AZUL);
+        USER.setForeground(BEIGE);
+        PASS.setBackground(AZUL);
+        PASS.setForeground(BEIGE);
+        PASS.setText("*********");
     }//GEN-LAST:event_MODIFICARModificar_press
 
     private void MODIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseEntered
