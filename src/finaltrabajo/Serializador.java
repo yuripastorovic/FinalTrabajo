@@ -27,7 +27,7 @@ public class Serializador implements Serializable {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
 
     public void uploadLocal() {
-        this.ac = this.leerDatos1("copi.test");
+        this.ac = this.leerDatos1("LocalCopy.bin");
         bd.tirarBD();
         bd = new BaseDatosAcademia();
         if (ac != null) {
@@ -68,7 +68,7 @@ public class Serializador implements Serializable {
             h1.popUp1("AJUSTES LOCAL", "La base de datos ha sido actualizada.", "OK", "favicon-32x32.png");
             System.out.println("La base de datos ha sido actualizada.");
         } else {
-            int respuesta = h1.popUp2("AJUSTES LOCAL", "NO EXISTE UNA COPIA LOCAL,\nCARGAR DAROS BORRARA LA BASE DE DATOS\nBorrar datos", "SI", "NO", "favicon-32x32.png");
+            int respuesta = h1.popUp2("AJUSTES LOCAL", "NO EXISTE UNA COPIA LOCAL,\nCARGAR COPIA LOCAL BORRARA LA BASE DE DATOS\nBorrar datos?", "SI", "NO", "favicon-32x32.png");
             if (respuesta == 0) {
                 h1.popUp1("AJUSTES LOCAL", "La base de datos ha sido borrada", "OK", "favicon-32x32.png");
             }
@@ -127,7 +127,7 @@ public class Serializador implements Serializable {
             Inscripcion i1 = new Inscripcion(id, selecAlum, selecCurso, fechaI, fechaF, nota, existe);;
             ac.getInscripciones().add(i1);
         }
-        this.escribirDatos(ac, "copi.test");
+        this.escribirDatos(ac, "LocalCopy.bin");
 
         System.out.println("Coplia local generada correctamente");
 
