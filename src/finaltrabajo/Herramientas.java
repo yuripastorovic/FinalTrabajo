@@ -4,6 +4,7 @@
  */
 package finaltrabajo;
 
+import java.awt.Color;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -24,6 +25,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -100,9 +105,9 @@ public class Herramientas {
             return coleccion;
         }
     }
-    
+
     public void leerDatos2(String dirFichero, Object objeto, Collection coleccion) {
-        
+
         File fDatos = new File(dirFichero);
         if (!(fDatos.exists())) {
             try {
@@ -130,7 +135,7 @@ public class Herramientas {
             }
         }
     }
-    
+
     public String leerFicheroTexto(String dirFichero) {
         File archivo = null;
         FileReader fr = null;
@@ -179,7 +184,7 @@ public class Herramientas {
         }
         return cadena;
     }
-    
+
     public void escribirFicheroTexto(String dirFichero, String cadena) {
 
         File fDatos = new File(dirFichero);
@@ -221,35 +226,35 @@ public class Herramientas {
         }
 
     }
-    
-    public void conexionSQL(String dirFichero){
+
+    public void conexionSQL(String dirFichero) {
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
         try {
             Class.forName("org.mariadb.jdbc.Driver");//NO SE TOCA
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/","root",""); //ESTA LINEA SE ENCARGA DE CONECTARSE A LA BASE DE DATOS
-            
-            Statement stmt=conn.createStatement();
-            ResultSet rs ;
-            
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/", "root", ""); //ESTA LINEA SE ENCARGA DE CONECTARSE A LA BASE DE DATOS
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs;
+
             try {
                 // Apertura del fichero y creacion de BufferedReader para poder
                 // hacer una lectura comoda (disponer del metodo readLine()).
                 archivo = new File(dirFichero);//EL FICHERO CON LOS DATOS PARA INICIAR LA BASE DE DATOS SOLO HAY QUE CAMBIAR "reservasBase.txt"
                 fr = new FileReader(archivo);
                 br = new BufferedReader(fr);
-                
+
                 // Lectura del fichero, si vamos a hacer un bucle no es necesario
-                String linea=leerFicheroTexto(dirFichero);
+                String linea = leerFicheroTexto(dirFichero);
                 //aqui cargamos todo el archivo de texto de una 
                 stmt.executeQuery(linea);//select basicamente el comando que ejecutamos en cmd
-                
+
                 /*
                 while ((linea = br.readLine()) != null) {//en este bucle vamos insertando cada linea del documento de texto 
                     stmt.executeQuery(linea);//select basicamente el comando que ejecutamos en cmd
                 }
-                */
+                 */
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
@@ -267,14 +272,13 @@ public class Herramientas {
             }
             conn.commit();
             conn.close();
-        }
-        // Handle any errors that may have occurred.
+        } // Handle any errors that may have occurred.
         catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
-    
+
     public static void escribir(String texto, String fichero) {
         //extraido de https://www.codejava.net/java-se/file-io/how-to-read-and-write-text-file-in-java
         FileWriter writer = null;
@@ -285,25 +289,25 @@ public class Herramientas {
             writer = new FileWriter(fichero, true);//Para añadir sin borrar lo anterior
             bufferedWriter = new BufferedWriter(writer);
             pw = new PrintWriter(bufferedWriter);
- 
+
             //bufferedWriter.write(texto);
             //bufferedWriter.newLine(); 
             pw.write(texto);
             pw.write("\n");
-            
+
         } catch (IOException e) {
             e.printStackTrace();
-        } finally{
+        } finally {
             try {
                 pw.close();
                 bufferedWriter.close();
                 writer.close();
             } catch (IOException ex) {
                 ex.printStackTrace();
-            }            
-        }        
+            }
+        }
     }
-    
+
     public static String leer(String fichero) {
         //extraido de https://www.codejava.net/java-se/file-io/how-to-read-and-write-text-file-in-java
         FileReader reader = null;
@@ -312,48 +316,69 @@ public class Herramientas {
         try {
             reader = new FileReader(fichero);
             bufferedReader = new BufferedReader(reader);
-            line = bufferedReader.readLine(); 
+            line = bufferedReader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             try {
                 bufferedReader.close();
                 reader.close();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            
+
         }
         return line;
     }
-    
+
     public static ArrayList<String> leer2(String fichero) {
         //extraido de https://www.codejava.net/java-se/file-io/how-to-read-and-write-text-file-in-java
         FileReader reader = null;
         BufferedReader bufferedReader = null;
-        ArrayList<String> contenido = new ArrayList<String>();        
+        ArrayList<String> contenido = new ArrayList<String>();
         try {
             reader = new FileReader(fichero);
             bufferedReader = new BufferedReader(reader);
- 
-            String line; 
+
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 //System.out.println(line);
                 contenido.add(line);
             }
             reader.close();
- 
+
         } catch (IOException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             try {
                 bufferedReader.close();
                 reader.close();
             } catch (IOException ex) {
                 ex.printStackTrace();
-            }            
+            }
         }
         return contenido;
     }
-    
+ public int popUp1(String titulo, String contenido, String opcion0, String path) {
+        UIManager UI = new UIManager();
+        UI.put("JOptionPane.background", new Color(0, 0, 0));
+        UI.put("Panel.background", new Color(221, 214, 204));//[]
+        Object[] options = {opcion0};
+        int opcion = JOptionPane.showOptionDialog(null, contenido, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, this.busca(path, 40, 40), options, options[0]);
+        return opcion;
+    }
+    public int popUp2(String titulo, String contenido, String opcion0, String opcion1, String path) {
+        UIManager UI = new UIManager();
+        UI.put("JOptionPane.background", new Color(0, 0, 0));
+        UI.put("Panel.background", new Color(221, 214, 204));//[]
+        Object[] options = {opcion0, opcion1};
+        int opcion = JOptionPane.showOptionDialog(null, contenido, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, this.busca(path, 40, 40), options, options[0]);
+        return opcion;
+    }
+
+    public Icon busca(String ruta, int ancho, int alto) {
+        Icon result = new ImageIcon(new ImageIcon(getClass().getResource(ruta)).getImage().getScaledInstance(ancho, alto, java.awt.Image.SCALE_SMOOTH));
+        return result;
+    }
+
 }

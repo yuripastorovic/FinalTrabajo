@@ -5,7 +5,9 @@
 package finaltrabajo.vistas;
 
 import finaltrabajo.BaseDatosAcademia;
+import finaltrabajo.Herramientas;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -18,6 +20,8 @@ public class AlumnosAlta extends javax.swing.JFrame {
      * Creates new form AlumnosAlta
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
+    private Herramientas h1 = new Herramientas();
+
     public AlumnosAlta() {
         initComponents();
     }
@@ -249,18 +253,20 @@ public class AlumnosAlta extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoTelefonoMouseClicked
 
     private void Crear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crear_alumno
-        if(!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())){
+
+        if (!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
             bd.insertarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
-        }else{
-            //aqui va un pop up de que avisa de que el alumno ya existe--------------------------------------------------------------------------------------------------------- 
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            h1.popUp1("ALTA ALUMNO", "ALUMNO CREADO", "OK", "favicon-32x32.png");
+        } else {
+            if (true) {
+                int resultado = h1.popUp2("ALTA ALUMNO", "ALUMNO CREADO", "0", "1", "favicon-32x32.png");
+                if(resultado==0){
+                
+                }
+                
+            } else {
+                h1.popUp1("ALTA ALUMNO", "ALUMNO YA EXISTENTE", "OK", "favicon-32x32.png");
+            }
         }
         CampoNombre.setText("");
         CampoApellido.setText("");
@@ -291,9 +297,8 @@ public class AlumnosAlta extends javax.swing.JFrame {
     private void ButtonAltaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMousePressed
         ButtonAlta.setBackground(new Color(184, 67, 87));
         LabelButtonAlta.setForeground(new Color(189, 146, 64));
-        
-        
-        
+
+
     }//GEN-LAST:event_ButtonAltaMousePressed
 
     private void ButtonAltaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseReleased
