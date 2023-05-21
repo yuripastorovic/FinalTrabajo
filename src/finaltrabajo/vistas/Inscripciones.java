@@ -60,6 +60,7 @@ public class Inscripciones extends javax.swing.JFrame {
         PanelFaldon.setBackground(new java.awt.Color(25, 34, 43));
 
         ALTA_BAJA.setBackground(new java.awt.Color(25, 34, 43));
+        ALTA_BAJA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ALTA_BAJA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ALTA_BAJABuscar_alum(evt);
@@ -95,6 +96,7 @@ public class Inscripciones extends javax.swing.JFrame {
         );
 
         CALIFICAR.setBackground(new java.awt.Color(25, 34, 43));
+        CALIFICAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CALIFICAR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CALIFICARModi_alum(evt);
@@ -130,6 +132,7 @@ public class Inscripciones extends javax.swing.JFrame {
         );
 
         MOSTRAR.setBackground(new java.awt.Color(25, 34, 43));
+        MOSTRAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         MOSTRAR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MOSTRARBaja_alum(evt);

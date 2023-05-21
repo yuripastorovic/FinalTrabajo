@@ -174,6 +174,7 @@ public class fin extends javax.swing.JFrame {
         PanelBotonera.setLayout(new java.awt.GridLayout(5, 1));
 
         ButtonPrinc.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonPrinc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonPrinc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Principal_action(evt);
@@ -212,6 +213,7 @@ public class fin extends javax.swing.JFrame {
         PanelBotonera.add(ButtonPrinc);
 
         ButtonAlumn.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAlumn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonAlumn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Alumn_action(evt);
@@ -250,6 +252,7 @@ public class fin extends javax.swing.JFrame {
         PanelBotonera.add(ButtonAlumn);
 
         ButtonCurso.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonCurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonCurso.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Curso_action(evt);
@@ -288,6 +291,7 @@ public class fin extends javax.swing.JFrame {
         PanelBotonera.add(ButtonCurso);
 
         ButtonInsc.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonInsc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonInsc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Inscrip_action(evt);
@@ -328,6 +332,7 @@ public class fin extends javax.swing.JFrame {
         PanelBotonera.add(ButtonInsc);
 
         ButtonAjustes.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonAjustes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ajustes_action(evt);

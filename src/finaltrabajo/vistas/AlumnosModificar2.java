@@ -82,6 +82,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         });
 
         Modificar_.setBackground(new java.awt.Color(25, 34, 43));
+        Modificar_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Modificar_.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Modificar_Crear_alumno(evt);

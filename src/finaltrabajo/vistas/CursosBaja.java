@@ -113,6 +113,7 @@ public class CursosBaja extends javax.swing.JFrame {
         });
 
         BotonReset.setBackground(new java.awt.Color(25, 34, 43));
+        BotonReset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonReset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BotonResetBoton_reset(evt);
@@ -148,6 +149,7 @@ public class CursosBaja extends javax.swing.JFrame {
         );
 
         BotonBuscar.setBackground(new java.awt.Color(25, 34, 43));
+        BotonBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BotonBuscar_buscar(evt);
@@ -238,6 +240,7 @@ public class CursosBaja extends javax.swing.JFrame {
         Alineador.add(jScrollPane1);
 
         ButtonModificar.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonModificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ButtonModificarModificar_press(evt);

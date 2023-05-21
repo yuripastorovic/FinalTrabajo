@@ -83,6 +83,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         jLabel1.setText("SELECCIONE ALUMNO");
 
         ButtonAlta.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAlta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonAlta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ButtonAltaCrear_alumno(evt);
@@ -188,6 +189,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         });
 
         ButtonModificar.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonModificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ButtonModificarModificar_press(evt);

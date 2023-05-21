@@ -129,6 +129,7 @@ public class AlumnosAlta extends javax.swing.JFrame {
         });
 
         ButtonAlta.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAlta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonAlta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Crear_alumno(evt);

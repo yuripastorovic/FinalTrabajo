@@ -67,6 +67,7 @@ public class Cursos extends javax.swing.JFrame {
         PanelFaldon.setBackground(new java.awt.Color(25, 34, 43));
 
         ALTA.setBackground(new java.awt.Color(25, 34, 43));
+        ALTA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ALTA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ALTAAlta_alum(evt);
@@ -102,6 +103,7 @@ public class Cursos extends javax.swing.JFrame {
         );
 
         BUSCAR.setBackground(new java.awt.Color(25, 34, 43));
+        BUSCAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BUSCAR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BUSCARBuscar_alum(evt);
@@ -137,6 +139,7 @@ public class Cursos extends javax.swing.JFrame {
         );
 
         MODIFY.setBackground(new java.awt.Color(25, 34, 43));
+        MODIFY.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         MODIFY.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MODIFYModi_alum(evt);
@@ -172,6 +175,7 @@ public class Cursos extends javax.swing.JFrame {
         );
 
         BAJA.setBackground(new java.awt.Color(25, 34, 43));
+        BAJA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BAJA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BAJABaja_alum(evt);
@@ -207,6 +211,7 @@ public class Cursos extends javax.swing.JFrame {
         );
 
         MOSTRAR.setBackground(new java.awt.Color(25, 34, 43));
+        MOSTRAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         MOSTRAR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MOSTRARMostrar_alum(evt);

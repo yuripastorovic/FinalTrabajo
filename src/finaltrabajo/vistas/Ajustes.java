@@ -90,6 +90,7 @@ public class Ajustes extends javax.swing.JFrame {
         PanelFaldon.setBackground(new java.awt.Color(25, 34, 43));
 
         Ajustes_bbdd.setBackground(new java.awt.Color(25, 34, 43));
+        Ajustes_bbdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Ajustes_bbdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ajustes_bbddBuscar_alum(evt);
@@ -125,6 +126,7 @@ public class Ajustes extends javax.swing.JFrame {
         );
 
         Ajustes_local.setBackground(new java.awt.Color(25, 34, 43));
+        Ajustes_local.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Ajustes_local.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ajustes_localBaja_alum(evt);

@@ -58,6 +58,7 @@ public class AjustesLocal extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(189, 146, 64));
 
         CARGAR_LOCAL.setBackground(new java.awt.Color(25, 34, 43));
+        CARGAR_LOCAL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CARGAR_LOCAL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CARGAR_LOCALModificar_clicked(evt);
@@ -95,6 +96,7 @@ public class AjustesLocal extends javax.swing.JFrame {
         );
 
         COPIA_LOCAL.setBackground(new java.awt.Color(25, 34, 43));
+        COPIA_LOCAL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         COPIA_LOCAL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 COPIA_LOCALModificar_clicked(evt);
@@ -132,6 +134,7 @@ public class AjustesLocal extends javax.swing.JFrame {
         );
 
         GENERAR_INFORMES.setBackground(new java.awt.Color(25, 34, 43));
+        GENERAR_INFORMES.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         GENERAR_INFORMES.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GENERAR_INFORMESModificar_press(evt);

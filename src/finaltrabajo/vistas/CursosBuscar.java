@@ -110,6 +110,7 @@ public class CursosBuscar extends javax.swing.JFrame {
         });
 
         BotonReset.setBackground(new java.awt.Color(25, 34, 43));
+        BotonReset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonReset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BotonResetBoton_reset(evt);
@@ -145,6 +146,7 @@ public class CursosBuscar extends javax.swing.JFrame {
         );
 
         BotonBuscar.setBackground(new java.awt.Color(25, 34, 43));
+        BotonBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BotonBuscar_buscar(evt);

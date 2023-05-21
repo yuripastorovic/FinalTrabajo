@@ -73,6 +73,7 @@ public static Color BEIGE=new Color(221, 214, 204);
         jPanel1.setBackground(new java.awt.Color(221, 214, 204));
 
         MODIFICAR.setBackground(new java.awt.Color(25, 34, 43));
+        MODIFICAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         MODIFICAR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MODIFICARModificar_press(evt);
@@ -234,6 +235,7 @@ public static Color BEIGE=new Color(221, 214, 204);
         jLabel1.setText("<html><body>Este programa esta conectado<br>\ncon una base de datos MriaDB.<br>\nAsegurese de que ha encendido<br>\nla base de datos, antes de encender<br> \nel programa.<br>\nAsegurese de que el puerto de <br>\nconexion entre la aplicacion y <br>\nla de datos es el mismo \n</body></html>");
 
         CONECTAR.setBackground(new java.awt.Color(25, 34, 43));
+        CONECTAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CONECTAR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CONECTARModificar_clicked(evt);

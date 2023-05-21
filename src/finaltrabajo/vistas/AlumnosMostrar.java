@@ -59,6 +59,7 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         PanelFondo.setBackground(new java.awt.Color(221, 214, 204));
 
         BotonExalumnos.setBackground(new java.awt.Color(25, 34, 43));
+        BotonExalumnos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonExalumnos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MostrarExalumnos(evt);
@@ -94,6 +95,7 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         );
 
         ButtonAlumnos.setBackground(new java.awt.Color(25, 34, 43));
+        ButtonAlumnos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MostrarAlumnos(evt);
