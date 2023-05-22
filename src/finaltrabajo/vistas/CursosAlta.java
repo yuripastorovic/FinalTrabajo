@@ -249,12 +249,12 @@ public class CursosAlta extends javax.swing.JFrame {
      */
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
         if (!(CampoNombre.getText().trim().equals("")
-                && TextAreaDescr.getText().trim().equals("")
-                && CampoNombre.getText().trim().equals("Introduzca nombre")
-                && TextAreaDescr.getText().trim().equals("Introduzca descripcion del curso")
-                && CBHoras.getSelectedIndex() == -1)
-                && CampoNombre.getText().trim().contains(",")
-                && TextAreaDescr.getText().trim().contains(",")) {
+                || TextAreaDescr.getText().trim().equals("")
+                || CampoNombre.getText().trim().equals("Introduzca nombre")
+                || TextAreaDescr.getText().trim().equals("Introduzca descripcion del curso")
+                || CBHoras.getSelectedIndex() == -1
+                || CampoNombre.getText().trim().contains(",")
+                || TextAreaDescr.getText().trim().contains(","))) {
 
             if (!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
                 h1.popUp1("ALTA CURSO", "CURSO CREADO", "OK", "favicon-32x32.png");
