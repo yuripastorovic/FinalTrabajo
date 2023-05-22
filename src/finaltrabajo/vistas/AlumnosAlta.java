@@ -319,7 +319,7 @@ public class AlumnosAlta extends javax.swing.JFrame {
             CampoTelefono.setBackground(new Color(25, 34, 43));
             CampoTelefono.setForeground(new Color(221, 214, 204));
         } else {
-            h1.popUp1("ALTA ALUMNO", "PORFAVOR REYENE BIEN LOS CAMPOS", "OK", "favicon-32x32.png");
+            h1.popUp1("ALTA ALUMNO", "PORFAVOR RELLENE BIEN LOS CAMPOS Y SIN COMAS ", "OK", "favicon-32x32.png");
         }
 
     }//GEN-LAST:event_Crear_alumno

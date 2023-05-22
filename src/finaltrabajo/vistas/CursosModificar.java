@@ -295,7 +295,7 @@ public class CursosModificar extends javax.swing.JFrame {
                 h1.popUp1("MODIFICAR CURSO", "ESE CURSO YA EXISTE", "OK", "favicon-32x32.png");
             }
         } else {
-            h1.popUp1("MODIFICAR CURSO", "PORFAVOR REYENE BIEN LOS DATOS", "OK", "favicon-32x32.png");
+            h1.popUp1("MODIFICAR CURSO", "PORFAVOR RELLENE BIEN LOS CAMPOS Y SIN COMAS ", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_ButtonAltaCrear_alumno
 

@@ -270,7 +270,7 @@ public class CursosAlta extends javax.swing.JFrame {
             CampoNombre.setBackground(new Color(25, 34, 43));
             CampoNombre.setForeground(new Color(221, 214, 204));
         } else {
-            h1.popUp1("ALTA CURSO", "PORFAVOR REYENE BIEN LOS DATOS", "OK", "favicon-32x32.png");
+            h1.popUp1("ALTA CURSO", "PORFAVOR RELLENE BIEN LOS CAMPOS Y SIN COMAS ", "OK", "favicon-32x32.png");
         }
 
     }//GEN-LAST:event_ButtonAltaCrear_alumno

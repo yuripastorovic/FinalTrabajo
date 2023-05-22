@@ -109,9 +109,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
         MODIFICAR.setLayout(MODIFICARLayout);
         MODIFICARLayout.setHorizontalGroup(
             MODIFICARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MODIFICARLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar))
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         MODIFICARLayout.setVerticalGroup(
             MODIFICARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,9 +278,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
         CONECTAR.setLayout(CONECTARLayout);
         CONECTARLayout.setHorizontalGroup(
             CONECTARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CONECTARLayout.createSequentialGroup()
-                .addGap(0, 128, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar1))
+            .addComponent(LabelButtonModificar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
         );
         CONECTARLayout.setVerticalGroup(
             CONECTARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

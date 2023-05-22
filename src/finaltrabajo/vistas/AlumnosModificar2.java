@@ -325,7 +325,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
                 h1.popUp1("MODIFICAR ALUMNO", "ESE ALUMNO YA EXISTE", "OK", "favicon-32x32.png");
             }
         } else {
-            h1.popUp1("MODIFICAR ALUMNO", "PORFAVOR ELIJA Y MODIFIQUE UN ALUMNO CORRECTAMENTE", "OK", "favicon-32x32.png");
+            h1.popUp1("MODIFICAR ALUMNO", "PORFAVOR ELIJA Y MODIFIQUE UN ALUMNO CORRECTAMENTE Y SIN COMAS ", "OK", "favicon-32x32.png");
         }
 
 
