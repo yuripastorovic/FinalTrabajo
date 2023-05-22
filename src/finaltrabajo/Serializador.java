@@ -13,25 +13,26 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class Serializador implements Serializable {
 
     private Herramientas h1 = new Herramientas();
-    Academia ac = new Academia();
     private BaseDatosAcademia bd = new BaseDatosAcademia();
+    Academia ac = new Academia();
 
+    /**
+     * Permite Actualizar la base de datos con acrhivos locales
+     */
     public void uploadLocal() {
-        this.ac = this.leerDatos1("LocalCopy.bin");
+        this.ac = this.leerDatos1("LocalCopy.bin"); //ficherdo desde el que se regenera la BBDD
         bd.tirarBD();
         bd = new BaseDatosAcademia();
-        if (ac != null) {
-            if (ac.getAlumnos().size() != 0) {
+        if (ac != null) { // Si existe una BBDD
+            if (ac.getAlumnos().size() != 0) { //Si existen alumnos
                 for (int i = 0; i < ac.getAlumnos().size(); i++) {
                     int id = ac.getAlumnos().get(i).getId();
                     String nombre = ac.getAlumnos().get(i).getNombre();
@@ -42,7 +43,7 @@ public class Serializador implements Serializable {
                     bd.insertarTodasAlumno(id, nombre, apellido, correo, tlf, existe);
                 }
             }
-            if (ac.getCursos().size() != 0) {
+            if (ac.getCursos().size() != 0) { // Si existen cursos
                 for (int i = 0; i < ac.getCursos().size(); i++) {
                     int id = ac.getCursos().get(i).getId();
                     String nombre = ac.getCursos().get(i).getNombre();
@@ -53,7 +54,7 @@ public class Serializador implements Serializable {
 
                 }
             }
-            if (ac.getInscripciones().size() != 0) {
+            if (ac.getInscripciones().size() != 0) { // Si existen Inscripciones
                 for (int i = 0; i < ac.getInscripciones().size(); i++) {
                     int id = ac.getInscripciones().get(i).getId();
                     int idAlum = ac.getInscripciones().get(i).getAlumno().getId();
@@ -68,6 +69,7 @@ public class Serializador implements Serializable {
             h1.popUp1("AJUSTES LOCAL", "La base de datos ha sido actualizada.", "OK", "favicon-32x32.png");
             System.out.println("La base de datos ha sido actualizada.");
         } else {
+            // Si no se pueden leer los datos o no existe un archivo local se creara una nueva BBDD vacia
             int respuesta = h1.popUp2("AJUSTES LOCAL", "NO EXISTE UNA COPIA LOCAL,\nCARGAR COPIA LOCAL BORRARA LA BASE DE DATOS\nBorrar datos?", "SI", "NO", "favicon-32x32.png");
             if (respuesta == 0) {
                 h1.popUp1("AJUSTES LOCAL", "La base de datos ha sido borrada", "OK", "favicon-32x32.png");
@@ -77,8 +79,12 @@ public class Serializador implements Serializable {
 
     }
 
+    /**
+     * Comvierte todos los registros de la base de BBDD en objetos tipo Alumno
+     * Curso e Incripciones y los añade a un objeto Academia
+     */
     public void copiaLocal() {
-        for (int i = 0; i < bd.leerStringArrayTodasAlumnos().length; i++) {    ///////////////////////se nececita un ArrayTodosLosAlumnos 
+        for (int i = 0; i < bd.leerStringArrayTodasAlumnos().length; i++) {
             String dateAlum[] = bd.leerStringArrayTodasAlumnos();
             String partes[] = dateAlum[i].split(",");
             int id = Integer.parseInt(partes[0]);
@@ -90,7 +96,7 @@ public class Serializador implements Serializable {
             Alumno a1 = new Alumno(id, nombre, apellido, telefono, correo, existe);
             ac.getAlumnos().add(a1);
         }
-        for (int i = 0; i < bd.leerStringArrayTodasCursos().length; i++) {    ///////////////////////se nececita un ArrayTodosLosCursos
+        for (int i = 0; i < bd.leerStringArrayTodasCursos().length; i++) {
             String dateCurs[] = bd.leerStringArrayTodasCursos();
             String partes[] = dateCurs[i].split(",");
             int id = Integer.parseInt(partes[0]);
@@ -101,7 +107,7 @@ public class Serializador implements Serializable {
             Curso c1 = new Curso(id, nombre, descr, horas, existe);;
             ac.getCursos().add(c1);
         }
-        for (int i = 0; i < bd.leerStringArrayTodasInscripciones().length; i++) {    ///////////////////////se nececita un ArrayTodosLasInscripciones
+        for (int i = 0; i < bd.leerStringArrayTodasInscripciones().length; i++) {
             String dateCurs[] = bd.leerStringArrayTodasInscripciones();
             String partes[] = dateCurs[i].split(",");
             int id = Integer.parseInt(partes[0]);
@@ -133,6 +139,12 @@ public class Serializador implements Serializable {
 
     }
 
+    /**
+     * Permite escribir un objeto academia en un fichero serializable
+     *
+     * @param academia
+     * @param dirFichero
+     */
     public void escribirDatos(Academia academia, String dirFichero) {
         File fDatos = new File(dirFichero);
         if (!(fDatos.exists())) {
@@ -166,6 +178,12 @@ public class Serializador implements Serializable {
         }
     }
 
+    /**
+     * Permite leer un fichro serializable tipo objeto academia
+     *
+     * @param dirFichero
+     * @return
+     */
     public Academia leerDatos1(String dirFichero) {
 
         File fDatos = new File(dirFichero);

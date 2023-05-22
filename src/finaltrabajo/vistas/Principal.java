@@ -8,17 +8,23 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class Principal extends javax.swing.JFrame {
 
     /**
-     * Creates new form Princial
+     * iniciamos componentes
      */
     public Principal() {
         initComponents();
     }
 
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
