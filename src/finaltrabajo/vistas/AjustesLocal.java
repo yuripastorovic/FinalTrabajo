@@ -55,6 +55,7 @@ public class AjustesLocal extends javax.swing.JFrame {
         LabelButtonModificar = new javax.swing.JLabel();
         caja = new javax.swing.JPanel();
         texto = new javax.swing.JLabel();
+        noGod = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -236,20 +237,31 @@ public class AjustesLocal extends javax.swing.JFrame {
             .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
+        noGod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/no.gif"))); // NOI18N
+        noGod.setOpaque(true);
+
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addContainerGap(542, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
+                .addComponent(noGod, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(noGod)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(caja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -378,7 +390,7 @@ public class AjustesLocal extends javax.swing.JFrame {
      * @param evt
      */
     private void CARGAR_LOCALModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALModificar_clicked
-        sc.uploadLocal();
+        sc.uploadLocal(); 
     }//GEN-LAST:event_CARGAR_LOCALModificar_clicked
     /**
      * Permite hacer cambiar el color del boton por interaccion del raton asi
@@ -413,6 +425,7 @@ public class AjustesLocal extends javax.swing.JFrame {
     private void CARGAR_LOCALMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMousePressed
         CARGAR_LOCAL.setBackground(new Color(184, 67, 87));
         LabelButtonModificar2.setForeground(new Color(189, 146, 64));
+        noGod.setOpaque(true);
     }//GEN-LAST:event_CARGAR_LOCALMousePressed
     /**
      * Permite hacer cambiar el color del boton por interaccion del raton
@@ -470,6 +483,7 @@ public class AjustesLocal extends javax.swing.JFrame {
     private javax.swing.JPanel caja;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel noGod;
     private javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 }
