@@ -359,7 +359,7 @@ public class Herramientas {
         }
         return contenido;
     }
- public int popUp1(String titulo, String contenido, String opcion0, String path) {
+    public int popUp1(String titulo, String contenido, String opcion0, String path) {
         UIManager UI = new UIManager();
         UI.put("JOptionPane.background", new Color(0, 0, 0));
         UI.put("Panel.background", new Color(221, 214, 204));//[]

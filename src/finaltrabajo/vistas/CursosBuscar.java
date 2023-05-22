@@ -199,6 +199,10 @@ public class CursosBuscar extends javax.swing.JFrame {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -208,15 +212,27 @@ public class CursosBuscar extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         TablaNew.setGridColor(new java.awt.Color(189, 146, 64));
         TablaNew.setSelectionBackground(new java.awt.Color(184, 67, 87));
         TablaNew.setSelectionForeground(new java.awt.Color(25, 34, 43));
         jScrollPane1.setViewportView(TablaNew);
+        if (TablaNew.getColumnModel().getColumnCount() > 0) {
+            TablaNew.getColumnModel().getColumn(0).setMinWidth(50);
+            TablaNew.getColumnModel().getColumn(0).setPreferredWidth(50);
+            TablaNew.getColumnModel().getColumn(0).setMaxWidth(50);
+        }
 
         Alineador.add(jScrollPane1);
 

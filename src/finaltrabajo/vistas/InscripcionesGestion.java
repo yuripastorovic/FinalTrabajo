@@ -155,6 +155,8 @@ public class InscripcionesGestion extends javax.swing.JFrame {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
             },
             new String [] {
@@ -181,12 +183,9 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         TablaNew.setSelectionForeground(new java.awt.Color(25, 34, 43));
         jScrollPane1.setViewportView(TablaNew);
         if (TablaNew.getColumnModel().getColumnCount() > 0) {
-            TablaNew.getColumnModel().getColumn(0).setResizable(false);
-            TablaNew.getColumnModel().getColumn(1).setResizable(false);
-            TablaNew.getColumnModel().getColumn(2).setResizable(false);
-            TablaNew.getColumnModel().getColumn(3).setResizable(false);
-            TablaNew.getColumnModel().getColumn(4).setResizable(false);
-            TablaNew.getColumnModel().getColumn(5).setResizable(false);
+            TablaNew.getColumnModel().getColumn(0).setMinWidth(50);
+            TablaNew.getColumnModel().getColumn(0).setPreferredWidth(50);
+            TablaNew.getColumnModel().getColumn(0).setMaxWidth(50);
         }
 
         jPanel2.add(jScrollPane1);
