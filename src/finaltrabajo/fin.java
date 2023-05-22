@@ -739,6 +739,7 @@ public class fin extends javax.swing.JFrame {
      * @param evt
      */
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
+        bd.cerrar();
         this.dispose();
         System.exit(0);
 
