@@ -108,7 +108,6 @@ public class fin extends javax.swing.JFrame {
         setResizable(false);
 
         PanelFondo.setBackground(new java.awt.Color(221, 214, 204));
-        PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         movimiento.setBackground(new java.awt.Color(0, 255, 0));
         movimiento.setOpaque(false);
@@ -164,8 +163,6 @@ public class fin extends javax.swing.JFrame {
             movimientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        PanelFondo.add(movimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 40));
 
         PanelMenu.setBackground(new java.awt.Color(25, 34, 43));
 
@@ -386,8 +383,6 @@ public class fin extends javax.swing.JFrame {
                 .addContainerGap(136, Short.MAX_VALUE))
         );
 
-        PanelFondo.add(PanelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         PanelHeader.setBackground(new java.awt.Color(184, 67, 87));
 
         PanelHora.setBackground(new java.awt.Color(184, 67, 87));
@@ -451,8 +446,6 @@ public class fin extends javax.swing.JFrame {
                     .addComponent(PanelFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        PanelFondo.add(PanelHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 49, 780, -1));
-
         PanelContenedor.setBackground(new java.awt.Color(221, 214, 204));
         PanelContenedor.setPreferredSize(new java.awt.Dimension(654, 375));
 
@@ -469,10 +462,10 @@ public class fin extends javax.swing.JFrame {
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(109, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(100, 100, 100))
         );
@@ -483,10 +476,35 @@ public class fin extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelFondo.add(PanelContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 90, 769, 460));
+        javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
+        PanelFondo.setLayout(PanelFondoLayout);
+        PanelFondoLayout.setHorizontalGroup(
+            PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(movimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(PanelFondoLayout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PanelContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 769, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        PanelFondoLayout.setVerticalGroup(
+            PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelFondoLayout.createSequentialGroup()
+                .addComponent(movimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE))
+            .addGroup(PanelFondoLayout.createSequentialGroup()
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(PanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
