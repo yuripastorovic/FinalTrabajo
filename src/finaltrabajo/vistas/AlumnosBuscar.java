@@ -71,6 +71,8 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         Alineador = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaNew = new javax.swing.JTable();
+        caja = new javax.swing.JPanel();
+        texto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -138,7 +140,9 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         BotonReset.setLayout(BotonResetLayout);
         BotonResetLayout.setHorizontalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(reset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonResetLayout.createSequentialGroup()
+                .addGap(0, 39, Short.MAX_VALUE)
+                .addComponent(reset))
         );
         BotonResetLayout.setVerticalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +177,9 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         BotonBuscar.setLayout(BotonBuscarLayout);
         BotonBuscarLayout.setHorizontalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonBuscarLayout.createSequentialGroup()
+                .addGap(0, 35, Short.MAX_VALUE)
+                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         BotonBuscarLayout.setVerticalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,6 +226,25 @@ public class AlumnosBuscar extends javax.swing.JFrame {
 
         Alineador.add(jScrollPane1);
 
+        caja.setBackground(new java.awt.Color(221, 214, 204));
+
+        texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setForeground(new java.awt.Color(221, 214, 204));
+
+        javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
+        caja.setLayout(cajaLayout);
+        cajaLayout.setHorizontalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cajaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cajaLayout.setVerticalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
@@ -228,9 +253,9 @@ public class AlumnosBuscar extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(LabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(PanelFondoLayout.createSequentialGroup()
@@ -241,34 +266,34 @@ public class AlumnosBuscar extends javax.swing.JFrame {
                                 .addComponent(ComboNombre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addComponent(BotonReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addComponent(Alineador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Alineador, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+            .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addComponent(Alineador, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(LabelInfo)
-                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addComponent(Alineador, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(LabelInfo))
+                    .addComponent(BotonReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelNombreC)
                             .addComponent(LabelTelefono))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29))
-                    .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                            .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(caja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -279,7 +304,9 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -324,11 +351,16 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     private void BotonResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseEntered
         BotonReset.setBackground(new Color(189, 146, 64));
         reset.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_BotonResetMouseEntered
 
     private void BotonResetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseExited
         BotonReset.setBackground(new Color(25, 34, 43));
         reset.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_BotonResetMouseExited
 
     private void BotonResetMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMousePressed
@@ -344,11 +376,16 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     private void BotonBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseEntered
         BotonBuscar.setBackground(new Color(189, 146, 64));
         buscar.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_BotonBuscarMouseEntered
 
     private void BotonBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseExited
         BotonBuscar.setBackground(new Color(25, 34, 43));
         buscar.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_BotonBuscarMouseExited
 
     private void BotonBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMousePressed
@@ -408,7 +445,9 @@ public class AlumnosBuscar extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JTable TablaNew;
     private javax.swing.JLabel buscar;
+    private javax.swing.JPanel caja;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel reset;
+    private javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 }

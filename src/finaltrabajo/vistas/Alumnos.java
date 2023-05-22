@@ -57,6 +57,8 @@ public class Alumnos extends javax.swing.JFrame {
         LabelButtonModificar5 = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
         Image_png = new javax.swing.JLabel();
+        caja = new javax.swing.JPanel();
+        texto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -272,19 +274,42 @@ public class Alumnos extends javax.swing.JFrame {
                     .addComponent(MOSTRAR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        contenedor.setBackground(new java.awt.Color(0, 255, 0));
+        contenedor.setBackground(new java.awt.Color(184, 67, 87));
 
         Image_png.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/alumnos.jpg"))); // NOI18N
+
+        caja.setBackground(new java.awt.Color(184, 67, 87));
+
+        texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setForeground(new java.awt.Color(221, 214, 204));
+
+        javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
+        caja.setLayout(cajaLayout);
+        cajaLayout.setHorizontalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cajaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cajaLayout.setVerticalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Image_png, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Image_png, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(contenedorLayout.createSequentialGroup()
+                .addComponent(Image_png, javax.swing.GroupLayout.PREFERRED_SIZE, 307, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(caja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
@@ -314,9 +339,7 @@ public class Alumnos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -350,52 +373,77 @@ public class Alumnos extends javax.swing.JFrame {
     private void ALTAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTAMouseEntered
         ALTA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_ALTAMouseEntered
 
     private void ALTAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTAMouseExited
         ALTA.setBackground(new Color(25, 34, 43));
         LabelButtonModificar1.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_ALTAMouseExited
 
     private void BUSCARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseEntered
         // TODO add your handling code here:
         BUSCAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_BUSCARMouseEntered
 
     private void BUSCARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseExited
         BUSCAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar4.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_BUSCARMouseExited
 
     private void MODIFYMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseEntered
         MODIFY.setBackground(new Color(189, 146, 64));
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_MODIFYMouseEntered
 
     private void MODIFYMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseExited
         MODIFY.setBackground(new Color(25, 34, 43));
         LabelButtonModificar3.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_MODIFYMouseExited
 
     private void BAJAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseEntered
         BAJA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_BAJAMouseEntered
 
     private void BAJAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseExited
         BAJA.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_BAJAMouseExited
 
     private void MOSTRARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseEntered
         MOSTRAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar5.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_MOSTRARMouseEntered
 
     private void MOSTRARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseExited
         MOSTRAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar5.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_MOSTRARMouseExited
 
     private void ALTAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTAMousePressed
@@ -424,7 +472,7 @@ public class Alumnos extends javax.swing.JFrame {
     }//GEN-LAST:event_MODIFYMousePressed
 
     private void MODIFYMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseReleased
-     MODIFY.setBackground(new Color(189, 146, 64));
+        MODIFY.setBackground(new Color(189, 146, 64));
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_MODIFYMouseReleased
 
@@ -434,7 +482,7 @@ public class Alumnos extends javax.swing.JFrame {
     }//GEN-LAST:event_BAJAMousePressed
 
     private void BAJAMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseReleased
-       BAJA.setBackground(new Color(189, 146, 64));
+        BAJA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BAJAMouseReleased
 
@@ -444,7 +492,7 @@ public class Alumnos extends javax.swing.JFrame {
     }//GEN-LAST:event_MOSTRARMousePressed
 
     private void MOSTRARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseReleased
-       MOSTRAR.setBackground(new Color(189, 146, 64));
+        MOSTRAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar5.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_MOSTRARMouseReleased
 
@@ -497,6 +545,8 @@ public class Alumnos extends javax.swing.JFrame {
     private javax.swing.JPanel MOSTRAR;
     private javax.swing.JPanel PanelFaldon;
     private javax.swing.JPanel PanelFondo;
+    private javax.swing.JPanel caja;
     private javax.swing.JPanel contenedor;
+    private javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 }

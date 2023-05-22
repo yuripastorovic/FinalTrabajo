@@ -20,6 +20,7 @@ public class AlumnosMostrar extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
+
     public AlumnosMostrar() {
         initComponents();
         modelo.addColumn("ID");
@@ -28,12 +29,12 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         modelo.addColumn("CORREO");
         modelo.addColumn("TELEFONO");
     }
-    
+
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
-        
+
         return fondo;
-        
+
     }
 
     /**
@@ -53,6 +54,8 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         Alineador = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaNew = new javax.swing.JTable();
+        caja = new javax.swing.JPanel();
+        texto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,6 +173,25 @@ public class AlumnosMostrar extends javax.swing.JFrame {
 
         Alineador.add(jScrollPane1);
 
+        caja.setBackground(new java.awt.Color(221, 214, 204));
+
+        texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setForeground(new java.awt.Color(221, 214, 204));
+
+        javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
+        caja.setLayout(cajaLayout);
+        cajaLayout.setHorizontalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cajaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cajaLayout.setVerticalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
@@ -177,9 +199,10 @@ public class AlumnosMostrar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addComponent(ButtonAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
                 .addComponent(BotonExalumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88))
+            .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelFondoLayout.createSequentialGroup()
                     .addGap(4, 4, 4)
@@ -193,12 +216,13 @@ public class AlumnosMostrar extends javax.swing.JFrame {
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BotonExalumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
+                .addComponent(caja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PanelFondoLayout.createSequentialGroup()
-                    .addGap(85, 85, 85)
-                    .addComponent(Alineador, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
+                    .addContainerGap(85, Short.MAX_VALUE)
+                    .addComponent(Alineador, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(99, 99, 99)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,18 +246,18 @@ public class AlumnosMostrar extends javax.swing.JFrame {
      * @param evt
      */
     private void MostrarAlumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarAlumnos
-        for (int i = 0; i <modelo.getRowCount(); i++) {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
             i--;
-            
+
         }
         TablaNew.setModel(modelo);
-        String datitos[]=bd.leerStringArrayAlumnosExistentes();
+        String datitos[] = bd.leerStringArrayAlumnosExistentes();
         for (int i = 0; i < bd.leerStringArrayAlumnosExistentes().length; i++) {
             modelo.addRow(datitos[i].split(","));
         }
-                
-        
+
+
     }//GEN-LAST:event_MostrarAlumnos
     /**
      * Debe borrar el contenido de la tabla y mostrar la tabla alumnos boolean
@@ -242,28 +266,33 @@ public class AlumnosMostrar extends javax.swing.JFrame {
      * @param evt
      */
     private void MostrarExalumnos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarExalumnos
-        for (int i = 0; i <modelo.getRowCount(); i++) {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
             i--;
             System.out.println(modelo.getRowCount());
         }
-        
+
         TablaNew.setModel(modelo);
-        String datitos[]= bd.leerStringArrayAlumnosNoExistentes();
+        String datitos[] = bd.leerStringArrayAlumnosNoExistentes();
         for (int i = 0; i < bd.leerStringArrayAlumnosNoExistentes().length; i++) {
             modelo.addRow(datitos[i].split(","));
         }
-        
+
     }//GEN-LAST:event_MostrarExalumnos
 
     private void BotonExalumnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseEntered
         BotonExalumnos.setBackground(new Color(189, 146, 64));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_BotonExalumnosMouseEntered
 
     private void BotonExalumnosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseExited
         BotonExalumnos.setBackground(new Color(25, 34, 43));
         LabelButtonModificar1.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_BotonExalumnosMouseExited
 
     private void BotonExalumnosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMousePressed
@@ -280,6 +309,9 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         // TODO add your handling code here:ButtonAlumnos
         ButtonAlumnos.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
     }//GEN-LAST:event_ButtonAlumnosMouseEntered
 
     private void ButtonAlumnosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMousePressed
@@ -290,6 +322,8 @@ public class AlumnosMostrar extends javax.swing.JFrame {
     private void ButtonAlumnosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMouseExited
         ButtonAlumnos.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_ButtonAlumnosMouseExited
 
     private void ButtonAlumnosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMouseReleased
@@ -340,6 +374,8 @@ public class AlumnosMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel LabelButtonModificar1;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JTable TablaNew;
+    private javax.swing.JPanel caja;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 }

@@ -74,6 +74,8 @@ public class AlumnosBaja extends javax.swing.JFrame {
         TablaNew = new javax.swing.JTable();
         ButtonRetirar = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
+        caja = new javax.swing.JPanel();
+        texto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -138,7 +140,9 @@ public class AlumnosBaja extends javax.swing.JFrame {
         BotonReset.setLayout(BotonResetLayout);
         BotonResetLayout.setHorizontalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(reset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonResetLayout.createSequentialGroup()
+                .addGap(0, 30, Short.MAX_VALUE)
+                .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         BotonResetLayout.setVerticalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +178,9 @@ public class AlumnosBaja extends javax.swing.JFrame {
         BotonBuscar.setLayout(BotonBuscarLayout);
         BotonBuscarLayout.setHorizontalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonBuscarLayout.createSequentialGroup()
+                .addGap(0, 36, Short.MAX_VALUE)
+                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         BotonBuscarLayout.setVerticalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,12 +261,31 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ButtonRetirarLayout.setHorizontalGroup(
             ButtonRetirarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonRetirarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar))
+                .addGap(0, 27, Short.MAX_VALUE)
+                .addComponent(LabelButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ButtonRetirarLayout.setVerticalGroup(
             ButtonRetirarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
+        caja.setBackground(new java.awt.Color(221, 214, 204));
+
+        texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setForeground(new java.awt.Color(221, 214, 204));
+
+        javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
+        caja.setLayout(cajaLayout);
+        cajaLayout.setHorizontalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cajaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cajaLayout.setVerticalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
@@ -270,9 +295,6 @@ public class AlumnosBaja extends javax.swing.JFrame {
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(LabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,26 +304,32 @@ public class AlumnosBaja extends javax.swing.JFrame {
                                     .addGap(38, 38, 38)
                                     .addComponent(LabelTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                                    .addComponent(ComboNombre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(LabelInfo1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotonReset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtonRetirar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(BotonReset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonRetirar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addComponent(Alineador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Alineador, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+            .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addComponent(Alineador, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelInfo)
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(LabelInfo)
+                        .addGap(18, 18, 18)
                         .addComponent(LabelInfo1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -311,15 +339,16 @@ public class AlumnosBaja extends javax.swing.JFrame {
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29))
-                    .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                         .addComponent(BotonReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(ButtonRetirar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(caja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -373,11 +402,17 @@ public class AlumnosBaja extends javax.swing.JFrame {
     private void BotonResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseEntered
         BotonReset.setBackground(new Color(189, 146, 64));
         reset.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
+
     }//GEN-LAST:event_BotonResetMouseEntered
 
     private void BotonResetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseExited
         BotonReset.setBackground(new Color(25, 34, 43));
         reset.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_BotonResetMouseExited
 
     private void BotonResetMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMousePressed
@@ -393,11 +428,17 @@ public class AlumnosBaja extends javax.swing.JFrame {
     private void BotonBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseEntered
         BotonBuscar.setBackground(new Color(189, 146, 64));
         buscar.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
+
     }//GEN-LAST:event_BotonBuscarMouseEntered
 
     private void BotonBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseExited
         BotonBuscar.setBackground(new Color(25, 34, 43));
         buscar.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_BotonBuscarMouseExited
 
     private void BotonBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMousePressed
@@ -439,11 +480,17 @@ public class AlumnosBaja extends javax.swing.JFrame {
     private void ButtonRetirarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarMouseEntered
         ButtonRetirar.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
+
     }//GEN-LAST:event_ButtonRetirarMouseEntered
 
     private void ButtonRetirarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarMouseExited
         ButtonRetirar.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
     }//GEN-LAST:event_ButtonRetirarMouseExited
 
     private void ButtonRetirarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRetirarMousePressed
@@ -506,7 +553,9 @@ public class AlumnosBaja extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JTable TablaNew;
     private javax.swing.JLabel buscar;
+    private javax.swing.JPanel caja;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel reset;
+    private javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 }
