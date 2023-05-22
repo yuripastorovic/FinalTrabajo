@@ -268,6 +268,7 @@
                 <StringItem index="6" value="7"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

@@ -142,6 +142,7 @@ public class CursosAlta extends javax.swing.JFrame {
         CBHoras.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CBHoras.setForeground(new java.awt.Color(221, 214, 204));
         CBHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7" }));
+        CBHoras.setSelectedIndex(-1);
         CBHoras.setBorder(null);
         CBHoras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CBHoras.addActionListener(new java.awt.event.ActionListener() {

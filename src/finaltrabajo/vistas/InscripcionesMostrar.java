@@ -15,9 +15,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class InscripcionesMostrar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InscripcionesMostrar
-     */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
 
@@ -275,8 +272,10 @@ public class InscripcionesMostrar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     /**
-     * 
-     * @param evt 
+     * Tras seleccionar una opcion actualiza los demas combox, muestra
+     * resultados en la tabla
+     *
+     * @param evt
      */
     private void NombreAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreAlumActionPerformed
         for (int i = 0; i < modelo.getRowCount(); i++) {
@@ -292,7 +291,12 @@ public class InscripcionesMostrar extends javax.swing.JFrame {
         NombreAlum.setBackground(new Color(189, 146, 64));
         NombreAlum.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_NombreAlumActionPerformed
-
+    /**
+     * Tras seleccionar una opcion actualiza los demas combox, muestra
+     * resultados en la tabla
+     *
+     * @param evt
+     */
     private void NombreExAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreExAlumActionPerformed
         for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
@@ -307,7 +311,12 @@ public class InscripcionesMostrar extends javax.swing.JFrame {
         NombreExAlum.setBackground(new Color(189, 146, 64));
         NombreExAlum.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_NombreExAlumActionPerformed
-
+    /**
+     * Tras seleccionar una opcion actualiza los demas combox, muestra
+     * resultados en la tabla
+     *
+     * @param evt
+     */
     private void NombreCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreCursoActionPerformed
         for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
@@ -322,7 +331,12 @@ public class InscripcionesMostrar extends javax.swing.JFrame {
         NombreCurso.setBackground(new Color(189, 146, 64));
         NombreCurso.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_NombreCursoActionPerformed
-
+    /**
+     * Tras seleccionar una opcion actualiza los demas combox, muestra
+     * resultados en la tabla
+     *
+     * @param evt
+     */
     private void NombreExCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreExCursoActionPerformed
         for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
