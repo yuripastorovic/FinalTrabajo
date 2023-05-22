@@ -161,6 +161,7 @@ public JPanel getFondo() {
         caja.setBackground(new java.awt.Color(221, 214, 204));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -240,7 +241,7 @@ public JPanel getFondo() {
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("MUESTRA EN LA TABLA TODOS LOS CURSOS RETIRADOS");
     }//GEN-LAST:event_BotonExalumnosMouseEntered
 
     private void BotonExalumnosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseExited
@@ -281,7 +282,7 @@ public JPanel getFondo() {
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("MUESTRA EN LA TODOS TABLA LOS CURSOS");
     }//GEN-LAST:event_ButtonAlumnosMouseEntered
 
     private void ButtonAlumnosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMouseExited

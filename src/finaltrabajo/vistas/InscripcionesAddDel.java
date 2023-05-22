@@ -134,6 +134,7 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         caja.setBackground(new java.awt.Color(221, 214, 204));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -248,7 +249,7 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE AGREGAR UN ALUMNO EN ACTIVO A UN CURSO EXISTENTE");
     }//GEN-LAST:event_ButtonModificarMouseEntered
 
     private void ButtonModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseExited

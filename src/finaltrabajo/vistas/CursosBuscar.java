@@ -228,6 +228,7 @@ public class CursosBuscar extends javax.swing.JFrame {
         caja.setBackground(new java.awt.Color(221, 214, 204));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -254,14 +255,9 @@ public class CursosBuscar extends javax.swing.JFrame {
                     .addComponent(LabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelFondoLayout.createSequentialGroup()
-                                .addComponent(LabelInfo1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(PanelFondoLayout.createSequentialGroup()
-                                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LabelNombreC)
-                                    .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(LabelInfo1)
+                            .addComponent(LabelNombreC)
+                            .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(4, 4, 4)
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LabelTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -343,7 +339,7 @@ public class CursosBuscar extends javax.swing.JFrame {
         reset.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("REINICIA LOS FILTROS DE BUSQUEDA");
     }//GEN-LAST:event_BotonResetMouseEntered
 
     private void BotonResetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseExited
@@ -390,7 +386,7 @@ public class CursosBuscar extends javax.swing.JFrame {
         buscar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("INICIA UNA BUSQUEDA CON LOS FILTROS SELECCIONADOS,  LOS RESULTADOS SE MOSTRARAN EN LA TABLA");
     }//GEN-LAST:event_BotonBuscarMouseEntered
 
     private void BotonBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseExited

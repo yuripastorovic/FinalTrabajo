@@ -143,7 +143,9 @@ public class CursosBaja extends javax.swing.JFrame {
         BotonReset.setLayout(BotonResetLayout);
         BotonResetLayout.setHorizontalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(reset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonResetLayout.createSequentialGroup()
+                .addGap(0, 19, Short.MAX_VALUE)
+                .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         BotonResetLayout.setVerticalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +181,9 @@ public class CursosBaja extends javax.swing.JFrame {
         BotonBuscar.setLayout(BotonBuscarLayout);
         BotonBuscarLayout.setHorizontalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+            .addGroup(BotonBuscarLayout.createSequentialGroup()
+                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 72, Short.MAX_VALUE))
         );
         BotonBuscarLayout.setVerticalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,7 +274,9 @@ public class CursosBaja extends javax.swing.JFrame {
         ButtonModificar.setLayout(ButtonModificarLayout);
         ButtonModificarLayout.setHorizontalGroup(
             ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonModificarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(LabelButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ButtonModificarLayout.setVerticalGroup(
             ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,6 +286,7 @@ public class CursosBaja extends javax.swing.JFrame {
         caja.setBackground(new java.awt.Color(221, 214, 204));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -400,7 +407,7 @@ public class CursosBaja extends javax.swing.JFrame {
         reset.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("REINICIA LOS FILTROS DE BUSQUEDA");
     }//GEN-LAST:event_BotonResetMouseEntered
 
     private void BotonResetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseExited
@@ -449,7 +456,7 @@ public class CursosBaja extends javax.swing.JFrame {
         buscar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("INICIA UNA BUSQUEDA CON LOS FILTROS SELECCIONADOS,  LOS RESULTADOS SE MOSTRARAN EN LA TABLA");
     }//GEN-LAST:event_BotonBuscarMouseEntered
 
     private void BotonBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseExited
@@ -494,7 +501,7 @@ public class CursosBaja extends javax.swing.JFrame {
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE RETIRAR UN CURSO EN ACTIVO, DEMATRICULANDO A LOS ALUMNO QUE ESTEN INSCRITOS");
     }//GEN-LAST:event_ButtonModificarMouseEntered
 
     private void ButtonModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseExited

@@ -199,6 +199,7 @@ public class Inscripciones extends javax.swing.JFrame {
         caja.setOpaque(false);
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -207,8 +208,8 @@ public class Inscripciones extends javax.swing.JFrame {
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cajaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 666, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
+                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         cajaLayout.setVerticalGroup(
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +268,7 @@ public class Inscripciones extends javax.swing.JFrame {
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE MATRICULAR O DESMATRICULAR UN ALUMNO EN ACTIVO");
         caja.setOpaque(true);
     }//GEN-LAST:event_ALTA_BAJAMouseEntered
 
@@ -299,7 +300,7 @@ public class Inscripciones extends javax.swing.JFrame {
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE CALIFICAR A UN ALUMNO EN ACTIVO EN UN CURSO AL QUE ESTE PERTENEZCA");
         caja.setOpaque(true);
     }//GEN-LAST:event_CALIFICARMouseEntered
 

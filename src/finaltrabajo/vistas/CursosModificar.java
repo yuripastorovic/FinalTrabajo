@@ -173,6 +173,7 @@ private void comboBox1() {
         caja.setBackground(new java.awt.Color(221, 214, 204));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -297,7 +298,7 @@ private void comboBox1() {
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE MODIFICAR UN CURSO EN ACTIVO");
     }//GEN-LAST:event_ButtonAltaMouseEntered
 
     private void ButtonAltaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseExited
