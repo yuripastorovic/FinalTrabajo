@@ -122,7 +122,7 @@ public class fin extends javax.swing.JFrame {
             }
         });
 
-        exit.setBackground(new java.awt.Color(204, 0, 0));
+        exit.setBackground(new java.awt.Color(184, 67, 87));
         exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,6 +137,7 @@ public class fin extends javax.swing.JFrame {
         });
 
         exiit.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
+        exiit.setForeground(new java.awt.Color(221, 214, 204));
         exiit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         exiit.setText("X");
 
@@ -791,8 +792,8 @@ public class fin extends javax.swing.JFrame {
      * @param evt
      */
     private void exitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseEntered
-        exit.setBackground(Color.black);
-        exiit.setForeground(Color.WHITE);
+        exit.setBackground(new Color(189,146,64));
+        exiit.setForeground(new Color(184,67,87));
     }//GEN-LAST:event_exitMouseEntered
     /**
      * Permite hacer cambiar el color del boton por interaccion del raton
@@ -800,8 +801,8 @@ public class fin extends javax.swing.JFrame {
      * @param evt
      */
     private void exitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseExited
-        exit.setBackground(Color.black);
-        exiit.setForeground(Color.WHITE);
+        exit.setBackground(new Color(184,67,87));
+        exiit.setForeground(new Color(221,214,204));
     }//GEN-LAST:event_exitMouseExited
 
     /**
