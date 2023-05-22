@@ -301,7 +301,8 @@ public class AlumnosModificar extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoNombreMouseClicked
     /**
      * Permite modificicar los los datos de un alumno
-     * @param evt 
+     *
+     * @param evt
      */
     private void Modificar_Crear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_Crear_alumno
         if (!(CBHoras1.getSelectedIndex() == -1
@@ -315,7 +316,11 @@ public class AlumnosModificar extends javax.swing.JFrame {
                 || CampoTelefono.getText().trim().equals("Introduzca telefono")
                 || CampoApellido.getText().trim().contains(",")
                 || CampoCorreo.getText().trim().contains(",")
-                || CampoTelefono.getText().trim().contains(","))) {
+                || CampoTelefono.getText().trim().contains(","))
+                && h1.comprobarNumeros(CampoTelefono.getText().trim())
+                && h1.comprobarSinEspacios(CampoNombre.getText().trim())
+                && h1.comprobarConEspacios(CampoApellido.getText().trim())
+                && CampoCorreo.getText().trim().contains("@")) {
             if (!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
                 String[] partes = CBHoras1.getSelectedItem().toString().split(",");
                 String id = partes[0].trim();
@@ -345,7 +350,7 @@ public class AlumnosModificar extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_Modificar_Crear_alumno
-        /**
+    /**
      * Permite hacer cambiar el color del boton por interaccion del raton asi
      * como mostrar una descripcion del boton
      *

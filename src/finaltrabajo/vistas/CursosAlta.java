@@ -268,7 +268,10 @@ public class CursosAlta extends javax.swing.JFrame {
                 || TextAreaDescr.getText().trim().equals("Introduzca descripcion del curso")
                 || CBHoras.getSelectedIndex() == -1
                 || CampoNombre.getText().trim().contains(",")
-                || TextAreaDescr.getText().trim().contains(","))) {
+                || TextAreaDescr.getText().trim().contains(","))
+                && h1.comprobarSinEspacios(CampoNombre.getText().trim())
+                && h1.comprobarConEspacios(TextAreaDescr.getText().trim())
+                ) {
 
             if (!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
                 h1.popUp1("ALTA CURSO", "CURSO CREADO", "OK", "favicon-32x32.png");

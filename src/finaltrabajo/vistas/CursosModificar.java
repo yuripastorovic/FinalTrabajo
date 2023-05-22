@@ -14,6 +14,7 @@ import javax.swing.JPanel;
  * @author Jorge & Miguel
  */
 public class CursosModificar extends javax.swing.JFrame {
+
     private Herramientas h1 = new Herramientas();
     private BaseDatosAcademia bd = new BaseDatosAcademia();
 
@@ -21,6 +22,7 @@ public class CursosModificar extends javax.swing.JFrame {
         initComponents();
         comboBox1();
     }
+
     /**
      * Permite devolver el panel de fondo que contiene todos los componenetes
      * del JFrame
@@ -273,10 +275,12 @@ public class CursosModificar extends javax.swing.JFrame {
         CampoNombre.setBackground(new Color(189, 146, 64));
         CampoNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoNombreMouseClicked
-/**
- * comprueba que los datos introducidos con validos y cambio los datos del alumno
- * @param evt 
- */
+    /**
+     * comprueba que los datos introducidos con validos y cambio los datos del
+     * alumno
+     *
+     * @param evt
+     */
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
         if (!(CBHoras1.getSelectedIndex() == -1 || CBHoras.getSelectedIndex() == -1
                 || CampoNombre.getText().trim().equals("")
@@ -284,7 +288,9 @@ public class CursosModificar extends javax.swing.JFrame {
                 || CampoNombre.getText().trim().equals("Introduzca nombre")
                 || TextAreaDescr.getText().trim().equals("Introduzca descripcion del curso")
                 || CampoNombre.getText().trim().contains(",")
-                || TextAreaDescr.getText().trim().contains(","))) {
+                || TextAreaDescr.getText().trim().contains(","))
+                && h1.comprobarSinEspacios(CampoNombre.getText().trim())
+                && h1.comprobarConEspacios(TextAreaDescr.getText().trim())) {
 
             if (!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
                 String[] partes = CBHoras1.getSelectedItem().toString().split(",");
@@ -309,7 +315,7 @@ public class CursosModificar extends javax.swing.JFrame {
             h1.popUp1("MODIFICAR CURSO", "PORFAVOR RELLENE BIEN LOS CAMPOS Y SIN COMAS ", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_ButtonAltaCrear_alumno
-   /**
+    /**
      * Permite hacer cambiar el color del boton por interaccion del raton asi
      * como mostrar una descripcion del boton
      *
@@ -370,10 +376,11 @@ public class CursosModificar extends javax.swing.JFrame {
         CBHoras.setBackground(new Color(189, 146, 64));
         CBHoras.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CBHorasActionPerformed
-/**
- * colo lod atos seleccionados en el combox en la tabla
- * @param evt 
- */
+    /**
+     * colo lod atos seleccionados en el combox en la tabla
+     *
+     * @param evt
+     */
     private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
         String[] partes = CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();

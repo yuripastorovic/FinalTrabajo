@@ -35,5 +35,58 @@ public class Herramientas {
         Icon result = new ImageIcon(new ImageIcon(getClass().getResource(ruta)).getImage().getScaledInstance(ancho, alto, java.awt.Image.SCALE_SMOOTH));
         return result;
     }
-
+    public boolean comprobarNumeros(String texto) {
+        boolean fin = true;
+            if (texto != ("")) {
+                for (int i = 0; i < texto.length(); i++) {
+                    //este if se encarga de que dentro de la cadena solo haya numeros
+                    if (!Character.isDigit(texto.charAt(i))) {
+                        fin = false;
+                    }
+                }
+            } else {
+                fin = false;
+            }
+            if (fin == false) {
+                System.out.println("NO HAY SOLO NUMEROS ");
+            }
+        return fin;
+    }
+    public boolean comprobarSinEspacios(String texto) {
+        boolean fin;
+            fin = true;
+            // este if se encarga de que el usuario haya metido algo
+            if (texto != ("")) {
+                for (int i = 0; i < texto.length(); i++) {
+                    // este if se encarga de que el usuario solo ha metido letras
+                    if (!Character.isLetter(texto.charAt(i))) {
+                        fin = false;
+                    }
+                }
+            } else {
+                fin = false;
+            }
+            if (fin == false) {
+                System.out.println("NO HAY SOLO LETRAS");
+            }
+        return fin;
+    }
+    public boolean comprobarConEspacios(String texto) {
+        boolean fin = true;
+            // este if se encarga de que el usuario a metido algo 
+            if (texto != ("") && texto != (" ") && texto.length() > 1) {
+                for (int i = 0; i < texto.length(); i++) {
+                    // este if se encarga de que haya metido una cadena
+                    if (!Character.isLetter(texto.charAt(i)) && texto.charAt(i) != ' ') {
+                        fin = false;
+                    }
+                }
+            } else {
+                fin = false;
+            }
+            if (fin == false) {
+                System.out.println("NO HAY LETRAS O ESPACIOS");
+            }
+        return fin;
+    }
 }

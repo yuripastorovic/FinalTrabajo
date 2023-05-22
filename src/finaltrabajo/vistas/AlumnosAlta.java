@@ -21,6 +21,7 @@ public class AlumnosAlta extends javax.swing.JFrame {
     public AlumnosAlta() {
         initComponents();
     }
+
     /**
      * Permite devolver el panel de fondo que contiene todos los componenetes
      * del JFrame
@@ -305,10 +306,12 @@ public class AlumnosAlta extends javax.swing.JFrame {
         CampoTelefono.setBackground(new Color(189, 146, 64));
         CampoTelefono.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoTelefonoMouseClicked
-/**
- * Permite la creaccion de un nuevo alumno, un alumno esgresado. tambien verifica que la introduccion de los datos es corracta
- * @param evt 
- */
+    /**
+     * Permite la creaccion de un nuevo alumno, un alumno esgresado. tambien
+     * verifica que la introduccion de los datos es corracta
+     *
+     * @param evt
+     */
     private void Crear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crear_alumno
         if (!(CampoNombre.getText().trim().equals("")
                 || CampoApellido.getText().trim().equals("")
@@ -320,7 +323,11 @@ public class AlumnosAlta extends javax.swing.JFrame {
                 || CampoTelefono.getText().trim().equals("Introduzca telefono")
                 || CampoApellido.getText().trim().contains(",")
                 || CampoCorreo.getText().trim().contains(",")
-                || CampoTelefono.getText().trim().contains(","))) {
+                || CampoTelefono.getText().trim().contains(","))
+                && h1.comprobarNumeros(CampoTelefono.getText().trim())
+                && h1.comprobarSinEspacios(CampoNombre.getText().trim())
+                && h1.comprobarConEspacios(CampoApellido.getText().trim())
+                && CampoCorreo.getText().trim().contains("@")) {
             if (!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
                 bd.insertarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
                 h1.popUp1("ALTA ALUMNO", "ALUMNO CREADO", "OK", "favicon-32x32.png");
