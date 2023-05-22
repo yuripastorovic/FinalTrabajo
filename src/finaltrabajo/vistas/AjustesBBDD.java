@@ -20,7 +20,7 @@ import javax.swing.JPanel;
  */
 public class AjustesBBDD extends javax.swing.JFrame {
 
-    public static Color AZUL = new Color(25, 34, 43);
+    public static Color AZUL = new Color(25, 34, 43); 
     public static Color BEIGE = new Color(221, 214, 204);
     /**
      * Creates new form AjustesBBDD
@@ -30,7 +30,12 @@ public class AjustesBBDD extends javax.swing.JFrame {
     public AjustesBBDD() {
         initComponents();
     }
-
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
@@ -393,9 +398,12 @@ public class AjustesBBDD extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * Permite cambiar parametros de configuracion de conexion con BBDD
+     *
+     * @param evt
+     */
     private void MODIFICARModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARModificar_press
-        //aaaaaaaaaaaaaaaaaaa boton modificar
         if (!(IP.getText().trim().equals("")
                 || PUERTO.getText().trim().equals("")
                 || USER.getText().trim().equals("")
@@ -454,7 +462,12 @@ public class AjustesBBDD extends javax.swing.JFrame {
             h1.popUp1("AjustesBBDD", "PORFAVOR INTRODUCE BIEN LOS DATOS", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_MODIFICARModificar_press
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void MODIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseEntered
         MODIFICAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
@@ -462,59 +475,100 @@ public class AjustesBBDD extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE MODICICAR AJUSTES DE CONEXION DE BASE DE DATOS");
     }//GEN-LAST:event_MODIFICARMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MODIFICARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseExited
         MODIFICAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_MODIFICARMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void PASSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PASSMouseClicked
         PASS.setText("");
         PASS.setBackground(new Color(189, 146, 64));
         PASS.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_PASSMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void PUERTOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PUERTOMouseClicked
         PUERTO.setText("");
         PUERTO.setBackground(new Color(189, 146, 64));
         PUERTO.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_PUERTOMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void IPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IPMouseClicked
         IP.setText("");
         IP.setBackground(new Color(189, 146, 64));
         IP.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_IPMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MODIFICARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMousePressed
         MODIFICAR.setBackground(new Color(184, 67, 87));
         MODIFICAR.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_MODIFICARMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MODIFICARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFICARMouseReleased
         MODIFICAR.setBackground(new Color(189, 146, 64));
         MODIFICAR.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_MODIFICARMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CONECTARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseReleased
         CONECTAR.setBackground(new Color(189, 146, 64));
         CONECTAR.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CONECTARMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CONECTARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMousePressed
         CONECTAR.setBackground(new Color(221, 214, 204));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CONECTARMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CONECTARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseExited
         CONECTAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar1.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_CONECTARMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void CONECTARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARMouseEntered
         CONECTAR.setBackground(new Color(184, 67, 87));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
@@ -522,19 +576,31 @@ public class AjustesBBDD extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("ACTUALIZA Y RESTABLECE CONEXION CON LA BASE DE DATOS");
     }//GEN-LAST:event_CONECTARMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CONECTARModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONECTARModificar_clicked
         BaseDatosAcademia bc = new BaseDatosAcademia();
         CONECTAR.setBackground(new Color(184, 67, 87));
         CONECTAR.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_CONECTARModificar_clicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void USERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_USERMouseClicked
         USER.setText("");
         USER.setBackground(new Color(189, 146, 64));
         USER.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_USERMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void PASSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PASSActionPerformed
         PASS.setText("");
         PASS.setBackground(new Color(189, 146, 64));

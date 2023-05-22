@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class AjustesLocal extends javax.swing.JFrame {
 
@@ -24,7 +24,12 @@ public class AjustesLocal extends javax.swing.JFrame {
     public AjustesLocal() {
         initComponents();
     }
-
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
@@ -260,14 +265,23 @@ public class AjustesLocal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Permite generar una copia local de los datos
+     *
+     * @param evt
+     */
     private void COPIA_LOCALModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALModificar_clicked
         sc.copiaLocal();
 
         COPIA_LOCAL.setBackground(new Color(184, 67, 87));
         COPIA_LOCAL.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_COPIA_LOCALModificar_clicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void COPIA_LOCALMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseEntered
         COPIA_LOCAL.setBackground(new Color(184, 67, 87));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
@@ -275,30 +289,51 @@ public class AjustesLocal extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE GENERAR UNA COPIA LOCAL");
     }//GEN-LAST:event_COPIA_LOCALMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void COPIA_LOCALMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseExited
         COPIA_LOCAL.setBackground(new Color(25, 34, 43));
         LabelButtonModificar1.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_COPIA_LOCALMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void COPIA_LOCALMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMousePressed
         COPIA_LOCAL.setBackground(new Color(221, 214, 204));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_COPIA_LOCALMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void COPIA_LOCALMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseReleased
         COPIA_LOCAL.setBackground(new Color(189, 146, 64));
         COPIA_LOCAL.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_COPIA_LOCALMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void GENERAR_INFORMESModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESModificar_press
         bd.guardarEnFicheroTextoAlumnos("informeAlumnos.txt");
         bd.guardarEnFicheroTextoCursos("informeCursos.txt");
         bd.guardarEnFicheroTextoInscripciones("informeInscripciones.txt");
     }//GEN-LAST:event_GENERAR_INFORMESModificar_press
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void GENERAR_INFORMESMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMouseEntered
         GENERAR_INFORMES.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
@@ -306,28 +341,50 @@ public class AjustesLocal extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE GENERAR UN INFORME CON LOS DATOS DE LOS ALUMNOS EN FORMATO CSV");
     }//GEN-LAST:event_GENERAR_INFORMESMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void GENERAR_INFORMESMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMouseExited
         GENERAR_INFORMES.setBackground(new Color(25, 34, 43));
-        LabelButtonModificar.setForeground(new Color(221, 214, 204)); 
+        LabelButtonModificar.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_GENERAR_INFORMESMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void GENERAR_INFORMESMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMousePressed
         GENERAR_INFORMES.setBackground(new Color(184, 67, 87));
         GENERAR_INFORMES.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_GENERAR_INFORMESMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void GENERAR_INFORMESMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMouseReleased
         GENERAR_INFORMES.setBackground(new Color(189, 146, 64));
         GENERAR_INFORMES.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_GENERAR_INFORMESMouseReleased
-
+    /**
+     * Permite cargar datos locales sobre escribiendo los datos actuales de la
+     * BBDD
+     *
+     * @param evt
+     */
     private void CARGAR_LOCALModificar_clicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALModificar_clicked
         sc.uploadLocal();
     }//GEN-LAST:event_CARGAR_LOCALModificar_clicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void CARGAR_LOCALMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseEntered
         CARGAR_LOCAL.setBackground(new Color(184, 67, 87));
         LabelButtonModificar2.setForeground(new Color(25, 34, 43));
@@ -336,19 +393,31 @@ public class AjustesLocal extends javax.swing.JFrame {
         texto.setText("PERMITE CRAGAR DATOS DESDE UN ARCHIVO LOCAL");
 
     }//GEN-LAST:event_CARGAR_LOCALMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CARGAR_LOCALMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseExited
         CARGAR_LOCAL.setBackground(new Color(25, 34, 43));
         LabelButtonModificar2.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_CARGAR_LOCALMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CARGAR_LOCALMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMousePressed
         CARGAR_LOCAL.setBackground(new Color(184, 67, 87));
         LabelButtonModificar2.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_CARGAR_LOCALMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CARGAR_LOCALMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CARGAR_LOCALMouseReleased
         CARGAR_LOCAL.setBackground(new Color(189, 146, 64));
         LabelButtonModificar2.setForeground(new Color(25, 34, 43));

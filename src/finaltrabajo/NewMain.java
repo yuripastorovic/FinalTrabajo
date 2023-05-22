@@ -15,8 +15,8 @@ public class NewMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Ho es: "+utiles.getFechaActual());
-        System.out.println(utiles.getHoraActual());
+        System.out.println("Ho es: "+Reloj.getFechaActual());
+        System.out.println(Reloj.getHoraActual());
     }
     
 }

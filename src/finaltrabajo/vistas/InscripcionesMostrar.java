@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class InscripcionesMostrar extends javax.swing.JFrame {
 
@@ -20,6 +20,7 @@ public class InscripcionesMostrar extends javax.swing.JFrame {
      */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
+
     public InscripcionesMostrar() {
         initComponents();
         comboBox1();
@@ -33,26 +34,50 @@ public class InscripcionesMostrar extends javax.swing.JFrame {
         modelo.addColumn("FECHA_FIN");
         modelo.addColumn("NOTA");
     }
-public JPanel getFondo() {
+
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
+    public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-private void comboBox1() {
+
+    /**
+     * permite actualizar el un ComboBox en funcion de otro ComboBox
+     */
+    private void comboBox1() {
         String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentesInscritos();
-        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+        NombreAlum.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
-private void comboBox2() {
+
+    /**
+     * permite actualizar el un ComboBox en funcion de otro ComboBox
+     */
+    private void comboBox2() {
         String arrayString[] = bd.leerIdNombreApellidoAlumnosNoExistentesInscritos();
-        ComboNombre1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+        NombreExAlum.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
-private void comboBox3() {
+
+    /**
+     * permite actualizar el un ComboBox en funcion de otro ComboBox
+     */
+    private void comboBox3() {
         String arrayString[] = bd.leerIdNombreHorasCursosExistentesInscritos();
-        ComboCurso.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+        NombreCurso.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
-private void comboBox4() {
+
+    /**
+     * permite actualizar el un ComboBox en funcion de otro ComboBox
+     */
+    private void comboBox4() {
         String arrayString[] = bd.leerIdNombreHorasCursosNoExistentesInscritos();
-        ComboCurso1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
+        NombreExCurso.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,14 +92,14 @@ private void comboBox4() {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaNew = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        ComboNombre = new javax.swing.JComboBox<>();
-        ComboNombre1 = new javax.swing.JComboBox<>();
+        NombreAlum = new javax.swing.JComboBox<>();
+        NombreExAlum = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        ComboCurso = new javax.swing.JComboBox<>();
+        NombreCurso = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        ComboCurso1 = new javax.swing.JComboBox<>();
+        NombreExCurso = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,21 +148,21 @@ private void comboBox4() {
         jLabel1.setForeground(new java.awt.Color(25, 34, 43));
         jLabel1.setText("SELECCIONE ALUMNO");
 
-        ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
-        ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre.addActionListener(new java.awt.event.ActionListener() {
+        NombreAlum.setBackground(new java.awt.Color(25, 34, 43));
+        NombreAlum.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        NombreAlum.setForeground(new java.awt.Color(221, 214, 204));
+        NombreAlum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboNombreActionPerformed(evt);
+                NombreAlumActionPerformed(evt);
             }
         });
 
-        ComboNombre1.setBackground(new java.awt.Color(25, 34, 43));
-        ComboNombre1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        ComboNombre1.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre1.addActionListener(new java.awt.event.ActionListener() {
+        NombreExAlum.setBackground(new java.awt.Color(25, 34, 43));
+        NombreExAlum.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        NombreExAlum.setForeground(new java.awt.Color(221, 214, 204));
+        NombreExAlum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboNombre1ActionPerformed(evt);
+                NombreExAlumActionPerformed(evt);
             }
         });
 
@@ -153,12 +178,12 @@ private void comboBox4() {
         jLabel4.setForeground(new java.awt.Color(25, 34, 43));
         jLabel4.setText("SELECCIONE CURSO");
 
-        ComboCurso.setBackground(new java.awt.Color(25, 34, 43));
-        ComboCurso.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        ComboCurso.setForeground(new java.awt.Color(221, 214, 204));
-        ComboCurso.addActionListener(new java.awt.event.ActionListener() {
+        NombreCurso.setBackground(new java.awt.Color(25, 34, 43));
+        NombreCurso.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        NombreCurso.setForeground(new java.awt.Color(221, 214, 204));
+        NombreCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboCursoActionPerformed(evt);
+                NombreCursoActionPerformed(evt);
             }
         });
 
@@ -166,12 +191,12 @@ private void comboBox4() {
         jLabel5.setForeground(new java.awt.Color(25, 34, 43));
         jLabel5.setText("SELECCIONE EXCURSO");
 
-        ComboCurso1.setBackground(new java.awt.Color(25, 34, 43));
-        ComboCurso1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        ComboCurso1.setForeground(new java.awt.Color(221, 214, 204));
-        ComboCurso1.addActionListener(new java.awt.event.ActionListener() {
+        NombreExCurso.setBackground(new java.awt.Color(25, 34, 43));
+        NombreExCurso.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        NombreExCurso.setForeground(new java.awt.Color(221, 214, 204));
+        NombreExCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboCurso1ActionPerformed(evt);
+                NombreExCursoActionPerformed(evt);
             }
         });
 
@@ -193,19 +218,19 @@ private void comboBox4() {
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NombreAlum, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(ComboNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NombreExAlum, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(ComboCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(ComboCurso1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NombreExCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 21, Short.MAX_VALUE))))
         );
         PanelFondoLayout.setVerticalGroup(
@@ -218,19 +243,19 @@ private void comboBox4() {
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ComboNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(NombreExAlum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(NombreAlum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ComboCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(NombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ComboCurso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(NombreExCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(Alineador, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -249,67 +274,70 @@ private void comboBox4() {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
-        for (int i = 0; i <modelo.getRowCount(); i++) {
+    /**
+     * 
+     * @param evt 
+     */
+    private void NombreAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreAlumActionPerformed
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
             i--;
         }
         TablaNew.setModel(modelo);
-        String parte[] = ComboNombre.getSelectedItem().toString().split(",");
-        String datitos[]=bd.leerInscripcionesConAlumnoExistente(Integer.valueOf(parte[0]));
+        String parte[] = NombreAlum.getSelectedItem().toString().split(",");
+        String datitos[] = bd.leerInscripcionesConAlumnoExistente(Integer.valueOf(parte[0]));
         for (int i = 0; i < bd.leerInscripcionesConAlumnoExistente(Integer.valueOf(parte[0])).length; i++) {
             modelo.addRow(datitos[i].split(","));
         }
-        ComboNombre.setBackground(new Color(189, 146, 64));
-        ComboNombre.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ComboNombreActionPerformed
+        NombreAlum.setBackground(new Color(189, 146, 64));
+        NombreAlum.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_NombreAlumActionPerformed
 
-    private void ComboNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombre1ActionPerformed
-        for (int i = 0; i <modelo.getRowCount(); i++) {
+    private void NombreExAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreExAlumActionPerformed
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
             i--;
         }
         TablaNew.setModel(modelo);
-        String parte[] = ComboNombre1.getSelectedItem().toString().split(",");
-        String datitos[]=bd.leerInscripcionesConAlumnoNoExistente(Integer.valueOf(parte[0]));
+        String parte[] = NombreExAlum.getSelectedItem().toString().split(",");
+        String datitos[] = bd.leerInscripcionesConAlumnoNoExistente(Integer.valueOf(parte[0]));
         for (int i = 0; i < bd.leerInscripcionesConAlumnoNoExistente(Integer.valueOf(parte[0])).length; i++) {
             modelo.addRow(datitos[i].split(","));
         }
-        ComboNombre1.setBackground(new Color(189, 146, 64));
-        ComboNombre1.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ComboNombre1ActionPerformed
+        NombreExAlum.setBackground(new Color(189, 146, 64));
+        NombreExAlum.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_NombreExAlumActionPerformed
 
-    private void ComboCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCursoActionPerformed
-        for (int i = 0; i <modelo.getRowCount(); i++) {
+    private void NombreCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreCursoActionPerformed
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
             i--;
         }
         TablaNew.setModel(modelo);
-        String parte[] = ComboCurso.getSelectedItem().toString().split(",");
-        String datitos[]=bd.leerInscripcionesConCursoExistente(Integer.valueOf(parte[0]));
+        String parte[] = NombreCurso.getSelectedItem().toString().split(",");
+        String datitos[] = bd.leerInscripcionesConCursoExistente(Integer.valueOf(parte[0]));
         for (int i = 0; i < bd.leerInscripcionesConCursoExistente(Integer.valueOf(parte[0])).length; i++) {
             modelo.addRow(datitos[i].split(","));
         }
-        ComboCurso.setBackground(new Color(189, 146, 64));
-        ComboCurso.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ComboCursoActionPerformed
+        NombreCurso.setBackground(new Color(189, 146, 64));
+        NombreCurso.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_NombreCursoActionPerformed
 
-    private void ComboCurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCurso1ActionPerformed
-        for (int i = 0; i <modelo.getRowCount(); i++) {
+    private void NombreExCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreExCursoActionPerformed
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
             i--;
         }
         TablaNew.setModel(modelo);
-        
-        String parte[] = ComboCurso1.getSelectedItem().toString().split(",");
-        String datitos[]=bd.leerInscripcionesConCursoNoExistente(Integer.valueOf(parte[0]));
+
+        String parte[] = NombreExCurso.getSelectedItem().toString().split(",");
+        String datitos[] = bd.leerInscripcionesConCursoNoExistente(Integer.valueOf(parte[0]));
         for (int i = 0; i < bd.leerInscripcionesConCursoNoExistente(Integer.valueOf(parte[0])).length; i++) {
             modelo.addRow(datitos[i].split(","));
         }
-        ComboCurso1.setBackground(new Color(189, 146, 64));
-        ComboCurso1.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ComboCurso1ActionPerformed
+        NombreExCurso.setBackground(new Color(189, 146, 64));
+        NombreExCurso.setForeground(new Color(25, 34, 43));
+    }//GEN-LAST:event_NombreExCursoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,10 +376,10 @@ private void comboBox4() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Alineador;
-    private javax.swing.JComboBox<String> ComboCurso;
-    private javax.swing.JComboBox<String> ComboCurso1;
-    private javax.swing.JComboBox<String> ComboNombre;
-    private javax.swing.JComboBox<String> ComboNombre1;
+    private javax.swing.JComboBox<String> NombreAlum;
+    private javax.swing.JComboBox<String> NombreCurso;
+    private javax.swing.JComboBox<String> NombreExAlum;
+    private javax.swing.JComboBox<String> NombreExCurso;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JTable TablaNew;
     private javax.swing.JLabel jLabel1;

@@ -11,32 +11,43 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class InscripcionesAddDel extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InscripcionesAdd
-     */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private Herramientas h1 = new Herramientas();
-
+    /**
+     * metodo que inicia componentes
+     */
     public InscripcionesAddDel() {
         initComponents();
         comboBox1();
         comboBox2();
     }
 
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
 
+    /**
+     * permite actualizar el un ComboBox en funcion de otro ComboBox
+     */
     private void comboBox1() {
         String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
         ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
 
+    /**
+     * permite actualizar el un ComboBox en funcion de otro ComboBox
+     */
     private void comboBox2() {
         String arrayString[] = bd.leerIdNombresCursosExistentes();
         ComboNota.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
@@ -204,18 +215,30 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
         ComboNombre.setBackground(new Color(189, 146, 64));
         ComboNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboNombreActionPerformed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ComboNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNotaActionPerformed
         ComboNota.setBackground(new Color(189, 146, 64));
         ComboNota.setForeground(new Color(25, 34, 43));
 
     }//GEN-LAST:event_ComboNotaActionPerformed
-
+    /**
+     * Permite Agregar a un alumno aun curso existente
+     *
+     * @param evt
+     */
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
         if (!(ComboNombre.getSelectedIndex() == -1 || ComboNota.getSelectedIndex() == -1)) {
             String[] partes = ComboNombre.getSelectedItem().toString().split(",");
@@ -243,7 +266,12 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
             h1.popUp1("ALTA INSCRIPCION", "PORFAVOR SELECCIONE UN ALUMNO Y UN CURSO", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_ButtonModificarModificar_press
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered
         ButtonModificar.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
@@ -251,19 +279,31 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE AGREGAR UN ALUMNO EN ACTIVO A UN CURSO EXISTENTE");
     }//GEN-LAST:event_ButtonModificarMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseExited
         ButtonModificar.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_ButtonModificarMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonModificarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMousePressed
         ButtonModificar.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_ButtonModificarMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonModificarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseReleased
         ButtonModificar.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));

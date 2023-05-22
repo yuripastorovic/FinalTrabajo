@@ -12,16 +12,17 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class InscripcionesGestion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InscripcionesAluCurs
-     */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
     private Herramientas h1 = new Herramientas();
+
+    /**
+     * metodo que inicia componentes
+     */
     public InscripcionesGestion() {
         initComponents();
         modelo.addColumn("ID");
@@ -32,25 +33,40 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         modelo.addColumn("NOTA");
         comboBox1();
     }
+
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
+
+    /**
+     * permite actualizar el un ComboBox
+     */
     private void comboBox1() {
         String arrayString[] = bd.leerIdId_alumnoNombreId_cursoNombreInscripcionesExistentes();//-------------------
         ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
-    private void ponerInscripcionTabla(){
+
+    /**
+     * Permite establecer en la tabla los datos de la seleccion en un Combox
+     */
+    private void ponerInscripcionTabla() {
         String partes[] = ComboNombre.getSelectedItem().toString().split(",");
-        for (int i = 0; i <modelo.getRowCount(); i++) {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
             i--;
         }
         TablaNew.setModel(modelo);
-        String datitos=bd.leerDatosUnInscripcioneExistente(Integer.valueOf(partes[0]));
+        String datitos = bd.leerDatosUnInscripcioneExistente(Integer.valueOf(partes[0]));
         modelo.addRow(datitos.split(","));
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,7 +79,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         PanelFondo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        ButtonAlta = new javax.swing.JPanel();
+        eliminar = new javax.swing.JPanel();
         LabelButtonAlta = new javax.swing.JLabel();
         ComboNombre = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
@@ -71,7 +87,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         TablaNew = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         ComboNota = new javax.swing.JComboBox<>();
-        ButtonModificar = new javax.swing.JPanel();
+        Calificar = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
         caja = new javax.swing.JPanel();
         texto = new javax.swing.JLabel();
@@ -84,23 +100,23 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(25, 34, 43));
         jLabel1.setText("SELECCIONE ALUMNO");
 
-        ButtonAlta.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonAlta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ButtonAlta.addMouseListener(new java.awt.event.MouseAdapter() {
+        eliminar.setBackground(new java.awt.Color(25, 34, 43));
+        eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonAltaCrear_alumno(evt);
+                eliminarCrear_alumno(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ButtonAltaMouseEntered(evt);
+                eliminarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ButtonAltaMouseExited(evt);
+                eliminarMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                ButtonAltaMousePressed(evt);
+                eliminarMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                ButtonAltaMouseReleased(evt);
+                eliminarMouseReleased(evt);
             }
         });
 
@@ -109,14 +125,16 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         LabelButtonAlta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelButtonAlta.setText("ELIMINAR INSCRIPCION");
 
-        javax.swing.GroupLayout ButtonAltaLayout = new javax.swing.GroupLayout(ButtonAlta);
-        ButtonAlta.setLayout(ButtonAltaLayout);
-        ButtonAltaLayout.setHorizontalGroup(
-            ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+        javax.swing.GroupLayout eliminarLayout = new javax.swing.GroupLayout(eliminar);
+        eliminar.setLayout(eliminarLayout);
+        eliminarLayout.setHorizontalGroup(
+            eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eliminarLayout.createSequentialGroup()
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addComponent(LabelButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        ButtonAltaLayout.setVerticalGroup(
-            ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        eliminarLayout.setVerticalGroup(
+            eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
@@ -190,23 +208,23 @@ public class InscripcionesGestion extends javax.swing.JFrame {
             }
         });
 
-        ButtonModificar.setBackground(new java.awt.Color(25, 34, 43));
-        ButtonModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ButtonModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+        Calificar.setBackground(new java.awt.Color(25, 34, 43));
+        Calificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Calificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonModificarModificar_press(evt);
+                CalificarModificar_press(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ButtonModificarMouseEntered(evt);
+                CalificarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ButtonModificarMouseExited(evt);
+                CalificarMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                ButtonModificarMousePressed(evt);
+                CalificarMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                ButtonModificarMouseReleased(evt);
+                CalificarMouseReleased(evt);
             }
         });
 
@@ -215,14 +233,16 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         LabelButtonModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelButtonModificar.setText("ESTABLECER NOTA");
 
-        javax.swing.GroupLayout ButtonModificarLayout = new javax.swing.GroupLayout(ButtonModificar);
-        ButtonModificar.setLayout(ButtonModificarLayout);
-        ButtonModificarLayout.setHorizontalGroup(
-            ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+        javax.swing.GroupLayout CalificarLayout = new javax.swing.GroupLayout(Calificar);
+        Calificar.setLayout(CalificarLayout);
+        CalificarLayout.setHorizontalGroup(
+            CalificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CalificarLayout.createSequentialGroup()
+                .addGap(0, 49, Short.MAX_VALUE)
+                .addComponent(LabelButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        ButtonModificarLayout.setVerticalGroup(
-            ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        CalificarLayout.setVerticalGroup(
+            CalificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
@@ -268,10 +288,10 @@ public class InscripcionesGestion extends javax.swing.JFrame {
                             .addComponent(ComboNota, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Calificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         PanelFondoLayout.setVerticalGroup(
@@ -289,9 +309,9 @@ public class InscripcionesGestion extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ComboNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(ButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Calificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(caja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -320,110 +340,160 @@ public class InscripcionesGestion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
-        if(ComboNombre.getSelectedIndex()!=-1 && ComboNota.getSelectedIndex()==-1){
-        String[] partes = ComboNombre.getSelectedItem().toString().split(",");
-        String id_alumno = partes[1].trim();
-        String id_curso = partes[3].trim();
-        String datos[] = bd.leerInscripcionConAlumnoYCursoQueExista( Integer.valueOf(id_alumno), Integer.valueOf(id_curso)).split(",");
-        String nota = "ABANDONO";
-        String fFin= "ABANDONO";
-        bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2])  , fFin , nota);
-        h1.popUp1("GESTION INSCRIPCION", "SE HA DESMATRICULADO AL ALUMNO DEL CURSO", "OK", "favicon-32x32.png");
-        comboBox1();
-        ComboNombre.setBackground(new Color (25, 34, 43));
-        ComboNombre.setForeground(new Color (221, 214, 204));
-        ComboNota.setBackground(new Color(25, 34, 43));
-        ComboNota.setForeground(new Color (221, 214, 204));
-        }else{
+/**
+     * Permite elimiar una incripcion
+     *
+     * @param evt
+     */
+    private void eliminarCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarCrear_alumno
+        if (ComboNombre.getSelectedIndex() != -1 && ComboNota.getSelectedIndex() == -1) {
+            String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+            String id_alumno = partes[1].trim();
+            String id_curso = partes[3].trim();
+            String datos[] = bd.leerInscripcionConAlumnoYCursoQueExista(Integer.valueOf(id_alumno), Integer.valueOf(id_curso)).split(",");
+            String nota = "ABANDONO";
+            String fFin = "ABANDONO";
+            bd.modificarInscripciones(Integer.valueOf(datos[0]), Integer.valueOf(datos[1]), Integer.valueOf(datos[2]), fFin, nota);
+            h1.popUp1("GESTION INSCRIPCION", "SE HA DESMATRICULADO AL ALUMNO DEL CURSO", "OK", "favicon-32x32.png");
+            comboBox1();
+            ComboNombre.setBackground(new Color(25, 34, 43));
+            ComboNombre.setForeground(new Color(221, 214, 204));
+            ComboNota.setBackground(new Color(25, 34, 43));
+            ComboNota.setForeground(new Color(221, 214, 204));
+        } else {
             h1.popUp1("GESTION INSCRIPCION", "PORFAVOR SELECCIONE UN ALUMNO ", "OK", "favicon-32x32.png");
         }
-    }//GEN-LAST:event_ButtonAltaCrear_alumno
-
-    private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered
-        ButtonAlta.setBackground(new Color(189, 146, 64));
+    }//GEN-LAST:event_eliminarCrear_alumno
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
+    private void eliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseEntered
+        eliminar.setBackground(new Color(189, 146, 64));
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE DESMATRICULAR A UN ALUMNO DE UN CURSO AL QUE ESTE PERTENEZCA");
-    }//GEN-LAST:event_ButtonAltaMouseEntered
-
-    private void ButtonAltaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseExited
-        ButtonAlta.setBackground(new Color(25, 34, 43));
+    }//GEN-LAST:event_eliminarMouseEntered
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
+    private void eliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseExited
+        eliminar.setBackground(new Color(25, 34, 43));
         LabelButtonAlta.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
-    }//GEN-LAST:event_ButtonAltaMouseExited
-
-    private void ButtonAltaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMousePressed
-        ButtonAlta.setBackground(new Color(184, 67, 87));
+    }//GEN-LAST:event_eliminarMouseExited
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
+    private void eliminarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMousePressed
+        eliminar.setBackground(new Color(184, 67, 87));
         LabelButtonAlta.setForeground(new Color(189, 146, 64));
-    }//GEN-LAST:event_ButtonAltaMousePressed
-
-    private void ButtonAltaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseReleased
-        ButtonAlta.setBackground(new Color(189, 146, 64));
+    }//GEN-LAST:event_eliminarMousePressed
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
+    private void eliminarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseReleased
+        eliminar.setBackground(new Color(189, 146, 64));
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ButtonAltaMouseReleased
-
+    }//GEN-LAST:event_eliminarMouseReleased
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
         ponerInscripcionTabla();
         System.out.println(ComboNombre.getSelectedItem().toString());
-        
+
         ComboNombre.setBackground(new Color(189, 146, 64));
         ComboNombre.setForeground(new Color(25, 34, 43));    }//GEN-LAST:event_ComboNombreActionPerformed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ComboNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNotaActionPerformed
         ComboNota.setBackground(new Color(189, 146, 64));
         ComboNota.setForeground(new Color(25, 34, 43));
-        this.ButtonAlta.setEnabled(false);
+        this.eliminar.setEnabled(false);
     }//GEN-LAST:event_ComboNotaActionPerformed
-
-    private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
-        if(!(ComboNombre.getSelectedIndex()==-1 || ComboNota.getSelectedIndex()==-1)){
-        String[] partes = ComboNombre.getSelectedItem().toString().split(",");
-        String id_alumno = partes[1].trim();
-        String id_curso = partes[3].trim();
-        String datos[] = bd.leerInscripcionConAlumnoYCursoQueExista( Integer.valueOf(id_alumno), Integer.valueOf(id_curso)).split(",");
-        String nota = ComboNota.getSelectedItem().toString();
-        String fFin= bd.getHoraDATE();
-        System.out.println("id="+datos[0] +"    id_alumno="+ datos[1] +"   id_curso="+ datos[2]+ "   fecha fin="+fFin+"  nota="+ nota);
-        bd.modificarInscripciones(Integer.valueOf(datos[0]) , Integer.valueOf(datos[1]) , Integer.valueOf(datos[2])  , fFin , nota);
-        h1.popUp1("GESTION INSCRIPCION", "ALUMNO CALIFICADO EXITOSAMENTE", "OK", "favicon-32x32.png");
-        comboBox1();
-        ComboNombre.setBackground(new Color (25, 34, 43));
-        ComboNombre.setForeground(new Color (221, 214, 204));
-        ComboNota.setBackground(new Color(25, 34, 43));
-        ComboNota.setForeground(new Color (221, 214, 204));
-        }else{
+    /**
+     * Permite establecer una nota a un alumno
+     *
+     * @param evt
+     */
+    private void CalificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalificarModificar_press
+        if (!(ComboNombre.getSelectedIndex() == -1 || ComboNota.getSelectedIndex() == -1)) {
+            String[] partes = ComboNombre.getSelectedItem().toString().split(",");
+            String id_alumno = partes[1].trim();
+            String id_curso = partes[3].trim();
+            String datos[] = bd.leerInscripcionConAlumnoYCursoQueExista(Integer.valueOf(id_alumno), Integer.valueOf(id_curso)).split(",");
+            String nota = ComboNota.getSelectedItem().toString();
+            String fFin = bd.getHoraDATE();
+            System.out.println("id=" + datos[0] + "    id_alumno=" + datos[1] + "   id_curso=" + datos[2] + "   fecha fin=" + fFin + "  nota=" + nota);
+            bd.modificarInscripciones(Integer.valueOf(datos[0]), Integer.valueOf(datos[1]), Integer.valueOf(datos[2]), fFin, nota);
+            h1.popUp1("GESTION INSCRIPCION", "ALUMNO CALIFICADO EXITOSAMENTE", "OK", "favicon-32x32.png");
+            comboBox1();
+            ComboNombre.setBackground(new Color(25, 34, 43));
+            ComboNombre.setForeground(new Color(221, 214, 204));
+            ComboNota.setBackground(new Color(25, 34, 43));
+            ComboNota.setForeground(new Color(221, 214, 204));
+        } else {
             h1.popUp1("GESTION INSCRIPCION", "PORFAVOR SELECCIONE UN ALUMNO Y UNA NOTA", "OK", "favicon-32x32.png");
         }
-    }//GEN-LAST:event_ButtonModificarModificar_press
-
-    private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered
-        ButtonModificar.setBackground(new Color(189, 146, 64));
+    }//GEN-LAST:event_CalificarModificar_press
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
+    private void CalificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalificarMouseEntered
+        Calificar.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE AGREGAR UNA NOTA A UN ALUMNO EN ACTIVO");
-    }//GEN-LAST:event_ButtonModificarMouseEntered
-
-    private void ButtonModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseExited
-        ButtonModificar.setBackground(new Color(25, 34, 43));
+    }//GEN-LAST:event_CalificarMouseEntered
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
+    private void CalificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalificarMouseExited
+        Calificar.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
-    }//GEN-LAST:event_ButtonModificarMouseExited
-
-    private void ButtonModificarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMousePressed
-        ButtonModificar.setBackground(new Color(184, 67, 87));
+    }//GEN-LAST:event_CalificarMouseExited
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
+    private void CalificarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalificarMousePressed
+        Calificar.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(189, 146, 64));
-    }//GEN-LAST:event_ButtonModificarMousePressed
-
-    private void ButtonModificarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseReleased
-        ButtonModificar.setBackground(new Color(189, 146, 64));
+    }//GEN-LAST:event_CalificarMousePressed
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
+    private void CalificarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalificarMouseReleased
+        Calificar.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
-    }//GEN-LAST:event_ButtonModificarMouseReleased
+    }//GEN-LAST:event_CalificarMouseReleased
 
     /**
      * @param args the command line arguments
@@ -462,8 +532,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ButtonAlta;
-    private javax.swing.JPanel ButtonModificar;
+    private javax.swing.JPanel Calificar;
     private javax.swing.JComboBox<String> ComboNombre;
     private javax.swing.JComboBox<String> ComboNota;
     private javax.swing.JLabel LabelButtonAlta;
@@ -471,6 +540,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JTable TablaNew;
     private javax.swing.JPanel caja;
+    private javax.swing.JPanel eliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

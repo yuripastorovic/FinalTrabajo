@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Jorge
+ * @author Jorge & Miguel
  */
 public class Inscripcion implements Serializable {
 
@@ -30,46 +30,86 @@ public class Inscripcion implements Serializable {
         this.existe = valor;
     }
 
+    /**
+     * Metodo q permite devolver los datos de un alumno en formato CSV
+     *
+     * @return
+     */
     public String toCSV() {
-        return id + "," + alumno.getId() + "," + curso.getId() + "," + fInicio + "," + fFin + "," + nota+","+existe;
+        return id + "," + alumno.getId() + "," + curso.getId() + "," + fInicio + "," + fFin + "," + nota + "," + existe;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getExiste() {
         return existe;
     }
 
+    /**
+     *
+     * @param existe
+     */
     public void setExiste(int existe) {
         this.existe = existe;
     }
-    
+
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @return
+     */
     public Alumno getAlumno() {
         return alumno;
     }
 
+    /**
+     *
+     * @return
+     */
     public Curso getCurso() {
         return curso;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getfInicio() {
         return fInicio;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getfFin() {
         return fFin;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNota() {
         return nota;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Inscripcion{" + "id=" + id + ", alumno=" + alumno + ", curso=" + curso + ", fInicio=" + fInicio + ", fFin=" + fFin + ", nota=" + nota + '}';
     }
-
 
 }

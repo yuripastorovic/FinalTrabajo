@@ -19,10 +19,23 @@ public class Inscripciones extends javax.swing.JFrame {
     public Inscripciones() {
         initComponents();
     }
+
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
+
+    /**
+     * Método que permite mostrar un JFrame en un JPanel
+     *
+     * @param panel
+     */
     private void showPanel(JPanel panel) {
         panel.setSize(this.contenedor.getWidth(), this.contenedor.getHeight());
         panel.setLocation(0, 0);
@@ -31,6 +44,7 @@ public class Inscripciones extends javax.swing.JFrame {
         this.contenedor.revalidate();
         this.contenedor.repaint();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -256,12 +270,21 @@ public class Inscripciones extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Boton que te dirige a la seccion Alta inscripnciones
+     *
+     * @param evt
+     */
     private void ALTA_BAJABuscar_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJABuscar_alum
         InscripcionesAddDel bbb = new InscripcionesAddDel();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_ALTA_BAJABuscar_alum
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void ALTA_BAJAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMouseEntered
         // TODO add your handling code here:
         ALTA_BAJA.setBackground(new Color(189, 146, 64));
@@ -271,7 +294,11 @@ public class Inscripciones extends javax.swing.JFrame {
         texto.setText("PERMITE MATRICULAR O DESMATRICULAR UN ALUMNO EN ACTIVO");
         caja.setOpaque(true);
     }//GEN-LAST:event_ALTA_BAJAMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ALTA_BAJAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMouseExited
         ALTA_BAJA.setBackground(new Color(25, 34, 43));
         LabelButtonModificar4.setForeground(new Color(221, 214, 204));
@@ -279,22 +306,39 @@ public class Inscripciones extends javax.swing.JFrame {
         texto.setText("");
         caja.setOpaque(false);
     }//GEN-LAST:event_ALTA_BAJAMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ALTA_BAJAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMousePressed
         ALTA_BAJA.setBackground(new Color(184, 67, 87));
         LabelButtonModificar4.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_ALTA_BAJAMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ALTA_BAJAMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMouseReleased
         ALTA_BAJA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ALTA_BAJAMouseReleased
-
+    /**
+     * Permite acceder a la seccion Calificar alumno
+     *
+     * @param evt
+     */
     private void CALIFICARModi_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARModi_alum
         InscripcionesGestion bbb = new InscripcionesGestion();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_CALIFICARModi_alum
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void CALIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMouseEntered
         CALIFICAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
@@ -303,7 +347,11 @@ public class Inscripciones extends javax.swing.JFrame {
         texto.setText("PERMITE CALIFICAR A UN ALUMNO EN ACTIVO EN UN CURSO AL QUE ESTE PERTENEZCA");
         caja.setOpaque(true);
     }//GEN-LAST:event_CALIFICARMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CALIFICARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMouseExited
         CALIFICAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar3.setForeground(new Color(221, 214, 204));
@@ -311,31 +359,52 @@ public class Inscripciones extends javax.swing.JFrame {
         texto.setText("");
         caja.setOpaque(false);
     }//GEN-LAST:event_CALIFICARMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CALIFICARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMousePressed
         CALIFICAR.setBackground(new Color(184, 67, 87));
         LabelButtonModificar3.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_CALIFICARMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CALIFICARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMouseReleased
         CALIFICAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CALIFICARMouseReleased
-
+    /**
+     * Permite acceder a Mostrar Inscripciones
+     *
+     * @param evt
+     */
     private void MOSTRARBaja_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARBaja_alum
         InscripcionesMostrar bbb = new InscripcionesMostrar();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_MOSTRARBaja_alum
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void MOSTRARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseEntered
         MOSTRAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE MOSTRAR EL REGISTRO DE INSCRIPCIONES DE ALUMNOS EN ACTIVO Y ESGRESADOS");
         caja.setOpaque(true);
     }//GEN-LAST:event_MOSTRARMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MOSTRARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseExited
         MOSTRAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
@@ -343,12 +412,20 @@ public class Inscripciones extends javax.swing.JFrame {
         texto.setText("");
         caja.setOpaque(false);
     }//GEN-LAST:event_MOSTRARMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MOSTRARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMousePressed
         MOSTRAR.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_MOSTRARMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MOSTRARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseReleased
         MOSTRAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));

@@ -35,6 +35,7 @@ public class fin extends javax.swing.JFrame {
     public fin() {
         // Iniciamos componenetes
         initComponents();
+        // Colocamos la aplicacion en el centro
         setLocationRelativeTo(null);
         //Actualizamos la hora
         rfresh();
@@ -50,9 +51,9 @@ public class fin extends javax.swing.JFrame {
         Timer timer = new Timer(10, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                LabelTime.setText(utiles.getHoraActual());
+                LabelTime.setText(Reloj.getHoraActual());
                 LabelTime.setForeground(new Color(187, 187, 187));
-                LabelDate.setText(utiles.getFechaActual());
+                LabelDate.setText(Reloj.getFechaActual());
                 LabelDate.setForeground(new Color(187, 187, 187));
             }
         });

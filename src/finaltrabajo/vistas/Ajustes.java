@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class Ajustes extends javax.swing.JFrame {
 
@@ -20,6 +20,11 @@ public class Ajustes extends javax.swing.JFrame {
         initComponents();
     }
 
+    /**
+     * Método que permite mostrar un JFrame en un JPanel
+     *
+     * @param panel
+     */
     private void showPanel(JPanel panel) {
         panel.setSize(this.contenedor.getWidth(), this.contenedor.getHeight());
         panel.setLocation(0, 0);
@@ -29,6 +34,12 @@ public class Ajustes extends javax.swing.JFrame {
         this.contenedor.repaint();
     }
 
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
@@ -76,8 +87,7 @@ public class Ajustes extends javax.swing.JFrame {
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cajaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cajaLayout.setVerticalGroup(
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,12 +101,10 @@ public class Ajustes extends javax.swing.JFrame {
             .addGroup(contenedorLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(settings_img)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(34, 34, 34))
-            .addGroup(contenedorLayout.createSequentialGroup()
-                .addComponent(caja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,58 +252,96 @@ public class Ajustes extends javax.swing.JFrame {
         AjustesBBDD bbb = new AjustesBBDD();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_Ajustes_bbddBuscar_alum
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void Ajustes_bbddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddMouseEntered
         // TODO add your handling code here:
         Ajustes_bbdd.setBackground(new Color(189, 146, 64));
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE MODIFICAR AJUSTES DE BASES DE DATOS: CONEXION BASE DE DATOS...");
     }//GEN-LAST:event_Ajustes_bbddMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Ajustes_bbddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddMouseExited
         Ajustes_bbdd.setBackground(new Color(25, 34, 43));
         LabelButtonModificar4.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_Ajustes_bbddMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Ajustes_bbddMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddMousePressed
         Ajustes_bbdd.setBackground(new Color(184, 67, 87));
         LabelButtonModificar4.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_Ajustes_bbddMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Ajustes_bbddMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_bbddMouseReleased
         Ajustes_bbdd.setBackground(new Color(189, 146, 64));
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_Ajustes_bbddMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Ajustes_localBaja_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localBaja_alum
         AjustesLocal bbb = new AjustesLocal();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_Ajustes_localBaja_alum
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void Ajustes_localMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localMouseEntered
         Ajustes_local.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("B");
+        texto.setText("PERMITE MODIFICAR AJUSTES DE DATOS LOCALES: GENERAR INFORMES, CARGAR DATOS, GUARDAR DATOS.");
     }//GEN-LAST:event_Ajustes_localMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Ajustes_localMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localMouseExited
         Ajustes_local.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_Ajustes_localMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Ajustes_localMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localMousePressed
         Ajustes_local.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_Ajustes_localMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Ajustes_localMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ajustes_localMouseReleased
         Ajustes_local.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
