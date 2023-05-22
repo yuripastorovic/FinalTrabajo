@@ -11,13 +11,9 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class CursosModificar extends javax.swing.JFrame {
-
-    /**
-     * Creates new form CursosModificar
-     */
     private Herramientas h1 = new Herramientas();
     private BaseDatosAcademia bd = new BaseDatosAcademia();
 
@@ -25,12 +21,20 @@ public class CursosModificar extends javax.swing.JFrame {
         initComponents();
         comboBox1();
     }
-
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
 
+    /**
+     * permite actualizar el un ComboBox
+     */
     private void comboBox1() {
         String arrayString[] = bd.leerIdNombresCursosExistentes();
         CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
@@ -259,13 +263,20 @@ public class CursosModificar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CampoNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoNombreMouseClicked
         CampoNombre.setText("");
         CampoNombre.setBackground(new Color(189, 146, 64));
         CampoNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoNombreMouseClicked
-
+/**
+ * comprueba que los datos introducidos con validos y cambio los datos del alumno
+ * @param evt 
+ */
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
         if (!(CBHoras1.getSelectedIndex() == -1 || CBHoras.getSelectedIndex() == -1
                 || CampoNombre.getText().trim().equals("")
@@ -298,7 +309,12 @@ public class CursosModificar extends javax.swing.JFrame {
             h1.popUp1("MODIFICAR CURSO", "PORFAVOR RELLENE BIEN LOS CAMPOS Y SIN COMAS ", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_ButtonAltaCrear_alumno
-
+   /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered
         ButtonAlta.setBackground(new Color(189, 146, 64));
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
@@ -306,35 +322,58 @@ public class CursosModificar extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE MODIFICAR UN CURSO EN ACTIVO");
     }//GEN-LAST:event_ButtonAltaMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAltaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseExited
         ButtonAlta.setBackground(new Color(25, 34, 43));
         LabelButtonAlta.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_ButtonAltaMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAltaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMousePressed
         ButtonAlta.setBackground(new Color(184, 67, 87));
         LabelButtonAlta.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_ButtonAltaMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAltaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseReleased
         ButtonAlta.setBackground(new Color(189, 146, 64));
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ButtonAltaMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void TextAreaDescrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextAreaDescrMouseClicked
         TextAreaDescr.setText("");
         TextAreaDescr.setBackground(new Color(189, 146, 64));
         TextAreaDescr.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_TextAreaDescrMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CBHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHorasActionPerformed
         CBHoras.setBackground(new Color(189, 146, 64));
         CBHoras.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CBHorasActionPerformed
-
+/**
+ * colo lod atos seleccionados en el combox en la tabla
+ * @param evt 
+ */
     private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
         String[] partes = CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();

@@ -13,7 +13,7 @@ import javax.swing.JPanel;
  *
  * @author yuripastorovic
  */
-public class AlumnosModificar2 extends javax.swing.JFrame {
+public class AlumnosModificar extends javax.swing.JFrame {
 
     /**
      * Creates new form CursosModificar
@@ -21,16 +21,25 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private Herramientas h1 = new Herramientas();
 
-    public AlumnosModificar2() {
+    public AlumnosModificar() {
         initComponents();
         comboBox1();
     }
 
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
 
+    /**
+     * permite actualizar el un ComboBox
+     */
     private void comboBox1() {
         String arrayString[] = bd.leerIdNombreApellidoAlumnosExistentes();
         CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
@@ -126,7 +135,6 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         CBHoras1.setBackground(new java.awt.Color(25, 34, 43));
         CBHoras1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CBHoras1.setForeground(new java.awt.Color(221, 214, 204));
-        CBHoras1.setSelectedIndex(-1);
         CBHoras1.setBorder(null);
         CBHoras1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CBHoras1.addActionListener(new java.awt.event.ActionListener() {
@@ -281,13 +289,20 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CampoNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoNombreMouseClicked
         CampoNombre.setText("");
         CampoNombre.setBackground(new Color(189, 146, 64));
         CampoNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoNombreMouseClicked
-
+    /**
+     * Permite modificicar los los datos de un alumno
+     * @param evt 
+     */
     private void Modificar_Crear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_Crear_alumno
         if (!(CBHoras1.getSelectedIndex() == -1
                 || CampoNombre.getText().trim().equals("")
@@ -330,7 +345,12 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_Modificar_Crear_alumno
-
+        /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void Modificar_MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_MouseEntered
         Modificar_.setBackground(new Color(189, 146, 64));
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
@@ -338,19 +358,31 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE MODIFICAR LOS DATOS DE UN ALUMNO EN ACTIVO");
     }//GEN-LAST:event_Modificar_MouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Modificar_MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_MouseExited
         Modificar_.setBackground(new Color(25, 34, 43));
         LabelButtonAlta.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_Modificar_MouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Modificar_MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_MousePressed
         Modificar_.setBackground(new Color(184, 67, 87));
         LabelButtonAlta.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_Modificar_MousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void Modificar_MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_MouseReleased
         Modificar_.setBackground(new Color(189, 146, 64));
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
@@ -367,19 +399,31 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         CampoTelefono.setText(partesTF[4]);
 
     }//GEN-LAST:event_CBHoras1ActionPerformed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CampoApellidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoApellidoMouseClicked
         CampoApellido.setText("");
         CampoApellido.setBackground(new Color(189, 146, 64));
         CampoApellido.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoApellidoMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CampoTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoTelefonoMouseClicked
         CampoTelefono.setText("");
         CampoTelefono.setBackground(new Color(189, 146, 64));
         CampoTelefono.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoTelefonoMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void CampoCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoCorreoMouseClicked
         CampoCorreo.setText("");
         CampoCorreo.setBackground(new Color(189, 146, 64));
@@ -403,19 +447,19 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AlumnosModificar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnosModificar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AlumnosModificar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnosModificar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AlumnosModificar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnosModificar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AlumnosModificar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnosModificar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AlumnosModificar2().setVisible(true);
+                new AlumnosModificar().setVisible(true);
             }
         });
     }

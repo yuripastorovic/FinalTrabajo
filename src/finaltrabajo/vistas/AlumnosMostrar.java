@@ -11,13 +11,10 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class AlumnosMostrar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AlumnosMostrar
-     */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
 
@@ -30,6 +27,12 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         modelo.addColumn("TELEFONO");
     }
 
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
 
@@ -290,7 +293,12 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_MostrarExalumnos
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void BotonExalumnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseEntered
         BotonExalumnos.setBackground(new Color(189, 146, 64));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
@@ -298,24 +306,41 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("MUESTRA EN LA TABLA LOS ALUMNOS ESGRESADOS");
     }//GEN-LAST:event_BotonExalumnosMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BotonExalumnosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseExited
         BotonExalumnos.setBackground(new Color(25, 34, 43));
         LabelButtonModificar1.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_BotonExalumnosMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BotonExalumnosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMousePressed
         BotonExalumnos.setBackground(new Color(184, 67, 87));
         LabelButtonModificar1.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_BotonExalumnosMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BotonExalumnosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseReleased
         BotonExalumnos.setBackground(new Color(189, 146, 64));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BotonExalumnosMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void ButtonAlumnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMouseEntered
         // TODO add your handling code here:ButtonAlumnos
         ButtonAlumnos.setBackground(new Color(189, 146, 64));
@@ -324,19 +349,31 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("MUESTRA EN LA TABLA LOS ALUMNOS EN ACTIVO");
     }//GEN-LAST:event_ButtonAlumnosMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAlumnosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMousePressed
         ButtonAlumnos.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_ButtonAlumnosMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAlumnosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMouseExited
         ButtonAlumnos.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_ButtonAlumnosMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAlumnosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMouseReleased
         ButtonAlumnos.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));

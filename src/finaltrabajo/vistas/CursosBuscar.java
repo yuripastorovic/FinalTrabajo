@@ -335,7 +335,11 @@ public class CursosBuscar extends javax.swing.JFrame {
         ComboHoras.setBackground(new Color(189, 146, 64));
         ComboHoras.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboHorasActionPerformed
-
+    /**
+     * Permite reinicar los filtros de busqueda
+     *
+     * @param evt
+     */
     private void BotonResetBoton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetBoton_reset
         ComboHoras.setEnabled(true);
         ComboNombre.setEnabled(true);
@@ -369,7 +373,11 @@ public class CursosBuscar extends javax.swing.JFrame {
         BotonReset.setBackground(new Color(189, 146, 64));
         reset.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BotonResetMouseReleased
-
+/**
+     * En funcion de la seleccion de Combobox muestra los resultados en la tabla
+     *
+     * @param evt
+     */
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
         if (!(ComboNombre.getSelectedIndex() == -1 && ComboHoras.getSelectedIndex() == -1)) {
             for (int i = 0; i < modelo.getRowCount(); i++) {

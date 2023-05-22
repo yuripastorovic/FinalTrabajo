@@ -9,22 +9,29 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class Alumnos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Alumnos
-     */
     public Alumnos() {
         initComponents();
     }
 
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-
+/**
+     * Método que permite mostrar un JFrame en un JPanel
+     *
+     * @param panel
+     */
     private void showPanel(JPanel panel) {
         panel.setSize(this.contenedor.getWidth(), this.contenedor.getHeight());
         panel.setLocation(0, 0);
@@ -342,32 +349,57 @@ public class Alumnos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * Pemite acceder a desmatricular alumno
+     *
+     * @param evt
+     */
     private void Baja_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Baja_alum
         AlumnosBaja bbb = new AlumnosBaja();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_Baja_alum
-
+    /**
+     * permite acceder a creaccion de alumno
+     *
+     * @param evt
+     */
     private void Alta_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Alta_alum
         AlumnosAlta bbb = new AlumnosAlta();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_Alta_alum
-
+    /**
+     * permite acceder a modificar alumno
+     *
+     * @param evt
+     */
     private void Modi_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modi_alum
-        AlumnosModificar2 bbb = new AlumnosModificar2();
+        AlumnosModificar bbb = new AlumnosModificar();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_Modi_alum
-
+    /**
+     * permite acceder a buscar alumno
+     *
+     * @param evt
+     */
     private void Buscar_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Buscar_alum
         AlumnosBuscar bbb = new AlumnosBuscar();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_Buscar_alum
-
+    /**
+     * permite acceder a mostrar alumnos
+     *
+     * @param evt
+     */
     private void Mostrar_alum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Mostrar_alum
         AlumnosMostrar bbb = new AlumnosMostrar();
         showPanel(bbb.getFondo());
     }//GEN-LAST:event_Mostrar_alum
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void ALTAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTAMouseEntered
         ALTA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
@@ -375,14 +407,23 @@ public class Alumnos extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE AGREGAR UN NUEVO ALUMNO, READMITIR UN ALUMNO ESGRESADO");
     }//GEN-LAST:event_ALTAMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ALTAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTAMouseExited
         ALTA.setBackground(new Color(25, 34, 43));
         LabelButtonModificar1.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(184,67,87));
+        caja.setBackground(new Color(184, 67, 87));
         texto.setText("");
     }//GEN-LAST:event_ALTAMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void BUSCARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseEntered
         // TODO add your handling code here:
         BUSCAR.setBackground(new Color(189, 146, 64));
@@ -391,14 +432,23 @@ public class Alumnos extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE BUSCAR ALUMNOS EN ACTIVO");
     }//GEN-LAST:event_BUSCARMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BUSCARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseExited
         BUSCAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar4.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(184,67,87));
+        caja.setBackground(new Color(184, 67, 87));
         texto.setText("");
     }//GEN-LAST:event_BUSCARMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void MODIFYMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseEntered
         MODIFY.setBackground(new Color(189, 146, 64));
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
@@ -406,14 +456,23 @@ public class Alumnos extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE MODIFICAR UN ALUMNO EN ACTIVO");
     }//GEN-LAST:event_MODIFYMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MODIFYMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseExited
         MODIFY.setBackground(new Color(25, 34, 43));
         LabelButtonModificar3.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(184,67,87));
+        caja.setBackground(new Color(184, 67, 87));
         texto.setText("");
     }//GEN-LAST:event_MODIFYMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void BAJAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseEntered
         BAJA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
@@ -421,14 +480,23 @@ public class Alumnos extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE ESGRESAR ALUMNOS EN ECTIVO");
     }//GEN-LAST:event_BAJAMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BAJAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseExited
         BAJA.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(184,67,87));
+        caja.setBackground(new Color(184, 67, 87));
         texto.setText("");
     }//GEN-LAST:event_BAJAMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void MOSTRARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseEntered
         MOSTRAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar5.setForeground(new Color(25, 34, 43));
@@ -436,39 +504,67 @@ public class Alumnos extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE MOSTRAR TODOS LOS ALUMNOS, EN ACTIVO Y ESGRESADOS");
     }//GEN-LAST:event_MOSTRARMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MOSTRARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseExited
         MOSTRAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar5.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(184,67,87));
+        caja.setBackground(new Color(184, 67, 87));
         texto.setText("");
     }//GEN-LAST:event_MOSTRARMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ALTAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTAMousePressed
         ALTA.setBackground(new Color(184, 67, 87));
         LabelButtonModificar1.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_ALTAMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ALTAMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTAMouseReleased
         ALTA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ALTAMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BUSCARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMousePressed
         BUSCAR.setBackground(new Color(184, 67, 87));
         LabelButtonModificar4.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_BUSCARMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BUSCARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseReleased
         BUSCAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BUSCARMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MODIFYMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMousePressed
         MODIFY.setBackground(new Color(184, 67, 87));
         LabelButtonModificar3.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_MODIFYMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MODIFYMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseReleased
         MODIFY.setBackground(new Color(189, 146, 64));
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
@@ -478,17 +574,29 @@ public class Alumnos extends javax.swing.JFrame {
         BAJA.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_BAJAMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BAJAMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseReleased
         BAJA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BAJAMouseReleased
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MOSTRARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMousePressed
         MOSTRAR.setBackground(new Color(184, 67, 87));
         LabelButtonModificar5.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_MOSTRARMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void MOSTRARMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseReleased
         MOSTRAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar5.setForeground(new Color(25, 34, 43));

@@ -7,25 +7,26 @@ package finaltrabajo.vistas;
 import finaltrabajo.BaseDatosAcademia;
 import finaltrabajo.Herramientas;
 import java.awt.Color;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class AlumnosAlta extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AlumnosAlta
-     */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private Herramientas h1 = new Herramientas();
 
     public AlumnosAlta() {
         initComponents();
     }
-
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
@@ -255,30 +256,54 @@ public class AlumnosAlta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     * borrando el textField
+     *
+     * @param evt
+     */
     private void CampoNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoNombreMouseClicked
         CampoNombre.setText("");
         CampoNombre.setBackground(new Color(189, 146, 64));
         CampoNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoNombreMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     * borrando el textField
+     *
+     * @param evt
+     */
     private void CampoApellidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoApellidoMouseClicked
         CampoApellido.setText("");
         CampoApellido.setBackground(new Color(189, 146, 64));
         CampoApellido.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoApellidoMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     * borrando el textField
+     *
+     * @param evt
+     */
     private void CampoCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoCorreoMouseClicked
         CampoCorreo.setText("");
         CampoCorreo.setBackground(new Color(189, 146, 64));
         CampoCorreo.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoCorreoMouseClicked
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     * borrando el textField
+     *
+     * @param evt
+     */
     private void CampoTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoTelefonoMouseClicked
         CampoTelefono.setText("");
         CampoTelefono.setBackground(new Color(189, 146, 64));
         CampoTelefono.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_CampoTelefonoMouseClicked
-
+/**
+ * Permite la creaccion de un nuevo alumno, un alumno esgresado. tambien verifica que la introduccion de los datos es corracta
+ * @param evt 
+ */
     private void Crear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crear_alumno
         if (!(CampoNombre.getText().trim().equals("")
                 || CampoApellido.getText().trim().equals("")
@@ -323,7 +348,12 @@ public class AlumnosAlta extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_Crear_alumno
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void ButtonAltaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseEntered
         ButtonAlta.setBackground(new Color(189, 146, 64));
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
@@ -331,21 +361,31 @@ public class AlumnosAlta extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PUEDE AGREGAR NUEVOS ALUMNOS.   PARA READMITIR A UN EXALUMNO ESCRIBA SUS DATOS");
     }//GEN-LAST:event_ButtonAltaMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAltaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseExited
         ButtonAlta.setBackground(new Color(25, 34, 43));
         LabelButtonAlta.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_ButtonAltaMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAltaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMousePressed
         ButtonAlta.setBackground(new Color(184, 67, 87));
         LabelButtonAlta.setForeground(new Color(189, 146, 64));
-
-
     }//GEN-LAST:event_ButtonAltaMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonAltaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaMouseReleased
         ButtonAlta.setBackground(new Color(189, 146, 64));
         LabelButtonAlta.setForeground(new Color(25, 34, 43));

@@ -12,13 +12,9 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author yuripastorovic
+ * @author Jorge & Miguel
  */
 public class CursosBaja extends javax.swing.JFrame {
-
-    /**
-     * Creates new form CursosBaja
-     */
     private BaseDatosAcademia bd = new BaseDatosAcademia();
     private DefaultTableModel modelo = new DefaultTableModel();
     private Herramientas h1 = new Herramientas();
@@ -32,17 +28,26 @@ public class CursosBaja extends javax.swing.JFrame {
         modelo.addColumn("DESCRIPCION");
         modelo.addColumn("HORAS");
     }
-
+    /**
+     * Permite devolver el panel de fondo que contiene todos los componenetes
+     * del JFrame
+     *
+     * @return fondo
+     */
     public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-
+    /**
+     * permite actualizar el un ComboBox en funcion de otro ComboBox
+     */
     private void comboBox1() {
         String arrayString[] = bd.leerIdNombresCursosExistentes();
         ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
-
+    /**
+     * permite actualizar el un ComboBox en funcion de otro ComboBox
+     */
     private void comboBox2() {
         String arrayString[] = bd.leerIdHorasCursosExistentes();
         ComboHoras.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
@@ -370,19 +375,31 @@ public class CursosBaja extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ComboNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNombreActionPerformed
         ComboHoras.setEnabled(false);
         ComboNombre.setBackground(new Color(189, 146, 64));
         ComboNombre.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboNombreActionPerformed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ComboHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboHorasActionPerformed
         ComboNombre.setEnabled(false);
         ComboHoras.setBackground(new Color(189, 146, 64));
         ComboHoras.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_ComboHorasActionPerformed
-
+    /**
+     * Permite reinicar los filtros de busqueda
+     *
+     * @param evt
+     */
     private void BotonResetBoton_reset(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetBoton_reset
         comboBox1();
         comboBox2();
@@ -393,7 +410,12 @@ public class CursosBaja extends javax.swing.JFrame {
         ComboNombre.setBackground(new Color(25, 34, 43));
         ComboNombre.setForeground(new Color(221, 214, 204));
     }//GEN-LAST:event_BotonResetBoton_reset
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void BotonResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseEntered
         BotonReset.setBackground(new Color(189, 146, 64));
         reset.setForeground(new Color(25, 34, 43));
@@ -401,24 +423,40 @@ public class CursosBaja extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("REINICIA LOS FILTROS DE BUSQUEDA");
     }//GEN-LAST:event_BotonResetMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton 
+     *
+     * @param evt
+     */
     private void BotonResetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseExited
         BotonReset.setBackground(new Color(25, 34, 43));
         reset.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_BotonResetMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BotonResetMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMousePressed
         BotonReset.setBackground(new Color(184, 67, 87));
         reset.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_BotonResetMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BotonResetMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonResetMouseReleased
         BotonReset.setBackground(new Color(189, 146, 64));
         reset.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BotonResetMouseReleased
-
+/**
+     * En funcion de la seleccion de Combobox muestra los resultados en la tabla
+     *
+     * @param evt
+     */
     private void BotonBuscar_buscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscar_buscar
         if (!(ComboNombre.getSelectedIndex() == -1 && ComboHoras.getSelectedIndex() == -1)) {
             for (int i = 0; i < modelo.getRowCount(); i++) {
@@ -442,7 +480,12 @@ public class CursosBaja extends javax.swing.JFrame {
             h1.popUp1("BAJA CURSO", "PORFAVOR SELECCIONE UN CURSO", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_BotonBuscar_buscar
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void BotonBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseEntered
         BotonBuscar.setBackground(new Color(189, 146, 64));
         buscar.setForeground(new Color(25, 34, 43));
@@ -450,24 +493,39 @@ public class CursosBaja extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("INICIA UNA BUSQUEDA CON LOS FILTROS SELECCIONADOS,  LOS RESULTADOS SE MOSTRARAN EN LA TABLA");
     }//GEN-LAST:event_BotonBuscarMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BotonBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseExited
         BotonBuscar.setBackground(new Color(25, 34, 43));
         buscar.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_BotonBuscarMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BotonBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMousePressed
         BotonBuscar.setBackground(new Color(184, 67, 87));
         buscar.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_BotonBuscarMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void BotonBuscarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMouseReleased
         BotonBuscar.setBackground(new Color(189, 146, 64));
         buscar.setForeground(new Color(25, 34, 43));
     }//GEN-LAST:event_BotonBuscarMouseReleased
-
+/**
+ * Permite retirar un alumno de la base de datos
+ * @param evt 
+ */
     private void ButtonModificarModificar_press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarModificar_press
         if (!(ComboNombre.getSelectedIndex() == -1 && ComboHoras.getSelectedIndex() == -1)) {
             for (int i = 0; i < modelo.getRowCount(); i++) {
@@ -487,7 +545,12 @@ public class CursosBaja extends javax.swing.JFrame {
             h1.popUp1("BAJA CURSO", "PORFAVOR SELECCIONE UN CURSO", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_ButtonModificarModificar_press
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton asi
+     * como mostrar una descripcion del boton
+     *
+     * @param evt
+     */
     private void ButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseEntered
         ButtonModificar.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
@@ -495,19 +558,31 @@ public class CursosBaja extends javax.swing.JFrame {
         texto.setForeground(new Color(221, 214, 204));
         texto.setText("PERMITE RETIRAR UN CURSO EN ACTIVO, DEMATRICULANDO A LOS ALUMNO QUE ESTEN INSCRITOS");
     }//GEN-LAST:event_ButtonModificarMouseEntered
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseExited
         ButtonModificar.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
         caja.setBackground(new Color(221, 214, 204));
         texto.setText("");
     }//GEN-LAST:event_ButtonModificarMouseExited
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonModificarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMousePressed
         ButtonModificar.setBackground(new Color(184, 67, 87));
         LabelButtonModificar.setForeground(new Color(189, 146, 64));
     }//GEN-LAST:event_ButtonModificarMousePressed
-
+    /**
+     * Permite hacer cambiar el color del boton por interaccion del raton
+     *
+     * @param evt
+     */
     private void ButtonModificarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonModificarMouseReleased
         ButtonModificar.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
