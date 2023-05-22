@@ -159,10 +159,7 @@ public class AlumnosAlta extends javax.swing.JFrame {
         ButtonAlta.setLayout(ButtonAltaLayout);
         ButtonAltaLayout.setHorizontalGroup(
             ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAltaLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(LabelButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
         );
         ButtonAltaLayout.setVerticalGroup(
             ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,7 +287,10 @@ public class AlumnosAlta extends javax.swing.JFrame {
                 || CampoNombre.getText().trim().equals("Introduzca nombre")
                 || CampoApellido.getText().trim().equals("Introduzca apellido")
                 || CampoCorreo.getText().trim().equals("Introduzca correo")
-                || CampoTelefono.getText().trim().equals("Introduzca telefono"))) {
+                || CampoTelefono.getText().trim().equals("Introduzca telefono")
+                || CampoApellido.getText().trim().contains(",")
+                || CampoCorreo.getText().trim().contains(",")
+                || CampoTelefono.getText().trim().contains(","))) {
             if (!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
                 bd.insertarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
                 h1.popUp1("ALTA ALUMNO", "ALUMNO CREADO", "OK", "favicon-32x32.png");

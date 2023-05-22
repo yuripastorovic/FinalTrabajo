@@ -129,9 +129,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         eliminar.setLayout(eliminarLayout);
         eliminarLayout.setHorizontalGroup(
             eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eliminarLayout.createSequentialGroup()
-                .addGap(0, 31, Short.MAX_VALUE)
-                .addComponent(LabelButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
         );
         eliminarLayout.setVerticalGroup(
             eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,9 +235,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
         Calificar.setLayout(CalificarLayout);
         CalificarLayout.setHorizontalGroup(
             CalificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CalificarLayout.createSequentialGroup()
-                .addGap(0, 49, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
         );
         CalificarLayout.setVerticalGroup(
             CalificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,7 +342,7 @@ public class InscripcionesGestion extends javax.swing.JFrame {
      * @param evt
      */
     private void eliminarCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarCrear_alumno
-        if (ComboNombre.getSelectedIndex() != -1 && ComboNota.getSelectedIndex() == -1) {
+        if (ComboNombre.getSelectedIndex() != -1 ) {
             String[] partes = ComboNombre.getSelectedItem().toString().split(",");
             String id_alumno = partes[1].trim();
             String id_curso = partes[3].trim();

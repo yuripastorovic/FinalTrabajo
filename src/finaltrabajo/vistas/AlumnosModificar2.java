@@ -112,9 +112,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         Modificar_.setLayout(Modificar_Layout);
         Modificar_Layout.setHorizontalGroup(
             Modificar_Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_Layout.createSequentialGroup()
-                .addGap(0, 34, Short.MAX_VALUE)
-                .addComponent(LabelButtonAlta))
+            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
         );
         Modificar_Layout.setVerticalGroup(
             Modificar_Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +126,6 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         CBHoras1.setBackground(new java.awt.Color(25, 34, 43));
         CBHoras1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CBHoras1.setForeground(new java.awt.Color(221, 214, 204));
-        CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CBHoras1.setSelectedIndex(-1);
         CBHoras1.setBorder(null);
         CBHoras1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -300,30 +297,37 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
                 || CampoNombre.getText().trim().equals("Introduzca nombre")
                 || CampoApellido.getText().trim().equals("Introduzca apellido")
                 || CampoCorreo.getText().trim().equals("Introduzca correo")
-                || CampoTelefono.getText().trim().equals("Introduzca telefono"))) {
-
-            String[] partes = CBHoras1.getSelectedItem().toString().split(",");
-            String id = partes[0].trim();
-            bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
-            h1.popUp1("MODIFICAR ALUMNO", "ALUMNO MODIFICADO", "OK", "favicon-32x32.png");
-            comboBox1();
-            CampoNombre.setText("Introduzca nombre");
-            CampoApellido.setText("Introduzca apellido");
-            CampoCorreo.setText("Introduzca correo");
-            CampoTelefono.setText("Introduzca telefono");
-            CampoNombre.setBackground(new Color(25, 34, 43));
-            CampoNombre.setForeground(new Color(221, 214, 204));
-            CampoApellido.setBackground(new Color(25, 34, 43));
-            CampoApellido.setForeground(new Color(221, 214, 204));
-            CampoCorreo.setBackground(new Color(25, 34, 43));
-            CampoCorreo.setForeground(new Color(221, 214, 204));
-            CampoTelefono.setBackground(new Color(25, 34, 43));
-            CampoTelefono.setForeground(new Color(221, 214, 204));
-            CBHoras1.setBackground(new Color(25, 34, 43));
-            CBHoras1.setForeground(new Color(221, 214, 204));
+                || CampoTelefono.getText().trim().equals("Introduzca telefono")
+                || CampoApellido.getText().trim().contains(",")
+                || CampoCorreo.getText().trim().contains(",")
+                || CampoTelefono.getText().trim().contains(","))) {
+            if (!bd.confirmarAlumno(CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText())) {
+                String[] partes = CBHoras1.getSelectedItem().toString().split(",");
+                String id = partes[0].trim();
+                bd.modificarAlumno(Integer.valueOf(id), CampoNombre.getText(), CampoApellido.getText(), CampoCorreo.getText(), CampoTelefono.getText());
+                h1.popUp1("MODIFICAR ALUMNO", "ALUMNO MODIFICADO", "OK", "favicon-32x32.png");
+                comboBox1();
+                CampoNombre.setText("Introduzca nombre");
+                CampoApellido.setText("Introduzca apellido");
+                CampoCorreo.setText("Introduzca correo");
+                CampoTelefono.setText("Introduzca telefono");
+                CampoNombre.setBackground(new Color(25, 34, 43));
+                CampoNombre.setForeground(new Color(221, 214, 204));
+                CampoApellido.setBackground(new Color(25, 34, 43));
+                CampoApellido.setForeground(new Color(221, 214, 204));
+                CampoCorreo.setBackground(new Color(25, 34, 43));
+                CampoCorreo.setForeground(new Color(221, 214, 204));
+                CampoTelefono.setBackground(new Color(25, 34, 43));
+                CampoTelefono.setForeground(new Color(221, 214, 204));
+                CBHoras1.setBackground(new Color(25, 34, 43));
+                CBHoras1.setForeground(new Color(221, 214, 204));
+            } else {
+                h1.popUp1("MODIFICAR ALUMNO", "ESE ALUMNO YA EXISTE", "OK", "favicon-32x32.png");
+            }
         } else {
             h1.popUp1("MODIFICAR ALUMNO", "PORFAVOR ELIJA Y MODIFIQUE UN ALUMNO CORRECTAMENTE", "OK", "favicon-32x32.png");
         }
+
 
     }//GEN-LAST:event_Modificar_Crear_alumno
 

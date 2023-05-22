@@ -111,9 +111,7 @@ public class CursosAlta extends javax.swing.JFrame {
         ButtonAlta.setLayout(ButtonAltaLayout);
         ButtonAltaLayout.setHorizontalGroup(
             ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAltaLayout.createSequentialGroup()
-                .addGap(0, 35, Short.MAX_VALUE)
-                .addComponent(LabelButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         ButtonAltaLayout.setVerticalGroup(
             ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,14 +182,14 @@ public class CursosAlta extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(CBHoras, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelFondoLayout.createSequentialGroup()
                                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(26, 26, 26))
-                            .addComponent(CampoNombre, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(CampoNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CBHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(388, 388, 388))))
             .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -243,7 +241,10 @@ public class CursosAlta extends javax.swing.JFrame {
                 || TextAreaDescr.getText().trim().equals("")
                 || CampoNombre.getText().trim().equals("Introduzca nombre")
                 || TextAreaDescr.getText().trim().equals("Introduzca descripcion del curso")
-                || CBHoras.getSelectedIndex() == -1)) {
+                || CBHoras.getSelectedIndex() == -1)
+                || CampoNombre.getText().trim().contains(",")
+                || TextAreaDescr.getText().trim().contains(",")
+                ) {
 
             if (!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
                 h1.popUp1("ALTA CURSO", "CURSO CREADO", "OK", "favicon-32x32.png");

@@ -140,9 +140,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
         BotonReset.setLayout(BotonResetLayout);
         BotonResetLayout.setHorizontalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonResetLayout.createSequentialGroup()
-                .addGap(0, 30, Short.MAX_VALUE)
-                .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(reset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         BotonResetLayout.setVerticalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,9 +176,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
         BotonBuscar.setLayout(BotonBuscarLayout);
         BotonBuscarLayout.setHorizontalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonBuscarLayout.createSequentialGroup()
-                .addGap(0, 36, Short.MAX_VALUE)
-                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         BotonBuscarLayout.setVerticalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,9 +256,7 @@ public class AlumnosBaja extends javax.swing.JFrame {
         ButtonRetirar.setLayout(ButtonRetirarLayout);
         ButtonRetirarLayout.setHorizontalGroup(
             ButtonRetirarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonRetirarLayout.createSequentialGroup()
-                .addGap(0, 27, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ButtonRetirarLayout.setVerticalGroup(
             ButtonRetirarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,19 +290,16 @@ public class AlumnosBaja extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(PanelFondoLayout.createSequentialGroup()
-                                    .addComponent(LabelNombreC)
-                                    .addGap(38, 38, 38)
-                                    .addComponent(LabelTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                                    .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(LabelInfo1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(PanelFondoLayout.createSequentialGroup()
+                            .addComponent(LabelNombreC)
+                            .addGap(38, 38, 38)
+                            .addComponent(LabelTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PanelFondoLayout.createSequentialGroup()
+                            .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(LabelInfo1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

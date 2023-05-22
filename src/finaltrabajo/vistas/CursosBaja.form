@@ -146,12 +146,7 @@
               <Color blue="cc" green="d6" red="dd" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
             <Property name="selectedIndex" type="int" value="-1"/>
           </Properties>
@@ -196,12 +191,7 @@
               <Color blue="cc" green="d6" red="dd" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
             <Property name="selectedIndex" type="int" value="-1"/>
           </Properties>
@@ -232,10 +222,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
-                      <Component id="reset" min="-2" pref="81" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="reset" alignment="1" pref="100" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -279,10 +266,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="buscar" min="-2" pref="156" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="72" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="buscar" alignment="0" pref="228" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -420,10 +404,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="LabelButtonModificar" min="-2" pref="77" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="LabelButtonModificar" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">

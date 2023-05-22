@@ -20,18 +20,22 @@ public class CursosModificar extends javax.swing.JFrame {
      */
     private Herramientas h1 = new Herramientas();
     private BaseDatosAcademia bd = new BaseDatosAcademia();
+
     public CursosModificar() {
         initComponents();
         comboBox1();
     }
-public JPanel getFondo() {
+
+    public JPanel getFondo() {
         JPanel fondo = PanelFondo;
         return fondo;
     }
-private void comboBox1() {
+
+    private void comboBox1() {
         String arrayString[] = bd.leerIdNombresCursosExistentes();
         CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(arrayString));
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -115,9 +119,7 @@ private void comboBox1() {
         ButtonAlta.setLayout(ButtonAltaLayout);
         ButtonAltaLayout.setHorizontalGroup(
             ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAltaLayout.createSequentialGroup()
-                .addGap(0, 34, Short.MAX_VALUE)
-                .addComponent(LabelButtonAlta))
+            .addComponent(LabelButtonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
         );
         ButtonAltaLayout.setVerticalGroup(
             ButtonAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,6 +147,7 @@ private void comboBox1() {
         CBHoras.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CBHoras.setForeground(new java.awt.Color(221, 214, 204));
         CBHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7" }));
+        CBHoras.setSelectedIndex(-1);
         CBHoras.setBorder(null);
         CBHoras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CBHoras.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +163,6 @@ private void comboBox1() {
         CBHoras1.setBackground(new java.awt.Color(25, 34, 43));
         CBHoras1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         CBHoras1.setForeground(new java.awt.Color(221, 214, 204));
-        CBHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CBHoras1.setSelectedIndex(-1);
         CBHoras1.setBorder(null);
         CBHoras1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -207,8 +209,8 @@ private void comboBox1() {
                         .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                            .addComponent(CBHoras, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(CampoNombre)
+                            .addComponent(CBHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(52, 52, 52))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
                         .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,30 +267,34 @@ private void comboBox1() {
     }//GEN-LAST:event_CampoNombreMouseClicked
 
     private void ButtonAltaCrear_alumno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAltaCrear_alumno
-        if(!( CBHoras1.getSelectedIndex()==-1 || CBHoras.getSelectedIndex()==-1 
+        if (!(CBHoras1.getSelectedIndex() == -1 || CBHoras.getSelectedIndex() == -1
                 || CampoNombre.getText().trim().equals("")
                 || TextAreaDescr.getText().trim().equals("")
                 || CampoNombre.getText().trim().equals("Introduzca nombre")
                 || TextAreaDescr.getText().trim().equals("Introduzca descripcion del curso")
-                )){
-            
-        
-        String[] partes= CBHoras1.getSelectedItem().toString().split(",");
-        String id = partes[0].trim();
-        bd.modificarCursos(Integer.valueOf(id), CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
-        h1.popUp1("MODIFICAR CURSO", "CURSO MODIFICADO", "OK", "favicon-32x32.png");
-        CampoNombre.setText("Introduzca nombre");
-        TextAreaDescr.setText("Introduzca descripcion del curso");
-        CBHoras1.setBackground(new Color(25, 34, 43));
-        CBHoras1.setForeground(new Color(221, 214, 204));
-        CBHoras.setBackground(new Color(25, 34, 43));
-        CBHoras.setForeground(new Color(221, 214, 204));
-        TextAreaDescr.setBackground(new Color(25, 34, 43));
-        TextAreaDescr.setForeground(new Color(221, 214, 204));
-        CampoNombre.setBackground(new Color(25, 34, 43));
-        CampoNombre.setForeground(new Color(221, 214, 204));
-        comboBox1();
-        }else{
+                || CampoNombre.getText().trim().contains(",")
+                || TextAreaDescr.getText().trim().contains(","))) {
+
+            if (!bd.confirmarCurso(CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString())) {
+                String[] partes = CBHoras1.getSelectedItem().toString().split(",");
+                String id = partes[0].trim();
+                bd.modificarCursos(Integer.valueOf(id), CampoNombre.getText(), TextAreaDescr.getText(), CBHoras.getSelectedItem().toString());
+                h1.popUp1("MODIFICAR CURSO", "CURSO MODIFICADO", "OK", "favicon-32x32.png");
+                CampoNombre.setText("Introduzca nombre");
+                TextAreaDescr.setText("Introduzca descripcion del curso");
+                CBHoras1.setBackground(new Color(25, 34, 43));
+                CBHoras1.setForeground(new Color(221, 214, 204));
+                CBHoras.setBackground(new Color(25, 34, 43));
+                CBHoras.setForeground(new Color(221, 214, 204));
+                TextAreaDescr.setBackground(new Color(25, 34, 43));
+                TextAreaDescr.setForeground(new Color(221, 214, 204));
+                CampoNombre.setBackground(new Color(25, 34, 43));
+                CampoNombre.setForeground(new Color(221, 214, 204));
+                comboBox1();
+            } else {
+                h1.popUp1("MODIFICAR CURSO", "ESE CURSO YA EXISTE", "OK", "favicon-32x32.png");
+            }
+        } else {
             h1.popUp1("MODIFICAR CURSO", "PORFAVOR REYENE BIEN LOS DATOS", "OK", "favicon-32x32.png");
         }
     }//GEN-LAST:event_ButtonAltaCrear_alumno
@@ -330,13 +336,13 @@ private void comboBox1() {
     }//GEN-LAST:event_CBHorasActionPerformed
 
     private void CBHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBHoras1ActionPerformed
-        String[] partes= CBHoras1.getSelectedItem().toString().split(",");
+        String[] partes = CBHoras1.getSelectedItem().toString().split(",");
         String id = partes[0].trim();
         String[] partesTF = bd.leerDatosUnCursoExistente(Integer.valueOf(id)).toString().split(",");
         CampoNombre.setText(partesTF[1]);
         TextAreaDescr.setText(partesTF[2]);
         CBHoras.setSelectedItem(partesTF[3]);
-                        
+
     }//GEN-LAST:event_CBHoras1ActionPerformed
 
     /**

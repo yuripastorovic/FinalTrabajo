@@ -96,7 +96,6 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         ComboNota.setBackground(new java.awt.Color(25, 34, 43));
         ComboNota.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNota.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         ComboNota.setSelectedIndex(-1);
         ComboNota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,9 +132,7 @@ public class InscripcionesAddDel extends javax.swing.JFrame {
         ButtonModificar.setLayout(ButtonModificarLayout);
         ButtonModificarLayout.setHorizontalGroup(
             ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ButtonModificarLayout.createSequentialGroup()
-                .addComponent(LabelButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 28, Short.MAX_VALUE))
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         ButtonModificarLayout.setVerticalGroup(
             ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

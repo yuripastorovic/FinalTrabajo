@@ -411,7 +411,11 @@ public class AjustesBBDD extends javax.swing.JFrame {
                 || IP.getText().trim().equals("Introduzca IP")
                 || PUERTO.getText().trim().equals("Introduzca Puerto")
                 || USER.getText().trim().equals("Introduzca usuario")
-                || PASS.getText().trim().equals("*********"))) {
+                || PASS.getText().trim().equals("*********")
+                || IP.getText().trim().contains(",")
+                || PUERTO.getText().trim().contains(",")
+                || USER.getText().trim().contains(",")
+                || PASS.getText().trim().contains(","))) {
 
             String parametros = "ip = " + IP.getText() + "\n" + "puerto = " + PUERTO.getText() + "\n" + "db = " + "\n" + "usuario = " + USER.getText() + "\n" + "password = " + PASS.getText() + "\n";
             String dirFichero = "conf.prop";

@@ -87,7 +87,6 @@ public class CursosBaja extends javax.swing.JFrame {
         ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboNombre.setSelectedIndex(-1);
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +105,6 @@ public class CursosBaja extends javax.swing.JFrame {
         ComboHoras.setBackground(new java.awt.Color(25, 34, 43));
         ComboHoras.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboHoras.setForeground(new java.awt.Color(221, 214, 204));
-        ComboHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboHoras.setSelectedIndex(-1);
         ComboHoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,9 +141,7 @@ public class CursosBaja extends javax.swing.JFrame {
         BotonReset.setLayout(BotonResetLayout);
         BotonResetLayout.setHorizontalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonResetLayout.createSequentialGroup()
-                .addGap(0, 19, Short.MAX_VALUE)
-                .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(reset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         BotonResetLayout.setVerticalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,9 +177,7 @@ public class CursosBaja extends javax.swing.JFrame {
         BotonBuscar.setLayout(BotonBuscarLayout);
         BotonBuscarLayout.setHorizontalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotonBuscarLayout.createSequentialGroup()
-                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 72, Short.MAX_VALUE))
+            .addComponent(buscar, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
         );
         BotonBuscarLayout.setVerticalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,9 +268,7 @@ public class CursosBaja extends javax.swing.JFrame {
         ButtonModificar.setLayout(ButtonModificarLayout);
         ButtonModificarLayout.setHorizontalGroup(
             ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonModificarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(LabelButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(LabelButtonModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ButtonModificarLayout.setVerticalGroup(
             ButtonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

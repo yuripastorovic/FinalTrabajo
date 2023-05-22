@@ -85,7 +85,6 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         ComboNombre.setBackground(new java.awt.Color(25, 34, 43));
         ComboNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboNombre.setForeground(new java.awt.Color(221, 214, 204));
-        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboNombre.setSelectedIndex(-1);
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +103,6 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         ComboTelefono.setBackground(new java.awt.Color(25, 34, 43));
         ComboTelefono.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ComboTelefono.setForeground(new java.awt.Color(221, 214, 204));
-        ComboTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboTelefono.setSelectedIndex(-1);
         ComboTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,9 +138,7 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         BotonReset.setLayout(BotonResetLayout);
         BotonResetLayout.setHorizontalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonResetLayout.createSequentialGroup()
-                .addGap(0, 39, Short.MAX_VALUE)
-                .addComponent(reset))
+            .addComponent(reset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
         );
         BotonResetLayout.setVerticalGroup(
             BotonResetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,9 +173,7 @@ public class AlumnosBuscar extends javax.swing.JFrame {
         BotonBuscar.setLayout(BotonBuscarLayout);
         BotonBuscarLayout.setHorizontalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonBuscarLayout.createSequentialGroup()
-                .addGap(0, 35, Short.MAX_VALUE)
-                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         BotonBuscarLayout.setVerticalGroup(
             BotonBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,9 +256,9 @@ public class AlumnosBuscar extends javax.swing.JFrame {
                                 .addComponent(LabelNombreC)
                                 .addGap(38, 38, 38)
                                 .addComponent(LabelTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
-                                .addComponent(ComboNombre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
+                            .addGroup(PanelFondoLayout.createSequentialGroup()
+                                .addComponent(ComboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(ComboTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
