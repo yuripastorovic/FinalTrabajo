@@ -214,6 +214,7 @@ public class AjustesLocal extends javax.swing.JFrame {
         caja.setBackground(new java.awt.Color(221, 214, 204));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -222,8 +223,7 @@ public class AjustesLocal extends javax.swing.JFrame {
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cajaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cajaLayout.setVerticalGroup(
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,7 +273,7 @@ public class AjustesLocal extends javax.swing.JFrame {
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE GENERAR UNA COPIA LOCAL");
     }//GEN-LAST:event_COPIA_LOCALMouseEntered
 
     private void COPIA_LOCALMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_COPIA_LOCALMouseExited
@@ -304,7 +304,7 @@ public class AjustesLocal extends javax.swing.JFrame {
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE GENERAR UN INFORME CON LOS DATOS DE LOS ALUMNOS EN FORMATO CSV");
     }//GEN-LAST:event_GENERAR_INFORMESMouseEntered
 
     private void GENERAR_INFORMESMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERAR_INFORMESMouseExited
@@ -333,7 +333,7 @@ public class AjustesLocal extends javax.swing.JFrame {
         LabelButtonModificar2.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE CRAGAR DATOS DESDE UN ARCHIVO LOCAL");
 
     }//GEN-LAST:event_CARGAR_LOCALMouseEntered
 

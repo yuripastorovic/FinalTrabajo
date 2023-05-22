@@ -56,9 +56,9 @@ public class Alumnos extends javax.swing.JFrame {
         MOSTRAR = new javax.swing.JPanel();
         LabelButtonModificar5 = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
-        Image_png = new javax.swing.JLabel();
         caja = new javax.swing.JPanel();
         texto = new javax.swing.JLabel();
+        Image_png = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -276,33 +276,31 @@ public class Alumnos extends javax.swing.JFrame {
 
         contenedor.setBackground(new java.awt.Color(184, 67, 87));
 
-        Image_png.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/alumnos.jpg"))); // NOI18N
-
         caja.setBackground(new java.awt.Color(184, 67, 87));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
         caja.setLayout(cajaLayout);
         cajaLayout.setHorizontalGroup(
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cajaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(texto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         cajaLayout.setVerticalGroup(
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
+        Image_png.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/alumnos.jpg"))); // NOI18N
+
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Image_png, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(caja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,13 +373,13 @@ public class Alumnos extends javax.swing.JFrame {
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE AGREGAR UN NUEVO ALUMNO, READMITIR UN ALUMNO ESGRESADO");
     }//GEN-LAST:event_ALTAMouseEntered
 
     private void ALTAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTAMouseExited
         ALTA.setBackground(new Color(25, 34, 43));
         LabelButtonModificar1.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(221, 214, 204));
+        caja.setBackground(new Color(184,67,87));
         texto.setText("");
     }//GEN-LAST:event_ALTAMouseExited
 
@@ -391,13 +389,13 @@ public class Alumnos extends javax.swing.JFrame {
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE BUSCAR ALUMNOS EN ACTIVO");
     }//GEN-LAST:event_BUSCARMouseEntered
 
     private void BUSCARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUSCARMouseExited
         BUSCAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar4.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(221, 214, 204));
+        caja.setBackground(new Color(184,67,87));
         texto.setText("");
     }//GEN-LAST:event_BUSCARMouseExited
 
@@ -406,13 +404,13 @@ public class Alumnos extends javax.swing.JFrame {
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE MODIFICAR UN ALUMNO EN ACTIVO");
     }//GEN-LAST:event_MODIFYMouseEntered
 
     private void MODIFYMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseExited
         MODIFY.setBackground(new Color(25, 34, 43));
         LabelButtonModificar3.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(221, 214, 204));
+        caja.setBackground(new Color(184,67,87));
         texto.setText("");
     }//GEN-LAST:event_MODIFYMouseExited
 
@@ -421,13 +419,13 @@ public class Alumnos extends javax.swing.JFrame {
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE ESGRESAR ALUMNOS EN ECTIVO");
     }//GEN-LAST:event_BAJAMouseEntered
 
     private void BAJAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BAJAMouseExited
         BAJA.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(221, 214, 204));
+        caja.setBackground(new Color(184,67,87));
         texto.setText("");
     }//GEN-LAST:event_BAJAMouseExited
 
@@ -436,13 +434,13 @@ public class Alumnos extends javax.swing.JFrame {
         LabelButtonModificar5.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE MOSTRAR TODOS LOS ALUMNOS, EN ACTIVO Y ESGRESADOS");
     }//GEN-LAST:event_MOSTRARMouseEntered
 
     private void MOSTRARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseExited
         MOSTRAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar5.setForeground(new Color(221, 214, 204));
-        caja.setBackground(new Color(221, 214, 204));
+        caja.setBackground(new Color(184,67,87));
         texto.setText("");
     }//GEN-LAST:event_MOSTRARMouseExited
 

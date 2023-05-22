@@ -49,6 +49,8 @@ public class Inscripciones extends javax.swing.JFrame {
         MOSTRAR = new javax.swing.JPanel();
         LabelButtonModificar = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
+        caja = new javax.swing.JPanel();
+        texto = new javax.swing.JLabel();
         curso_img = new javax.swing.JLabel();
         insc_txt = new javax.swing.JLabel();
 
@@ -178,7 +180,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 .addComponent(CALIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MOSTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelFaldonLayout.setVerticalGroup(
             PanelFaldonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,29 +193,35 @@ public class Inscripciones extends javax.swing.JFrame {
         );
 
         contenedor.setBackground(new java.awt.Color(221, 214, 204));
+        contenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        caja.setBackground(new java.awt.Color(221, 214, 204));
+        caja.setOpaque(false);
+
+        texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setForeground(new java.awt.Color(221, 214, 204));
+
+        javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
+        caja.setLayout(cajaLayout);
+        cajaLayout.setHorizontalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cajaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 666, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
+        );
+        cajaLayout.setVerticalGroup(
+            cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+
+        contenedor.add(caja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 750, -1));
 
         curso_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/inscripcion.png"))); // NOI18N
+        contenedor.add(curso_img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 360, 330));
 
         insc_txt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finaltrabajo/vistas/icon/inscrip_txt.png"))); // NOI18N
-
-        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
-        contenedor.setLayout(contenedorLayout);
-        contenedorLayout.setHorizontalGroup(
-            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenedorLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(curso_img)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(insc_txt)
-                .addGap(44, 44, 44))
-        );
-        contenedorLayout.setVerticalGroup(
-            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenedorLayout.createSequentialGroup()
-                .addComponent(curso_img)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(insc_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
-        );
+        contenedor.add(insc_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, -1, 260));
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
@@ -230,7 +238,7 @@ public class Inscripciones extends javax.swing.JFrame {
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addComponent(PanelFaldon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -238,15 +246,11 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -261,11 +265,18 @@ public class Inscripciones extends javax.swing.JFrame {
         // TODO add your handling code here:
         ALTA_BAJA.setBackground(new Color(189, 146, 64));
         LabelButtonModificar4.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
+        caja.setOpaque(true);
     }//GEN-LAST:event_ALTA_BAJAMouseEntered
 
     private void ALTA_BAJAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMouseExited
         ALTA_BAJA.setBackground(new Color(25, 34, 43));
         LabelButtonModificar4.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
+        caja.setOpaque(false);
     }//GEN-LAST:event_ALTA_BAJAMouseExited
 
     private void ALTA_BAJAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALTA_BAJAMousePressed
@@ -286,11 +297,18 @@ public class Inscripciones extends javax.swing.JFrame {
     private void CALIFICARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMouseEntered
         CALIFICAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar3.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
+        caja.setOpaque(true);
     }//GEN-LAST:event_CALIFICARMouseEntered
 
     private void CALIFICARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMouseExited
         CALIFICAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar3.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
+        caja.setOpaque(false);
     }//GEN-LAST:event_CALIFICARMouseExited
 
     private void CALIFICARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALIFICARMousePressed
@@ -311,11 +329,18 @@ public class Inscripciones extends javax.swing.JFrame {
     private void MOSTRARMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseEntered
         MOSTRAR.setBackground(new Color(189, 146, 64));
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
+        caja.setBackground(new Color(25, 34, 43));
+        texto.setForeground(new Color(221, 214, 204));
+        texto.setText("A");
+        caja.setOpaque(true);
     }//GEN-LAST:event_MOSTRARMouseEntered
 
     private void MOSTRARMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMouseExited
         MOSTRAR.setBackground(new Color(25, 34, 43));
         LabelButtonModificar.setForeground(new Color(221, 214, 204));
+        caja.setBackground(new Color(221, 214, 204));
+        texto.setText("");
+        caja.setOpaque(false);
     }//GEN-LAST:event_MOSTRARMouseExited
 
     private void MOSTRARMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MOSTRARMousePressed
@@ -372,8 +397,10 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JPanel MOSTRAR;
     private javax.swing.JPanel PanelFaldon;
     private javax.swing.JPanel PanelFondo;
+    private javax.swing.JPanel caja;
     private javax.swing.JPanel contenedor;
     private javax.swing.JLabel curso_img;
     private javax.swing.JLabel insc_txt;
+    private javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 }

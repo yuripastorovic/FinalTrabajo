@@ -195,6 +195,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         caja.setBackground(new java.awt.Color(221, 214, 204));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -203,8 +204,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cajaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cajaLayout.setVerticalGroup(
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,7 +332,7 @@ public class AlumnosModificar2 extends javax.swing.JFrame {
         LabelButtonAlta.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("PERMITE MODIFICAR LOS DATOS DE UN ALUMNO EN ACTIVO");
     }//GEN-LAST:event_Modificar_MouseEntered
 
     private void Modificar_MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Modificar_MouseExited

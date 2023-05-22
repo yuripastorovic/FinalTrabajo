@@ -176,6 +176,7 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         caja.setBackground(new java.awt.Color(221, 214, 204));
 
         texto.setBackground(new java.awt.Color(221, 214, 204));
+        texto.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         texto.setForeground(new java.awt.Color(221, 214, 204));
 
         javax.swing.GroupLayout cajaLayout = new javax.swing.GroupLayout(caja);
@@ -184,8 +185,7 @@ public class AlumnosMostrar extends javax.swing.JFrame {
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cajaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cajaLayout.setVerticalGroup(
             cajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,7 +285,7 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         LabelButtonModificar1.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("MUESTRA EN LA TABLA LOS ALUMNOS ESGRESADOS");
     }//GEN-LAST:event_BotonExalumnosMouseEntered
 
     private void BotonExalumnosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonExalumnosMouseExited
@@ -311,7 +311,7 @@ public class AlumnosMostrar extends javax.swing.JFrame {
         LabelButtonModificar.setForeground(new Color(25, 34, 43));
         caja.setBackground(new Color(25, 34, 43));
         texto.setForeground(new Color(221, 214, 204));
-        texto.setText("A");
+        texto.setText("MUESTRA EN LA TABLA LOS ALUMNOS EN ACTIVO");
     }//GEN-LAST:event_ButtonAlumnosMouseEntered
 
     private void ButtonAlumnosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAlumnosMousePressed
