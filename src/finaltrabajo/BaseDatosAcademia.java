@@ -55,7 +55,7 @@ public class BaseDatosAcademia {
                 comprobacion.createNewFile();
 
             } catch (Exception e) {
-                e.printStackTrace();
+               // e.printStackTrace();
             }
             FileOutputStream fileOut = null;
             BufferedOutputStream bufOut = null;
@@ -67,14 +67,14 @@ public class BaseDatosAcademia {
                 objOut.writeObject(parametrosString);///////////////////////////////////////////////////////
                 System.out.println("los datos se han copiado exitosamente en: " + dirFichero);
             } catch (IOException ex) {
-                ex.printStackTrace();
+                //ex.printStackTrace();
             } finally {
                 try {
                     objOut.close();
                     bufOut.close();
                     fileOut.close();
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    //ex.printStackTrace();
                 }
             }
         }
@@ -127,13 +127,13 @@ public class BaseDatosAcademia {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
         } finally {
             try {
                 bR.close();
                 fR.close();
             } catch (IOException ex) {
-                ex.printStackTrace();
+                //ex.printStackTrace();
             }
 
         }
@@ -152,7 +152,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
     }
     /**
@@ -198,7 +198,7 @@ public class BaseDatosAcademia {
             stmt.close();
         } catch (SQLException ex) {
             h1.popUp1("BBDD NO EXISTE", "NO SE HA PODIDO CREAR LA BBDD\nDEBIO A QUE NO SE HA PODIDO CONECTAR\nREVISE AJUSTES BBDD", "OK", "favicon-32x32.png");
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
     /**
@@ -227,7 +227,7 @@ public class BaseDatosAcademia {
                     this.conn.close();
                 }
             } catch (Exception ex) {
-                ex.printStackTrace();
+                //ex.printStackTrace();
             }
         }
     }
@@ -259,7 +259,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -278,7 +278,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+          //  ex.printStackTrace();
         }
     }
 
@@ -297,7 +297,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -314,7 +314,7 @@ public class BaseDatosAcademia {
                 comprobacion.createNewFile();
 
             } catch (Exception e) {
-                e.printStackTrace();
+               // e.printStackTrace();
             }
         }
         FileWriter writer = null;
@@ -341,18 +341,18 @@ public class BaseDatosAcademia {
                 }
                 stmt.close();
             } catch (SQLException ex) {
-                ex.printStackTrace();
+               // ex.printStackTrace();
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+          //  e.printStackTrace();
         } finally {
             try {
                 pw.close();
                 bufferedWriter.close();
                 writer.close();
             } catch (IOException ex) {
-                ex.printStackTrace();
+              //  ex.printStackTrace();
             }
         }
 
@@ -371,7 +371,7 @@ public class BaseDatosAcademia {
                 comprobacion.createNewFile();
 
             } catch (Exception e) {
-                e.printStackTrace();
+               // e.printStackTrace();
             }
         }
         FileWriter writer = null;
@@ -397,18 +397,18 @@ public class BaseDatosAcademia {
                 }
                 stmt.close();
             } catch (SQLException ex) {
-                ex.printStackTrace();
+               // ex.printStackTrace();
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+          //  e.printStackTrace();
         } finally {
             try {
                 pw.close();
                 bufferedWriter.close();
                 writer.close();
             } catch (IOException ex) {
-                ex.printStackTrace();
+               // ex.printStackTrace();
             }
         }
 
@@ -427,7 +427,7 @@ public class BaseDatosAcademia {
                 comprobacion.createNewFile();
 
             } catch (Exception e) {
-                e.printStackTrace();
+              //  e.printStackTrace();
             }
         }
         FileWriter writer = null;
@@ -455,18 +455,18 @@ public class BaseDatosAcademia {
                 }
                 stmt.close();
             } catch (SQLException ex) {
-                ex.printStackTrace();
+               // ex.printStackTrace();
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+          //  e.printStackTrace();
         } finally {
             try {
                 pw.close();
                 bufferedWriter.close();
                 writer.close();
             } catch (IOException ex) {
-                ex.printStackTrace();
+               // ex.printStackTrace();
             }
         }
 
@@ -493,7 +493,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return cadenaDatos;
     }
@@ -513,7 +513,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return cadenaDatos;
     }
@@ -535,7 +535,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return cadenaDatos;
     }
@@ -561,7 +561,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -585,7 +585,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -611,7 +611,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -637,7 +637,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -663,7 +663,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -693,7 +693,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -717,7 +717,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -743,7 +743,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -769,7 +769,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -795,7 +795,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -826,7 +826,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         return cadenaDatos;
     }
@@ -846,7 +846,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return cadenaDatos;
     }
@@ -869,7 +869,7 @@ public class BaseDatosAcademia {
 
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return cadenaDatos;
     }
@@ -898,7 +898,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return cadenaDatos;
     }
@@ -921,7 +921,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -944,7 +944,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -966,7 +966,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -988,7 +988,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1011,7 +1011,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1036,7 +1036,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1066,7 +1066,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1088,7 +1088,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1121,7 +1121,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1147,7 +1147,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1180,7 +1180,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1206,7 +1206,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1235,7 +1235,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1258,7 +1258,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1287,7 +1287,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1310,7 +1310,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1339,7 +1339,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return id;
     }
@@ -1355,7 +1355,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return id;
     }
@@ -1371,7 +1371,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return id;
     }
@@ -1401,7 +1401,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return confirmar;
     }
@@ -1422,7 +1422,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return confirmar;
     }
@@ -1443,7 +1443,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return confirmar;
     }
@@ -1473,7 +1473,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return confirmar;
     }
@@ -1494,7 +1494,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return confirmar;
     }
@@ -1515,7 +1515,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         return confirmar;
     }
@@ -1537,7 +1537,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1549,7 +1549,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1561,7 +1561,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1578,7 +1578,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1590,7 +1590,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           //ex.printStackTrace();
         }
     }
 
@@ -1602,7 +1602,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1619,7 +1619,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1631,7 +1631,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1643,7 +1643,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1668,7 +1668,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1693,7 +1693,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1720,7 +1720,7 @@ public class BaseDatosAcademia {
             }
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
         String[] cadenaDatos = new String[arrayDatos.size()];
         for (int i = 0; i < arrayDatos.size(); i++) {
@@ -1747,7 +1747,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1759,7 +1759,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 
@@ -1771,7 +1771,7 @@ public class BaseDatosAcademia {
             this.conn.commit();
             stmt.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         }
     }
 

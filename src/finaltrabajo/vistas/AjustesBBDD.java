@@ -422,7 +422,7 @@ public class AjustesBBDD extends javax.swing.JFrame {
                     comprobacion.createNewFile();
 
                 } catch (Exception e) {
-                    e.printStackTrace();
+                   // e.printStackTrace();
                 }
             }
             FileOutputStream fileOut = null;
@@ -435,14 +435,14 @@ public class AjustesBBDD extends javax.swing.JFrame {
                 objOut.writeObject(parametros);///////////////////////////////////////////////////////
                 System.out.println("los datos se han ESCRITO EN : " + dirFichero);
             } catch (IOException ex) {
-                ex.printStackTrace();
+               // ex.printStackTrace();
             } finally {
                 try {
                     objOut.close();
                     bufOut.close();
                     fileOut.close();
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                   // ex.printStackTrace();
                 }
             }
             h1.popUp1("AjustesBBDD", "MODIFICACION REALIZADA", "OK", "favicon-32x32.png");

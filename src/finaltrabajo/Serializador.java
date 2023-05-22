@@ -153,7 +153,7 @@ public class Serializador implements Serializable {
                 comprobacion.createNewFile();
 
             } catch (Exception e) {
-                e.printStackTrace();
+              //  e.printStackTrace();
             }
         }
         FileOutputStream fileOut = null;
@@ -166,14 +166,14 @@ public class Serializador implements Serializable {
             objOut.writeObject(academia);///////////////////////////////////////////////////////
             System.out.println("los datos se han copiado exitosamente en: " + dirFichero);
         } catch (IOException ex) {
-            ex.printStackTrace();
+           // ex.printStackTrace();
         } finally {
             try {
                 objOut.close();
                 bufOut.close();
                 fileOut.close();
             } catch (Exception ex) {
-                ex.printStackTrace();
+               // ex.printStackTrace();
             }
         }
     }
@@ -193,7 +193,7 @@ public class Serializador implements Serializable {
                 comprobacion.createNewFile();
 
             } catch (Exception e) {
-                e.printStackTrace();
+               // e.printStackTrace();
             }
             return null;
         } else {
@@ -207,14 +207,14 @@ public class Serializador implements Serializable {
                 objIn = new ObjectInputStream(bufIn);
                 academia = (Academia) objIn.readObject();/////////////////////////////
             } catch (Exception ex) {
-                ex.printStackTrace();
+               // ex.printStackTrace();
             } finally {
                 try {
                     objIn.close();
                     bufIn.close();
                     fileIn.close();
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                   // ex.printStackTrace();
                 }
             }
             return academia;
