@@ -1,3 +1,5 @@
+-Devido a nuestra gran experiencia en lenguaje de marcas hemos decidido que el archivo que inicia el proyecto se llama index a si que porfavor para iniciar el proyecto ejecute el Frame Index
+
 Requisitos previos:
 -Isnatalción de la fuente de letra: Roboto 
 -Disponible en \recursos\fonts\Roboto
