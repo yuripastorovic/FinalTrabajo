@@ -23,7 +23,7 @@ import javax.swing.Timer;
  *
  * @author Miguel y Jorge
  */
-public class fin extends javax.swing.JFrame {
+public class Index extends javax.swing.JFrame {
 
     //Inicializamos la BBDD
     private BaseDatosAcademia bd = new BaseDatosAcademia();
@@ -32,7 +32,7 @@ public class fin extends javax.swing.JFrame {
     //Necesario para poder arrastar la ventana
     int xEje, yEje;
 
-    public fin() {
+    public Index() {
         // Iniciamos componenetes
         initComponents();
         // Colocamos la aplicacion en el centro
@@ -823,20 +823,21 @@ public class fin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(fin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(fin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(fin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(fin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new fin().setVisible(true);
+                new Index().setVisible(true);
             }
         });
     }

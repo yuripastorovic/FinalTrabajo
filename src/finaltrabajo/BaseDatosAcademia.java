@@ -159,6 +159,9 @@ public class BaseDatosAcademia {
      * El siguiente metodo se encarga de crear la BBDD
      */
     public void crearDB() {
+        if(this.conn==null){
+            h1.popUp1("BBDD NO EXISTE", "NO SE HA PODIDO CREAR LA BBDD\nDEBIO A QUE NO SE HA PODIDO CONECTAR\nCAMBIE MANUALMENTE LA CONFIGURACION", "OK", "favicon-32x32.png");
+        }else{
         Statement stmt;
         try {
             stmt = this.conn.createStatement();
@@ -200,6 +203,7 @@ public class BaseDatosAcademia {
             h1.popUp1("BBDD NO EXISTE", "NO SE HA PODIDO CREAR LA BBDD\nDEBIO A QUE NO SE HA PODIDO CONECTAR\nREVISE AJUSTES BBDD", "OK", "favicon-32x32.png");
            // ex.printStackTrace();
         }
+    }
     }
     /**
      * El siguiente metodo se encarga de conectarse a la BBDD
